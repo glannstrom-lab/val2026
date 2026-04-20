@@ -182,11 +182,11 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 
 ## 7. Datakategorier
 
-### Quiz-frågor (46 st, 10 kategorier)
+### Quiz-frågor (50 st, 10 kategorier)
 - Ekonomi, Arbetsmarknad, Lag & ordning, Migration, Klimat & energi
 - Sjukvård, Skola, Försvar, EU, Värderingar
 
-### Sakfrågor (51 st, 12 kategorier)
+### Sakfrågor (56 st, 12 kategorier)
 - Ekonomi, Energi, Lag & ordning, Migration, Miljö, Försvar
 - Vård, Skola, Arbetsmarknad, Familj, Kultur, EU
 

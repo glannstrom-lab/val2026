@@ -138,8 +138,8 @@
       return;
     }
 
-    const compass1 = compassData.parties.find(p => p.id === party1.id);
-    const compass2 = compassData.parties.find(p => p.id === party2.id);
+    const compass1 = compassData.positions.find(p => p.id === party1.id);
+    const compass2 = compassData.positions.find(p => p.id === party2.id);
 
     container.innerHTML = `
       <!-- Party Selector (collapsed) -->

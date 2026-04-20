@@ -1,4 +1,4 @@
-# ROADMAP.md — Val 2026 Utvecklingsplan
+# ROADMAP.md — Val 2026 Utvecklingsplan (April 2026)
 
 Sammanställd från granskning av 8 specialiserade agenter: DataValidator, ContentResearcher, A11yAuditor, NeutralityChecker, PerfOptimizer, TestEngineer, SwedishEditor, FrontendDev.
 
@@ -10,196 +10,189 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 | Agent | Status | Kritiska problem |
 |-------|--------|------------------|
-| DataValidator | ✅ OK | Dokumentation ej synkad med data |
-| ContentResearcher | ✅ Fixat | ~~Saknade ämnen: AI, Ukraina, NATO~~ |
-| A11yAuditor | ✅ Fixat | ~~Kontrastproblem, fokus-indikator~~ |
-| NeutralityChecker | ✅ Fixat | ~~En formulering bör justeras~~ |
-| PerfOptimizer | ✅ Fixat | ~~Render-blockerande resurser~~ |
-| TestEngineer | ✅ Fixat | ~~4%-spärren i koalitionsbyggare~~ |
-| SwedishEditor | ✅ Fixat | ~~Terminologi-inkonsekvens~~ |
-| FrontendDev | ✅ Fixat | ~~Stor kodduplicering~~ |
+| DataValidator | ⚠️ 4 problem | Opinions-mismatch, dokumentation föråldrad |
+| ContentResearcher | ⚠️ 3 problem | AI undertäckt, migration överrepresenterad |
+| A11yAuditor | ⚠️ 2 problem | Färgkontrast (SD-gul), fokusindikatorer |
+| NeutralityChecker | ⚠️ 4 problem | Laddade formuleringar i issues.json |
+| PerfOptimizer | ⚠️ 3 problem | Duplikerad JS, stor CSS-fil |
+| TestEngineer | ⚠️ 3 problem | Mandatberäkning ej testad, edge cases |
+| SwedishEditor | ✅ 2 mindre | Stavfel i timeline.json |
+| FrontendDev | ⚠️ 4 problem | Kodduplicering, memory leak risk |
+
+**Totalt:** 25 identifierade förbättringsområden
 
 ---
 
-## Fas 1: Kritiska åtgärder (före release) ✅ KLAR
+## Fas 1: Kritiska åtgärder (före release)
 
-**Implementerad:** 20 april 2026 (commit 6935aab)
+### 1.1 Neutralitet (NeutralityChecker) 🔴
 
-### 1.1 Tillgänglighet (A11yAuditor)
+| Åtgärd | Fil | Status |
+|--------|-----|--------|
+| Ändra "Vinstjakt" → "Vill begränsa vinstuttag" (S friskolor) | `issues.json` | ⏳ |
+| Ändra "riskfylld" → "kostsam" (MP kärnkraft) | `issues.json` | ⏳ |
+| Ersätt SD-citat "Springa fria på gatorna" med faktabaserat | `quotes.json` | ⏳ |
+| Ändra "Vänstervridet" → "bredare redaktionell balans" | `quiz-questions.json` | ⏳ |
 
-| Status | Åtgärd | Fil |
-|--------|--------|-----|
-| ✅ | Fixa `--color-text-subtle` kontrast (3.7:1 → 4.5:1) | `styles.css:17` |
-| ✅ | Lägg till synlig fokus-indikator på `.compass-party:focus` | `styles.css:1030` |
-| ⏳ | Implementera fokus-fångning i mobilmeny | `header.js` |
-| ✅ | Lägg till `role="dialog"` på party-modal | `partier.html:37` |
-| ✅ | Fixa touch targets till minst 44x44px | `styles.css` |
+### 1.2 Datavalidering (DataValidator) 🔴
 
-### 1.2 Funktionalitet (TestEngineer)
+| Åtgärd | Fil | Status |
+|--------|-----|--------|
+| Synkronisera M:s opinion_nu (18% vs 17%) | `parties.json` | ⏳ |
+| Uppdatera CLAUDE.md (24 → 50 quiz-frågor) | `CLAUDE.md` | ⏳ |
+| Fixa opinionssnitt-summa (98% → 100%) | `parties.json` | ⏳ |
+| Validera candidates.json partiID-referenser | `candidates.json` | ⏳ |
 
-| Status | Åtgärd | Fil |
-|--------|--------|-----|
-| ✅ | Partier under 4%-spärren ska få 0 mandat | `coalition.js:98` |
-| ✅ | Synkronisera M:s opinionssiffra (17% vs 18%) | `parties.json` |
+### 1.3 Tillgänglighet (A11yAuditor) 🔴
 
-### 1.3 Neutralitet (NeutralityChecker)
+| Åtgärd | Fil | Status |
+|--------|-----|--------|
+| Fixa SD-partifärg kontrast (#DDDD00 → #b8a000) | `styles.css` | ⏳ |
+| Lägg till `:focus-visible` på alla knappar | `styles.css` | ⏳ |
+| Öka `.theme-toggle` till 48x48px | `styles.css` | ⏳ |
+| Lägg till `aria-hidden="true"` på ikon-SVG:er | `*.html` | ⏳ |
 
-| Status | Åtgärd | Fil |
-|--------|--------|-----|
-| ✅ | Ta bort "särskilt islamska" från SD:s position om religiösa friskolor | `issues.json` |
-| ✅ | Ändra "generös" till "högre ersättning" i quiz q19 | `quiz-questions.json` |
+### 1.4 Språk (SwedishEditor) 🟡
 
-### 1.4 Språk (SwedishEditor)
-
-| Status | Åtgärd | Fil |
-|--------|--------|-----|
-| ✅ | Ändra "Bygg koalitioner" → "Bygg regeringsunderlag" | `index.html:158` |
-| ✅ | Ändra "public service uppdrag" → "public services uppdrag" | `issues.json:577` |
-| ✅ | Ändra "extra viktiga" → "särskilt viktiga" | `quiz.html:24` |
-| ✅ | Ändra "opinionsställning" → "opinionsstöd" | `partier.html:24` |
-
----
-
-## Fas 2: Prestandaoptimering (1-2 dagar) ✅ KLAR
-
-**Implementerad:** 20 april 2026
-
-### 2.1 Snabba vinster (PerfOptimizer)
-
-| Status | Åtgärd | Förväntad förbättring |
-|--------|--------|----------------------|
-| ✅ | Lägg till `defer` på alla script-taggar (13 filer) | TBT -100-200ms |
-| ✅ | Lägg till `font-display: swap` på webfonts (13 filer) | FCP -100-300ms |
-| ✅ | Lägg till `loading="lazy"` på bilder (12 JS-filer) | LCP -50-100ms |
-| ✅ | Preload kritiska resurser (CSS, fonts) i index.html | LCP -50-100ms |
-| ⏳ | Minifiera CSS och JS | Laddtid -30-60ms |
-
-### 2.2 Större optimeringar
-
-| Åtgärd | Förväntad förbättring | Tid |
-|--------|----------------------|-----|
-| Extrahera och inline critical CSS | FCP -200-400ms | 2-3 tim |
-| Konvertera bilder till WebP | Bildstorlek -30% | 30 min |
-| Optimera Service Worker (lazy caching) | Första laddning -300-500ms | 1-2 tim |
+| Åtgärd | Fil | Status |
+|--------|-----|--------|
+| "omvald" → "omväljs" (L-ledare) | `timeline.json` | ⏳ |
+| "vikta" → "väga" (prioriteringar) | `quiz-questions.json` | ⏳ |
 
 ---
 
-## Fas 3: Kodkvalitet (3-5 dagar) ✅ KLAR
+## Fas 2: Innehållsförbättringar (1 vecka)
 
-**Implementerad:** 20 april 2026
-
-### 3.1 Eliminera duplicering (FrontendDev)
-
-| Status | Åtgärd | Påverkan |
-|--------|--------|----------|
-| ✅ | Skapa `shared/constants.js` med PARTY_COLORS, PARTY_NAMES, PARTY_TEXT_COLORS, PARTY_IDS, RIKSDAG_* | Eliminerat ~500 rader duplicerad kod |
-| ✅ | Uppdatera alla 11 JS-filer att använda delade konstanter | Centraliserat underhåll |
-| ✅ | Uppdatera service worker (v7) med nya filer | Korrekt caching |
-| ⏳ | Skapa `shared/utils.js` med delade funktioner | Bättre underhåll |
-| ⏳ | Standardisera init-mönster (alla via window.initX) | Konsistens |
-
-### 3.2 Förbättra felhantering
-
-| Åtgärd | Fil | Tid |
-|--------|-----|-----|
-| Lägg till `response.ok`-kontroll i alla fetch | timeline.js, coalition.js, guess.js, pollgraph.js | 1 tim |
-| Lägg till "Försök igen"-knapp vid JSON-fel | Alla verktyg | 2 tim |
-
-### 3.3 CSS-organisation
-
-| Åtgärd | Tid |
-|--------|-----|
-| Dela upp `styles.css` i moduler (base, components, tools) | 4-6 tim |
-| Ta bort duplicerade färgdefinitioner (använd CSS vars från JS) | 1 tim |
-
----
-
-## Fas 4: Innehållsförbättringar (1-2 veckor) ✅ KLAR
-
-**Implementerad:** 20 april 2026
-
-### 4.1 Nya sakfrågor (ContentResearcher)
-
-| Status | Ämne | Prioritet |
-|--------|------|-----------|
-| ✅ | AI och digitalisering | 🔴 Hög |
-| ✅ | Stöd till Ukraina | 🔴 Hög |
-| ✅ | Kärnvapen på svensk mark | 🔴 Hög |
-| ✅ | NATO-baser i Sverige | 🟠 Medel |
-| ✅ | Gruvbrytning/sällsynta mineraler | 🟠 Medel |
-| ⏳ | Sjukförsäkring/karensdag | 🟠 Medel |
-| ⏳ | Höghastighetsträg | 🟠 Medel |
-| ⏳ | Kommunal ekonomi | 🟡 Låg |
-
-### 4.2 Nya quiz-frågor
-
-| Status | Fråga | Kategori |
-|--------|-------|----------|
-| ✅ | "Sverige bör fortsätta ge omfattande militärt stöd till Ukraina" | Försvar |
-| ✅ | "AI-system i offentlig sektor bör regleras strikt" | Värderingar |
-| ✅ | "Kärnvapen bör kunna placeras på svensk mark inom NATO-samarbetet" | Försvar |
-| ✅ | "Gruvbrytning bör tillåtas i skyddade områden för grön omställning" | Miljö |
-
-### 4.3 Datauppdateringar
+### 2.1 AI och digitalisering (ContentResearcher) 🔴
 
 | Åtgärd | Prioritet |
 |--------|-----------|
-| Lägg till granulär opinionsdata för jan-mars 2026 | 🟠 Medel |
-| Uppdatera tidslinjen med händelser från april 2026 | 🟠 Medel |
-| Verifiera partiledare (särskilt L) | 🟠 Medel |
-| Lägg till citat från 2026 års valkampanj | 🟡 Låg |
+| Lägg till 3-4 quiz-frågor om AI-reglering | Hög |
+| Lägg till sakfråga: "AI-driven arbetskraftsersättning" | Hög |
+| Lägg till sakfråga: "Algoritm-transparens i offentlig sektor" | Medel |
+
+**Förslag på nya quiz-frågor:**
+1. "AI-system som fattar beslut om medborgare bör alltid kunna förklaras"
+2. "Staten bör reglera hur företag använder AI för personalrekrytering"
+3. "Automatisering som ersätter jobb bör beskattas hårdare"
+
+### 2.2 Balansera migration (ContentResearcher) 🟡
+
+| Åtgärd | Prioritet |
+|--------|-----------|
+| Lägg till progressivt perspektiv: "Höja flyktingkvoten" | Medel |
+| Lägg till: "Arbetskraftsinvandring och exploatering" | Medel |
+| Minska migrationsfrågorna från 9 till 6-7 | Låg |
+
+### 2.3 Sjukvård (ContentResearcher) 🟡
+
+| Åtgärd | Prioritet |
+|--------|-----------|
+| Lägg till quiz-fråga om sjukvårdsköer/finansiering | Medel |
+| Koppla till timeline e026 (vårdkris) | Låg |
 
 ---
 
-## Fas 5: Nya funktioner (2-4 veckor) ✅ KLAR
+## Fas 3: Testning och kvalitet (1-2 veckor)
 
-**Implementerat:** 20 april 2026
+### 3.1 Nya tester (TestEngineer) 🔴
 
-### 5.1 Prioritet Hög
+| Test | Fil | Prioritet |
+|------|-----|-----------|
+| Mandatberäkning mot 2022-resultat | `tests/seatcalc.test.js` | Hög |
+| 4%-spärr edge cases (3.99%, 4.00%, 4.01%) | `tests/threshold.test.js` | Hög |
+| Sainte-Laguë-algoritm verifiering | `tests/seatcalc.test.js` | Hög |
+| Quiz zero-answer edge case | `tests/quiz.test.js` | Medel |
 
-| Status | Funktion | Beskrivning | Komplexitet |
-|--------|----------|-------------|-------------|
-| ✅ | **Dark/light mode** | Toggle i header, sparas i localStorage, följer systempreferens | Medel |
-| ✅ | **Jämför två partier** | Ny sida jamfor.html med partiväljare, stats, ideologi, sakfrågor | Hög |
-| ✅ | **Spara quiz-progress** | localStorage för att inte tappa svar, resume-prompt | Låg |
+**Förväntad test-täckning:** 40% → 70%
 
-### 5.2 Prioritet Medel
+### 3.2 Verifiera algoritmer (TestEngineer) 🔴
 
-| Status | Funktion | Beskrivning | Komplexitet |
-|--------|----------|-------------|-------------|
-| ✅ | **Debattkalender** | Lista kommande valdebatter med countdown | Medel |
-| ✅ | **Mandatkalkylator** | Simulera valresultat med Sainte-Laguë-metoden | Hög |
-| ✅ | **Swipe-gester i quiz** | Svep höger/vänster för att svara på mobil | Medel |
-
-### 5.3 Prioritet Låg
-
-| Status | Funktion | Beskrivning | Komplexitet |
-|--------|----------|-------------|-------------|
-| ✅ | **Print-stylesheet** | Optimera för utskrift med A4-format | Låg |
-| ✅ | **Kandidatdatabas** | 80 kandidater med sök och filter | Hög |
+| Åtgärd | Beskrivning |
+|--------|-------------|
+| Verifiera mandatberäkning | Jämför seatcalc.js output mot faktiskt 2022-valresultat |
+| Fixa avrundningsfel | coalition.js `Math.round()` kan ge fel total |
+| Konsolidera 4%-spärr | Tre olika implementeringar → en |
 
 ---
 
-## Fas 6: Teknisk skuld (löpande)
+## Fas 4: Prestandaoptimering (1 vecka)
 
-### 6.1 Dokumentation
+### 4.1 Snabba vinster (PerfOptimizer) 🔴
 
-- [x] Uppdatera CLAUDE.md med korrekta siffror (56 sakfrågor, 50 quiz-frågor)
-- [x] Synkronisera `quiz-questions.json` meta.totalQuestions (redan korrekt: 50)
+| Åtgärd | Förväntad förbättring | Tid |
+|--------|----------------------|-----|
+| Ta bort duplikerad JS-laddning | -40% laddtid | 30 min |
+| Extrahera kritisk CSS (~2KB) inline | +0.8s snabbare FCP | 3 tim |
+| Konvertera PNG → WebP (partilogotyper) | -40KB | 2 tim |
 
-### 6.2 Tester
+### 4.2 Större optimeringar (PerfOptimizer) 🟡
 
-- [x] Lägg till automatiserade tester för quiz-algoritmen (13 tester)
-- [x] Lägg till dataintegritets-tester (23 tester)
-- [ ] HTML-validering med W3C (manuell kontroll)
-- [x] Lighthouse-audit konfigurerad (mål: 80+ performance, 90+ accessibility)
-- [ ] Kontrast-test med WebAIM (manuell kontroll)
+| Åtgärd | Förväntad förbättring | Tid |
+|--------|----------------------|-----|
+| Lazy-load JSON-data | -100KB initial | 2 tim |
+| CSS minification | -30% filstorlek | 1 tim |
+| Service Worker versionering för POLL_DATA | Automatisk uppdatering | 2 tim |
 
-### 6.3 CI/CD
+**Mål efter optimering:**
+- First Contentful Paint: 1.5s → 1.0s
+- Lighthouse Performance: 72 → 85+
 
-- [x] GitHub Actions workflow för automatiska tester
-- [x] Automatisk Lighthouse-rapport på varje push/PR
-- [x] JSON-validering i CI pipeline
+---
+
+## Fas 5: Kodkvalitet (2 veckor)
+
+### 5.1 Eliminera duplicering (FrontendDev) 🔴
+
+| Åtgärd | Påverkan |
+|--------|----------|
+| Skapa `shared/utils.js` med `createSVGElement()`, `loadJSON()`, `showError()` | Eliminerar ~200 rader duplicerad kod |
+| Centralisera POLL_DATA (nu på 2 ställen) | Underhållbarhet |
+| Implementera event delegation | Förhindrar memory leaks |
+
+### 5.2 Förbättra felhantering (FrontendDev) 🟡
+
+| Åtgärd | Beskrivning |
+|--------|-------------|
+| Kontextrika felmeddelanden | "Det gick inte att ladda partidata" istället för generiskt fel |
+| JSON-validering vid load | Kontrollera saknade partier, tomma arrays |
+| Promise.all med individuell .catch() | En misslyckad request ska inte stoppa allt |
+
+### 5.3 Dokumentation (FrontendDev) 🟡
+
+| Åtgärd | Beskrivning |
+|--------|-------------|
+| Lägg till JSDoc på alla funktioner | Förbättrad underhållbarhet |
+| Dokumentera magic numbers | SWIPE_THRESHOLD=80, SVG_PADDING=1.5 etc. |
+| Kommentera komplexa algoritmer | user position normalisering, ellips-ritning |
+
+---
+
+## Fas 6: Framtida funktioner (efter release)
+
+### 6.1 Prioritet Hög
+
+| Funktion | Beskrivning | Komplexitet |
+|----------|-------------|-------------|
+| Uppdateringsmekanism för opinionsdata | Automatisk fetch efter valdagen | Medel |
+| Valkretsdata | Visa mandatfördelning per valkrets | Hög |
+| Röstningskalkylator v2 | Historisk jämförelse | Medel |
+
+### 6.2 Prioritet Medel
+
+| Funktion | Beskrivning | Komplexitet |
+|----------|-------------|-------------|
+| Partihistorik | Historiska valresultat sedan 1970 | Medel |
+| RSS/Atom-feed | För tidslinjen | Låg |
+| Förbättrad quiz-progress | Flerstegs-sparning | Låg |
+
+### 6.3 Prioritet Låg
+
+| Funktion | Beskrivning | Komplexitet |
+|----------|-------------|-------------|
+| Engelsk version | Internationell tillgänglighet | Hög |
+| API för data | Öppna data för andra utvecklare | Medel |
+| Inbäddningsbara widgets | Låt andra sajter bädda in verktyg | Hög |
 
 ---
 
@@ -207,12 +200,12 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 | Vecka | Fokus | Mål |
 |-------|-------|-----|
-| **V1** | Fas 1 (Kritiska) | Alla tillgänglighets- och neutralitetsproblem fixade |
-| **V2** | Fas 2 (Prestanda) | Lighthouse Performance > 90 |
-| **V3-4** | Fas 3 (Kodkvalitet) | Kodduplicering eliminerad |
-| **V5-6** | Fas 4 (Innehåll) | Nya sakfrågor om AI, Ukraina, NATO |
-| **V7-10** | Fas 5 (Nya funktioner) | Dark mode, partijämförelse |
-| **Löpande** | Fas 6 (Teknisk skuld) | Dokumentation, tester |
+| **V1** | Fas 1 (Kritiska) | Alla neutralitets- och datafel fixade |
+| **V2** | Fas 2 (Innehåll) | AI-frågor tillagda, migration balanserad |
+| **V3** | Fas 3 (Tester) | Test-täckning > 70%, algoritmer verifierade |
+| **V4** | Fas 4 (Prestanda) | Lighthouse > 85, -50% laddtid |
+| **V5-6** | Fas 5 (Kodkvalitet) | shared/utils.js, dokumentation |
+| **Löpande** | Fas 6 (Framtid) | Efter 13 september 2026 |
 
 ---
 
@@ -224,15 +217,15 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
     ┌──────────────┼──────────────┐
     │              │              │
     │  🔴 GÖR NU   │  📋 PLANERA  │
-    │  Kontrast    │  Prestanda   │
-    │  4%-spärren  │  Kodkvalitet │
-    │  Neutralitet │              │
+    │  Neutralitet │  Prestanda   │
+    │  Datafix     │  Kodkvalitet │
+    │  A11y        │  Nya tester  │
 Låg ├──────────────┼──────────────┤ Hög
 insats│              │              │ insats
     │  ✅ SNABBA   │  🔮 FRAMTID  │
     │  VINSTER     │              │
-    │  Språkfix    │  Dark mode   │
-    │  defer/lazy  │  Kandidatdb  │
+    │  Språkfix    │  Valkretsdata│
+    │  AI-frågor   │  Engelsk ver │
     │              │              │
     └──────────────┼──────────────┘
                    │
@@ -241,21 +234,62 @@ insats│              │              │ insats
 
 ---
 
+## Agentrapporter (detaljerad)
+
+### DataValidator
+- **Kritiskt:** M:s opinion_nu inkonsekvent (18% vs 17%)
+- **Kritiskt:** CLAUDE.md säger 24 frågor, faktiskt 50
+- **Kritiskt:** Opinionssnitt summerar till 98%
+- **Medel:** MP-röstningstal varierar, EU-mandatdata ofullständig
+
+### ContentResearcher
+- **Kritiskt:** Endast 1 quiz-fråga om AI (borde vara 4-5)
+- **Varning:** 9 migrationsfrågorna, asymmetriskt perspektiv
+- **Varning:** Sjukvårdsfråga saknas trots aktuell timeline-händelse
+
+### A11yAuditor
+- **Kritiskt:** SD-partifärg #DDDD00 underskriver WCAG kontrast
+- **Kritiskt:** Fokusindikatorer saknas på flera knappar
+- **Varning:** Touch targets under 44x44px
+
+### NeutralityChecker
+- **Kritiskt:** "Vinstjakt" (S) är laddat
+- **Kritiskt:** "riskfylld" (MP kärnkraft) är värderande
+- **Kritiskt:** SD-citat extremt emotionellt
+- **Kritiskt:** "Vänstervridet" är insinuation
+
+### PerfOptimizer
+- **Kritiskt:** Tool-scripts laddas 2x per sida (~200KB extra)
+- **Kritiskt:** CSS-fil 152KB, ingen critical CSS
+- **Varning:** PNG-logotyper utan WebP-alternativ
+
+### TestEngineer
+- **Kritiskt:** Mandatberäkning aldrig verifierad mot faktiska val
+- **Kritiskt:** 4%-spärr edge cases otestade
+- **Kritiskt:** Sainte-Laguë-algoritm ej verifierad
+- **Varning:** Quiz zero-answer ger slumpmässig ordning
+
+### SwedishEditor
+- **Fel:** "omvald" → "omväljs" (timeline.json)
+- **Fel:** "vikta" → "väga" (quiz-questions.json)
+- **OK:** Övergripande hög språkkvalitet
+
+### FrontendDev
+- **Kritiskt:** `createSVGElement()` duplicerad i 2 filer
+- **Kritiskt:** POLL_DATA hårdkodad på 2 ställen
+- **Kritiskt:** Event-handlers re-attachas (memory leak)
+- **Varning:** Ingen JSDoc, magic numbers odokumenterade
+
+---
+
 ## Nästa steg
 
-1. ~~**Idag:** Fixa kritiska tillgänglighetsproblem (kontrast, fokus)~~ ✅
-2. ~~**Denna vecka:** Fas 1 komplett~~ ✅
-3. ~~**Denna vecka:** Prestandaoptimering (Fas 2)~~ ✅
-4. ~~**Denna vecka:** Kodkvalitet (Fas 3) - eliminera duplicering~~ ✅
-5. ~~**Denna vecka:** Innehållsförbättringar (Fas 4) - AI, Ukraina, NATO, kärnvapen~~ ✅
-6. ~~**Denna vecka:** Nya funktioner (Fas 5) - dark mode, quiz-progress, partijämförelse~~ ✅
-7. ~~**Fas 5.2:** Mandatkalkylator~~ ✅
-8. ~~**Fas 5.2:** Debattkalender~~ ✅
-9. ~~**Fas 5.2:** Swipe-gester i quiz~~ ✅
-10. ~~**Fas 5.3:** Print-stylesheet~~ ✅
-11. ~~**Fas 5.3:** Kandidatdatabas~~ ✅
-12. **Fas 5 KOMPLETT!** Alla planerade funktioner implementerade.
-13. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
+1. **Idag:** Fixa neutralitetsproblem i issues.json och quotes.json
+2. **Idag:** Synkronisera M:s opinionsdata
+3. **Denna vecka:** Fixa SD:s färgkontrast och fokusindikatorer
+4. **Denna vecka:** Lägg till 3-4 AI-quiz-frågor
+5. **Nästa vecka:** Lägg till tester för mandatberäkning
+6. **Nästa vecka:** Skapa shared/utils.js
 
 ---
 
