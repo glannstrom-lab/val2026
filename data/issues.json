@@ -183,7 +183,7 @@
         },
         "MP": {
           "stance": "emot",
-          "summary": "Vill fasa ut kärnkraft. Ser den som dyr, riskfylld och onödig med förnybart.",
+          "summary": "Vill fasa ut kärnkraft. Ser den som kostsam och onödig när förnybar energi finns.",
           "source": "https://www.mp.se/politik/energi"
         },
         "C": {
@@ -319,7 +319,7 @@
         },
         "S": {
           "stance": "for",
-          "summary": "Vill stoppa vinstjakten i skolan och begränsa vinstuttag kraftigt.",
+          "summary": "Vill begränsa vinstuttag i friskolor kraftigt.",
           "source": "https://www.socialdemokraterna.se/var-politik/skola"
         },
         "MP": {

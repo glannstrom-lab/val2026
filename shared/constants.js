@@ -15,7 +15,7 @@
     L: '#006AB3',
     KD: '#1F3C81',
     M: '#1B49DD',
-    SD: '#DDDD00'
+    SD: '#b8a000'
   };
 
   // Party full names
