@@ -3,7 +3,7 @@
  * Möjliggör offline-läsning
  */
 
-const CACHE_NAME = 'val2026-v1';
+const CACHE_NAME = 'val2026-v4';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -16,12 +16,16 @@ const ASSETS_TO_CACHE = [
   './tools/coalition.js',
   './tools/guess.js',
   './tools/pollgraph.js',
+  './tools/budget.js',
+  './tools/votes.js',
   './data/parties.json',
   './data/compass-positions.json',
   './data/quiz-questions.json',
   './data/issues.json',
   './data/timeline.json',
   './data/quotes.json',
+  './data/votes.json',
+  './data/budget.json',
   './data/polls-history.json',
   './assets/logos/V.png',
   './assets/logos/S.png',
@@ -31,7 +35,9 @@ const ASSETS_TO_CACHE = [
   './assets/logos/KD.png',
   './assets/logos/M.png',
   './assets/logos/SD.png',
-  './assets/favicon.svg'
+  './assets/favicon.svg',
+  './assets/icon-192.svg',
+  './manifest.json'
 ];
 
 // Install event - cache assets

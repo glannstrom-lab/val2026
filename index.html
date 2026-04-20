@@ -11,14 +11,15 @@
   <meta property="og:url" content="https://glannstrom-lab.github.io/val2026/">
   <meta property="og:title" content="Val 2026 — Väljarportal">
   <meta property="og:description" content="Neutral, faktabaserad information om partierna inför riksdagsvalet 2026. Valkompass, sakfrågor och koalitionsbyggare.">
-  <meta property="og:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png">
+  <!-- TODO: Create og-image.png (1200x630px) for social sharing -->
+  <!-- <meta property="og:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png"> -->
   <meta property="og:locale" content="sv_SE">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Val 2026 — Väljarportal">
   <meta name="twitter:description" content="Neutral, faktabaserad information om partierna inför riksdagsvalet 2026.">
-  <meta name="twitter:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png">
+  <!-- <meta name="twitter:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png"> -->
 
   <title>Val 2026 — Väljarportal</title>
 
@@ -34,7 +35,7 @@
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
-  <link rel="apple-touch-icon" href="assets/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icon-192.svg">
 </head>
 <body>
   <!-- Skip link for accessibility -->
@@ -55,6 +56,8 @@
         <a href="#opinion">Opinion</a>
         <a href="#koalitioner">Koalitioner</a>
         <a href="#gissa">Gissa partiet</a>
+        <a href="#budget">Budget</a>
+        <a href="#rostningar">Röstningar</a>
         <a href="#om">Om sidan</a>
       </nav>
 
@@ -77,6 +80,8 @@
     <a href="#opinion">Opinionsläget</a>
     <a href="#koalitioner">Koalitioner</a>
     <a href="#gissa">Gissa partiet</a>
+    <a href="#budget">Statsbudgeten</a>
+    <a href="#rostningar">Röstningar</a>
     <a href="#om">Om sidan</a>
   </nav>
 
@@ -330,6 +335,34 @@
       </div>
     </section>
 
+    <!-- Budget Section -->
+    <section class="tool-section budget-section" id="budget">
+      <div class="container">
+        <div class="section-header">
+          <h2>Statsbudgeten</h2>
+          <p>Jämför regeringens budget 2025 med oppositionens alternativ. Alla 27 utgiftsområden.</p>
+        </div>
+
+        <div id="budget-container">
+          <!-- Budget rendered by budget.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Riksdag Votes Section -->
+    <section class="tool-section votes-section" id="rostningar">
+      <div class="container">
+        <div class="section-header">
+          <h2>Riksdagsröstningar</h2>
+          <p>Se hur partierna har röstat i viktiga frågor. Riktig data från Riksdagens öppna API.</p>
+        </div>
+
+        <div id="votes-container">
+          <!-- Votes rendered by votes.js -->
+        </div>
+      </div>
+    </section>
+
     <!-- About Section -->
     <section class="about-section" id="om">
       <div class="container">
@@ -424,6 +457,8 @@
   <script src="tools/coalition.js"></script>
   <script src="tools/guess.js"></script>
   <script src="tools/pollgraph.js"></script>
+  <script src="tools/budget.js"></script>
+  <script src="tools/votes.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

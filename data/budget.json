@@ -1,0 +1,450 @@
+{
+  "description": "Statsbudget 2025 - Regeringens budget och oppositionens alternativ",
+  "year": 2025,
+  "source": "Prop. 2024/25:1, oppositionens budgetmotioner",
+  "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/budgetpropositionen-for-2025_hc031/",
+  "last_updated": "2025-10",
+  "currency": "miljarder SEK",
+  "total_budget": 1405.9,
+  "expenditure_areas": [
+    {
+      "id": 1,
+      "name": "Rikets styrelse",
+      "short": "Styrelse",
+      "category": "samhalle",
+      "description": "Riksdagen, regeringen och statschefen, länsstyrelserna m.m.",
+      "gov_budget": 20,
+      "parties": {
+        "S": { "diff": 0.2, "comment": "Mer till demokratistärkande arbete" },
+        "V": { "diff": 0.3, "comment": "Stärkt demokrati och länsstyrelser" },
+        "C": { "diff": -0.1, "comment": "Effektivisering av statsförvaltning" },
+        "MP": { "diff": 0.1, "comment": "Mer till demokratiarbete" }
+      }
+    },
+    {
+      "id": 2,
+      "name": "Samhällsekonomi och finansförvaltning",
+      "short": "Finans",
+      "category": "ekonomi",
+      "description": "Finansinspektionen, Statistiska centralbyrån, statliga pensioner m.m.",
+      "gov_budget": 22,
+      "parties": {
+        "S": { "diff": 0.5, "comment": "Stärkt finansinspektion" },
+        "V": { "diff": 0.8, "comment": "Stärkt konsumentskydd och finanstillsyn" },
+        "C": { "diff": 0, "comment": "Som regeringen" },
+        "MP": { "diff": 0.2, "comment": "Stärkt hållbarhetsrapportering" }
+      }
+    },
+    {
+      "id": 3,
+      "name": "Skatt, tull och exekution",
+      "short": "Skatt/tull",
+      "category": "samhalle",
+      "description": "Skatteverket, Tullverket, Kronofogdemyndigheten",
+      "gov_budget": 14,
+      "parties": {
+        "S": { "diff": 0.3, "comment": "Förstärkt Skatteverket mot skattefusk" },
+        "V": { "diff": 0.5, "comment": "Bekämpa skatteflykt och ekonomisk brottslighet" },
+        "C": { "diff": 0.2, "comment": "Stärkt tullen mot smuggling" },
+        "MP": { "diff": 0.3, "comment": "Grön skatteväxling kräver stärkt Skatteverk" }
+      }
+    },
+    {
+      "id": 4,
+      "name": "Rättsväsendet",
+      "short": "Rättsvård",
+      "category": "trygghet",
+      "description": "Polisen, domstolarna, kriminalvården, Åklagarmyndigheten m.m.",
+      "gov_budget": 86,
+      "parties": {
+        "S": { "diff": 2.5, "comment": "Fler poliser, förebyggande mot gängkriminalitet" },
+        "V": { "diff": 1.8, "comment": "Fler poliser och stärkt brottsförebyggande arbete" },
+        "C": { "diff": 2.0, "comment": "Satsning på polis i hela landet" },
+        "MP": { "diff": 1.5, "comment": "Brottsförebyggande och grön kriminalpolitik" }
+      }
+    },
+    {
+      "id": 5,
+      "name": "Internationell samverkan",
+      "short": "Int. samverkan",
+      "category": "internationellt",
+      "description": "Sveriges EU-avgift för gemensamma program, internationella organisationer",
+      "gov_budget": 3,
+      "parties": {
+        "S": { "diff": 0.1, "comment": "Stärkt svenskt deltagande i EU" },
+        "V": { "diff": -0.2, "comment": "Kritisk till vissa EU-program" },
+        "C": { "diff": 0.2, "comment": "Utökat EU-samarbete" },
+        "MP": { "diff": 0.3, "comment": "Stärkt internationellt miljösamarbete" }
+      }
+    },
+    {
+      "id": 6,
+      "name": "Försvar och samhällets krisberedskap",
+      "short": "Försvar",
+      "category": "trygghet",
+      "description": "Försvarsmakten, MSB, totalförsvaret, cybersäkerhet",
+      "gov_budget": 164,
+      "parties": {
+        "S": { "diff": 0, "comment": "Stödjer försvarsuppgörelsen med fokus på civilt försvar" },
+        "V": { "diff": -8, "comment": "Kritisk till överutgifter, satsar på civilt försvar" },
+        "C": { "diff": 2, "comment": "Mer till civilt försvar och cybersäkerhet" },
+        "MP": { "diff": -3, "comment": "Prioriterar civilt försvar, klimatanpassning" }
+      }
+    },
+    {
+      "id": 7,
+      "name": "Internationellt bistånd",
+      "short": "Bistånd",
+      "category": "internationellt",
+      "description": "Sida, humanitärt bistånd, utvecklingssamarbete",
+      "gov_budget": 45,
+      "parties": {
+        "S": { "diff": 8, "comment": "Höja biståndet mot 1% av BNI" },
+        "V": { "diff": 10.6, "comment": "Återställ enprocentsmålet för bistånd" },
+        "C": { "diff": 1.7, "comment": "Öka biståndet successivt mot 1% av BNI" },
+        "MP": { "diff": 12, "comment": "Återinföra enprocentsmålet direkt" }
+      }
+    },
+    {
+      "id": 8,
+      "name": "Migration",
+      "short": "Migration",
+      "category": "samhalle",
+      "description": "Migrationsverket, mottagande av asylsökande",
+      "gov_budget": 10,
+      "parties": {
+        "S": { "diff": 1.5, "comment": "Stärkt mottagande och integration" },
+        "V": { "diff": 3, "comment": "Human migrationspolitik, stärkt rättssäkerhet" },
+        "C": { "diff": 0.5, "comment": "Fokus på arbetskraftsinvandring" },
+        "MP": { "diff": 4, "comment": "Humanare flyktingpolitik, klimatflyktingar" }
+      }
+    },
+    {
+      "id": 9,
+      "name": "Hälsovård, sjukvård och social omsorg",
+      "short": "Hälso/sjukvård",
+      "category": "valfard",
+      "description": "Statsbidrag till regioner, Folkhälsomyndigheten, läkemedel m.m.",
+      "gov_budget": 116,
+      "parties": {
+        "S": { "diff": 12, "comment": "Kraftig satsning på sjukvården, mer personal" },
+        "V": { "diff": 20, "comment": "Nationell vårdgaranti, avskaffa regionernas misslyckande" },
+        "C": { "diff": 8, "comment": "Stärkt primärvård och digital hälsa" },
+        "MP": { "diff": 10, "comment": "Förebyggande hälsa, psykisk hälsa" }
+      }
+    },
+    {
+      "id": 10,
+      "name": "Ekonomisk trygghet vid sjukdom och funktionsnedsättning",
+      "short": "Sjukförsäkring",
+      "category": "valfard",
+      "description": "Sjukpenning, aktivitetsersättning, sjukersättning, assistansersättning",
+      "gov_budget": 120,
+      "parties": {
+        "S": { "diff": 5, "comment": "Höjd sjukersättning, reformerad försäkring" },
+        "V": { "diff": 8, "comment": "Generösare sjukförsäkring, stärkt assistans" },
+        "C": { "diff": 2, "comment": "Rehabiliteringsfokus" },
+        "MP": { "diff": 4, "comment": "Stärkt trygghetssystem" }
+      }
+    },
+    {
+      "id": 11,
+      "name": "Ekonomisk trygghet vid ålderdom",
+      "short": "Pensioner",
+      "category": "valfard",
+      "description": "Garantipension, bostadstillägg till pensionärer, äldreförsörjningsstöd",
+      "gov_budget": 62,
+      "parties": {
+        "S": { "diff": 4, "comment": "Höjd garantipension, stärkt bostadstillägg" },
+        "V": { "diff": 6, "comment": "Kraftigt höjd garantipension och bostadstillägg" },
+        "C": { "diff": 2, "comment": "Jobbskatteavdrag för äldre" },
+        "MP": { "diff": 3, "comment": "Höjd garantipension" }
+      }
+    },
+    {
+      "id": 12,
+      "name": "Ekonomisk trygghet för familjer och barn",
+      "short": "Familjer/barn",
+      "category": "valfard",
+      "description": "Barnbidrag, föräldraförsäkring, bostadsbidrag",
+      "gov_budget": 101,
+      "parties": {
+        "S": { "diff": 3, "comment": "Höjt barnbidrag +200 kr/mån, höjt bostadsbidrag" },
+        "V": { "diff": 5, "comment": "Kraftigt höjt barnbidrag och bostadsbidrag" },
+        "C": { "diff": 1.5, "comment": "Flexiblare föräldraförsäkring" },
+        "MP": { "diff": 4, "comment": "Höjt barnbidrag, jämställd föräldraförsäkring" }
+      }
+    },
+    {
+      "id": 13,
+      "name": "Integration och jämställdhet",
+      "short": "Integration",
+      "category": "samhalle",
+      "description": "Etableringsersättning, jämställdhetspolitik, diskrimineringsombudsmannen",
+      "gov_budget": 6,
+      "parties": {
+        "S": { "diff": 2, "comment": "Stärkt integration och jämställdhetsarbete" },
+        "V": { "diff": 3, "comment": "Kraftfulla integrationsinsatser, jämställdhet" },
+        "C": { "diff": 1, "comment": "Snabbare etablering på arbetsmarknaden" },
+        "MP": { "diff": 2.5, "comment": "Feministisk och antirasistisk politik" }
+      }
+    },
+    {
+      "id": 14,
+      "name": "Arbetsmarknad och arbetsliv",
+      "short": "Arbetsmarknad",
+      "category": "ekonomi",
+      "description": "Arbetsförmedlingen, arbetsmarknadspolitiska program, arbetslöshetsförsäkring",
+      "gov_budget": 91,
+      "parties": {
+        "S": { "diff": 15, "comment": "Aktiv arbetsmarknadspolitik, fler utbildningsplatser" },
+        "V": { "diff": 30, "comment": "Sverigejobb - storskalig arbetsmarknadsinsats" },
+        "C": { "diff": 8, "comment": "Sänkta arbetsgivaravgifter för unga och småföretag" },
+        "MP": { "diff": 12, "comment": "Gröna jobb, omställning" }
+      }
+    },
+    {
+      "id": 15,
+      "name": "Studiestöd",
+      "short": "Studiestöd",
+      "category": "utbildning",
+      "description": "Studiemedel, studiebidrag, CSN",
+      "gov_budget": 31,
+      "parties": {
+        "S": { "diff": 1, "comment": "Höjt studiebidrag" },
+        "V": { "diff": 2, "comment": "Kraftigt höjt studiebidrag, fri utbildning" },
+        "C": { "diff": 0.5, "comment": "Enklare omskolning för vuxna" },
+        "MP": { "diff": 1.5, "comment": "Höjt studiebidrag" }
+      }
+    },
+    {
+      "id": 16,
+      "name": "Utbildning och universitetsforskning",
+      "short": "Utbildning",
+      "category": "utbildning",
+      "description": "Grundskola, gymnasium, universitet, forskning",
+      "gov_budget": 102,
+      "parties": {
+        "S": { "diff": 8, "comment": "Fler lärare, minskade klasser, mer till forskning" },
+        "V": { "diff": 12, "comment": "Stopp för nedskärningar i skolan, fler lärare" },
+        "C": { "diff": 5, "comment": "Sektorsbidrag på 17 mdr, 250 mkr mer än S/V/MP" },
+        "MP": { "diff": 7, "comment": "Klimatutbildning, stärkt forskning" }
+      }
+    },
+    {
+      "id": 17,
+      "name": "Kultur, medier, trossamfund och fritid",
+      "short": "Kultur/fritid",
+      "category": "samhalle",
+      "description": "Kulturrådet, public service, idrottsanslag, folkbildning",
+      "gov_budget": 17,
+      "parties": {
+        "S": { "diff": 1.5, "comment": "Stärkt kultur och public service" },
+        "V": { "diff": 2, "comment": "Ökade kulturanslag, stärkt folkbildning" },
+        "C": { "diff": 2, "comment": "2 mdr extra till idrott och friluftsliv" },
+        "MP": { "diff": 1.8, "comment": "Stärkt kultur och civilsamhälle" }
+      }
+    },
+    {
+      "id": 18,
+      "name": "Samhällsplanering, bostadsförsörjning och byggande samt konsumentpolitik",
+      "short": "Bostad/plan",
+      "category": "ekonomi",
+      "description": "Boverket, Lantmäteriet, bostadspolitiska insatser",
+      "gov_budget": 3,
+      "parties": {
+        "S": { "diff": 5, "comment": "Återinföra investeringsstöd för hyresrätter" },
+        "V": { "diff": 8, "comment": "Kraftigt investeringsstöd för samhällsfastigheter" },
+        "C": { "diff": 2, "comment": "Förenklade byggregler, startlån för unga" },
+        "MP": { "diff": 6, "comment": "Grönt byggande, klimatsmarta bostäder" }
+      }
+    },
+    {
+      "id": 19,
+      "name": "Regional utveckling",
+      "short": "Regional utv.",
+      "category": "ekonomi",
+      "description": "Regionala tillväxtåtgärder, landsbygdsutveckling",
+      "gov_budget": 4,
+      "parties": {
+        "S": { "diff": 1.5, "comment": "Stärkt regional tillväxt, hela Sverige" },
+        "V": { "diff": 2, "comment": "Satsa på hela landet" },
+        "C": { "diff": 3, "comment": "Landsbygdssatsning, statlig service i hela landet" },
+        "MP": { "diff": 1.5, "comment": "Hållbar regional utveckling" }
+      }
+    },
+    {
+      "id": 20,
+      "name": "Klimat, miljö och natur",
+      "short": "Miljö/klimat",
+      "category": "klimat",
+      "description": "Naturvårdsverket, miljöskydd, klimatinvesteringar",
+      "gov_budget": 13,
+      "parties": {
+        "S": { "diff": 6, "comment": "Stärkta klimatinvesteringar, naturskydd" },
+        "V": { "diff": 12, "comment": "Över 7 mdr mer till skydd av värdefull natur" },
+        "C": { "diff": 8, "comment": "5 mdr klimatbonus för nya och begagnade elbilar" },
+        "MP": { "diff": 28, "comment": "Rekordstora satsningar - nästan 41 mdr totalt" }
+      }
+    },
+    {
+      "id": 21,
+      "name": "Energi",
+      "short": "Energi",
+      "category": "klimat",
+      "description": "Energimyndigheten, energieffektivisering, förnybar energi",
+      "gov_budget": 5,
+      "parties": {
+        "S": { "diff": 3, "comment": "Satsning på förnybar energi" },
+        "V": { "diff": 5, "comment": "Massiva investeringar i förnybart" },
+        "C": { "diff": 2, "comment": "Teknikneutral energipolitik" },
+        "MP": { "diff": 8, "comment": "Utbyggd havsbaserad vindkraft, solenergi" }
+      }
+    },
+    {
+      "id": 22,
+      "name": "Kommunikationer",
+      "short": "Kommunikation",
+      "category": "ekonomi",
+      "description": "Trafikverket, järnväg, vägar, kollektivtrafik",
+      "gov_budget": 89,
+      "parties": {
+        "S": { "diff": 8, "comment": "Upprustning av järnväg, mer kollektivtrafik" },
+        "V": { "diff": 18, "comment": "18 mdr till järnväg, nationell biljett, elbilsbonus" },
+        "C": { "diff": 5, "comment": "Satsning på järnväg och bredband" },
+        "MP": { "diff": 15, "comment": "Kraftfull järnvägssatsning, nattåg" }
+      }
+    },
+    {
+      "id": 23,
+      "name": "Areella näringar, landsbygd och livsmedel",
+      "short": "Jordbruk",
+      "category": "ekonomi",
+      "description": "Jordbruksverket, stöd till jordbruk, skog, fiske",
+      "gov_budget": 21,
+      "parties": {
+        "S": { "diff": 1, "comment": "Stärkt livsmedelsproduktion" },
+        "V": { "diff": 2, "comment": "Ekologiskt jordbruk, hållbart skogsbruk" },
+        "C": { "diff": 3, "comment": "Sänkta kostnader för lantbruket" },
+        "MP": { "diff": 4, "comment": "Ekologisk omställning av jordbruket" }
+      }
+    },
+    {
+      "id": 24,
+      "name": "Näringsliv",
+      "short": "Näringsliv",
+      "category": "ekonomi",
+      "description": "Bolagsverket, Patent- och registreringsverket, företagsstöd",
+      "gov_budget": 8,
+      "parties": {
+        "S": { "diff": 2, "comment": "Innovationssatsningar" },
+        "V": { "diff": 1, "comment": "Stöd till kooperativ och sociala företag" },
+        "C": { "diff": 5, "comment": "13 mdr i slopade arbetsgivaravgifter för små företag" },
+        "MP": { "diff": 2, "comment": "Gröna innovationer" }
+      }
+    },
+    {
+      "id": 25,
+      "name": "Allmänna bidrag till kommuner",
+      "short": "Kommunbidrag",
+      "category": "valfard",
+      "description": "Generella statsbidrag till kommuner och regioner",
+      "gov_budget": 173,
+      "parties": {
+        "S": { "diff": 15, "comment": "Kraftigt höjda statsbidrag till välfärden" },
+        "V": { "diff": 33, "comment": "20 mdr generella bidrag + 5 mdr till sjukvård" },
+        "C": { "diff": 10, "comment": "Mer till kommunerna för skola och omsorg" },
+        "MP": { "diff": 18, "comment": "Stärkt välfärd i kommuner och regioner" }
+      }
+    },
+    {
+      "id": 26,
+      "name": "Statsskuldsräntor m.m.",
+      "short": "Räntor",
+      "category": "ekonomi",
+      "description": "Räntor på statsskulden",
+      "gov_budget": 30,
+      "parties": {
+        "S": { "diff": 0, "comment": "Finansieras via ökade skatter på banker" },
+        "V": { "diff": 0, "comment": "Finansieras via ökade skatter och avgifter" },
+        "C": { "diff": 0, "comment": "Prioriterar tillväxt för att minska skuldbördan" },
+        "MP": { "diff": 0, "comment": "Gröna obligationer" }
+      }
+    },
+    {
+      "id": 27,
+      "name": "Avgiften till Europeiska unionen",
+      "short": "EU-avgift",
+      "category": "internationellt",
+      "description": "Sveriges avgift till EU:s budget",
+      "gov_budget": 46,
+      "parties": {
+        "S": { "diff": 0, "comment": "EU-positiva" },
+        "V": { "diff": 0, "comment": "Kritiska till delar av EU-budgeten" },
+        "C": { "diff": 0, "comment": "Pro-EU, vill se reformer" },
+        "MP": { "diff": 0, "comment": "EU-positiva, mer till grön omställning" }
+      }
+    }
+  ],
+  "categories": {
+    "valfard": { "name": "Välfärd", "color": "#E8112D" },
+    "trygghet": { "name": "Trygghet & rättsväsende", "color": "#1B49DD" },
+    "ekonomi": { "name": "Ekonomi & arbetsmarknad", "color": "#009933" },
+    "klimat": { "name": "Klimat & miljö", "color": "#83CF39" },
+    "utbildning": { "name": "Utbildning", "color": "#006AB3" },
+    "internationellt": { "name": "Internationellt", "color": "#1F3C81" },
+    "samhalle": { "name": "Samhälle", "color": "#AF0000" }
+  },
+  "party_summaries": {
+    "S": {
+      "name": "Socialdemokraterna",
+      "motion_title": "Ett rikare och rättvisare Sverige",
+      "motion_id": "HC023199",
+      "total_reform": 85,
+      "key_priorities": ["Höjt barnbidrag", "Kraftig satsning på sjukvård", "Bankskatt 16 mdr"],
+      "financing": "Bankernas övervinster, skatt på kapital"
+    },
+    "V": {
+      "name": "Vänsterpartiet",
+      "motion_title": "För ett starkare Sverige – Klimat, välfärd och tillväxt",
+      "motion_id": "HC021924",
+      "total_reform": 150,
+      "key_priorities": ["33 mdr mer till kommunsektorn", "Sverigejobb 30 mdr", "Återställd bistånd"],
+      "financing": "Höjda kapitalskatter, bankskatt, förmögenhetsskatt"
+    },
+    "C": {
+      "name": "Centerpartiet",
+      "motion_title": "Ny kraft för Sverige",
+      "motion_id": "HC022962",
+      "total_reform": 70,
+      "key_priorities": ["13 mdr slopade arbetsgivaravgifter", "5 mdr sektorsbidrag skola", "5 mdr klimatbonus"],
+      "financing": "Effektiviseringar, minskade bidrag"
+    },
+    "MP": {
+      "name": "Miljöpartiet",
+      "motion_title": "Budget för en rättvis omställning",
+      "motion_id": "HC023220",
+      "total_reform": 120,
+      "key_priorities": ["41 mdr till klimat och miljö", "Återställd bistånd", "Stärkt kollektivtrafik"],
+      "financing": "Grön skatteväxling, miljöskatter"
+    }
+  },
+  "highlights": [
+    {
+      "title": "Största skillnaden: Klimat",
+      "description": "MP satsar nästan 3x så mycket på klimat och miljö som regeringen"
+    },
+    {
+      "title": "Välfärdslyft",
+      "description": "V föreslår 33 miljarder mer till kommuner och regioner"
+    },
+    {
+      "title": "Bistånd",
+      "description": "Oppositionen vill återställa enprocentsmålet - 8-12 mdr mer"
+    },
+    {
+      "title": "Arbetsmarknad",
+      "description": "V:s Sverigejobb kostar 30 miljarder, C sänker arbetsgivaravgifter med 13 mdr"
+    }
+  ]
+}
