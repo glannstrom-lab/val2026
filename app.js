@@ -358,6 +358,11 @@
       window.initCompare();
     }
 
+    // Initialize timeline (loaded from tools/timeline.js)
+    if (typeof window.initTimeline === 'function') {
+      window.initTimeline();
+    }
+
     // Handle initial hash
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);

@@ -1,0 +1,327 @@
+{
+  "meta": {
+    "description": "Tidslinje över politiska händelser 2022-2026",
+    "lastUpdated": "2026-04"
+  },
+  "eventTypes": {
+    "val": { "label": "Val & regering", "icon": "🗳️", "color": "#4a9eff" },
+    "avtal": { "label": "Avtal & överenskommelse", "icon": "📜", "color": "#a78bfa" },
+    "reform": { "label": "Reform & lagstiftning", "icon": "⚖️", "color": "#60a5fa" },
+    "utspel": { "label": "Utspel & förslag", "icon": "📢", "color": "#fbbf24" },
+    "kris": { "label": "Kris & händelse", "icon": "⚠️", "color": "#f87171" },
+    "parti": { "label": "Partiledarbyte", "icon": "👤", "color": "#4ade80" },
+    "internationellt": { "label": "Internationellt", "icon": "🌍", "color": "#38bdf8" }
+  },
+  "events": [
+    {
+      "id": "e001",
+      "date": "2022-09-11",
+      "type": "val",
+      "party": null,
+      "title": "Riksdagsvalet 2022",
+      "summary": "Högersidan vinner med minimal marginal. SD blir näst största parti med 20,5%. S får 30,3% men förlorar makten.",
+      "source_url": "https://www.val.se/valresultat/riksdag-region-och-kommun/2022/valresultat.html",
+      "source_name": "Valmyndigheten"
+    },
+    {
+      "id": "e002",
+      "date": "2022-10-14",
+      "type": "avtal",
+      "party": null,
+      "title": "Tidöavtalet presenteras",
+      "summary": "M, KD, L och SD presenterar Tidöavtalet med 62 punkter om migration, kriminalitet och energi. SD får inflytande utan att sitta i regeringen.",
+      "source_url": "https://www.regeringen.se/contentassets/d6ad6b18f3a84a3ea3b9e63d3095355b/tidoavtalet-overenskommelse-for-sverige.pdf",
+      "source_name": "Regeringen"
+    },
+    {
+      "id": "e003",
+      "date": "2022-10-18",
+      "type": "val",
+      "party": "M",
+      "title": "Ulf Kristersson blir statsminister",
+      "summary": "Kristersson väljs till statsminister med stöd av 176 riksdagsledamöter. Regeringen består av M, KD och L.",
+      "source_url": "https://www.riksdagen.se/sv/aktuellt/2022/okt/18/ulf-kristersson-vald-till-statsminister/",
+      "source_name": "Riksdagen"
+    },
+    {
+      "id": "e004",
+      "date": "2022-11-22",
+      "type": "reform",
+      "party": "M",
+      "title": "Första Tidöbudgeten läggs fram",
+      "summary": "Regeringens första budget med sänkt reduktionsplikt, höjt försörjningskrav och satsningar på polis och försvar.",
+      "source_url": "https://www.regeringen.se/pressmeddelanden/2022/11/budgetpropositionen-for-2023/",
+      "source_name": "Regeringen"
+    },
+    {
+      "id": "e005",
+      "date": "2023-01-30",
+      "type": "kris",
+      "party": null,
+      "title": "Koranbränningar väcker internationell kris",
+      "summary": "Koranbränningar utanför Turkiets ambassad leder till diplomatisk kris och fördröjd NATO-process.",
+      "source_url": "https://www.svt.se/nyheter/inrikes/koranbranningen-vacker-stor-internationell-uppmärksamhet",
+      "source_name": "SVT Nyheter"
+    },
+    {
+      "id": "e006",
+      "date": "2023-03-07",
+      "type": "internationellt",
+      "party": null,
+      "title": "Finland går med i NATO",
+      "summary": "Finland blir NATO:s 31:a medlem. Sverige väntar fortfarande på turkiskt godkännande.",
+      "source_url": "https://www.nato.int/cps/en/natohq/news_212720.htm",
+      "source_name": "NATO"
+    },
+    {
+      "id": "e007",
+      "date": "2023-04-19",
+      "type": "parti",
+      "party": "L",
+      "title": "Johan Pehrson omvald som L-ledare",
+      "summary": "Trots interna konflikter omväljs Johan Pehrson som partiledare för Liberalerna på landsmötet.",
+      "source_url": "https://www.liberalerna.se/",
+      "source_name": "Liberalerna"
+    },
+    {
+      "id": "e008",
+      "date": "2023-06-01",
+      "type": "reform",
+      "party": null,
+      "title": "Tillfälliga visitationszoner införs",
+      "summary": "Riksdagen beslutar om tillfälliga visitationszoner för att bekämpa gängkriminalitet.",
+      "source_url": "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/proposition/tillfalliga-visiteringszoner_ha03124/",
+      "source_name": "Riksdagen"
+    },
+    {
+      "id": "e009",
+      "date": "2023-07-10",
+      "type": "internationellt",
+      "party": null,
+      "title": "Turkiet godkänner Sveriges NATO-ansökan",
+      "summary": "Vid NATO-toppmötet i Vilnius meddelar Turkiets president Erdogan att han stödjer svenskt medlemskap.",
+      "source_url": "https://www.regeringen.se/pressmeddelanden/2023/07/turkiet-stodjer-sveriges-nato-medlemskap/",
+      "source_name": "Regeringen"
+    },
+    {
+      "id": "e010",
+      "date": "2023-09-28",
+      "type": "kris",
+      "party": null,
+      "title": "Sprängdåd och skjutningar eskalerar",
+      "summary": "Hösten 2023 präglas av en våg av sprängningar. Polisen rapporterar rekordmånga skjutningar.",
+      "source_url": "https://www.svt.se/nyheter/inrikes/dodliga-skjutningar-2023",
+      "source_name": "SVT Nyheter"
+    },
+    {
+      "id": "e011",
+      "date": "2023-11-01",
+      "type": "reform",
+      "party": null,
+      "title": "Skärpta straff för gängbrott",
+      "summary": "Riksdagen röstar igenom kraftigt skärpta straff för gängkriminalitet, inklusive dubbla straff för gängrelaterade brott.",
+      "source_url": "https://www.riksdagen.se/",
+      "source_name": "Riksdagen"
+    },
+    {
+      "id": "e012",
+      "date": "2023-11-14",
+      "type": "parti",
+      "party": "MP",
+      "title": "Daniel Helldén väljs till MP-språkrör",
+      "summary": "Daniel Helldén väljs som nytt språkrör för Miljöpartiet vid en extra kongress.",
+      "source_url": "https://www.mp.se/",
+      "source_name": "Miljöpartiet"
+    },
+    {
+      "id": "e013",
+      "date": "2024-01-23",
+      "type": "internationellt",
+      "party": null,
+      "title": "Ungern godkänner Sveriges NATO-ansökan",
+      "summary": "Som sista land ratificerar Ungern Sveriges NATO-medlemskap efter långdragna förhandlingar.",
+      "source_url": "https://www.regeringen.se/pressmeddelanden/2024/02/sverige-valkomnas-som-natos-32a-medlem/",
+      "source_name": "Regeringen"
+    },
+    {
+      "id": "e014",
+      "date": "2024-03-07",
+      "type": "internationellt",
+      "party": null,
+      "title": "Sverige blir NATO-medlem",
+      "summary": "Sverige blir officiellt NATO:s 32:a medlem efter 200 år av alliansfrihet.",
+      "source_url": "https://www.nato.int/cps/en/natohq/news_222186.htm",
+      "source_name": "NATO"
+    },
+    {
+      "id": "e015",
+      "date": "2024-04-15",
+      "type": "reform",
+      "party": null,
+      "title": "Nya migrationslagar träder i kraft",
+      "summary": "Skärpta krav för permanent uppehållstillstånd och höjda försörjningskrav börjar gälla.",
+      "source_url": "https://www.migrationsverket.se/",
+      "source_name": "Migrationsverket"
+    },
+    {
+      "id": "e016",
+      "date": "2024-06-09",
+      "type": "val",
+      "party": null,
+      "title": "EU-val: SD störst i Sverige",
+      "summary": "Sverigedemokraterna blir för första gången största parti i ett rikstäckande val med 13,2% av de svenska EU-rösterna.",
+      "source_url": "https://www.val.se/",
+      "source_name": "Valmyndigheten"
+    },
+    {
+      "id": "e017",
+      "date": "2024-09-01",
+      "type": "utspel",
+      "party": "S",
+      "title": "S presenterar kriminalpolitiskt program",
+      "summary": "Socialdemokraterna skärper tonen i kriminalpolitiken med förslag om anonyma vittnen och strängare straff.",
+      "source_url": "https://www.socialdemokraterna.se/",
+      "source_name": "Socialdemokraterna"
+    },
+    {
+      "id": "e018",
+      "date": "2024-10-20",
+      "type": "parti",
+      "party": "MP",
+      "title": "Amanda Lind ny MP-språkrör",
+      "summary": "Amanda Lind väljs till språkrör vid Miljöpartiets kongress och bildar duo med Daniel Helldén.",
+      "source_url": "https://www.mp.se/",
+      "source_name": "Miljöpartiet"
+    },
+    {
+      "id": "e019",
+      "date": "2024-11-20",
+      "type": "reform",
+      "party": "M",
+      "title": "Budget 2025: Försvaret höjs till 2,4% av BNP",
+      "summary": "Regeringen presenterar historisk försvarssatsning och fortsatta skattesänkningar.",
+      "source_url": "https://www.regeringen.se/",
+      "source_name": "Regeringen"
+    },
+    {
+      "id": "e020",
+      "date": "2025-02-01",
+      "type": "utspel",
+      "party": "SD",
+      "title": "SD kräver krafttag mot bidragsfusk",
+      "summary": "Sverigedemokraterna lanserar förslag om omfattande bidragstak och utökad kontroll.",
+      "source_url": "https://www.sd.se/",
+      "source_name": "Sverigedemokraterna"
+    },
+    {
+      "id": "e021",
+      "date": "2025-03-15",
+      "type": "reform",
+      "party": null,
+      "title": "Kärnkraftslagen ändras",
+      "summary": "Riksdagen röstar för att tillåta fler än tio reaktorer och byggnation på nya platser.",
+      "source_url": "https://www.riksdagen.se/",
+      "source_name": "Riksdagen"
+    },
+    {
+      "id": "e022",
+      "date": "2025-04-28",
+      "type": "parti",
+      "party": "L",
+      "title": "Johan Pehrson avgår som L-ledare",
+      "summary": "Efter svaga opinionssiffror meddelar Johan Pehrson att han avgår. Nyval till partiledare utlyses.",
+      "source_url": "https://www.liberalerna.se/",
+      "source_name": "Liberalerna"
+    },
+    {
+      "id": "e023",
+      "date": "2025-05-10",
+      "type": "utspel",
+      "party": "V",
+      "title": "V kräver plats i S-regering",
+      "summary": "Nooshi Dadgostar ställer ultimatum: Vänsterpartiet vill ha ministerposter i en eventuell S-ledd regering.",
+      "source_url": "https://www.vansterpartiet.se/",
+      "source_name": "Vänsterpartiet"
+    },
+    {
+      "id": "e024",
+      "date": "2025-06-24",
+      "type": "parti",
+      "party": "L",
+      "title": "Simona Mohamsson ny L-ledare",
+      "summary": "Simona Mohamsson väljs till ny partiledare för Liberalerna vid en extra partistämma.",
+      "source_url": "https://www.liberalerna.se/",
+      "source_name": "Liberalerna"
+    },
+    {
+      "id": "e025",
+      "date": "2025-09-01",
+      "type": "utspel",
+      "party": "M",
+      "title": "M vill ha fler kärnreaktorer",
+      "summary": "Ulf Kristersson presenterar mål om minst 10 nya kärnreaktorer till 2040.",
+      "source_url": "https://www.moderaterna.se/",
+      "source_name": "Moderaterna"
+    },
+    {
+      "id": "e026",
+      "date": "2025-10-15",
+      "type": "kris",
+      "party": null,
+      "title": "Vårdkris: Rekordlånga köer",
+      "summary": "Köerna till operation och behandling når rekordnivåer. Debatten om förstatligad vård intensifieras.",
+      "source_url": "https://www.svt.se/nyheter/",
+      "source_name": "SVT Nyheter"
+    },
+    {
+      "id": "e027",
+      "date": "2025-11-18",
+      "type": "reform",
+      "party": "M",
+      "title": "Budget 2026 presenteras",
+      "summary": "Valbudgeten innehåller skattesänkningar, satsningar på polis och höjda försvarsanslag till 2,6% av BNP.",
+      "source_url": "https://www.regeringen.se/",
+      "source_name": "Regeringen"
+    },
+    {
+      "id": "e028",
+      "date": "2026-01-15",
+      "type": "utspel",
+      "party": "S",
+      "title": "S presenterar valplattform",
+      "summary": "Socialdemokraterna går till val på välfärd, jämlikhet och en hårdare kriminalpolitik.",
+      "source_url": "https://www.socialdemokraterna.se/",
+      "source_name": "Socialdemokraterna"
+    },
+    {
+      "id": "e029",
+      "date": "2026-02-20",
+      "type": "utspel",
+      "party": "C",
+      "title": "C lanserar landsbygdspaket",
+      "summary": "Centerpartiet presenterar reformer för landsbygden med fokus på service, företagande och infrastruktur.",
+      "source_url": "https://www.centerpartiet.se/",
+      "source_name": "Centerpartiet"
+    },
+    {
+      "id": "e030",
+      "date": "2026-03-15",
+      "type": "kris",
+      "party": null,
+      "title": "L under riksdagsspärren i mätningar",
+      "summary": "Flera mätningar visar Liberalerna under 4%. Partiet riskerar att åka ur riksdagen.",
+      "source_url": "https://www.svt.se/nyheter/",
+      "source_name": "SVT Nyheter"
+    },
+    {
+      "id": "e031",
+      "date": "2026-04-01",
+      "type": "utspel",
+      "party": "KD",
+      "title": "KD vill förstatliga sjukvården",
+      "summary": "Ebba Busch driver frågan om förstatligad sjukvård som valfråga för Kristdemokraterna.",
+      "source_url": "https://www.kristdemokraterna.se/",
+      "source_name": "Kristdemokraterna"
+    }
+  ]
+}
