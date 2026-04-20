@@ -11,15 +11,7 @@
   <meta property="og:url" content="https://glannstrom-lab.github.io/val2026/">
   <meta property="og:title" content="Val 2026 — Väljarportal">
   <meta property="og:description" content="Neutral, faktabaserad information om partierna inför riksdagsvalet 2026. Valkompass, sakfrågor och koalitionsbyggare.">
-  <!-- TODO: Create og-image.png (1200x630px) for social sharing -->
-  <!-- <meta property="og:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png"> -->
   <meta property="og:locale" content="sv_SE">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Val 2026 — Väljarportal">
-  <meta name="twitter:description" content="Neutral, faktabaserad information om partierna inför riksdagsvalet 2026.">
-  <!-- <meta name="twitter:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png"> -->
 
   <title>Val 2026 — Väljarportal</title>
 
@@ -38,55 +30,6 @@
   <link rel="apple-touch-icon" href="assets/icon-192.svg">
 </head>
 <body>
-  <!-- Skip link for accessibility -->
-  <a href="#main" class="skip-link">Hoppa till innehåll</a>
-
-  <!-- Header -->
-  <header class="site-header">
-    <div class="container">
-      <a href="#" class="site-logo">Val<span>2026</span></a>
-
-      <nav class="main-nav" aria-label="Huvudnavigation">
-        <a href="#snabbguide">Snabbguide</a>
-        <a href="#kompass">Kompass</a>
-        <a href="#quiz">Quiz</a>
-        <a href="#sakfragor">Sakfrågor</a>
-        <a href="#tidslinje">Tidslinje</a>
-        <a href="#partier">Partierna</a>
-        <a href="#historik">Historik</a>
-        <a href="#opinion">Opinion</a>
-        <a href="#koalitioner">Koalitioner</a>
-        <a href="#gissa">Gissa partiet</a>
-        <a href="#budget">Budget</a>
-        <a href="#rostningar">Röstningar</a>
-        <a href="#om">Om sidan</a>
-      </nav>
-
-      <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
-  </header>
-
-  <!-- Mobile Navigation -->
-  <nav class="mobile-nav" aria-label="Mobilnavigation">
-    <a href="#snabbguide">Snabbguide</a>
-    <a href="#kompass">Politisk kompass</a>
-    <a href="#quiz">Valkompass-quiz</a>
-    <a href="#sakfragor">Sakfrågor</a>
-    <a href="#tidslinje">Tidslinje</a>
-    <a href="#partier">Partierna</a>
-    <a href="#historik">Valhistorik</a>
-    <a href="#opinion">Opinionsläget</a>
-    <a href="#koalitioner">Koalitioner</a>
-    <a href="#gissa">Gissa partiet</a>
-    <a href="#budget">Statsbudgeten</a>
-    <a href="#rostningar">Röstningar</a>
-    <a href="#om">Om sidan</a>
-  </nav>
-
   <!-- Main Content -->
   <main id="main">
 
@@ -128,8 +71,8 @@
 
           <!-- CTA Buttons -->
           <div class="cta-group">
-            <a href="#quiz" class="btn btn-primary">Gör valkompassen</a>
-            <a href="#partier" class="btn btn-secondary">Utforska partierna</a>
+            <a href="quiz.html" class="btn btn-primary">Gör valkompassen</a>
+            <a href="partier.html" class="btn btn-secondary">Utforska partierna</a>
           </div>
         </div>
       </div>
@@ -168,314 +111,210 @@
       </div>
     </section>
 
-    <!-- Political Compass Section -->
-    <section class="tool-section compass-section" id="kompass">
+    <!-- Tools Overview -->
+    <section class="tools-overview">
       <div class="container">
         <div class="section-header">
-          <h2>Politisk kompass</h2>
-          <p>Se var partierna står på den ekonomiska och värderingsmässiga skalan.</p>
+          <h2>Verktyg</h2>
+          <p>Interaktiva verktyg för att utforska valet och hitta ditt parti.</p>
         </div>
 
-        <div class="compass-wrapper" id="compass-container">
-          <!-- Controls -->
-          <div class="compass-controls">
-            <label class="compass-toggle">
-              <input type="checkbox" class="compass-coalition-toggle">
-              <span class="compass-toggle-slider"></span>
-              <span class="compass-toggle-label">Visa regeringsunderlag</span>
-            </label>
-          </div>
-
-          <!-- SVG Container -->
-          <div class="compass-svg-container">
-            <!-- SVG rendered by compass.js -->
-          </div>
-
-          <!-- Legend -->
-          <div class="compass-legend">
-            <p class="compass-legend-hint">Håll muspekaren över ett parti för mer information</p>
-          </div>
-
-          <!-- Disclaimer -->
-          <div class="compass-disclaimer">
-            <button class="compass-disclaimer-toggle" aria-expanded="false">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <line x1="12" y1="16" x2="12" y2="12"></line>
-                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+        <div class="overview-grid">
+          <a href="quiz.html" class="overview-card featured">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 11l3 3L22 4"></path>
+                <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path>
               </svg>
-              <span>Om kompassen</span>
-            </button>
-            <div class="compass-disclaimer-content">
-              <p class="compass-disclaimer-text">
-                Detta är en förenkling. Partiernas positioner bygger på expertbedömningar och kan variera beroende på sakfråga. Partier är inte monolitiska — åsikter skiljer sig mellan ledamöter.
-              </p>
-              <p class="compass-disclaimer-sources">
-                <strong>Källor:</strong> Chapel Hill Expert Survey (CHES) 2024, Göteborgs universitets Valforskningsprogram, V-Dem / V-Party Dataset
-              </p>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
+            <h3>Valkompass</h3>
+            <p>Svara på 25 frågor och se vilka partier som matchar dina åsikter bäst.</p>
+            <span class="overview-card-cta">Starta quizet →</span>
+          </a>
 
-    <!-- Quiz Section -->
-    <section class="tool-section quiz-section" id="quiz">
-      <div class="container">
-        <div class="section-header">
-          <h2>Valkompass-quiz</h2>
-          <p>Svara på frågor och se vilka partier som ligger närmast dig.</p>
-        </div>
-
-        <div class="quiz-wrapper" id="quiz-container">
-          <!-- Quiz content rendered by quiz.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Issues Comparison Section -->
-    <section class="tool-section compare-section" id="sakfragor">
-      <div class="container">
-        <div class="section-header">
-          <h2>Sakfråge-jämförelse</h2>
-          <p>Jämför partiernas ståndpunkter i de viktigaste frågorna.</p>
-        </div>
-
-        <div id="compare-container">
-          <!-- Compare content rendered by compare.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Timeline Section -->
-    <section class="tool-section timeline-section" id="tidslinje">
-      <div class="container">
-        <div class="section-header">
-          <h2>Tidslinje</h2>
-          <p>Följ vallöften, utspel och händelser från 2022 till valdagen.</p>
-        </div>
-
-        <div id="timeline-container">
-          <!-- Timeline content rendered by timeline.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Parties Section -->
-    <section class="parties-section" id="partier">
-      <div class="container">
-        <div class="section-header">
-          <h2>Partierna i riksdagen</h2>
-          <p>Åtta partier är representerade i Sveriges riksdag. Klicka på ett parti för mer information.</p>
-        </div>
-
-        <div class="parties-grid" id="parties-grid">
-          <!-- Parties will be loaded dynamically -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Election History Section -->
-    <section class="tool-section history-section" id="historik">
-      <div class="container">
-        <div class="section-header">
-          <h2>Valhistorik</h2>
-          <p>Jämför riksdagsvalen 2018 och 2022, EU-valet 2024 och partiledarna.</p>
-        </div>
-
-        <div id="history-container">
-          <!-- History rendered by history.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Opinion Polls Section -->
-    <section class="polls-section" id="opinion">
-      <div class="container">
-        <div class="section-header">
-          <h2>Opinionsläget</h2>
-          <p>Sammanvägt snitt baserat på de senaste opinionsmätningarna.</p>
-        </div>
-
-        <div class="polls-container">
-          <div class="poll-chart" id="poll-chart">
-            <!-- Poll bars will be loaded dynamically -->
-          </div>
-
-          <div class="poll-meta">
-            <p>
-              Baserat på Poll of Polls-metodik.
-              Senast uppdaterat: <span class="update-date">april 2026</span>
-            </p>
-            <p>
-              Källa: <a href="https://pollofpolls.se" target="_blank" rel="noopener">pollofpolls.se</a>
-            </p>
-          </div>
-        </div>
-
-        <!-- Historical graph -->
-        <div class="section-subheader">
-          <h3>Utveckling över tid</h3>
-        </div>
-        <div id="pollgraph-container">
-          <!-- Poll graph rendered by pollgraph.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Coalition Builder Section -->
-    <section class="tool-section coalition-section" id="koalitioner">
-      <div class="container">
-        <div class="section-header">
-          <h2>Koalitionsbyggare</h2>
-          <p>Bygg regeringsunderlag och se vilka partikombinationer som når majoritet.</p>
-        </div>
-
-        <div id="coalition-container">
-          <!-- Coalition builder rendered by coalition.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Guess the Party Section -->
-    <section class="tool-section guess-section" id="gissa">
-      <div class="container">
-        <div class="section-header">
-          <h2>Gissa partiet</h2>
-          <p>Kan du avgöra vilket parti som står bakom citatet?</p>
-        </div>
-
-        <div id="guess-container">
-          <!-- Guess quiz rendered by guess.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Budget Section -->
-    <section class="tool-section budget-section" id="budget">
-      <div class="container">
-        <div class="section-header">
-          <h2>Statsbudgeten</h2>
-          <p>Jämför regeringens budget 2025 med oppositionens alternativ. Alla 27 utgiftsområden.</p>
-        </div>
-
-        <div id="budget-container">
-          <!-- Budget rendered by budget.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Riksdag Votes Section -->
-    <section class="tool-section votes-section" id="rostningar">
-      <div class="container">
-        <div class="section-header">
-          <h2>Riksdagsröstningar</h2>
-          <p>Se hur partierna har röstat i viktiga frågor. Riktig data från Riksdagens öppna API.</p>
-        </div>
-
-        <div id="votes-container">
-          <!-- Votes rendered by votes.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="om">
-      <div class="container">
-        <div class="section-header">
-          <h2>Om sidan</h2>
-          <p>Transparens kring syfte, metodik och källor.</p>
-        </div>
-
-        <div class="about-content">
-          <div class="about-grid">
-            <div class="about-item">
-              <h3>🎯 Syfte</h3>
-              <p>
-                Den här sidan finns för att ge väljare neutral, faktabaserad information
-                inför riksdagsvalet 2026. Vi ger inga röstningsrekommendationer — bara
-                verktyg för att bilda din egen uppfattning.
-              </p>
+          <a href="kompass.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+              </svg>
             </div>
+            <h3>Politisk kompass</h3>
+            <p>Se var partierna står på den ekonomiska och värderingsmässiga skalan.</p>
+            <span class="overview-card-cta">Utforska →</span>
+          </a>
 
-            <div class="about-item">
-              <h3>📐 Metodik</h3>
-              <p>
-                Kompasspositioner baseras på Chapel Hill Expert Survey och Göteborgs
-                universitets valforskningsprogram. Quiz-matchningar beräknas utifrån
-                partiernas officiella ståndpunkter i sakfrågor.
-              </p>
+          <a href="koalition.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
             </div>
+            <h3>Koalitionsbyggare</h3>
+            <p>Bygg regeringsunderlag och se vilka kombinationer som når 175 mandat.</p>
+            <span class="overview-card-cta">Bygg koalitioner →</span>
+          </a>
 
-            <div class="about-item">
-              <h3>📚 Källor</h3>
-              <p>
-                All information härstammar från partiernas officiella program,
-                riksdagens röstningsprotokoll, Valmyndigheten, SCB och etablerad
-                forskning. Varje påstående har en angiven källa.
-              </p>
+          <a href="gissa.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
             </div>
+            <h3>Gissa partiet</h3>
+            <p>Kan du avgöra vilket parti som står bakom citatet? Testa dig själv!</p>
+            <span class="overview-card-cta">Spela →</span>
+          </a>
+        </div>
+      </div>
+    </section>
 
-            <div class="about-item">
-              <h3>⚠️ Begränsningar</h3>
-              <p>
-                Politiska positioner är förenklade. Partier är inte monolitiska —
-                åsikter varierar mellan ledamöter. Använd den här sidan som
-                utgångspunkt och läs partiernas egna program för djupare förståelse.
-              </p>
-            </div>
+    <!-- Facts Overview -->
+    <section class="facts-overview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Fakta</h2>
+          <p>Grundläggande information om partierna och deras politik.</p>
+        </div>
 
-            <div class="about-item">
-              <h3>🔒 Integritet</h3>
-              <p>
-                Ingen personlig data samlas in. Inga cookies, ingen tracking,
-                inga externa API-anrop. Dina quiz-svar stannar i din webbläsare.
-              </p>
+        <div class="overview-grid">
+          <a href="partier.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+              </svg>
             </div>
+            <h3>Partierna</h3>
+            <p>Alla åtta riksdagspartier — ledare, ideologi, mandat och ståndpunkter.</p>
+            <span class="overview-card-cta">Se partierna →</span>
+          </a>
 
-            <div class="about-item">
-              <h3>♿ Tillgänglighet</h3>
-              <p>
-                Sidan följer WCAG 2.1 AA-riktlinjer. Tangentbordsnavigering fungerar
-                genomgående. Kontrastkrav uppfylls. Om du upplever problem,
-                kontakta oss.
-              </p>
+          <a href="sakfragor.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"></line>
+                <line x1="8" y1="12" x2="21" y2="12"></line>
+                <line x1="8" y1="18" x2="21" y2="18"></line>
+                <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                <line x1="3" y1="18" x2="3.01" y2="18"></line>
+              </svg>
             </div>
-          </div>
+            <h3>Sakfrågor</h3>
+            <p>Jämför partiernas ståndpunkter i de viktigaste frågorna sida vid sida.</p>
+            <span class="overview-card-cta">Jämför →</span>
+          </a>
+
+          <a href="budget.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="12" y1="1" x2="12" y2="23"></line>
+                <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+              </svg>
+            </div>
+            <h3>Statsbudgeten</h3>
+            <p>Regeringens budget 2025 jämfört med oppositionens förslag — alla 27 områden.</p>
+            <span class="overview-card-cta">Se budgeten →</span>
+          </a>
+
+          <a href="rostningar.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+            </div>
+            <h3>Röstningar</h3>
+            <p>Hur har partierna röstat i riksdagen? Riktig data från öppna API:er.</p>
+            <span class="overview-card-cta">Se röstningar →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analysis Overview -->
+    <section class="analysis-overview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Analys</h2>
+          <p>Opinionsmätningar, trender och historisk data.</p>
+        </div>
+
+        <div class="overview-grid overview-grid-3">
+          <a href="opinion.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3>Opinionsläget</h3>
+            <p>Aktuella opinionsmätningar och sammanvägt snitt. Uppdateras löpande.</p>
+            <span class="overview-card-cta">Se opinionen →</span>
+          </a>
+
+          <a href="tidslinje.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+            </div>
+            <h3>Tidslinje</h3>
+            <p>Händelser, vallöften och utspel från 2022 fram till valdagen 2026.</p>
+            <span class="overview-card-cta">Se tidslinjen →</span>
+          </a>
+
+          <a href="historik.html" class="overview-card">
+            <div class="overview-card-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v5h5"></path>
+                <path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"></path>
+                <path d="M12 7v5l4 2"></path>
+              </svg>
+            </div>
+            <h3>Valhistorik</h3>
+            <p>Jämför riksdagsvalen 2018, 2022 och EU-valet 2024. Se trender och valkretsar.</p>
+            <span class="overview-card-cta">Se historik →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Opinion Preview -->
+    <section class="opinion-preview">
+      <div class="container">
+        <div class="section-header">
+          <h2>Opinionsläget just nu</h2>
+          <p>Baserat på Poll of Polls-metodik. Senast uppdaterat april 2026.</p>
+        </div>
+
+        <div class="poll-chart" id="poll-chart">
+          <!-- Rendered by app.js -->
+        </div>
+
+        <div class="opinion-preview-cta">
+          <a href="opinion.html" class="btn btn-secondary">Se fullständig analys →</a>
         </div>
       </div>
     </section>
 
   </main>
 
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-links">
-          <a href="#om">Om sidan</a>
-          <a href="#om">Källor</a>
-          <a href="#om">Tillgänglighet</a>
-        </div>
-
-        <div class="footer-meta">
-          <p>Senast uppdaterad: april 2026</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
   <!-- Scripts -->
-  <script src="tools/compass.js"></script>
-  <script src="tools/quiz.js"></script>
-  <script src="tools/compare.js"></script>
-  <script src="tools/timeline.js"></script>
-  <script src="tools/coalition.js"></script>
-  <script src="tools/guess.js"></script>
-  <script src="tools/pollgraph.js"></script>
-  <script src="tools/history.js"></script>
-  <script src="tools/budget.js"></script>
-  <script src="tools/votes.js"></script>
+  <script src="components/header.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

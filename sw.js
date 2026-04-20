@@ -3,12 +3,25 @@
  * Möjliggör offline-läsning
  */
 
-const CACHE_NAME = 'val2026-v5';
+const CACHE_NAME = 'val2026-v6';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
+  './partier.html',
+  './kompass.html',
+  './quiz.html',
+  './sakfragor.html',
+  './tidslinje.html',
+  './opinion.html',
+  './historik.html',
+  './koalition.html',
+  './gissa.html',
+  './budget.html',
+  './rostningar.html',
+  './om.html',
   './styles.css',
   './app.js',
+  './components/header.js',
   './tools/compass.js',
   './tools/quiz.js',
   './tools/compare.js',

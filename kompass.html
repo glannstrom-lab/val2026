@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Politisk kompass - se var de svenska partierna står på den ekonomiska och värderingsmässiga skalan.">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Politisk kompass — Val 2026</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600,700|inter:400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="page-kompass">
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brödsmulor">
+          <a href="index.html">Hem</a>
+          <span>/</span>
+          <span>Politisk kompass</span>
+        </nav>
+        <h1>Politisk kompass</h1>
+        <p class="page-hero-subtitle">Se var partierna står på den ekonomiska (vänster-höger) och värderingsmässiga (liberal-auktoritär) skalan. Placeringarna bygger på expertbedömningar.</p>
+      </div>
+    </section>
+
+    <section class="compass-section">
+      <div class="container">
+        <div class="compass-wrapper" id="compass-container">
+          <!-- Controls -->
+          <div class="compass-controls">
+            <label class="compass-toggle">
+              <input type="checkbox" class="compass-coalition-toggle">
+              <span class="compass-toggle-slider"></span>
+              <span class="compass-toggle-label">Visa regeringsunderlag</span>
+            </label>
+          </div>
+
+          <!-- SVG Container -->
+          <div class="compass-svg-container">
+            <!-- SVG rendered by compass.js -->
+          </div>
+
+          <!-- Legend -->
+          <div class="compass-legend">
+            <p class="compass-legend-hint">Håll muspekaren över ett parti för mer information</p>
+          </div>
+
+          <!-- Disclaimer -->
+          <div class="compass-disclaimer">
+            <button class="compass-disclaimer-toggle" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Om kompassen</span>
+            </button>
+            <div class="compass-disclaimer-content">
+              <p class="compass-disclaimer-text">
+                Detta är en förenkling. Partiernas positioner bygger på expertbedömningar och kan variera beroende på sakfråga. Partier är inte monolitiska — åsikter skiljer sig mellan ledamöter.
+              </p>
+              <p class="compass-disclaimer-sources">
+                <strong>Källor:</strong> Chapel Hill Expert Survey (CHES) 2024, Göteborgs universitets Valforskningsprogram, V-Dem / V-Party Dataset
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explanation -->
+        <div class="compass-explanation">
+          <h2>Så läser du kompassen</h2>
+          <div class="compass-explanation-grid">
+            <div class="compass-explanation-item">
+              <h3>X-axeln: Ekonomi</h3>
+              <p><strong>Vänster:</strong> Högre skatter, mer omfördelning, statlig välfärd</p>
+              <p><strong>Höger:</strong> Lägre skatter, marknadslösningar, privat välfärd</p>
+            </div>
+            <div class="compass-explanation-item">
+              <h3>Y-axeln: Värderingar</h3>
+              <p><strong>Liberal (ned):</strong> Individuell frihet, öppenhet, pluralism</p>
+              <p><strong>Auktoritär (upp):</strong> Traditionella värden, nationalism, ordning</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="components/header.js"></script>
+  <script src="tools/compass.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

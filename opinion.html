@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Aktuella opinionsmätningar och sammanvägt snitt inför valet 2026. Se trender över tid.">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Opinionsläget — Val 2026</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600,700|inter:400,500,600" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="page-opinion">
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brödsmulor">
+          <a href="index.html">Hem</a>
+          <span>/</span>
+          <span>Opinionsläget</span>
+        </nav>
+        <h1>Opinionsläget</h1>
+        <p class="page-hero-subtitle">Sammanvägt snitt baserat på de senaste opinionsmätningarna. Se hur stödet utvecklats över tid och jämför med valresultaten.</p>
+      </div>
+    </section>
+
+    <section class="polls-section">
+      <div class="container">
+        <div class="polls-container">
+          <h2>Aktuellt opinionssnitt</h2>
+          <div class="poll-chart" id="poll-chart">
+            <!-- Poll bars will be loaded dynamically -->
+          </div>
+
+          <div class="poll-meta">
+            <p>
+              Baserat på Poll of Polls-metodik.
+              Senast uppdaterat: <span class="update-date">april 2026</span>
+            </p>
+            <p>
+              Källa: <a href="https://pollofpolls.se" target="_blank" rel="noopener">pollofpolls.se</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="polls-graph-section">
+          <h2>Utveckling över tid</h2>
+          <div id="pollgraph-container">
+            <!-- Poll graph rendered by pollgraph.js -->
+          </div>
+        </div>
+
+        <!-- Block comparison -->
+        <div class="block-analysis">
+          <h2>Blockanalys</h2>
+          <div class="block-analysis-content">
+            <div class="block-bar-visual">
+              <div class="block-bar-left" id="block-left">
+                <span class="block-label">Vänsterblocket</span>
+                <span class="block-value">S + V + C + MP</span>
+              </div>
+              <div class="block-bar-right" id="block-right">
+                <span class="block-label">Högerblocket</span>
+                <span class="block-value">M + KD + L + SD</span>
+              </div>
+            </div>
+            <p class="block-note">175 mandat krävs för majoritet i riksdagen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="components/header.js"></script>
+  <script src="tools/pollgraph.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 /**
  * Val 2026 — Väljarportal
- * Main application script
+ * Main application script (multi-page version)
  */
 
 (function() {
@@ -45,6 +45,22 @@
   // ==========================================================================
   // Utilities
   // ==========================================================================
+
+  /**
+   * Get current page name
+   */
+  function getCurrentPage() {
+    const path = window.location.pathname;
+    const page = path.substring(path.lastIndexOf('/') + 1) || 'index.html';
+    return page.replace('.html', '');
+  }
+
+  /**
+   * Check if element exists on page
+   */
+  function elementExists(selector) {
+    return document.querySelector(selector) !== null;
+  }
 
   /**
    * Fetch JSON data from a file
@@ -93,74 +109,25 @@
   // ==========================================================================
 
   function updateCountdown() {
+    const daysEl = document.getElementById('countdown-days');
+    const hoursEl = document.getElementById('countdown-hours');
+    const minutesEl = document.getElementById('countdown-minutes');
+    const secondsEl = document.getElementById('countdown-seconds');
+
+    if (!daysEl) return;
+
     const time = getTimeRemaining();
 
-    document.getElementById('countdown-days').textContent = time.days;
-    document.getElementById('countdown-hours').textContent = padZero(time.hours);
-    document.getElementById('countdown-minutes').textContent = padZero(time.minutes);
-    document.getElementById('countdown-seconds').textContent = padZero(time.seconds);
+    daysEl.textContent = time.days;
+    hoursEl.textContent = padZero(time.hours);
+    minutesEl.textContent = padZero(time.minutes);
+    secondsEl.textContent = padZero(time.seconds);
   }
 
   function initCountdown() {
+    if (!elementExists('#countdown-days')) return;
     updateCountdown();
     setInterval(updateCountdown, 1000);
-  }
-
-  // ==========================================================================
-  // Mobile Navigation
-  // ==========================================================================
-
-  function initMobileNav() {
-    const toggle = document.querySelector('.nav-toggle');
-    const mobileNav = document.querySelector('.mobile-nav');
-    const links = mobileNav.querySelectorAll('a');
-
-    toggle.addEventListener('click', () => {
-      const isOpen = mobileNav.classList.toggle('is-open');
-      toggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    // Close menu when clicking a link
-    links.forEach(link => {
-      link.addEventListener('click', () => {
-        mobileNav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    // Close menu on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && mobileNav.classList.contains('is-open')) {
-        mobileNav.classList.remove('is-open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.focus();
-      }
-    });
-  }
-
-  // ==========================================================================
-  // Active Navigation
-  // ==========================================================================
-
-  function initActiveNav() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.main-nav a');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            navLinks.forEach(link => {
-              link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
-            });
-          }
-        });
-      },
-      { rootMargin: '-50% 0px -50% 0px' }
-    );
-
-    sections.forEach(section => observer.observe(section));
   }
 
   // ==========================================================================
@@ -210,6 +177,7 @@
 
   async function initPartiesGrid() {
     const grid = document.getElementById('parties-grid');
+    if (!grid) return;
 
     partiesData = await fetchJSON('data/parties.json');
 
@@ -253,6 +221,8 @@
 
   function initPollChart() {
     const chart = document.getElementById('poll-chart');
+    if (!chart) return;
+
     const maxPercent = Math.max(...POLL_DATA.map(p => p.procent));
 
     // Add threshold marker and note
@@ -267,7 +237,7 @@
   }
 
   // ==========================================================================
-  // Smooth Scroll (enhanced)
+  // Smooth Scroll (for hash links)
   // ==========================================================================
 
   function initSmoothScroll() {
@@ -329,51 +299,106 @@
   }
 
   // ==========================================================================
+  // Block Analysis (Opinion page)
+  // ==========================================================================
+
+  function initBlockAnalysis() {
+    const leftBlock = document.getElementById('block-left');
+    const rightBlock = document.getElementById('block-right');
+
+    if (!leftBlock || !rightBlock) return;
+
+    // Calculate block totals
+    const leftParties = ['S', 'V', 'C', 'MP'];
+    const rightParties = ['M', 'KD', 'L', 'SD'];
+
+    const leftTotal = POLL_DATA
+      .filter(p => leftParties.includes(p.id))
+      .reduce((sum, p) => sum + p.procent, 0);
+
+    const rightTotal = POLL_DATA
+      .filter(p => rightParties.includes(p.id))
+      .reduce((sum, p) => sum + p.procent, 0);
+
+    // Update visual representation
+    leftBlock.style.flex = leftTotal;
+    rightBlock.style.flex = rightTotal;
+
+    leftBlock.innerHTML = `
+      <span class="block-label">Vänsterblocket ${leftTotal}%</span>
+      <span class="block-value">S + V + C + MP</span>
+    `;
+
+    rightBlock.innerHTML = `
+      <span class="block-label">Högerblocket ${rightTotal}%</span>
+      <span class="block-value">M + KD + L + SD</span>
+    `;
+  }
+
+  // ==========================================================================
   // Init
   // ==========================================================================
 
   function init() {
-    initCountdown();
-    initMobileNav();
-    initActiveNav();
+    const currentPage = getCurrentPage();
+    console.log('Val 2026 Väljarportal - Page:', currentPage);
+
+    // Global inits (run on all pages)
     initSmoothScroll();
-    initPartiesGrid();
-    initPollChart();
     initDisclaimerToggles();
 
-    // Initialize compass (loaded from tools/compass.js)
-    if (typeof window.initCompass === 'function') {
-      window.initCompass();
-    }
+    // Page-specific inits
+    switch (currentPage) {
+      case 'index':
+      case '':
+        initCountdown();
+        initPollChart();
+        break;
 
-    // Initialize quiz (loaded from tools/quiz.js)
-    if (typeof window.initQuiz === 'function') {
-      window.initQuiz();
-    }
+      case 'partier':
+        initPartiesGrid();
+        break;
 
-    // Initialize compare (loaded from tools/compare.js)
-    if (typeof window.initCompare === 'function') {
-      window.initCompare();
-    }
+      case 'opinion':
+        initPollChart();
+        initBlockAnalysis();
+        break;
 
-    // Initialize timeline (loaded from tools/timeline.js)
-    if (typeof window.initTimeline === 'function') {
-      window.initTimeline();
-    }
+      case 'kompass':
+        // compass.js handles its own init
+        break;
 
-    // Initialize coalition builder (loaded from tools/coalition.js)
-    if (typeof window.initCoalition === 'function') {
-      window.initCoalition();
-    }
+      case 'quiz':
+        // quiz.js handles its own init
+        break;
 
-    // Initialize guess quiz (loaded from tools/guess.js)
-    if (typeof window.initGuess === 'function') {
-      window.initGuess();
-    }
+      case 'sakfragor':
+        // compare.js handles its own init
+        break;
 
-    // Initialize poll graph (loaded from tools/pollgraph.js)
-    if (typeof window.initPollGraph === 'function') {
-      window.initPollGraph();
+      case 'tidslinje':
+        // timeline.js handles its own init
+        break;
+
+      case 'historik':
+        // history.js handles its own init
+        break;
+
+      case 'koalition':
+        // coalition.js handles its own init
+        break;
+
+      case 'gissa':
+        // guess.js handles its own init
+        break;
+
+      case 'budget':
+        // budget.js handles its own init
+        break;
+
+      case 'rostningar':
+        // votes.js handles its own init
+        break;
     }
 
     // Handle initial hash
