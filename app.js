@@ -353,6 +353,11 @@
       window.initQuiz();
     }
 
+    // Initialize compare (loaded from tools/compare.js)
+    if (typeof window.initCompare === 'function') {
+      window.initCompare();
+    }
+
     // Handle initial hash
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
