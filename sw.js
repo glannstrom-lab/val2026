@@ -3,7 +3,7 @@
  * Möjliggör offline-läsning
  */
 
-const CACHE_NAME = 'val2026-v10';
+const CACHE_NAME = 'val2026-v11';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -21,6 +21,7 @@ const ASSETS_TO_CACHE = [
   './jamfor.html',
   './mandat.html',
   './debatter.html',
+  './kandidater.html',
   './om.html',
   './styles.css',
   './app.js',
@@ -39,8 +40,10 @@ const ASSETS_TO_CACHE = [
   './tools/partycompare.js',
   './tools/seatcalc.js',
   './tools/debates.js',
+  './tools/candidates.js',
   './data/parties.json',
   './data/debates.json',
+  './data/candidates.json',
   './data/compass-positions.json',
   './data/quiz-questions.json',
   './data/issues.json',

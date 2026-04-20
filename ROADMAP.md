@@ -176,7 +176,7 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 | Status | Funktion | Beskrivning | Komplexitet |
 |--------|----------|-------------|-------------|
 | ✅ | **Print-stylesheet** | Optimera för utskrift med A4-format | Låg |
-| ⏳ | **Kandidatdatabas** | Sökbar lista över kandidater | Hög |
+| ✅ | **Kandidatdatabas** | 80 kandidater med sök och filter | Hög |
 
 ---
 
@@ -251,8 +251,9 @@ insats│              │              │ insats
 8. ~~**Fas 5.2:** Debattkalender~~ ✅
 9. ~~**Fas 5.2:** Swipe-gester i quiz~~ ✅
 10. ~~**Fas 5.3:** Print-stylesheet~~ ✅
-11. **Nästa:** Fas 5.3 - Kandidatdatabas (låg prioritet, hög komplexitet)
-12. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
+11. ~~**Fas 5.3:** Kandidatdatabas~~ ✅
+12. **Fas 5 KOMPLETT!** Alla planerade funktioner implementerade.
+13. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---
 

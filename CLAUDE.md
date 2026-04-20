@@ -23,7 +23,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ## 2. Tech stack
 
 - **Vanilla HTML, CSS, JavaScript** — inga ramverk, ingen build-process
-- **Multi-page struktur** — 17 separata HTML-sidor med delad header/footer-komponent
+- **Multi-page struktur** — 18 separata HTML-sidor med delad header/footer-komponent
 - **Data i JSON** — all partidata i `/data/`-mappen, laddas via `fetch()`
 - **Ingen backend** — allt körs i webbläsaren
 - **PWA-stöd** — service worker för offline-läsning
@@ -51,6 +51,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ├── jamfor.html             # Partijämförelse (två partier sida vid sida)
 ├── mandat.html             # Mandatkalkylator (simulera valresultat)
 ├── debatter.html           # Debattkalender (kommande valdebatter)
+├── kandidater.html         # Kandidatdatabas (sökbar lista)
 ├── om.html                 # Om sidan, källor, metodik
 ├── index-single.html       # (Arkiv) Gammal ensidig version
 │
@@ -78,7 +79,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 │   ├── votes.js            # Riksdagsröstningar (340 rader)
 │   ├── partycompare.js     # Partijämförelse (398 rader)
 │   ├── seatcalc.js         # Mandatkalkylator (320 rader)
-│   └── debates.js          # Debattkalender (220 rader)
+│   ├── debates.js          # Debattkalender (220 rader)
+│   └── candidates.js       # Kandidatdatabas (280 rader)
 │
 ├── /data/
 │   ├── parties.json        # Grunddata om partierna (8 partier)
@@ -92,7 +94,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 │   ├── constituencies.json # Valkretsar med mandatfördelning
 │   ├── budget.json         # 27 budgetområden
 │   ├── votes.json          # 20 riksdagsomröstningar
-│   └── debates.json        # 12 valdebatter
+│   ├── debates.json        # 12 valdebatter
+│   └── candidates.json     # 80 riksdagskandidater
 │
 ├── /assets/
 │   ├── /logos/             # Officiella partilogotyper (PNG)

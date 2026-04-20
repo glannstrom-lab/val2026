@@ -22,6 +22,7 @@
       label: 'Fakta',
       items: [
         { href: 'partier.html', title: 'Partierna', desc: 'Alla åtta riksdagspartier' },
+        { href: 'kandidater.html', title: 'Kandidater', desc: 'Sök bland riksdagskandidater' },
         { href: 'sakfragor.html', title: 'Sakfrågor', desc: 'Jämför partiernas ståndpunkter' },
         { href: 'budget.html', title: 'Statsbudgeten', desc: 'Regeringens vs oppositionens budget' },
         { href: 'rostningar.html', title: 'Röstningar', desc: 'Hur partierna röstat i riksdagen' }
