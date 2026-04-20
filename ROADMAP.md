@@ -12,49 +12,51 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 |-------|--------|------------------|
 | DataValidator | ✅ OK | Dokumentation ej synkad med data |
 | ContentResearcher | ⚠️ Förbättringar | Saknade ämnen: AI, Ukraina, NATO |
-| A11yAuditor | ⚠️ Åtgärder krävs | Kontrastproblem, fokus-indikator |
-| NeutralityChecker | ✅ God neutralitet | En formulering bör justeras |
+| A11yAuditor | ✅ Fixat | ~~Kontrastproblem, fokus-indikator~~ |
+| NeutralityChecker | ✅ Fixat | ~~En formulering bör justeras~~ |
 | PerfOptimizer | ⚠️ Optimering möjlig | Render-blockerande resurser |
-| TestEngineer | ✅ 38/38 pass | 4%-spärren i koalitionsbyggare |
-| SwedishEditor | ✅ Hög kvalitet | Terminologi-inkonsekvens |
+| TestEngineer | ✅ Fixat | ~~4%-spärren i koalitionsbyggare~~ |
+| SwedishEditor | ✅ Fixat | ~~Terminologi-inkonsekvens~~ |
 | FrontendDev | ⚠️ Refaktorering | Stor kodduplicering |
 
 ---
 
-## Fas 1: Kritiska åtgärder (före release)
+## Fas 1: Kritiska åtgärder (före release) ✅ KLAR
+
+**Implementerad:** 20 april 2026 (commit 6935aab)
 
 ### 1.1 Tillgänglighet (A11yAuditor)
 
-| Prioritet | Åtgärd | Fil | Tid |
-|-----------|--------|-----|-----|
-| 🔴 Kritisk | Fixa `--color-text-subtle` kontrast (3.7:1 → 4.5:1) | `styles.css:17` | 5 min |
-| 🔴 Kritisk | Lägg till synlig fokus-indikator på `.compass-party:focus` | `styles.css:1030` | 10 min |
-| 🟠 Viktig | Implementera fokus-fångning i mobilmeny | `header.js` | 1 tim |
-| 🟠 Viktig | Lägg till `role="dialog"` på party-modal | `partier.html:37` | 5 min |
-| 🟠 Viktig | Fixa touch targets till minst 44x44px | `styles.css` | 30 min |
+| Status | Åtgärd | Fil |
+|--------|--------|-----|
+| ✅ | Fixa `--color-text-subtle` kontrast (3.7:1 → 4.5:1) | `styles.css:17` |
+| ✅ | Lägg till synlig fokus-indikator på `.compass-party:focus` | `styles.css:1030` |
+| ⏳ | Implementera fokus-fångning i mobilmeny | `header.js` |
+| ✅ | Lägg till `role="dialog"` på party-modal | `partier.html:37` |
+| ✅ | Fixa touch targets till minst 44x44px | `styles.css` |
 
 ### 1.2 Funktionalitet (TestEngineer)
 
-| Prioritet | Åtgärd | Fil | Tid |
-|-----------|--------|-----|-----|
-| 🟠 Viktig | Partier under 4%-spärren ska få 0 mandat | `coalition.js:98` | 30 min |
-| 🟡 Medel | Synkronisera M:s opinionssiffra (17% vs 18%) | `parties.json` | 5 min |
+| Status | Åtgärd | Fil |
+|--------|--------|-----|
+| ✅ | Partier under 4%-spärren ska få 0 mandat | `coalition.js:98` |
+| ✅ | Synkronisera M:s opinionssiffra (17% vs 18%) | `parties.json` |
 
 ### 1.3 Neutralitet (NeutralityChecker)
 
-| Prioritet | Åtgärd | Fil | Tid |
-|-----------|--------|-----|-----|
-| 🟠 Viktig | Ta bort "särskilt islamska" från SD:s position om religiösa friskolor | `issues.json` | 5 min |
-| 🟡 Medel | Ändra "generös" till "högre ersättning" i quiz q19 | `quiz-questions.json` | 5 min |
+| Status | Åtgärd | Fil |
+|--------|--------|-----|
+| ✅ | Ta bort "särskilt islamska" från SD:s position om religiösa friskolor | `issues.json` |
+| ✅ | Ändra "generös" till "högre ersättning" i quiz q19 | `quiz-questions.json` |
 
 ### 1.4 Språk (SwedishEditor)
 
-| Prioritet | Åtgärd | Fil | Tid |
-|-----------|--------|-----|-----|
-| 🟠 Viktig | Ändra "Bygg koalitioner" → "Bygg regeringsunderlag" | `index.html:158` | 5 min |
-| 🟠 Viktig | Ändra "public service uppdrag" → "public services uppdrag" | `issues.json:577` | 5 min |
-| 🟡 Medel | Ändra "extra viktiga" → "särskilt viktiga" | `quiz.html:24` | 5 min |
-| 🟡 Medel | Ändra "opinionsställning" → "opinionsstöd" | `partier.html:24` | 5 min |
+| Status | Åtgärd | Fil |
+|--------|--------|-----|
+| ✅ | Ändra "Bygg koalitioner" → "Bygg regeringsunderlag" | `index.html:158` |
+| ✅ | Ändra "public service uppdrag" → "public services uppdrag" | `issues.json:577` |
+| ✅ | Ändra "extra viktiga" → "särskilt viktiga" | `quiz.html:24` |
+| ✅ | Ändra "opinionsställning" → "opinionsstöd" | `partier.html:24` |
 
 ---
 
