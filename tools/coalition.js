@@ -91,9 +91,9 @@
     if (usePolls) {
       // Convert poll percentage to estimated seats
       const percent = POLL_DATA[party.id] || 0;
-      // Simple proportional calculation (ignore 4% threshold for simplicity)
-      if (percent < 4 && party.id !== 'L') {
-        // Parties under threshold get 0 seats (except we show L's situation)
+      // Parties under 4% threshold get 0 seats in the Riksdag
+      if (percent < 4) {
+        return 0;
       }
       return Math.round((percent / 100) * TOTAL_SEATS);
     } else {

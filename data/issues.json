@@ -574,7 +574,7 @@
         },
         "KD": {
           "stance": "neutral",
-          "summary": "Vill se över public service uppdrag. Orolig för politisering.",
+          "summary": "Vill se över public services uppdrag. Orolig för politisering.",
           "source": "https://www.kristdemokraterna.se/politik/kultur"
         },
         "M": {
@@ -948,7 +948,7 @@
         "L": { "stance": "for", "summary": "Del av Tidöavtalet, stoppar nya religiösa friskolor.", "source": "https://www.liberalerna.se/politik/skola" },
         "KD": { "stance": "emot", "summary": "Försvarar rätten till religiösa friskolor.", "source": "https://www.kristdemokraterna.se/politik/skola" },
         "M": { "stance": "delvis_for", "summary": "Vill stoppa nya konfessionella skolor.", "source": "https://www.moderaterna.se/var-politik/skola" },
-        "SD": { "stance": "for", "summary": "Vill förbjuda religiösa friskolor, särskilt islamska.", "source": "https://www.sd.se/vad-vi-vill/skola" }
+        "SD": { "stance": "for", "summary": "Vill förbjuda religiösa friskolor.", "source": "https://www.sd.se/vad-vi-vill/skola" }
       }
     },
     {
