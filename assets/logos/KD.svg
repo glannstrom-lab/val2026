@@ -1,6 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <circle cx="50" cy="50" r="48" fill="#1F3C81"/>
-  <!-- Simplified cross with rounded ends -->
-  <rect x="44" y="24" width="12" height="52" rx="3" fill="#fff"/>
-  <rect x="30" y="38" width="40" height="12" rx="3" fill="#fff"/>
-</svg>

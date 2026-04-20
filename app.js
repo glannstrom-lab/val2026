@@ -174,7 +174,7 @@
     return `
       <article class="party-card" data-party="${party.id}">
         <header class="party-card-header">
-          <img src="assets/logos/${party.id}.svg" alt="${party.namn} logotyp" class="party-logo-img">
+          <img src="assets/logos/${party.id}.png" alt="${party.namn} logotyp" class="party-logo-img">
           <div>
             <h3>${party.namn}</h3>
             <p class="party-leader">${party.ledare_titel}: ${party.ledare}</p>
