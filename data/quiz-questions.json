@@ -1,0 +1,221 @@
+{
+  "meta": {
+    "version": "1.0",
+    "totalQuestions": 24,
+    "description": "Valkompass-frågor för riksdagsvalet 2026",
+    "scale": {
+      "-2": "Starkt emot",
+      "-1": "Delvis emot",
+      "0": "Neutral/osäker",
+      "1": "Delvis för",
+      "2": "Starkt för"
+    },
+    "disclaimer": "Detta är ingen rekommendation. Resultatet speglar förenklade data — läs partiernas egna program för djupare förståelse."
+  },
+  "categories": {
+    "ekonomi": { "label": "Ekonomi & skatter", "icon": "💰" },
+    "migration": { "label": "Migration & integration", "icon": "🌍" },
+    "lag_ordning": { "label": "Lag & ordning", "icon": "⚖️" },
+    "klimat_energi": { "label": "Klimat & energi", "icon": "🌱" },
+    "sjukvard": { "label": "Sjukvård", "icon": "🏥" },
+    "skola": { "label": "Skola & utbildning", "icon": "📚" },
+    "arbetsmarknad": { "label": "Arbetsmarknad & pension", "icon": "👷" },
+    "forsvar": { "label": "Försvar & säkerhet", "icon": "🛡️" },
+    "eu": { "label": "EU & internationellt", "icon": "🇪🇺" },
+    "varderingar": { "label": "Värderingar & samhälle", "icon": "🏛️" }
+  },
+  "questions": [
+    {
+      "id": "q01",
+      "category": "ekonomi",
+      "statement": "Skatten på arbete bör sänkas kraftigt",
+      "positions": { "V": -2, "S": -1, "MP": -1, "C": 2, "L": 2, "KD": 2, "M": 2, "SD": 1 },
+      "source": "Partiprogram 2024, budgetmotioner",
+      "compass": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "q02",
+      "category": "ekonomi",
+      "statement": "Vinsterna i välfärdsföretag (skolor, vård, omsorg) bör begränsas",
+      "positions": { "V": 2, "S": 2, "MP": 1, "C": -2, "L": -1, "KD": -1, "M": -2, "SD": 1 },
+      "source": "Riksdagsröstningar, partiprogram",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q03",
+      "category": "ekonomi",
+      "statement": "Förmögenhetsskatt bör återinföras i Sverige",
+      "positions": { "V": 2, "S": 1, "MP": 1, "C": -2, "L": -2, "KD": -2, "M": -2, "SD": -1 },
+      "source": "Partiprogram 2024, skattepolitiska utspel",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q04",
+      "category": "ekonomi",
+      "statement": "RUT- och ROT-avdragen bör utökas",
+      "positions": { "V": -2, "S": -1, "MP": -1, "C": 2, "L": 2, "KD": 2, "M": 2, "SD": 1 },
+      "source": "Budgetmotioner 2024–2025",
+      "compass": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "q05",
+      "category": "migration",
+      "statement": "Sverige bör ta emot färre asylsökande än idag",
+      "positions": { "V": -2, "S": 0, "MP": -2, "C": -1, "L": 0, "KD": 1, "M": 2, "SD": 2 },
+      "source": "Tidöavtalet, partiprogram, riksdagsuttalanden",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q06",
+      "category": "migration",
+      "statement": "Arbetskraftsinvandring från länder utanför EU bör underlättas",
+      "positions": { "V": 0, "S": 0, "MP": 1, "C": 2, "L": 1, "KD": 0, "M": 0, "SD": -2 },
+      "source": "Arbetsmarknadspolitiska motioner",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q07",
+      "category": "migration",
+      "statement": "Kraven för att få permanent uppehållstillstånd bör skärpas",
+      "positions": { "V": -2, "S": 1, "MP": -2, "C": 0, "L": 1, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Tidöavtalet, migrationslagstiftning 2024",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q08",
+      "category": "lag_ordning",
+      "statement": "Straffen för gängkriminalitet bör skärpas ytterligare",
+      "positions": { "V": -1, "S": 1, "MP": -1, "C": 1, "L": 2, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Tidöavtalet, riksdagsröstningar om straffskärpningar",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q09",
+      "category": "lag_ordning",
+      "statement": "Polisen bör få utökade befogenheter för övervakning",
+      "positions": { "V": -2, "S": 1, "MP": -2, "C": -1, "L": 0, "KD": 1, "M": 2, "SD": 2 },
+      "source": "Lagförslag om hemlig dataavläsning, preventiva tvångsmedel",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q10",
+      "category": "lag_ordning",
+      "statement": "Anonyma vittnen bör tillåtas i rättegångar",
+      "positions": { "V": -1, "S": 1, "MP": -1, "C": 0, "L": 1, "KD": 1, "M": 2, "SD": 2 },
+      "source": "Tidöavtalet, rättspolitiska utspel 2024",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q11",
+      "category": "klimat_energi",
+      "statement": "Sverige bör bygga nya kärnkraftverk",
+      "positions": { "V": -2, "S": 0, "MP": -2, "C": -1, "L": 2, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Energipolitiska överenskommelser, partiprogram",
+      "compass": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "q12",
+      "category": "klimat_energi",
+      "statement": "Reduktionsplikten på drivmedel bör sänkas",
+      "positions": { "V": -2, "S": -1, "MP": -2, "C": -1, "L": 1, "KD": 1, "M": 2, "SD": 2 },
+      "source": "Regeringens klimatpolitik 2023–2024",
+      "compass": { "x": 1, "y": 1 }
+    },
+    {
+      "id": "q13",
+      "category": "klimat_energi",
+      "statement": "Sverige bör satsa mer på vindkraft till havs",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 2, "L": 1, "KD": 0, "M": 0, "SD": -1 },
+      "source": "Energipolitiska utspel, partiprogram",
+      "compass": { "x": -1, "y": -1 }
+    },
+    {
+      "id": "q14",
+      "category": "sjukvard",
+      "statement": "Staten bör ta över ansvaret för sjukvården från regionerna",
+      "positions": { "V": 1, "S": 0, "MP": -1, "C": -2, "L": 0, "KD": 2, "M": 1, "SD": 2 },
+      "source": "Vårdpolitiska utspel, regiondebatt",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q15",
+      "category": "sjukvard",
+      "statement": "Privata vårdgivare bör få större utrymme i sjukvården",
+      "positions": { "V": -2, "S": -1, "MP": -1, "C": 2, "L": 2, "KD": 1, "M": 2, "SD": 0 },
+      "source": "Vårdpolitik, partiprogram",
+      "compass": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "q16",
+      "category": "skola",
+      "statement": "Vinstuttag i friskolor bör förbjudas helt",
+      "positions": { "V": 2, "S": 2, "MP": 1, "C": -2, "L": -1, "KD": -1, "M": -2, "SD": 0 },
+      "source": "Skolpolitiska utspel, riksdagsröstningar",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q17",
+      "category": "skola",
+      "statement": "Betyg bör införas tidigare i grundskolan",
+      "positions": { "V": -2, "S": -1, "MP": -2, "C": 0, "L": 2, "KD": 2, "M": 2, "SD": 1 },
+      "source": "Skolpolitik, partiprogram",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q18",
+      "category": "arbetsmarknad",
+      "statement": "Åldersgränsen för pension bör höjas",
+      "positions": { "V": -2, "S": 0, "MP": 0, "C": 1, "L": 2, "KD": 1, "M": 2, "SD": -1 },
+      "source": "Pensionsgruppens förslag, partiutspel",
+      "compass": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "q19",
+      "category": "arbetsmarknad",
+      "statement": "A-kassan bör höjas och göras mer generös",
+      "positions": { "V": 2, "S": 2, "MP": 1, "C": -1, "L": -1, "KD": 0, "M": -1, "SD": 1 },
+      "source": "Arbetsmarknadspolitik, budgetmotioner",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q20",
+      "category": "forsvar",
+      "statement": "Sverige bör öka försvarsanslagen till över 2,5% av BNP",
+      "positions": { "V": -1, "S": 1, "MP": -1, "C": 1, "L": 2, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Försvarspolitik, NATO-åtaganden",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q21",
+      "category": "forsvar",
+      "statement": "Värnplikten bör utökas till fler personer",
+      "positions": { "V": 0, "S": 1, "MP": -1, "C": 1, "L": 1, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Försvarspolitiska utspel 2024",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q22",
+      "category": "eu",
+      "statement": "EU bör få mer makt över medlemsländernas politik",
+      "positions": { "V": -2, "S": 0, "MP": 1, "C": 1, "L": 1, "KD": -1, "M": 0, "SD": -2 },
+      "source": "EU-politik, partiprogram",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q23",
+      "category": "varderingar",
+      "statement": "Sverige bör värna traditionella familjevärderingar i politiken",
+      "positions": { "V": -2, "S": -1, "MP": -2, "C": -1, "L": -1, "KD": 2, "M": 0, "SD": 2 },
+      "source": "Familjepolitik, partiprogram",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q24",
+      "category": "varderingar",
+      "statement": "Public service (SVT, SR) bör minskas i omfattning",
+      "positions": { "V": -2, "S": -2, "MP": -2, "C": -1, "L": -1, "KD": 0, "M": 0, "SD": 2 },
+      "source": "Mediepolitik, kulturpolitiska utspel",
+      "compass": { "x": 0, "y": 1 }
+    }
+  ]
+}

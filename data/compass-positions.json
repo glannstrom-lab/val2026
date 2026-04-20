@@ -1,0 +1,81 @@
+{
+  "meta": {
+    "description": "Partiernas positioner på den politiska kompassen",
+    "x_axis": {
+      "label": "Ekonomi",
+      "left": "Vänster",
+      "right": "Höger",
+      "description": "Vänster innebär mer statlig styrning, omfördelning och kollektiva lösningar. Höger innebär mer marknadsekonomi, privat ägande och individuellt ansvar."
+    },
+    "y_axis": {
+      "label": "Värderingar",
+      "top": "Auktoritär",
+      "bottom": "Liberal",
+      "description": "Auktoritär innebär mer statlig kontroll över personliga friheter, tradition och nationell identitet. Liberal innebär mer individuella friheter, öppenhet och progressiva värderingar."
+    },
+    "sources": [
+      "Chapel Hill Expert Survey (CHES) 2024",
+      "Göteborgs universitets Valforskningsprogram",
+      "V-Dem / V-Party Dataset"
+    ],
+    "disclaimer": "Detta är en förenkling. Partiernas positioner bygger på expertbedömningar och kan variera beroende på sakfråga. Partier är inte monolitiska — åsikter skiljer sig mellan ledamöter."
+  },
+  "positions": [
+    {
+      "id": "V",
+      "x": -7,
+      "y": -3,
+      "motivation": "Vänsterpartiet förespråkar kraftig omfördelning, höjda skatter på kapital och förmögenheter, samt utökad offentlig sektor. I värderingsfrågor är partiet liberalt med fokus på individuella rättigheter, feminism och öppna gränser.",
+      "source": "CHES 2024, partiprogram 2024"
+    },
+    {
+      "id": "S",
+      "x": -3,
+      "y": 1,
+      "motivation": "Socialdemokraterna står för blandekonomi med stark välfärdsstat men accepterar marknadsekonomi. I värderingsfrågor har partiet rört sig mot mitten med hårdare migrationspolitik och fokus på lag och ordning sedan 2015.",
+      "source": "CHES 2024, regeringsförklaringar 2022–2024"
+    },
+    {
+      "id": "MP",
+      "x": -4,
+      "y": -6,
+      "motivation": "Miljöpartiet kombinerar grön ekonomisk politik med starkt fokus på klimatomställning och skepticism mot tillväxt. Partiet är det mest liberala i värderingsfrågor med fokus på individuella friheter, mångfald och öppna gränser.",
+      "source": "CHES 2024, partiprogram 2024"
+    },
+    {
+      "id": "C",
+      "x": 3,
+      "y": -3,
+      "motivation": "Centerpartiet förespråkar marknadsekonomi, sänkta skatter och avregleringar, särskilt för småföretag. I värderingsfrågor är partiet liberalt med fokus på individuell frihet, landsbygdsutveckling och en öppen migrationspolitik.",
+      "source": "CHES 2024, partiprogram 2024"
+    },
+    {
+      "id": "L",
+      "x": 4,
+      "y": -2,
+      "motivation": "Liberalerna står för klassisk liberal ekonomisk politik med fokus på utbildning och arbetslinjen. I värderingsfrågor betonar partiet rättsstaten och individuella friheter, men har skärpt tonen i integrationsfrågor som del av Tidösamarbetet.",
+      "source": "CHES 2024, Tidöavtalet 2022"
+    },
+    {
+      "id": "KD",
+      "x": 5,
+      "y": 4,
+      "motivation": "Kristdemokraterna förespråkar marknadsekonomi med fokus på familjen som samhällets grund. I värderingsfrågor är partiet konservativt med betoning på tradition, kristna värderingar och en restriktiv migrationspolitik.",
+      "source": "CHES 2024, partiprogram 2024"
+    },
+    {
+      "id": "M",
+      "x": 6,
+      "y": 2,
+      "motivation": "Moderaterna driver klassisk högerekonomisk politik med sänkta skatter, privatiseringar och valfrihet. I värderingsfrågor har partiet blivit mer konservativt med hårdare linje i migrations- och kriminalpolitik som del av Tidöregeringen.",
+      "source": "CHES 2024, regeringsförklaringar 2022–2024"
+    },
+    {
+      "id": "SD",
+      "x": 3,
+      "y": 7,
+      "motivation": "Sverigedemokraterna kombinerar ekonomisk centrism (accepterar välfärdsstaten) med starkt konservativa värderingar. Partiet är det mest auktoritära i riksdagen med fokus på nationell identitet, kraftigt minskad invandring och traditionella värden.",
+      "source": "CHES 2024, V-Party 2024, partiprogram 2024"
+    }
+  ]
+}

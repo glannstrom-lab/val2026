@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Väljarportal inför riksdagsvalet 2026. Neutral, faktabaserad information om partierna, valkompass och sakfrågor.">
+  <meta name="theme-color" content="#0d0d0d">
+
+  <title>Val 2026 — Väljarportal</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600,700|inter:400,500,600" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <!-- Skip link for accessibility -->
+  <a href="#main" class="skip-link">Hoppa till innehåll</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="site-logo">Val<span>2026</span></a>
+
+      <nav class="main-nav" aria-label="Huvudnavigation">
+        <a href="#snabbguide">Snabbguide</a>
+        <a href="#kompass">Kompass</a>
+        <a href="#quiz">Quiz</a>
+        <a href="#sakfragor">Sakfrågor</a>
+        <a href="#tidslinje">Tidslinje</a>
+        <a href="#partier">Partierna</a>
+        <a href="#opinion">Opinion</a>
+        <a href="#om">Om sidan</a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Öppna meny" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav class="mobile-nav" aria-label="Mobilnavigation">
+    <a href="#snabbguide">Snabbguide</a>
+    <a href="#kompass">Politisk kompass</a>
+    <a href="#quiz">Valkompass-quiz</a>
+    <a href="#sakfragor">Sakfrågor</a>
+    <a href="#tidslinje">Tidslinje</a>
+    <a href="#partier">Partierna</a>
+    <a href="#opinion">Opinionsläget</a>
+    <a href="#om">Om sidan</a>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="dot"></span>
+            <span>Riksdagsvalet 13 september 2026</span>
+          </div>
+
+          <h1>Din guide till valet</h1>
+
+          <p class="hero-subtitle">
+            Neutral, faktabaserad information om partierna och sakfrågorna.
+            Inga rekommendationer — bara verktyg för att bilda din egen uppfattning.
+          </p>
+
+          <!-- Countdown -->
+          <div class="countdown" aria-label="Nedräkning till valdagen">
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-days">---</span>
+              <span class="countdown-label">Dagar</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-hours">--</span>
+              <span class="countdown-label">Timmar</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-minutes">--</span>
+              <span class="countdown-label">Minuter</span>
+            </div>
+            <div class="countdown-item">
+              <span class="countdown-value" id="countdown-seconds">--</span>
+              <span class="countdown-label">Sekunder</span>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="cta-group">
+            <a href="#quiz" class="btn btn-primary">Gör valkompassen</a>
+            <a href="#partier" class="btn btn-secondary">Utforska partierna</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Guide Section -->
+    <section class="quick-guide" id="snabbguide">
+      <div class="container">
+        <div class="section-header">
+          <h2>Riksdagsvalet på 60 sekunder</h2>
+          <p>Grundläggande fakta om hur det svenska valsystemet fungerar.</p>
+        </div>
+
+        <div class="quick-guide-grid">
+          <div class="quick-guide-item">
+            <span class="number">4%</span>
+            <span class="label">Riksdagsspärren</span>
+          </div>
+          <div class="quick-guide-item">
+            <span class="number">349</span>
+            <span class="label">Mandat i riksdagen</span>
+          </div>
+          <div class="quick-guide-item">
+            <span class="number">175</span>
+            <span class="label">Mandat för majoritet</span>
+          </div>
+          <div class="quick-guide-item">
+            <span class="number">29</span>
+            <span class="label">Valkretsar</span>
+          </div>
+          <div class="quick-guide-item">
+            <span class="number">39</span>
+            <span class="label">Utjämningsmandat</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Political Compass Section -->
+    <section class="tool-section compass-section" id="kompass">
+      <div class="container">
+        <div class="section-header">
+          <h2>Politisk kompass</h2>
+          <p>Se var partierna står på den ekonomiska och värderingsmässiga skalan.</p>
+        </div>
+
+        <div class="compass-wrapper" id="compass-container">
+          <!-- Controls -->
+          <div class="compass-controls">
+            <label class="compass-toggle">
+              <input type="checkbox" class="compass-coalition-toggle">
+              <span class="compass-toggle-slider"></span>
+              <span class="compass-toggle-label">Visa regeringsunderlag</span>
+            </label>
+          </div>
+
+          <!-- SVG Container -->
+          <div class="compass-svg-container">
+            <!-- SVG rendered by compass.js -->
+          </div>
+
+          <!-- Legend -->
+          <div class="compass-legend">
+            <p class="compass-legend-hint">Håll muspekaren över ett parti för mer information</p>
+          </div>
+
+          <!-- Disclaimer -->
+          <div class="compass-disclaimer">
+            <button class="compass-disclaimer-toggle" aria-expanded="false">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="16" x2="12" y2="12"></line>
+                <line x1="12" y1="8" x2="12.01" y2="8"></line>
+              </svg>
+              <span>Om kompassen</span>
+            </button>
+            <div class="compass-disclaimer-content">
+              <p class="compass-disclaimer-text">
+                Detta är en förenkling. Partiernas positioner bygger på expertbedömningar och kan variera beroende på sakfråga. Partier är inte monolitiska — åsikter skiljer sig mellan ledamöter.
+              </p>
+              <p class="compass-disclaimer-sources">
+                <strong>Källor:</strong> Chapel Hill Expert Survey (CHES) 2024, Göteborgs universitets Valforskningsprogram, V-Dem / V-Party Dataset
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="tool-section quiz-section" id="quiz">
+      <div class="container">
+        <div class="section-header">
+          <h2>Valkompass-quiz</h2>
+          <p>Svara på frågor och se vilka partier som ligger närmast dig.</p>
+        </div>
+
+        <div class="quiz-wrapper" id="quiz-container">
+          <!-- Quiz content rendered by quiz.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Issues Comparison Section (Placeholder) -->
+    <section class="tool-section" id="sakfragor">
+      <div class="container">
+        <div class="section-header">
+          <h2>Sakfråge-jämförelse</h2>
+          <p>Jämför partiernas ståndpunkter i de viktigaste frågorna.</p>
+        </div>
+
+        <div class="tool-placeholder">
+          <div class="tool-placeholder-icon">⚖️</div>
+          <p>Sakfråge-jämförelse kommer snart</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section (Placeholder) -->
+    <section class="tool-section" id="tidslinje">
+      <div class="container">
+        <div class="section-header">
+          <h2>Tidslinje</h2>
+          <p>Följ vallöften, utspel och händelser från 2022 till valdagen.</p>
+        </div>
+
+        <div class="tool-placeholder">
+          <div class="tool-placeholder-icon">📅</div>
+          <p>Tidslinje kommer snart</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Parties Section -->
+    <section class="parties-section" id="partier">
+      <div class="container">
+        <div class="section-header">
+          <h2>Partierna i riksdagen</h2>
+          <p>Åtta partier är representerade i Sveriges riksdag. Klicka på ett parti för mer information.</p>
+        </div>
+
+        <div class="parties-grid" id="parties-grid">
+          <!-- Parties will be loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Opinion Polls Section -->
+    <section class="polls-section" id="opinion">
+      <div class="container">
+        <div class="section-header">
+          <h2>Opinionsläget</h2>
+          <p>Sammanvägt snitt baserat på de senaste opinionsmätningarna.</p>
+        </div>
+
+        <div class="polls-container">
+          <div class="poll-chart" id="poll-chart">
+            <!-- Poll bars will be loaded dynamically -->
+          </div>
+
+          <div class="poll-meta">
+            <p>
+              Baserat på Poll of Polls-metodik.
+              Senast uppdaterat: <span class="update-date">april 2026</span>
+            </p>
+            <p>
+              Källa: <a href="https://pollofpolls.se" target="_blank" rel="noopener">pollofpolls.se</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="om">
+      <div class="container">
+        <div class="section-header">
+          <h2>Om sidan</h2>
+          <p>Transparens kring syfte, metodik och källor.</p>
+        </div>
+
+        <div class="about-content">
+          <div class="about-grid">
+            <div class="about-item">
+              <h3>🎯 Syfte</h3>
+              <p>
+                Den här sidan finns för att ge väljare neutral, faktabaserad information
+                inför riksdagsvalet 2026. Vi ger inga röstningsrekommendationer — bara
+                verktyg för att bilda din egen uppfattning.
+              </p>
+            </div>
+
+            <div class="about-item">
+              <h3>📐 Metodik</h3>
+              <p>
+                Kompasspositioner baseras på Chapel Hill Expert Survey och Göteborgs
+                universitets valforskningsprogram. Quiz-matchningar beräknas utifrån
+                partiernas officiella ståndpunkter i sakfrågor.
+              </p>
+            </div>
+
+            <div class="about-item">
+              <h3>📚 Källor</h3>
+              <p>
+                All information härstammar från partiernas officiella program,
+                riksdagens röstningsprotokoll, Valmyndigheten, SCB och etablerad
+                forskning. Varje påstående har en angiven källa.
+              </p>
+            </div>
+
+            <div class="about-item">
+              <h3>⚠️ Begränsningar</h3>
+              <p>
+                Politiska positioner är förenklade. Partier är inte monolitiska —
+                åsikter varierar mellan ledamöter. Använd den här sidan som
+                utgångspunkt och läs partiernas egna program för djupare förståelse.
+              </p>
+            </div>
+
+            <div class="about-item">
+              <h3>🔒 Integritet</h3>
+              <p>
+                Ingen personlig data samlas in. Inga cookies, ingen tracking,
+                inga externa API-anrop. Dina quiz-svar stannar i din webbläsare.
+              </p>
+            </div>
+
+            <div class="about-item">
+              <h3>♿ Tillgänglighet</h3>
+              <p>
+                Sidan följer WCAG 2.1 AA-riktlinjer. Tangentbordsnavigering fungerar
+                genomgående. Kontrastkrav uppfylls. Om du upplever problem,
+                kontakta oss.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-links">
+          <a href="#om">Om sidan</a>
+          <a href="#om">Källor</a>
+          <a href="#om">Tillgänglighet</a>
+        </div>
+
+        <div class="footer-meta">
+          <p>Senast uppdaterad: april 2026</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="tools/compass.js"></script>
+  <script src="tools/quiz.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
