@@ -362,42 +362,57 @@
       case 'opinion':
         initPollChart();
         initBlockAnalysis();
+        if (typeof window.initPollGraph === 'function') {
+          window.initPollGraph();
+        }
         break;
 
       case 'kompass':
-        // compass.js handles its own init
+        if (typeof window.initCompass === 'function') {
+          window.initCompass();
+        }
         break;
 
       case 'quiz':
-        // quiz.js handles its own init
+        if (typeof window.initQuiz === 'function') {
+          window.initQuiz();
+        }
         break;
 
       case 'sakfragor':
-        // compare.js handles its own init
+        if (typeof window.initCompare === 'function') {
+          window.initCompare();
+        }
         break;
 
       case 'tidslinje':
-        // timeline.js handles its own init
+        if (typeof window.initTimeline === 'function') {
+          window.initTimeline();
+        }
         break;
 
       case 'historik':
-        // history.js handles its own init
+        // history.js auto-initializes
         break;
 
       case 'koalition':
-        // coalition.js handles its own init
+        if (typeof window.initCoalition === 'function') {
+          window.initCoalition();
+        }
         break;
 
       case 'gissa':
-        // guess.js handles its own init
+        if (typeof window.initGuess === 'function') {
+          window.initGuess();
+        }
         break;
 
       case 'budget':
-        // budget.js handles its own init
+        // budget.js auto-initializes
         break;
 
       case 'rostningar':
-        // votes.js handles its own init
+        // votes.js auto-initializes
         break;
     }
 
