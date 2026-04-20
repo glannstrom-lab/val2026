@@ -6,6 +6,20 @@
   <meta name="description" content="Väljarportal inför riksdagsvalet 2026. Neutral, faktabaserad information om partierna, valkompass och sakfrågor.">
   <meta name="theme-color" content="#0d0d0d">
 
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://glannstrom-lab.github.io/val2026/">
+  <meta property="og:title" content="Val 2026 — Väljarportal">
+  <meta property="og:description" content="Neutral, faktabaserad information om partierna inför riksdagsvalet 2026. Valkompass, sakfrågor och koalitionsbyggare.">
+  <meta property="og:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png">
+  <meta property="og:locale" content="sv_SE">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Val 2026 — Väljarportal">
+  <meta name="twitter:description" content="Neutral, faktabaserad information om partierna inför riksdagsvalet 2026.">
+  <meta name="twitter:image" content="https://glannstrom-lab.github.io/val2026/assets/og-image.png">
+
   <title>Val 2026 — Väljarportal</title>
 
   <!-- Fonts -->
@@ -17,6 +31,10 @@
 
   <!-- Favicon -->
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="assets/icon-192.png">
 </head>
 <body>
   <!-- Skip link for accessibility -->
@@ -36,6 +54,7 @@
         <a href="#partier">Partierna</a>
         <a href="#opinion">Opinion</a>
         <a href="#koalitioner">Koalitioner</a>
+        <a href="#gissa">Gissa partiet</a>
         <a href="#om">Om sidan</a>
       </nav>
 
@@ -57,6 +76,7 @@
     <a href="#partier">Partierna</a>
     <a href="#opinion">Opinionsläget</a>
     <a href="#koalitioner">Koalitioner</a>
+    <a href="#gissa">Gissa partiet</a>
     <a href="#om">Om sidan</a>
   </nav>
 
@@ -271,6 +291,14 @@
             </p>
           </div>
         </div>
+
+        <!-- Historical graph -->
+        <div class="section-subheader">
+          <h3>Utveckling över tid</h3>
+        </div>
+        <div id="pollgraph-container">
+          <!-- Poll graph rendered by pollgraph.js -->
+        </div>
       </div>
     </section>
 
@@ -284,6 +312,20 @@
 
         <div id="coalition-container">
           <!-- Coalition builder rendered by coalition.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Guess the Party Section -->
+    <section class="tool-section guess-section" id="gissa">
+      <div class="container">
+        <div class="section-header">
+          <h2>Gissa partiet</h2>
+          <p>Kan du avgöra vilket parti som står bakom citatet?</p>
+        </div>
+
+        <div id="guess-container">
+          <!-- Guess quiz rendered by guess.js -->
         </div>
       </div>
     </section>
@@ -380,6 +422,8 @@
   <script src="tools/compare.js"></script>
   <script src="tools/timeline.js"></script>
   <script src="tools/coalition.js"></script>
+  <script src="tools/guess.js"></script>
+  <script src="tools/pollgraph.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

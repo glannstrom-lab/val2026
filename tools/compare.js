@@ -92,8 +92,8 @@
                   data-party="${partyId}"
                   style="--party-color: ${PARTY_COLORS[partyId]}; --party-text: ${PARTY_TEXT_COLORS[partyId]}"
                   aria-pressed="${isSelected}">
+                  <img src="assets/logos/${partyId}.png" alt="" class="compare-party-logo">
                   <span class="compare-party-abbr">${partyId}</span>
-                  <span class="compare-party-name">${party?.namn || partyId}</span>
                 </button>
               `;
             }).join('')}

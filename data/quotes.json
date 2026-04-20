@@ -1,0 +1,176 @@
+{
+  "meta": {
+    "description": "Partiuttalanden för Gissa partiet-quiz",
+    "lastUpdated": "2026-04"
+  },
+  "quotes": [
+    {
+      "id": "q01",
+      "text": "Vi vill se ett samhälle där människor får behålla mer av sin egen lön och där arbete alltid lönar sig.",
+      "party": "M",
+      "source": "Moderaternas valplattform 2026",
+      "category": "ekonomi"
+    },
+    {
+      "id": "q02",
+      "text": "Välfärden ska finansieras gemensamt och fördelas efter behov, inte efter plånbok.",
+      "party": "S",
+      "source": "Socialdemokraternas principprogram",
+      "category": "välfärd"
+    },
+    {
+      "id": "q03",
+      "text": "Sverige behöver en ansvarsfull invandringspolitik med fokus på återvandring och kraftigt minskade volymer.",
+      "party": "SD",
+      "source": "Sverigedemokraternas valmanifest",
+      "category": "migration"
+    },
+    {
+      "id": "q04",
+      "text": "Klimatet är vår tids ödesfråga. Vi måste ställa om till ett fossilfritt samhälle.",
+      "party": "MP",
+      "source": "Miljöpartiets klimatprogram",
+      "category": "klimat"
+    },
+    {
+      "id": "q05",
+      "text": "Hela Sverige ska leva. Landsbygden behöver bättre service, infrastruktur och möjligheter att driva företag.",
+      "party": "C",
+      "source": "Centerpartiets landsbygdsprogram",
+      "category": "landsbygd"
+    },
+    {
+      "id": "q06",
+      "text": "Familjen är samhällets grundsten. Föräldrarna, inte staten, vet bäst vad som är rätt för deras barn.",
+      "party": "KD",
+      "source": "Kristdemokraternas familjepolitik",
+      "category": "familj"
+    },
+    {
+      "id": "q07",
+      "text": "Kunskap och bildning ska stå i centrum för skolan. Lärarna måste få vara lärare.",
+      "party": "L",
+      "source": "Liberalernas skolpolitik",
+      "category": "skola"
+    },
+    {
+      "id": "q08",
+      "text": "Vinster ska gå tillbaka till verksamheten, inte till riskkapitalister. Välfärden är ingen marknad.",
+      "party": "V",
+      "source": "Vänsterpartiets välfärdspolitik",
+      "category": "välfärd"
+    },
+    {
+      "id": "q09",
+      "text": "Kärnkraften är en viktig del av Sveriges energimix för att säkra planerbar el.",
+      "party": "M",
+      "source": "Moderaternas energipolitik",
+      "category": "energi"
+    },
+    {
+      "id": "q10",
+      "text": "Jämställdhet handlar om att både kvinnor och män ska ha samma möjligheter i livet.",
+      "party": "S",
+      "source": "Socialdemokraternas jämställdhetspolitik",
+      "category": "jämställdhet"
+    },
+    {
+      "id": "q11",
+      "text": "Brottslingar ska sitta inlåsta, inte springa fria på gatorna. Straffen måste skärpas rejält.",
+      "party": "SD",
+      "source": "Sverigedemokraternas rättspolitik",
+      "category": "kriminalitet"
+    },
+    {
+      "id": "q12",
+      "text": "Vi måste lämna oljan, kolet och gasen i marken. Framtiden är förnybar.",
+      "party": "MP",
+      "source": "Miljöpartiets energipolitik",
+      "category": "energi"
+    },
+    {
+      "id": "q13",
+      "text": "Företagande och entreprenörskap skapar jobb och välstånd. Vi vill se fler som startar eget.",
+      "party": "C",
+      "source": "Centerpartiets näringspolitik",
+      "category": "ekonomi"
+    },
+    {
+      "id": "q14",
+      "text": "Vården ska styras av läkare och sjuksköterskor, inte av byråkrater och regionpolitiker.",
+      "party": "KD",
+      "source": "Kristdemokraternas vårdpolitik",
+      "category": "vård"
+    },
+    {
+      "id": "q15",
+      "text": "Demokratin hotas när människor inte litar på varandra. Integration kräver gemensamma värderingar.",
+      "party": "L",
+      "source": "Liberalernas integrationspolitik",
+      "category": "integration"
+    },
+    {
+      "id": "q16",
+      "text": "De rikaste måste bidra mer till samhället. Ojämlikheten har blivit för stor.",
+      "party": "V",
+      "source": "Vänsterpartiets skattepolitik",
+      "category": "ekonomi"
+    },
+    {
+      "id": "q17",
+      "text": "Polisen behöver fler resurser och bättre verktyg för att knäcka gängen.",
+      "party": "M",
+      "source": "Moderaternas kriminalpolitik",
+      "category": "kriminalitet"
+    },
+    {
+      "id": "q18",
+      "text": "Alla barn har rätt till en bra skola, oavsett var de bor eller vilka föräldrar de har.",
+      "party": "S",
+      "source": "Socialdemokraternas skolpolitik",
+      "category": "skola"
+    },
+    {
+      "id": "q19",
+      "text": "Sverige ska vara svenskt. Vår kultur och våra traditioner måste värnas.",
+      "party": "SD",
+      "source": "Sverigedemokraternas kulturpolitik",
+      "category": "kultur"
+    },
+    {
+      "id": "q20",
+      "text": "Biologisk mångfald är lika viktig som klimatet. Vi måste skydda naturen.",
+      "party": "MP",
+      "source": "Miljöpartiets naturpolitik",
+      "category": "miljö"
+    },
+    {
+      "id": "q21",
+      "text": "Decentralisering är nyckeln. Beslut ska fattas så nära människorna som möjligt.",
+      "party": "C",
+      "source": "Centerpartiets demokratipolitik",
+      "category": "demokrati"
+    },
+    {
+      "id": "q22",
+      "text": "Äldre förtjänar trygghet och värdighet. Pensionerna måste höjas.",
+      "party": "KD",
+      "source": "Kristdemokraternas äldrepolitik",
+      "category": "pension"
+    },
+    {
+      "id": "q23",
+      "text": "Varje människa är unik och har rätt att forma sitt eget liv.",
+      "party": "L",
+      "source": "Liberalernas frihetsprogram",
+      "category": "frihet"
+    },
+    {
+      "id": "q24",
+      "text": "Hyresrätten måste värnas. Bostaden är en rättighet, inte en spekulationsvara.",
+      "party": "V",
+      "source": "Vänsterpartiets bostadspolitik",
+      "category": "bostad"
+    }
+  ]
+}

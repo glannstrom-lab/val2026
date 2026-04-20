@@ -1,0 +1,25 @@
+{
+  "name": "Val 2026 — Väljarportal",
+  "short_name": "Val 2026",
+  "description": "Neutral, faktabaserad information om partierna inför riksdagsvalet 2026",
+  "start_url": "/val2026/",
+  "display": "standalone",
+  "background_color": "#0d0d0d",
+  "theme_color": "#0d0d0d",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["news", "education"],
+  "lang": "sv",
+  "dir": "ltr"
+}

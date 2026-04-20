@@ -211,6 +211,7 @@
                 </span>
                 ${event.party ? `
                   <span class="timeline-event-party" style="background: ${partyColor}">
+                    <img src="assets/logos/${event.party}.png" alt="" class="timeline-party-logo">
                     ${event.party}
                   </span>
                 ` : ''}

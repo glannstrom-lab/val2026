@@ -356,7 +356,7 @@
               <div class="quiz-match-item ${index === 0 ? 'is-top' : ''}">
                 <div class="quiz-match-header">
                   <div class="quiz-match-party">
-                    <span class="quiz-match-badge" style="background: ${PARTY_COLORS[match.id]}; color: ${PARTY_TEXT_COLORS[match.id]}">${match.id}</span>
+                    <img src="assets/logos/${match.id}.png" alt="" class="quiz-match-logo">
                     <span class="quiz-match-name">${match.name}</span>
                   </div>
                   <span class="quiz-match-percent">${match.matchPercent}%</span>

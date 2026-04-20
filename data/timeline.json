@@ -322,6 +322,56 @@
       "summary": "Ebba Busch driver frågan om förstatligad sjukvård som valfråga för Kristdemokraterna.",
       "source_url": "https://www.kristdemokraterna.se/",
       "source_name": "Kristdemokraterna"
+    },
+    {
+      "id": "e032",
+      "date": "2025-12-01",
+      "type": "reform",
+      "party": null,
+      "title": "Anonyma vittnen godkänns",
+      "summary": "Riksdagen röstar igenom möjligheten för anonyma vittnen i mål om grov brottslighet.",
+      "source_url": "https://www.riksdagen.se/",
+      "source_name": "Riksdagen"
+    },
+    {
+      "id": "e033",
+      "date": "2026-02-01",
+      "type": "kris",
+      "party": null,
+      "title": "Energipriserna stiger",
+      "summary": "Trots milda vintrar pressas hushållen av höga elpriser i södra Sverige.",
+      "source_url": "https://www.svt.se/nyheter/",
+      "source_name": "SVT Nyheter"
+    },
+    {
+      "id": "e034",
+      "date": "2026-03-01",
+      "type": "utspel",
+      "party": "MP",
+      "title": "MP lanserar klimatprogram",
+      "summary": "Miljöpartiet presenterar ambitiös klimatplan med mål om fossilfritt Sverige 2035.",
+      "source_url": "https://www.mp.se/",
+      "source_name": "Miljöpartiet"
+    },
+    {
+      "id": "e035",
+      "date": "2026-04-10",
+      "type": "utspel",
+      "party": "SD",
+      "title": "SD vill minska invandringen ytterligare",
+      "summary": "Jimmie Åkesson presenterar förslag om noll asylinvandring och skärpta krav för medborgarskap.",
+      "source_url": "https://www.sd.se/",
+      "source_name": "Sverigedemokraterna"
+    },
+    {
+      "id": "e036",
+      "date": "2026-04-15",
+      "type": "val",
+      "party": null,
+      "title": "Valrörelsen drar igång",
+      "summary": "Fem månader kvar till valet. Partierna intensifierar kampanjerna.",
+      "source_url": "https://www.val.se/",
+      "source_name": "Valmyndigheten"
     }
   ]
 }

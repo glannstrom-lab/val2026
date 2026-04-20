@@ -237,7 +237,7 @@
       <div class="poll-bar-container">
         <div class="poll-bar-header">
           <div class="poll-bar-party">
-            <span class="poll-bar-dot" style="background-color: ${color}"></span>
+            <img src="assets/logos/${poll.id}.png" alt="" class="poll-bar-logo">
             <span class="poll-bar-name">${poll.namn}</span>
           </div>
           <span class="poll-bar-value" style="color: ${isBelowThreshold ? 'var(--color-error)' : 'inherit'}">
@@ -366,6 +366,16 @@
       window.initCoalition();
     }
 
+    // Initialize guess quiz (loaded from tools/guess.js)
+    if (typeof window.initGuess === 'function') {
+      window.initGuess();
+    }
+
+    // Initialize poll graph (loaded from tools/pollgraph.js)
+    if (typeof window.initPollGraph === 'function') {
+      window.initPollGraph();
+    }
+
     // Handle initial hash
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
@@ -378,6 +388,19 @@
     document.addEventListener('DOMContentLoaded', init);
   } else {
     init();
+  }
+
+  // Register Service Worker for offline support
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then((registration) => {
+          console.log('Service Worker registered:', registration.scope);
+        })
+        .catch((error) => {
+          console.log('Service Worker registration failed:', error);
+        });
+    });
   }
 
 })();
