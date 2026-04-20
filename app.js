@@ -141,7 +141,7 @@
     return `
       <article class="party-card" data-party="${party.id}">
         <header class="party-card-header">
-          <img src="assets/logos/${party.id}.png" alt="${party.namn} logotyp" class="party-logo-img">
+          <img src="assets/logos/${party.id}.png" alt="${party.namn} logotyp" class="party-logo-img" loading="lazy" decoding="async">
           <div>
             <h3>${party.namn}</h3>
             <p class="party-leader">${party.ledare_titel}: ${party.ledare}</p>
@@ -205,7 +205,7 @@
       <div class="poll-bar-container">
         <div class="poll-bar-header">
           <div class="poll-bar-party">
-            <img src="assets/logos/${poll.id}.png" alt="${poll.id}" class="poll-bar-logo">
+            <img src="assets/logos/${poll.id}.png" alt="${poll.id}" class="poll-bar-logo" loading="lazy" decoding="async">
             <span class="poll-bar-name">${poll.namn}</span>
           </div>
           <span class="poll-bar-value" style="color: ${isBelowThreshold ? 'var(--color-error)' : 'inherit'}">

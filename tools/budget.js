@@ -275,7 +275,7 @@
     return Object.entries(budgetData.party_summaries).map(([party, data]) => `
       <div class="budget-party-card" style="--party-color: ${PARTY_COLORS[party]}">
         <div class="party-card-header">
-          <img src="./assets/logos/${party}.png" alt="${party}" class="party-card-logo"
+          <img src="./assets/logos/${party}.png" alt="${party}" class="party-card-logo" loading="lazy" decoding="async"
                onerror="this.style.display='none'">
           <div class="party-card-title">
             <h4>${data.name}</h4>
