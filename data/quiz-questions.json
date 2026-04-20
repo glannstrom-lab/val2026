@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "totalQuestions": 46,
+    "totalQuestions": 50,
     "description": "Valkompass-frågor för riksdagsvalet 2026",
     "scale": {
       "-2": "Starkt emot",
@@ -392,6 +392,38 @@
       "positions": { "V": 2, "S": 2, "MP": 2, "C": 1, "L": 1, "KD": 2, "M": 1, "SD": 2 },
       "source": "Äldrepolitik, vårdpolitik",
       "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q47",
+      "category": "forsvar",
+      "statement": "Sverige bör fortsätta ge omfattande militärt stöd till Ukraina",
+      "positions": { "V": 0, "S": 2, "MP": 1, "C": 2, "L": 2, "KD": 2, "M": 2, "SD": 1 },
+      "source": "Utrikespolitik, försvarspolitik 2024-2026",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q48",
+      "category": "forsvar",
+      "statement": "Kärnvapen bör kunna placeras på svensk mark inom NATO-samarbetet",
+      "positions": { "V": -2, "S": -2, "MP": -2, "C": -1, "L": 0, "KD": 1, "M": 0, "SD": -1 },
+      "source": "NATO-politik, försvarsdebatt",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q49",
+      "category": "varderingar",
+      "statement": "AI-system i offentlig sektor bör regleras strikt",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 0, "L": 0, "KD": 1, "M": 0, "SD": 0 },
+      "source": "Digitaliseringspolitik, EU AI Act",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q50",
+      "category": "klimat_energi",
+      "statement": "Gruvbrytning bör tillåtas i skyddade områden för att säkra mineraler till grön omställning",
+      "positions": { "V": -1, "S": 0, "MP": -2, "C": 1, "L": 1, "KD": 1, "M": 2, "SD": 1 },
+      "source": "Miljöpolitik, näringspolitik",
+      "compass": { "x": 1, "y": 0 }
     }
   ]
 }

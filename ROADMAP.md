@@ -11,7 +11,7 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 | Agent | Status | Kritiska problem |
 |-------|--------|------------------|
 | DataValidator | ✅ OK | Dokumentation ej synkad med data |
-| ContentResearcher | ⚠️ Förbättringar | Saknade ämnen: AI, Ukraina, NATO |
+| ContentResearcher | ✅ Fixat | ~~Saknade ämnen: AI, Ukraina, NATO~~ |
 | A11yAuditor | ✅ Fixat | ~~Kontrastproblem, fokus-indikator~~ |
 | NeutralityChecker | ✅ Fixat | ~~En formulering bör justeras~~ |
 | PerfOptimizer | ✅ Fixat | ~~Render-blockerande resurser~~ |
@@ -114,29 +114,31 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 ---
 
-## Fas 4: Innehållsförbättringar (1-2 veckor)
+## Fas 4: Innehållsförbättringar (1-2 veckor) ✅ KLAR
+
+**Implementerad:** 20 april 2026
 
 ### 4.1 Nya sakfrågor (ContentResearcher)
 
-| Ämne | Prioritet | Relevans |
-|------|-----------|----------|
-| AI och digitalisering | 🔴 Hög | Aktuell politisk fråga 2025-2026 |
-| Stöd till Ukraina | 🔴 Hög | Central utrikespolitik sedan 2022 |
-| Kärnvapen på svensk mark | 🔴 Hög | NATO-följdfråga |
-| NATO-baser i Sverige | 🟠 Medel | NATO-följdfråga |
-| Sjukförsäkring/karensdag | 🟠 Medel | Arbetsmarknadsfråga |
-| Höghastighetsträg | 🟠 Medel | Infrastrukturfråga |
-| Gruvbrytning/sällsynta mineraler | 🟠 Medel | Grön omställning |
-| Kommunal ekonomi | 🟡 Låg | Välfärdsfråga |
+| Status | Ämne | Prioritet |
+|--------|------|-----------|
+| ✅ | AI och digitalisering | 🔴 Hög |
+| ✅ | Stöd till Ukraina | 🔴 Hög |
+| ✅ | Kärnvapen på svensk mark | 🔴 Hög |
+| ✅ | NATO-baser i Sverige | 🟠 Medel |
+| ✅ | Gruvbrytning/sällsynta mineraler | 🟠 Medel |
+| ⏳ | Sjukförsäkring/karensdag | 🟠 Medel |
+| ⏳ | Höghastighetsträg | 🟠 Medel |
+| ⏳ | Kommunal ekonomi | 🟡 Låg |
 
 ### 4.2 Nya quiz-frågor
 
-| Förslag | Kategori |
-|---------|----------|
-| "Sverige bör aktivt stödja Ukraina militärt" | Försvar |
-| "AI-system i offentlig sektor bör regleras strikt" | Värderingar |
-| "Kärnvapen bör kunna placeras på svensk mark" | Försvar |
-| "Gruvbrytning bör tillåtas i skyddade områden för grön omställning" | Miljö |
+| Status | Fråga | Kategori |
+|--------|-------|----------|
+| ✅ | "Sverige bör fortsätta ge omfattande militärt stöd till Ukraina" | Försvar |
+| ✅ | "AI-system i offentlig sektor bör regleras strikt" | Värderingar |
+| ✅ | "Kärnvapen bör kunna placeras på svensk mark inom NATO-samarbetet" | Försvar |
+| ✅ | "Gruvbrytning bör tillåtas i skyddade områden för grön omställning" | Miljö |
 
 ### 4.3 Datauppdateringar
 
@@ -241,8 +243,9 @@ insats│              │              │ insats
 2. ~~**Denna vecka:** Fas 1 komplett~~ ✅
 3. ~~**Denna vecka:** Prestandaoptimering (Fas 2)~~ ✅
 4. ~~**Denna vecka:** Kodkvalitet (Fas 3) - eliminera duplicering~~ ✅
-5. **Nästa:** Fas 4 - Innehållsförbättringar (AI, Ukraina, NATO)
-6. **Före valet:** Alla nya sakfrågor tillagda
+5. ~~**Denna vecka:** Innehållsförbättringar (Fas 4) - AI, Ukraina, NATO, kärnvapen~~ ✅
+6. **Nästa:** Fas 5 - Nya funktioner (dark mode, partijämförelse)
+7. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---
 

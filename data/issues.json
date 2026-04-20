@@ -1205,6 +1205,81 @@
         "M": { "stance": "emot", "summary": "Har sänkt reduktionsplikten och bensinskatten.", "source": "https://www.moderaterna.se/var-politik/klimat" },
         "SD": { "stance": "emot", "summary": "Vill kraftigt sänka bensinskatten.", "source": "https://www.sd.se/vad-vi-vill/klimat" }
       }
+    },
+    {
+      "id": "ukraina_stod",
+      "label": "Stöd till Ukraina",
+      "category": "forsvar",
+      "positions": {
+        "V": { "stance": "delvis_for", "summary": "Stödjer humanitärt bistånd, har accepterat vapenstöd trots principiell skepsis.", "source": "https://www.vansterpartiet.se/politik/utrikespolitik" },
+        "S": { "stance": "for", "summary": "Starkt stöd för Ukraina, både militärt och humanitärt.", "source": "https://www.socialdemokraterna.se/var-politik/utrikes" },
+        "MP": { "stance": "for", "summary": "Stödjer Ukraina med vapen och humanitärt bistånd.", "source": "https://www.mp.se/politik/utrikespolitik" },
+        "C": { "stance": "for", "summary": "Starkt stöd för Ukrainas frihetskamp.", "source": "https://www.centerpartiet.se/var-politik/utrikespolitik" },
+        "L": { "stance": "for", "summary": "Driver på för ökat stöd till Ukraina.", "source": "https://www.liberalerna.se/politik/utrikespolitik" },
+        "KD": { "stance": "for", "summary": "Starkt engagemang för Ukrainas försvar.", "source": "https://www.kristdemokraterna.se/politik/utrikespolitik" },
+        "M": { "stance": "for", "summary": "Leder Sveriges största militära stödpaket till Ukraina.", "source": "https://www.moderaterna.se/var-politik/utrikespolitik" },
+        "SD": { "stance": "delvis_for", "summary": "Stödjer Ukraina men betonar försiktighet med eskalering.", "source": "https://www.sd.se/vad-vi-vill/utrikespolitik" }
+      }
+    },
+    {
+      "id": "karnvapen_svensk_mark",
+      "label": "Kärnvapen på svensk mark",
+      "category": "forsvar",
+      "positions": {
+        "V": { "stance": "emot", "summary": "Starkt emot kärnvapen på svensk mark, vill ha kärnvapenfritt Sverige.", "source": "https://www.vansterpartiet.se/politik/forsvar" },
+        "S": { "stance": "emot", "summary": "Vill inte ha kärnvapen permanent stationerade i Sverige.", "source": "https://www.socialdemokraterna.se/var-politik/forsvar" },
+        "MP": { "stance": "emot", "summary": "Starkt emot, arbetar för kärnvapennedrustning.", "source": "https://www.mp.se/politik/fred-och-sakerhet" },
+        "C": { "stance": "delvis_emot", "summary": "Skeptisk till kärnvapen på svensk mark i fredstid.", "source": "https://www.centerpartiet.se/var-politik/forsvar" },
+        "L": { "stance": "neutral", "summary": "Öppen för diskussion inom NATO:s ramar.", "source": "https://www.liberalerna.se/politik/forsvar" },
+        "KD": { "stance": "delvis_for", "summary": "Vill inte utesluta något inom NATO-samarbetet.", "source": "https://www.kristdemokraterna.se/politik/forsvar" },
+        "M": { "stance": "neutral", "summary": "Ska varken efterfråga eller utesluta, upp till NATO.", "source": "https://www.moderaterna.se/var-politik/forsvar" },
+        "SD": { "stance": "delvis_emot", "summary": "Skeptisk, vill behålla handlingsfrihet.", "source": "https://www.sd.se/vad-vi-vill/forsvar" }
+      }
+    },
+    {
+      "id": "ai_reglering",
+      "label": "AI-reglering",
+      "category": "ekonomi",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill ha strikt reglering av AI för att skydda arbetare och demokrati.", "source": "https://www.vansterpartiet.se/politik/digitalisering" },
+        "S": { "stance": "for", "summary": "Vill reglera AI för att skydda jobb och integritet.", "source": "https://www.socialdemokraterna.se/var-politik/digitalisering" },
+        "MP": { "stance": "for", "summary": "Vill ha etisk AI-utveckling med starka regelverk.", "source": "https://www.mp.se/politik/digitalisering" },
+        "C": { "stance": "neutral", "summary": "Vill balansera innovation med ansvarsfull reglering.", "source": "https://www.centerpartiet.se/var-politik/digitalisering" },
+        "L": { "stance": "neutral", "summary": "Förespråkar innovation med proportionerlig reglering.", "source": "https://www.liberalerna.se/politik/digitalisering" },
+        "KD": { "stance": "delvis_for", "summary": "Vill ha etiska riktlinjer för AI-användning.", "source": "https://www.kristdemokraterna.se/politik/digitalisering" },
+        "M": { "stance": "neutral", "summary": "Vill främja AI-innovation med balanserad reglering.", "source": "https://www.moderaterna.se/var-politik/digitalisering" },
+        "SD": { "stance": "neutral", "summary": "Avvaktande, fokuserar på nationell kontroll.", "source": "https://www.sd.se/vad-vi-vill/digitalisering" }
+      }
+    },
+    {
+      "id": "nato_baser",
+      "label": "NATO-baser i Sverige",
+      "category": "forsvar",
+      "positions": {
+        "V": { "stance": "emot", "summary": "Emot permanenta NATO-baser på svensk mark.", "source": "https://www.vansterpartiet.se/politik/forsvar" },
+        "S": { "stance": "delvis_for", "summary": "Accepterar NATO-närvaro enligt DCA-avtalet.", "source": "https://www.socialdemokraterna.se/var-politik/forsvar" },
+        "MP": { "stance": "delvis_emot", "summary": "Skeptisk till permanent utländsk militär närvaro.", "source": "https://www.mp.se/politik/forsvar" },
+        "C": { "stance": "for", "summary": "Stödjer NATO-samarbete inklusive basering.", "source": "https://www.centerpartiet.se/var-politik/forsvar" },
+        "L": { "stance": "for", "summary": "Förespråkar starkt NATO-samarbete.", "source": "https://www.liberalerna.se/politik/forsvar" },
+        "KD": { "stance": "for", "summary": "Stödjer fullt NATO-samarbete.", "source": "https://www.kristdemokraterna.se/politik/forsvar" },
+        "M": { "stance": "for", "summary": "Har förhandlat DCA-avtalet med USA.", "source": "https://www.moderaterna.se/var-politik/forsvar" },
+        "SD": { "stance": "delvis_for", "summary": "Stödjer DCA-avtalet men betonar nationell kontroll.", "source": "https://www.sd.se/vad-vi-vill/forsvar" }
+      }
+    },
+    {
+      "id": "gruvbrytning_miljo",
+      "label": "Gruvbrytning för grön omställning",
+      "category": "miljo",
+      "positions": {
+        "V": { "stance": "delvis_emot", "summary": "Skeptisk till nya gruvor, vill skydda natur och samers rättigheter.", "source": "https://www.vansterpartiet.se/politik/miljo" },
+        "S": { "stance": "delvis_for", "summary": "Vill öka mineralbrytning med höga miljökrav.", "source": "https://www.socialdemokraterna.se/var-politik/klimat" },
+        "MP": { "stance": "emot", "summary": "Emot nya gruvor i skyddade områden och renbetesland.", "source": "https://www.mp.se/politik/gruvor" },
+        "C": { "stance": "for", "summary": "Vill underlätta gruvbrytning för grön omställning.", "source": "https://www.centerpartiet.se/var-politik/naringsliv" },
+        "L": { "stance": "for", "summary": "Stödjer gruvnäring för klimatomställning.", "source": "https://www.liberalerna.se/politik/klimat" },
+        "KD": { "stance": "for", "summary": "Vill underlätta mineralutvinning.", "source": "https://www.kristdemokraterna.se/politik/energi" },
+        "M": { "stance": "for", "summary": "Driver på för fler gruvor och kortare tillståndsprocesser.", "source": "https://www.moderaterna.se/var-politik/naringsliv" },
+        "SD": { "stance": "delvis_for", "summary": "Stödjer gruvbrytning med hänsyn till lokala intressen.", "source": "https://www.sd.se/vad-vi-vill/naringsliv" }
+      }
     }
   ]
 }

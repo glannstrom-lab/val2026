@@ -77,8 +77,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ├── /data/
 │   ├── parties.json        # Grunddata om partierna (8 partier)
 │   ├── compass-positions.json  # Kompasspositioner
-│   ├── quiz-questions.json # 46 quiz-frågor (10 kategorier)
-│   ├── issues.json         # 51 sakfrågor (12 kategorier)
+│   ├── quiz-questions.json # 50 quiz-frågor (10 kategorier)
+│   ├── issues.json         # 56 sakfrågor (12 kategorier)
 │   ├── timeline.json       # 36 politiska händelser
 │   ├── quotes.json         # 56 partiuttalanden
 │   ├── polls-history.json  # Opinionshistorik sedan 2022
