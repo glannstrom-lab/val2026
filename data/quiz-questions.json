@@ -1,7 +1,7 @@
 {
   "meta": {
     "version": "1.0",
-    "totalQuestions": 24,
+    "totalQuestions": 46,
     "description": "Valkompass-frågor för riksdagsvalet 2026",
     "scale": {
       "-2": "Starkt emot",
@@ -216,6 +216,182 @@
       "positions": { "V": -2, "S": -2, "MP": -2, "C": -1, "L": -1, "KD": 0, "M": 0, "SD": 2 },
       "source": "Mediepolitik, kulturpolitiska utspel",
       "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q25",
+      "category": "sjukvard",
+      "statement": "Tandvård bör ingå i samma högkostnadsskydd som övrig sjukvård",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 1, "L": 1, "KD": 1, "M": 0, "SD": 2 },
+      "source": "Vårdpolitik, tandvårdsutspel",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q26",
+      "category": "sjukvard",
+      "statement": "Mer resurser bör satsas på psykiatrin och psykisk ohälsa",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 2, "L": 2, "KD": 2, "M": 1, "SD": 2 },
+      "source": "Vårdpolitik, psykiatriutspel",
+      "compass": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "q27",
+      "category": "skola",
+      "statement": "Religiösa friskolor bör förbjudas",
+      "positions": { "V": 2, "S": 2, "MP": 1, "C": -1, "L": 1, "KD": -2, "M": 1, "SD": 2 },
+      "source": "Tidöavtalet, skolpolitik",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q28",
+      "category": "skola",
+      "statement": "Lärarlönerna bör höjas kraftigt",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 1, "L": 2, "KD": 1, "M": 1, "SD": 2 },
+      "source": "Skolpolitik, lärarfackliga utspel",
+      "compass": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "q29",
+      "category": "klimat_energi",
+      "statement": "Bensinskatten bör sänkas",
+      "positions": { "V": -2, "S": -1, "MP": -2, "C": -1, "L": 0, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Klimatpolitik, budgetmotioner",
+      "compass": { "x": 1, "y": 1 }
+    },
+    {
+      "id": "q30",
+      "category": "klimat_energi",
+      "statement": "Kollektivtrafiken bör byggas ut kraftigt",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 1, "L": 1, "KD": 0, "M": 0, "SD": 0 },
+      "source": "Infrastrukturpolitik, klimatpolitik",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q31",
+      "category": "eu",
+      "statement": "Sverige bör införa euron som valuta",
+      "positions": { "V": -2, "S": -2, "MP": -1, "C": 0, "L": 2, "KD": -1, "M": 0, "SD": -2 },
+      "source": "EU-politik, ekonomisk politik",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q32",
+      "category": "varderingar",
+      "statement": "HBTQ-rättigheter bör stärkas ytterligare",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 2, "L": 2, "KD": 0, "M": 1, "SD": -1 },
+      "source": "Jämställdhetspolitik, HBTQ-frågor",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q33",
+      "category": "varderingar",
+      "statement": "Föräldraförsäkringen bör delas helt lika mellan föräldrarna",
+      "positions": { "V": 2, "S": 1, "MP": 2, "C": 0, "L": 1, "KD": -2, "M": -1, "SD": -2 },
+      "source": "Familjepolitik, jämställdhet",
+      "compass": { "x": -1, "y": -1 }
+    },
+    {
+      "id": "q34",
+      "category": "arbetsmarknad",
+      "statement": "Anställningsskyddet (LAS) bör försvagas för ökad flexibilitet",
+      "positions": { "V": -2, "S": -2, "MP": -1, "C": 2, "L": 2, "KD": 1, "M": 2, "SD": 0 },
+      "source": "Arbetsmarknadspolitik, LAS-reform",
+      "compass": { "x": 1, "y": 0 }
+    },
+    {
+      "id": "q35",
+      "category": "migration",
+      "statement": "Det bör ställas krav på kunskaper i svenska för medborgarskap",
+      "positions": { "V": -2, "S": 1, "MP": -2, "C": 0, "L": 2, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Tidöavtalet, medborgarskapspolitik",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q36",
+      "category": "lag_ordning",
+      "statement": "Visitationszoner bör införas i utsatta områden",
+      "positions": { "V": -2, "S": -1, "MP": -2, "C": 0, "L": 1, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Tidöavtalet, kriminalpolitik",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q37",
+      "category": "lag_ordning",
+      "statement": "Innehav av cannabis för eget bruk bör avkriminaliseras",
+      "positions": { "V": 1, "S": -2, "MP": 1, "C": 1, "L": -1, "KD": -2, "M": -2, "SD": -2 },
+      "source": "Narkotikapolitik, riksdagsdebatter",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q38",
+      "category": "ekonomi",
+      "statement": "Barnbidraget bör höjas",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 0, "L": 0, "KD": 2, "M": 0, "SD": 2 },
+      "source": "Familjepolitik, budgetmotioner",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q39",
+      "category": "forsvar",
+      "statement": "Svensk vapenexport bör begränsas kraftigt",
+      "positions": { "V": 2, "S": 0, "MP": 2, "C": 0, "L": -1, "KD": -1, "M": -1, "SD": 0 },
+      "source": "Försvarspolitik, utrikespolitik",
+      "compass": { "x": -1, "y": -1 }
+    },
+    {
+      "id": "q40",
+      "category": "varderingar",
+      "statement": "Statligt stöd till kultur bör ökas",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 1, "L": 0, "KD": 0, "M": -1, "SD": -1 },
+      "source": "Kulturpolitik, budgetmotioner",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q41",
+      "category": "eu",
+      "statement": "Sverige bör delta mer aktivt i EU:s gemensamma klimatpolitik",
+      "positions": { "V": 1, "S": 1, "MP": 2, "C": 2, "L": 2, "KD": 0, "M": 0, "SD": -2 },
+      "source": "Klimatpolitik, EU-politik",
+      "compass": { "x": 0, "y": -1 }
+    },
+    {
+      "id": "q42",
+      "category": "arbetsmarknad",
+      "statement": "Minimilöner bör lagstiftas i Sverige",
+      "positions": { "V": 1, "S": -1, "MP": 0, "C": -2, "L": -1, "KD": -1, "M": -2, "SD": 0 },
+      "source": "Arbetsmarknadspolitik, EU-direktivet om minimilöner",
+      "compass": { "x": -1, "y": 1 }
+    },
+    {
+      "id": "q43",
+      "category": "arbetsmarknad",
+      "statement": "Pensionerna för de med lägst inkomst bör höjas kraftigt",
+      "positions": { "V": 2, "S": 2, "MP": 1, "C": 1, "L": 1, "KD": 2, "M": 1, "SD": 2 },
+      "source": "Pensionspolitik, välfärd",
+      "compass": { "x": -1, "y": 0 }
+    },
+    {
+      "id": "q44",
+      "category": "migration",
+      "statement": "Sverige bör satsa mer på integration och språkutbildning",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 2, "L": 2, "KD": 1, "M": 1, "SD": 0 },
+      "source": "Integrationspolitik, partiprogram",
+      "compass": { "x": 0, "y": 0 }
+    },
+    {
+      "id": "q45",
+      "category": "forsvar",
+      "statement": "Det civila försvaret och krisberedskapen bör stärkas kraftigt",
+      "positions": { "V": 1, "S": 2, "MP": 1, "C": 2, "L": 2, "KD": 2, "M": 2, "SD": 2 },
+      "source": "Försvarspolitik, totalförsvar",
+      "compass": { "x": 0, "y": 1 }
+    },
+    {
+      "id": "q46",
+      "category": "sjukvard",
+      "statement": "Äldreomsorgen bör förstärkas med fler anställda",
+      "positions": { "V": 2, "S": 2, "MP": 2, "C": 1, "L": 1, "KD": 2, "M": 1, "SD": 2 },
+      "source": "Äldrepolitik, vårdpolitik",
+      "compass": { "x": -1, "y": 0 }
     }
   ]
 }

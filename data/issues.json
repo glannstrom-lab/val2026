@@ -451,7 +451,7 @@
     {
       "id": "forsvar",
       "label": "Försvarsanslag",
-      "category": "ovrigt",
+      "category": "forsvar",
       "positions": {
         "V": {
           "stance": "delvis_emot",
@@ -498,7 +498,7 @@
     {
       "id": "eu",
       "label": "EU:s makt",
-      "category": "ovrigt",
+      "category": "eu",
       "positions": {
         "V": {
           "stance": "emot",
@@ -545,7 +545,7 @@
     {
       "id": "public_service",
       "label": "Public service (SVT, SR)",
-      "category": "ovrigt",
+      "category": "kultur",
       "positions": {
         "V": {
           "stance": "for",
@@ -889,6 +889,321 @@
         "KD": { "stance": "emot", "summary": "Starkt emot legalisering eller avkriminalisering.", "source": "https://www.kristdemokraterna.se/politik/trygghet" },
         "M": { "stance": "emot", "summary": "Mot legalisering, vill ha hårda tag mot droger.", "source": "https://www.moderaterna.se/var-politik/kriminalitet" },
         "SD": { "stance": "emot", "summary": "Starkt emot alla former av liberalisering.", "source": "https://www.sd.se/vad-vi-vill/narkotika" }
+      }
+    },
+    {
+      "id": "varnplikt",
+      "label": "Värnplikt",
+      "category": "forsvar",
+      "positions": {
+        "V": { "stance": "delvis_emot", "summary": "Accepterar värnplikt men vill ha civiltjänst som alternativ.", "source": "https://www.vansterpartiet.se/politik/forsvar" },
+        "S": { "stance": "for", "summary": "Stödjer återaktiverad värnplikt och vill utöka den.", "source": "https://www.socialdemokraterna.se/var-politik/forsvar" },
+        "MP": { "stance": "neutral", "summary": "Accepterar värnplikt men vill ha civiltjänst.", "source": "https://www.mp.se/politik/forsvar" },
+        "C": { "stance": "for", "summary": "Stödjer värnplikt och vill utöka den.", "source": "https://www.centerpartiet.se/var-politik/forsvar" },
+        "L": { "stance": "for", "summary": "Vill utöka värnplikten kraftigt.", "source": "https://www.liberalerna.se/politik/forsvar" },
+        "KD": { "stance": "for", "summary": "Vill ha utökad värnplikt.", "source": "https://www.kristdemokraterna.se/politik/forsvar" },
+        "M": { "stance": "for", "summary": "Har återaktiverat värnplikten, vill utöka.", "source": "https://www.moderaterna.se/var-politik/forsvar" },
+        "SD": { "stance": "for", "summary": "Starkt stöd för utökad värnplikt.", "source": "https://www.sd.se/vad-vi-vill/forsvar" }
+      }
+    },
+    {
+      "id": "tandvard",
+      "label": "Tandvård i högkostnadsskydd",
+      "category": "vard",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill ha tandvård i högkostnadsskyddet som övrig vård.", "source": "https://www.vansterpartiet.se/politik/tandvard" },
+        "S": { "stance": "for", "summary": "Vill sänka kostnaderna för tandvård stegvis.", "source": "https://www.socialdemokraterna.se/var-politik/tandvard" },
+        "MP": { "stance": "for", "summary": "Vill inkludera tandvård i sjukvårdens högkostnadsskydd.", "source": "https://www.mp.se/politik/tandvard" },
+        "C": { "stance": "delvis_for", "summary": "Vill förbättra tandvårdsstödet.", "source": "https://www.centerpartiet.se/var-politik/vard" },
+        "L": { "stance": "delvis_for", "summary": "Vill stärka tandvårdsstödet för utsatta grupper.", "source": "https://www.liberalerna.se/politik/vard" },
+        "KD": { "stance": "delvis_for", "summary": "Vill förbättra tandvårdsstödet.", "source": "https://www.kristdemokraterna.se/politik/vard" },
+        "M": { "stance": "neutral", "summary": "Prioriterar andra vårdreformer.", "source": "https://www.moderaterna.se/var-politik/vard" },
+        "SD": { "stance": "for", "summary": "Vill sänka kostnaderna för tandvård.", "source": "https://www.sd.se/vad-vi-vill/tandvard" }
+      }
+    },
+    {
+      "id": "psykisk_ohalsa",
+      "label": "Psykisk ohälsa & vård",
+      "category": "vard",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill kraftigt öka resurserna till psykiatrin.", "source": "https://www.vansterpartiet.se/politik/psykisk-halsa" },
+        "S": { "stance": "for", "summary": "Vill satsa på psykisk hälsa och korta köerna.", "source": "https://www.socialdemokraterna.se/var-politik/psykisk-halsa" },
+        "MP": { "stance": "for", "summary": "Prioriterar psykisk hälsa och förebyggande insatser.", "source": "https://www.mp.se/politik/psykisk-halsa" },
+        "C": { "stance": "for", "summary": "Vill stärka psykiatrin och första linjens vård.", "source": "https://www.centerpartiet.se/var-politik/psykisk-halsa" },
+        "L": { "stance": "for", "summary": "Vill satsa mer på barn- och ungdomspsykiatrin.", "source": "https://www.liberalerna.se/politik/psykisk-halsa" },
+        "KD": { "stance": "for", "summary": "Vill stärka psykiatrin och elevhälsan.", "source": "https://www.kristdemokraterna.se/politik/psykisk-halsa" },
+        "M": { "stance": "for", "summary": "Vill korta köerna i psykiatrin.", "source": "https://www.moderaterna.se/var-politik/psykisk-halsa" },
+        "SD": { "stance": "for", "summary": "Vill satsa mer på psykiatrin.", "source": "https://www.sd.se/vad-vi-vill/psykiatri" }
+      }
+    },
+    {
+      "id": "religiosa_friskolor",
+      "label": "Religiösa friskolor",
+      "category": "skola",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill förbjuda religiösa friskolor.", "source": "https://www.vansterpartiet.se/politik/skola" },
+        "S": { "stance": "for", "summary": "Vill stoppa nya religiösa friskolor.", "source": "https://www.socialdemokraterna.se/var-politik/skola" },
+        "MP": { "stance": "delvis_for", "summary": "Skeptisk till religiösa inslag i skolan.", "source": "https://www.mp.se/politik/skola" },
+        "C": { "stance": "delvis_emot", "summary": "Vill behålla möjligheten men med skärpt tillsyn.", "source": "https://www.centerpartiet.se/var-politik/skola" },
+        "L": { "stance": "for", "summary": "Del av Tidöavtalet, stoppar nya religiösa friskolor.", "source": "https://www.liberalerna.se/politik/skola" },
+        "KD": { "stance": "emot", "summary": "Försvarar rätten till religiösa friskolor.", "source": "https://www.kristdemokraterna.se/politik/skola" },
+        "M": { "stance": "delvis_for", "summary": "Vill stoppa nya konfessionella skolor.", "source": "https://www.moderaterna.se/var-politik/skola" },
+        "SD": { "stance": "for", "summary": "Vill förbjuda religiösa friskolor, särskilt islamska.", "source": "https://www.sd.se/vad-vi-vill/skola" }
+      }
+    },
+    {
+      "id": "betyg_tidigt",
+      "label": "Betyg från årskurs 4",
+      "category": "skola",
+      "positions": {
+        "V": { "stance": "emot", "summary": "Mot tidiga betyg, vill ha formativ bedömning.", "source": "https://www.vansterpartiet.se/politik/skola" },
+        "S": { "stance": "delvis_emot", "summary": "Skeptisk till tidiga betyg.", "source": "https://www.socialdemokraterna.se/var-politik/skola" },
+        "MP": { "stance": "emot", "summary": "Mot tidiga betyg, fokuserar på lärande.", "source": "https://www.mp.se/politik/skola" },
+        "C": { "stance": "neutral", "summary": "Vill ge skolor frihet att välja.", "source": "https://www.centerpartiet.se/var-politik/skola" },
+        "L": { "stance": "for", "summary": "Vill ha betyg från årskurs 4.", "source": "https://www.liberalerna.se/politik/skola" },
+        "KD": { "stance": "for", "summary": "Vill ha tidiga betyg för tydlig uppföljning.", "source": "https://www.kristdemokraterna.se/politik/skola" },
+        "M": { "stance": "for", "summary": "Har infört betyg från årskurs 4.", "source": "https://www.moderaterna.se/var-politik/skola" },
+        "SD": { "stance": "for", "summary": "Vill ha betyg tidigt i skolan.", "source": "https://www.sd.se/vad-vi-vill/skola" }
+      }
+    },
+    {
+      "id": "euro",
+      "label": "Införande av euron",
+      "category": "eu",
+      "positions": {
+        "V": { "stance": "emot", "summary": "Starkt emot euro, vill behålla kronan.", "source": "https://www.vansterpartiet.se/politik/eu" },
+        "S": { "stance": "emot", "summary": "Vill behålla kronan, respekterar folkomröstningen.", "source": "https://www.socialdemokraterna.se/var-politik/eu" },
+        "MP": { "stance": "emot", "summary": "Vill behålla kronan.", "source": "https://www.mp.se/politik/eu" },
+        "C": { "stance": "delvis_for", "summary": "Historiskt positiv men respekterar nuvarande ordning.", "source": "https://www.centerpartiet.se/var-politik/eu" },
+        "L": { "stance": "for", "summary": "Vill på sikt införa euron.", "source": "https://www.liberalerna.se/politik/eu" },
+        "KD": { "stance": "emot", "summary": "Vill behålla kronan.", "source": "https://www.kristdemokraterna.se/politik/eu" },
+        "M": { "stance": "neutral", "summary": "Respekterar folkomröstningen, ingen prioriterad fråga.", "source": "https://www.moderaterna.se/var-politik/eu" },
+        "SD": { "stance": "emot", "summary": "Starkt emot euro, vill behålla kronan.", "source": "https://www.sd.se/vad-vi-vill/eu" }
+      }
+    },
+    {
+      "id": "vapenexport",
+      "label": "Vapenexport",
+      "category": "forsvar",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill kraftigt begränsa svensk vapenexport.", "source": "https://www.vansterpartiet.se/politik/forsvar" },
+        "S": { "stance": "neutral", "summary": "Vill ha strikt reglering men tillåter export.", "source": "https://www.socialdemokraterna.se/var-politik/forsvar" },
+        "MP": { "stance": "for", "summary": "Vill skärpa reglerna för vapenexport.", "source": "https://www.mp.se/politik/forsvar" },
+        "C": { "stance": "delvis_emot", "summary": "Accepterar reglerad vapenexport.", "source": "https://www.centerpartiet.se/var-politik/forsvar" },
+        "L": { "stance": "emot", "summary": "Stödjer svensk försvarsindustri och export.", "source": "https://www.liberalerna.se/politik/forsvar" },
+        "KD": { "stance": "emot", "summary": "Stödjer vapenexport inom reglerna.", "source": "https://www.kristdemokraterna.se/politik/forsvar" },
+        "M": { "stance": "emot", "summary": "Stödjer försvarsindustrin och export.", "source": "https://www.moderaterna.se/var-politik/forsvar" },
+        "SD": { "stance": "neutral", "summary": "Accepterar reglerad export till demokratier.", "source": "https://www.sd.se/vad-vi-vill/forsvar" }
+      }
+    },
+    {
+      "id": "tjm_ansvar",
+      "label": "Tjänstemannaansvar",
+      "category": "lag_ordning",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill återinföra stärkt tjänstemannaansvar.", "source": "https://www.vansterpartiet.se/politik/demokrati" },
+        "S": { "stance": "delvis_for", "summary": "Öppen för att se över ansvaret.", "source": "https://www.socialdemokraterna.se/var-politik/demokrati" },
+        "MP": { "stance": "delvis_for", "summary": "Positiv till stärkt ansvarsutkrävande.", "source": "https://www.mp.se/politik/demokrati" },
+        "C": { "stance": "for", "summary": "Vill stärka tjänstemannaansvaret.", "source": "https://www.centerpartiet.se/var-politik/demokrati" },
+        "L": { "stance": "for", "summary": "Stödjer stärkt tjänstemannaansvar.", "source": "https://www.liberalerna.se/politik/demokrati" },
+        "KD": { "stance": "for", "summary": "Vill återinföra tjänstemannaansvaret.", "source": "https://www.kristdemokraterna.se/politik/demokrati" },
+        "M": { "stance": "for", "summary": "Driver frågan om stärkt tjänstemannaansvar.", "source": "https://www.moderaterna.se/var-politik/demokrati" },
+        "SD": { "stance": "for", "summary": "Starkt stöd för återinfört tjänstemannaansvar.", "source": "https://www.sd.se/vad-vi-vill/demokrati" }
+      }
+    },
+    {
+      "id": "hedersbrott",
+      "label": "Hedersrelaterat våld",
+      "category": "lag_ordning",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill bekämpa hedersförtryck med resurser och stöd.", "source": "https://www.vansterpartiet.se/politik/hedersfortryck" },
+        "S": { "stance": "for", "summary": "Vill stärka insatserna mot hedersrelaterat våld.", "source": "https://www.socialdemokraterna.se/var-politik/hedersbrott" },
+        "MP": { "stance": "for", "summary": "Vill bekämpa hedersförtryck med sociala insatser.", "source": "https://www.mp.se/politik/jamstallhet" },
+        "C": { "stance": "for", "summary": "Vill ha hårdare tag mot hedersbrott.", "source": "https://www.centerpartiet.se/var-politik/hedersbrott" },
+        "L": { "stance": "for", "summary": "Driver frågan hårt, vill ha skärpta straff.", "source": "https://www.liberalerna.se/politik/hedersbrott" },
+        "KD": { "stance": "for", "summary": "Vill ha skärpta straff och stärkt skydd.", "source": "https://www.kristdemokraterna.se/politik/hedersbrott" },
+        "M": { "stance": "for", "summary": "Har skärpt lagstiftningen mot hedersbrott.", "source": "https://www.moderaterna.se/var-politik/hedersbrott" },
+        "SD": { "stance": "for", "summary": "Vill ha hårda straff och utvisning.", "source": "https://www.sd.se/vad-vi-vill/hedersbrott" }
+      }
+    },
+    {
+      "id": "strandskydd",
+      "label": "Strandskydd",
+      "category": "miljo",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill behålla starkt strandskydd.", "source": "https://www.vansterpartiet.se/politik/miljo" },
+        "S": { "stance": "delvis_for", "summary": "Vill behålla grundskyddet men med undantag.", "source": "https://www.socialdemokraterna.se/var-politik/miljo" },
+        "MP": { "stance": "for", "summary": "Försvarar strandskyddet starkt.", "source": "https://www.mp.se/politik/strandskydd" },
+        "C": { "stance": "emot", "summary": "Vill lätta på strandskyddet på landsbygden.", "source": "https://www.centerpartiet.se/var-politik/strandskydd" },
+        "L": { "stance": "delvis_emot", "summary": "Vill förenkla reglerna.", "source": "https://www.liberalerna.se/politik/bostad" },
+        "KD": { "stance": "emot", "summary": "Vill lätta på strandskyddet.", "source": "https://www.kristdemokraterna.se/politik/bostad" },
+        "M": { "stance": "emot", "summary": "Har lättat på strandskyddet i landsbygd.", "source": "https://www.moderaterna.se/var-politik/bostad" },
+        "SD": { "stance": "delvis_emot", "summary": "Vill lätta på reglerna på landsbygden.", "source": "https://www.sd.se/vad-vi-vill/miljo" }
+      }
+    },
+    {
+      "id": "hbtq",
+      "label": "HBTQ-rättigheter",
+      "category": "familj",
+      "positions": {
+        "V": { "stance": "for", "summary": "Starkt stöd för HBTQ-rättigheter och mot diskriminering.", "source": "https://www.vansterpartiet.se/politik/hbtq" },
+        "S": { "stance": "for", "summary": "Försvarar HBTQ-rättigheter och vill stärka dem.", "source": "https://www.socialdemokraterna.se/var-politik/hbtq" },
+        "MP": { "stance": "for", "summary": "Stark försvarare av HBTQ-rättigheter.", "source": "https://www.mp.se/politik/hbtq" },
+        "C": { "stance": "for", "summary": "Liberalt stöd för HBTQ-rättigheter.", "source": "https://www.centerpartiet.se/var-politik/hbtq" },
+        "L": { "stance": "for", "summary": "Historiskt drivande i HBTQ-frågor.", "source": "https://www.liberalerna.se/politik/hbtq" },
+        "KD": { "stance": "neutral", "summary": "Accepterar nuvarande lagstiftning.", "source": "https://www.kristdemokraterna.se/politik/familj" },
+        "M": { "stance": "delvis_for", "summary": "Stödjer grundläggande rättigheter.", "source": "https://www.moderaterna.se/var-politik/hbtq" },
+        "SD": { "stance": "delvis_emot", "summary": "Accepterar lagstiftning men skeptisk till utvidgning.", "source": "https://www.sd.se/vad-vi-vill/familj" }
+      }
+    },
+    {
+      "id": "barnbidrag",
+      "label": "Barnbidrag",
+      "category": "familj",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill höja barnbidraget kraftigt.", "source": "https://www.vansterpartiet.se/politik/familj" },
+        "S": { "stance": "for", "summary": "Vill höja barnbidraget.", "source": "https://www.socialdemokraterna.se/var-politik/familj" },
+        "MP": { "stance": "for", "summary": "Vill höja barnbidraget.", "source": "https://www.mp.se/politik/familj" },
+        "C": { "stance": "neutral", "summary": "Vill behålla nuvarande nivå.", "source": "https://www.centerpartiet.se/var-politik/familj" },
+        "L": { "stance": "neutral", "summary": "Prioriterar andra familjereformer.", "source": "https://www.liberalerna.se/politik/familj" },
+        "KD": { "stance": "for", "summary": "Vill höja barnbidraget och flerbarnstillägg.", "source": "https://www.kristdemokraterna.se/politik/familj" },
+        "M": { "stance": "neutral", "summary": "Prioriterar jobbskatteavdrag före bidrag.", "source": "https://www.moderaterna.se/var-politik/familj" },
+        "SD": { "stance": "for", "summary": "Vill höja barnbidraget för svenska medborgare.", "source": "https://www.sd.se/vad-vi-vill/familj" }
+      }
+    },
+    {
+      "id": "rot_rut",
+      "label": "RUT- och ROT-avdrag",
+      "category": "ekonomi",
+      "positions": {
+        "V": { "stance": "emot", "summary": "Vill avskaffa eller kraftigt begränsa avdragen.", "source": "https://www.vansterpartiet.se/politik/skatter" },
+        "S": { "stance": "delvis_emot", "summary": "Vill begränsa avdragen, särskilt för höginkomsttagare.", "source": "https://www.socialdemokraterna.se/var-politik/skatter" },
+        "MP": { "stance": "neutral", "summary": "Vill rikta om till gröna tjänster.", "source": "https://www.mp.se/politik/ekonomi" },
+        "C": { "stance": "for", "summary": "Vill behålla och utöka avdragen.", "source": "https://www.centerpartiet.se/var-politik/skatter" },
+        "L": { "stance": "for", "summary": "Vill utöka RUT och ROT.", "source": "https://www.liberalerna.se/politik/skatter" },
+        "KD": { "stance": "for", "summary": "Vill utöka avdragen.", "source": "https://www.kristdemokraterna.se/politik/skatter" },
+        "M": { "stance": "for", "summary": "Vill behålla och utöka avdragen.", "source": "https://www.moderaterna.se/var-politik/skatter" },
+        "SD": { "stance": "delvis_for", "summary": "Vill behålla avdragen.", "source": "https://www.sd.se/vad-vi-vill/skatter" }
+      }
+    },
+    {
+      "id": "formugenhetsskatt",
+      "label": "Förmögenhetsskatt",
+      "category": "ekonomi",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill återinföra förmögenhetsskatt.", "source": "https://www.vansterpartiet.se/politik/skatter" },
+        "S": { "stance": "delvis_for", "summary": "Öppen för att se över kapitalbeskattningen.", "source": "https://www.socialdemokraterna.se/var-politik/skatter" },
+        "MP": { "stance": "delvis_for", "summary": "Vill ha rättvisare beskattning av förmögenheter.", "source": "https://www.mp.se/politik/ekonomi" },
+        "C": { "stance": "emot", "summary": "Starkt emot förmögenhetsskatt.", "source": "https://www.centerpartiet.se/var-politik/skatter" },
+        "L": { "stance": "emot", "summary": "Emot återinförd förmögenhetsskatt.", "source": "https://www.liberalerna.se/politik/skatter" },
+        "KD": { "stance": "emot", "summary": "Starkt emot förmögenhetsskatt.", "source": "https://www.kristdemokraterna.se/politik/skatter" },
+        "M": { "stance": "emot", "summary": "Avskaffade skatten, vill inte återinföra.", "source": "https://www.moderaterna.se/var-politik/skatter" },
+        "SD": { "stance": "emot", "summary": "Emot förmögenhetsskatt.", "source": "https://www.sd.se/vad-vi-vill/skatter" }
+      }
+    },
+    {
+      "id": "jamstalldhet_lon",
+      "label": "Jämställda löner",
+      "category": "familj",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill lagstifta om lika lön för lika arbete.", "source": "https://www.vansterpartiet.se/politik/jamstallhet" },
+        "S": { "stance": "for", "summary": "Driver frågan om jämställda löner.", "source": "https://www.socialdemokraterna.se/var-politik/jamstallhet" },
+        "MP": { "stance": "for", "summary": "Vill stänga lönegapet mellan könen.", "source": "https://www.mp.se/politik/jamstallhet" },
+        "C": { "stance": "delvis_for", "summary": "Stödjer jämställda löner men via marknad.", "source": "https://www.centerpartiet.se/var-politik/jamstallhet" },
+        "L": { "stance": "delvis_for", "summary": "Vill minska lönegapet.", "source": "https://www.liberalerna.se/politik/jamstallhet" },
+        "KD": { "stance": "neutral", "summary": "Vill ha jämställdhet utan kvotering.", "source": "https://www.kristdemokraterna.se/politik/jamstallhet" },
+        "M": { "stance": "neutral", "summary": "Stödjer principen men mot lagstiftning.", "source": "https://www.moderaterna.se/var-politik/jamstallhet" },
+        "SD": { "stance": "neutral", "summary": "Stödjer lika lön men mot kvotering.", "source": "https://www.sd.se/vad-vi-vill/jamstallhet" }
+      }
+    },
+    {
+      "id": "kollektivtrafik",
+      "label": "Kollektivtrafik",
+      "category": "energi",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill kraftigt bygga ut och sänka priserna.", "source": "https://www.vansterpartiet.se/politik/kollektivtrafik" },
+        "S": { "stance": "for", "summary": "Vill satsa på kollektivtrafik och järnväg.", "source": "https://www.socialdemokraterna.se/var-politik/infrastruktur" },
+        "MP": { "stance": "for", "summary": "Kärnfråga. Vill bygga ut kraftigt.", "source": "https://www.mp.se/politik/kollektivtrafik" },
+        "C": { "stance": "delvis_for", "summary": "Vill ha bättre kollektivtrafik på landsbygden.", "source": "https://www.centerpartiet.se/var-politik/infrastruktur" },
+        "L": { "stance": "neutral", "summary": "Vill ha effektiv kollektivtrafik.", "source": "https://www.liberalerna.se/politik/infrastruktur" },
+        "KD": { "stance": "neutral", "summary": "Fokuserar på valfrihet i resande.", "source": "https://www.kristdemokraterna.se/politik/infrastruktur" },
+        "M": { "stance": "neutral", "summary": "Vill ha effektiv kollektivtrafik men prioriterar vägar.", "source": "https://www.moderaterna.se/var-politik/infrastruktur" },
+        "SD": { "stance": "neutral", "summary": "Vill ha bättre kollektivtrafik men prioriterar vägar.", "source": "https://www.sd.se/vad-vi-vill/infrastruktur" }
+      }
+    },
+    {
+      "id": "kulturstod",
+      "label": "Kulturstöd",
+      "category": "kultur",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill kraftigt öka kulturanslagen.", "source": "https://www.vansterpartiet.se/politik/kultur" },
+        "S": { "stance": "for", "summary": "Vill stärka kulturen och konstnärers villkor.", "source": "https://www.socialdemokraterna.se/var-politik/kultur" },
+        "MP": { "stance": "for", "summary": "Vill satsa på kultur i hela landet.", "source": "https://www.mp.se/politik/kultur" },
+        "C": { "stance": "delvis_for", "summary": "Vill ha kultur på landsbygden.", "source": "https://www.centerpartiet.se/var-politik/kultur" },
+        "L": { "stance": "neutral", "summary": "Vill ha mångfald i kulturlivet.", "source": "https://www.liberalerna.se/politik/kultur" },
+        "KD": { "stance": "neutral", "summary": "Stödjer kulturens roll men kritisk till viss konst.", "source": "https://www.kristdemokraterna.se/politik/kultur" },
+        "M": { "stance": "delvis_emot", "summary": "Vill minska statens kulturstyrning.", "source": "https://www.moderaterna.se/var-politik/kultur" },
+        "SD": { "stance": "delvis_emot", "summary": "Vill rikta om stöd till svenskt kulturarv.", "source": "https://www.sd.se/vad-vi-vill/kultur" }
+      }
+    },
+    {
+      "id": "vaglang",
+      "label": "Vägar vs järnväg",
+      "category": "energi",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill prioritera järnväg före vägar.", "source": "https://www.vansterpartiet.se/politik/infrastruktur" },
+        "S": { "stance": "delvis_for", "summary": "Vill satsa på järnväg men också underhålla vägar.", "source": "https://www.socialdemokraterna.se/var-politik/infrastruktur" },
+        "MP": { "stance": "for", "summary": "Vill prioritera tåg och cykla före bil.", "source": "https://www.mp.se/politik/infrastruktur" },
+        "C": { "stance": "neutral", "summary": "Vill ha både vägar och järnväg.", "source": "https://www.centerpartiet.se/var-politik/infrastruktur" },
+        "L": { "stance": "neutral", "summary": "Vill ha balans mellan trafikslag.", "source": "https://www.liberalerna.se/politik/infrastruktur" },
+        "KD": { "stance": "delvis_emot", "summary": "Vill satsa mer på vägar.", "source": "https://www.kristdemokraterna.se/politik/infrastruktur" },
+        "M": { "stance": "emot", "summary": "Prioriterar vägar och stoppar höghastighetståg.", "source": "https://www.moderaterna.se/var-politik/infrastruktur" },
+        "SD": { "stance": "emot", "summary": "Vill prioritera vägar före järnväg.", "source": "https://www.sd.se/vad-vi-vill/infrastruktur" }
+      }
+    },
+    {
+      "id": "segregation",
+      "label": "Segregation",
+      "category": "migration",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill bryta segregation genom investeringar i utsatta områden.", "source": "https://www.vansterpartiet.se/politik/integration" },
+        "S": { "stance": "for", "summary": "Prioriterar att bryta segregationen.", "source": "https://www.socialdemokraterna.se/var-politik/integration" },
+        "MP": { "stance": "for", "summary": "Vill satsa på bostäder och jobb i utsatta områden.", "source": "https://www.mp.se/politik/integration" },
+        "C": { "stance": "delvis_for", "summary": "Vill bryta segregation genom jobb och utbildning.", "source": "https://www.centerpartiet.se/var-politik/integration" },
+        "L": { "stance": "for", "summary": "Kärnfråga. Vill bryta utanförskap.", "source": "https://www.liberalerna.se/politik/integration" },
+        "KD": { "stance": "for", "summary": "Vill bryta segregation och utanförskap.", "source": "https://www.kristdemokraterna.se/politik/integration" },
+        "M": { "stance": "for", "summary": "Vill bryta segregation genom krav och insatser.", "source": "https://www.moderaterna.se/var-politik/integration" },
+        "SD": { "stance": "for", "summary": "Vill bryta segregation genom minskad invandring.", "source": "https://www.sd.se/vad-vi-vill/integration" }
+      }
+    },
+    {
+      "id": "visitationszoner",
+      "label": "Visitationszoner",
+      "category": "lag_ordning",
+      "positions": {
+        "V": { "stance": "emot", "summary": "Starkt emot, ser det som kränkande för oskyldiga.", "source": "https://www.vansterpartiet.se/politik/brott-och-straff" },
+        "S": { "stance": "delvis_emot", "summary": "Skeptisk men öppen för utvärdering.", "source": "https://www.socialdemokraterna.se/var-politik/trygghet" },
+        "MP": { "stance": "emot", "summary": "Kritisk till visitationszoner.", "source": "https://www.mp.se/politik/rattsvasen" },
+        "C": { "stance": "neutral", "summary": "Avvaktande, vill se resultat.", "source": "https://www.centerpartiet.se/var-politik/trygghet" },
+        "L": { "stance": "for", "summary": "Del av Tidöavtalet, stödjer förslaget.", "source": "https://www.liberalerna.se/politik/kriminalitet" },
+        "KD": { "stance": "for", "summary": "Stödjer visitationszoner.", "source": "https://www.kristdemokraterna.se/politik/trygghet" },
+        "M": { "stance": "for", "summary": "Driver frågan, har infört säkerhetszoner.", "source": "https://www.moderaterna.se/var-politik/kriminalitet" },
+        "SD": { "stance": "for", "summary": "Starkt stöd för visitationszoner.", "source": "https://www.sd.se/vad-vi-vill/lag-och-ordning" }
+      }
+    },
+    {
+      "id": "bensinskatt",
+      "label": "Bensin- och dieselskatt",
+      "category": "energi",
+      "positions": {
+        "V": { "stance": "for", "summary": "Vill behålla miljöskatter men kompensera landsbygd.", "source": "https://www.vansterpartiet.se/politik/klimat" },
+        "S": { "stance": "neutral", "summary": "Vill ha balans mellan klimat och hushållsekonomi.", "source": "https://www.socialdemokraterna.se/var-politik/klimat" },
+        "MP": { "stance": "for", "summary": "Vill ha höga miljöskatter för klimatomställning.", "source": "https://www.mp.se/politik/klimat" },
+        "C": { "stance": "delvis_for", "summary": "Vill ha miljöskatter men kompensera landsbygd.", "source": "https://www.centerpartiet.se/var-politik/klimat" },
+        "L": { "stance": "neutral", "summary": "Accepterar miljöskatter men måttliga.", "source": "https://www.liberalerna.se/politik/klimat" },
+        "KD": { "stance": "emot", "summary": "Vill sänka drivmedelsskatterna.", "source": "https://www.kristdemokraterna.se/politik/klimat" },
+        "M": { "stance": "emot", "summary": "Har sänkt reduktionsplikten och bensinskatten.", "source": "https://www.moderaterna.se/var-politik/klimat" },
+        "SD": { "stance": "emot", "summary": "Vill kraftigt sänka bensinskatten.", "source": "https://www.sd.se/vad-vi-vill/klimat" }
       }
     }
   ]

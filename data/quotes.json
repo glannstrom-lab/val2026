@@ -171,6 +171,230 @@
       "party": "V",
       "source": "Vänsterpartiets bostadspolitik",
       "category": "bostad"
+    },
+    {
+      "id": "q25",
+      "text": "NATO-medlemskapet stärker Sveriges säkerhet. Vi står aldrig ensamma igen.",
+      "party": "M",
+      "source": "Moderaternas försvarspolitik",
+      "category": "försvar"
+    },
+    {
+      "id": "q26",
+      "text": "Sverige ska bygga minst tio nya kärnkraftsreaktorer för att säkra elförsörjningen.",
+      "party": "M",
+      "source": "Moderaternas energipolitik 2024",
+      "category": "energi"
+    },
+    {
+      "id": "q27",
+      "text": "Tryggheten börjar med ett jobb. Arbete ger frihet och självständighet.",
+      "party": "S",
+      "source": "Socialdemokraternas arbetsmarknadspolitik",
+      "category": "arbetsmarknad"
+    },
+    {
+      "id": "q28",
+      "text": "Vi byggde folkhemmet en gång. Nu ska vi rusta det för framtiden.",
+      "party": "S",
+      "source": "Socialdemokraternas valmanifest",
+      "category": "välfärd"
+    },
+    {
+      "id": "q29",
+      "text": "Invandringen har varit för stor under för lång tid. Nu måste Sverige få en paus.",
+      "party": "SD",
+      "source": "Sverigedemokraternas migrationspolitik",
+      "category": "migration"
+    },
+    {
+      "id": "q30",
+      "text": "Pensionärerna har byggt Sverige. De förtjänar en värdig ålderdom utan fattigdom.",
+      "party": "SD",
+      "source": "Sverigedemokraternas pensionspolitik",
+      "category": "pension"
+    },
+    {
+      "id": "q31",
+      "text": "Vi har inte råd att vänta med klimatomställningen. Varje ton koldioxid räknas.",
+      "party": "MP",
+      "source": "Miljöpartiets klimatprogram 2025",
+      "category": "klimat"
+    },
+    {
+      "id": "q32",
+      "text": "Naturen har ett egenvärde. Vi ska lämna över en frisk planet till nästa generation.",
+      "party": "MP",
+      "source": "Miljöpartiets miljöpolitik",
+      "category": "miljö"
+    },
+    {
+      "id": "q33",
+      "text": "Regelkrångel kväver företagande. Vi vill halvera företagens administrativa börda.",
+      "party": "C",
+      "source": "Centerpartiets företagarpolitik",
+      "category": "ekonomi"
+    },
+    {
+      "id": "q34",
+      "text": "Gröna näringar är framtiden. Skogen och jordbruket skapar jobb i hela landet.",
+      "party": "C",
+      "source": "Centerpartiets näringspolitik",
+      "category": "landsbygd"
+    },
+    {
+      "id": "q35",
+      "text": "Staten ska inte lägga sig i hur familjer organiserar sin vardag. Valfriheten är helig.",
+      "party": "KD",
+      "source": "Kristdemokraternas familjepolitik",
+      "category": "familj"
+    },
+    {
+      "id": "q36",
+      "text": "Civilsamhället och ideella krafter är viktigare än politiska program.",
+      "party": "KD",
+      "source": "Kristdemokraternas samhällsprogram",
+      "category": "civilsamhälle"
+    },
+    {
+      "id": "q37",
+      "text": "Språket är nyckeln till integration. Utan svenska står man utanför.",
+      "party": "L",
+      "source": "Liberalernas integrationspolitik",
+      "category": "integration"
+    },
+    {
+      "id": "q38",
+      "text": "Rättsstaten måste fungera. Alla ska vara lika inför lagen, utan undantag.",
+      "party": "L",
+      "source": "Liberalernas rättspolitik",
+      "category": "rättsväsende"
+    },
+    {
+      "id": "q39",
+      "text": "Feminism handlar om frihet – att slippa bli bedömd efter kön.",
+      "party": "V",
+      "source": "Vänsterpartiets jämställdhetspolitik",
+      "category": "jämställdhet"
+    },
+    {
+      "id": "q40",
+      "text": "Vården ska vara offentligt finansierad och drivas utan vinstintresse.",
+      "party": "V",
+      "source": "Vänsterpartiets vårdpolitik",
+      "category": "vård"
+    },
+    {
+      "id": "q41",
+      "text": "Sänkta skatter på arbete gör att fler kan leva på sin lön.",
+      "party": "M",
+      "source": "Moderaternas skattepolitik",
+      "category": "ekonomi"
+    },
+    {
+      "id": "q42",
+      "text": "Valfrihet i välfärden ger bättre kvalitet och makt till medborgarna.",
+      "party": "M",
+      "source": "Moderaternas välfärdspolitik",
+      "category": "välfärd"
+    },
+    {
+      "id": "q43",
+      "text": "Facket och arbetsgivarna ska komma överens, inte politikerna.",
+      "party": "S",
+      "source": "Socialdemokraternas arbetsmarknadspolitik",
+      "category": "arbetsmarknad"
+    },
+    {
+      "id": "q44",
+      "text": "Den som flyr krig och förföljelse ska få skydd, men inte ekonomiska migranter.",
+      "party": "S",
+      "source": "Socialdemokraternas migrationspolitik",
+      "category": "migration"
+    },
+    {
+      "id": "q45",
+      "text": "Utvisning av kriminella utlänningar ska verkställas, inga undantag.",
+      "party": "SD",
+      "source": "Sverigedemokraternas kriminalpolitik",
+      "category": "kriminalitet"
+    },
+    {
+      "id": "q46",
+      "text": "Public service har blivit för stort och för vänstervridet. Det måste reformeras.",
+      "party": "SD",
+      "source": "Sverigedemokraternas mediepolitik",
+      "category": "medier"
+    },
+    {
+      "id": "q47",
+      "text": "Tågen ska gå i tid och biljetterna vara billiga. Satsa på järnvägen!",
+      "party": "MP",
+      "source": "Miljöpartiets transportpolitik",
+      "category": "infrastruktur"
+    },
+    {
+      "id": "q48",
+      "text": "Djurens välfärd är inte förhandlingsbar. Djurplågeri ska straffas hårt.",
+      "party": "MP",
+      "source": "Miljöpartiets djurpolitik",
+      "category": "djurrätt"
+    },
+    {
+      "id": "q49",
+      "text": "Bredband och mobiltäckning i hela landet är lika viktigt som vägar var förr.",
+      "party": "C",
+      "source": "Centerpartiets digitaliseringspolitik",
+      "category": "digitalisering"
+    },
+    {
+      "id": "q50",
+      "text": "Äganderätten är fundamental. Staten ska inte kunna ta människors mark.",
+      "party": "C",
+      "source": "Centerpartiets äganderättspolitik",
+      "category": "äganderätt"
+    },
+    {
+      "id": "q51",
+      "text": "Barnen ska sättas först i vårdnadstvister. Barnets bästa är lag.",
+      "party": "KD",
+      "source": "Kristdemokraternas barnpolitik",
+      "category": "familj"
+    },
+    {
+      "id": "q52",
+      "text": "Psykisk ohälsa bland unga är en kris. Vi behöver fler kuratorer i skolorna.",
+      "party": "KD",
+      "source": "Kristdemokraternas ungdomspolitik",
+      "category": "psykisk hälsa"
+    },
+    {
+      "id": "q53",
+      "text": "Hedersförtryck hör inte hemma i ett fritt land. Alla ska få välja sitt eget liv.",
+      "party": "L",
+      "source": "Liberalernas jämställdhetspolitik",
+      "category": "hedersbrott"
+    },
+    {
+      "id": "q54",
+      "text": "Läxhjälp och lovskola ska finnas för alla elever som behöver det.",
+      "party": "L",
+      "source": "Liberalernas utbildningspolitik",
+      "category": "skola"
+    },
+    {
+      "id": "q55",
+      "text": "Klimatomställningen måste vara rättvis. De rika ska betala mer.",
+      "party": "V",
+      "source": "Vänsterpartiets klimatpolitik",
+      "category": "klimat"
+    },
+    {
+      "id": "q56",
+      "text": "Sex timmars arbetsdag skulle ge människor mer tid för livet.",
+      "party": "V",
+      "source": "Vänsterpartiets arbetsmarknadspolitik",
+      "category": "arbetsmarknad"
     }
   ]
 }
