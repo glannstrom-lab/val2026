@@ -7228,3 +7228,298 @@ section {
     cursor: default;
   }
 }
+
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  /* Reset colors for print */
+  :root {
+    --color-bg: #ffffff;
+    --color-surface: #ffffff;
+    --color-text: #000000;
+    --color-text-muted: #333333;
+    --color-text-subtle: #555555;
+    --color-border: #cccccc;
+    --color-border-subtle: #dddddd;
+  }
+
+  /* Base print styles */
+  *,
+  *::before,
+  *::after {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html {
+    font-size: 12pt;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    line-height: 1.5;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Hide non-essential elements */
+  .site-header,
+  .mobile-nav,
+  .site-footer,
+  .skip-link,
+  .theme-toggle,
+  .nav-toggle,
+  .btn,
+  button,
+  .quiz-nav,
+  .quiz-swipe-hint,
+  .quiz-swipe-indicator,
+  .quiz-start-btn,
+  .quiz-resume-buttons,
+  .coalition-controls,
+  .coalition-party-btn,
+  .seatcalc-preset-buttons,
+  .seatcalc-slider,
+  .seatcalc-normalize-btn,
+  .debates-filter,
+  .debate-card-link,
+  .partycompare-party-btn,
+  .partycompare-change-btn,
+  .timeline-filters,
+  .compare-filters,
+  .pollgraph-legend-toggle,
+  .issue-expand-btn,
+  .back-to-top,
+  [aria-hidden="true"] {
+    display: none !important;
+  }
+
+  /* Page settings */
+  @page {
+    margin: 2cm;
+    size: A4;
+  }
+
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #000 !important;
+    page-break-after: avoid;
+    page-break-inside: avoid;
+    margin-top: 1em;
+  }
+
+  h1 {
+    font-size: 24pt;
+    border-bottom: 2pt solid #000;
+    padding-bottom: 0.5em;
+  }
+
+  h2 {
+    font-size: 18pt;
+    border-bottom: 1pt solid #666;
+    padding-bottom: 0.3em;
+  }
+
+  h3 {
+    font-size: 14pt;
+  }
+
+  /* Paragraphs and text */
+  p, li, td, th {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* Links - show URL */
+  a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666 !important;
+  }
+
+  a[href^="#"]::after,
+  a[href^="javascript"]::after,
+  .site-logo::after,
+  .footer-logo::after {
+    content: none;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+  }
+
+  /* Tables */
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1pt solid #ccc;
+    padding: 0.5em;
+    text-align: left;
+  }
+
+  th {
+    background: #f0f0f0 !important;
+    font-weight: bold;
+  }
+
+  /* Cards and containers */
+  .container {
+    max-width: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .section {
+    padding: 1em 0;
+    page-break-inside: avoid;
+  }
+
+  /* Party cards */
+  .party-card,
+  .overview-card,
+  .debate-card,
+  .issue-card,
+  .partycompare-issue {
+    border: 1pt solid #ccc !important;
+    padding: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  /* Party logos */
+  .party-card img,
+  .partycompare-party-logo,
+  .seatcalc-party-logo,
+  .debate-card-party {
+    width: 24px !important;
+    height: 24px !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Preserve party colors for logos */
+  .party-card-header,
+  .debate-card-party,
+  .partycompare-stat {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  /* Quiz results */
+  .quiz-results {
+    page-break-before: always;
+  }
+
+  .quiz-results-grid {
+    display: block;
+  }
+
+  .quiz-result-card {
+    border: 1pt solid #ccc !important;
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    page-break-inside: avoid;
+  }
+
+  .quiz-match-bar {
+    background: #f0f0f0 !important;
+    border: 1pt solid #ccc;
+  }
+
+  /* Compass */
+  .compass-container {
+    max-width: 400px;
+    margin: 0 auto;
+    page-break-inside: avoid;
+  }
+
+  /* Timeline */
+  .timeline-event {
+    border-left: 2pt solid #ccc !important;
+    padding-left: 1em;
+    margin-bottom: 1em;
+    page-break-inside: avoid;
+  }
+
+  /* Budget comparison */
+  .budget-comparison {
+    page-break-inside: avoid;
+  }
+
+  /* Hemicycle - hide on print */
+  .seatcalc-hemicycle-container {
+    display: none;
+  }
+
+  /* Show seat breakdown instead */
+  .seatcalc-breakdown {
+    border: 1pt solid #ccc !important;
+  }
+
+  /* Poll graph */
+  .pollgraph-container canvas,
+  .pollgraph-container svg {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  /* Grids - linearize for print */
+  .overview-grid,
+  .overview-grid-3,
+  .parties-grid,
+  .debates-grid,
+  .partycompare-select-grid,
+  .seatcalc-layout {
+    display: block;
+  }
+
+  /* Footer print info */
+  .main-content::after {
+    content: "Utskrivet från Val 2026 (val2026.se) - " attr(data-print-date);
+    display: block;
+    margin-top: 2em;
+    padding-top: 1em;
+    border-top: 1pt solid #ccc;
+    font-size: 10pt;
+    color: #666 !important;
+    text-align: center;
+  }
+
+  /* Hide interactive charts on print, show data tables if available */
+  .chart-container {
+    page-break-inside: avoid;
+  }
+
+  /* Accessibility - ensure contrast */
+  .text-muted,
+  .text-subtle,
+  small {
+    color: #333 !important;
+  }
+
+  /* Print header */
+  .section-header {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+
+  .section-title {
+    margin-bottom: 0.5em;
+  }
+
+  .section-subtitle {
+    font-size: 11pt;
+    color: #333 !important;
+  }
+}

@@ -173,10 +173,10 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 ### 5.3 Prioritet Låg
 
-| Funktion | Beskrivning | Komplexitet |
-|----------|-------------|-------------|
-| **Print-stylesheet** | Optimera för utskrift | Låg |
-| **Kandidatdatabas** | Sökbar lista över kandidater | Hög |
+| Status | Funktion | Beskrivning | Komplexitet |
+|--------|----------|-------------|-------------|
+| ✅ | **Print-stylesheet** | Optimera för utskrift med A4-format | Låg |
+| ⏳ | **Kandidatdatabas** | Sökbar lista över kandidater | Hög |
 
 ---
 
@@ -250,8 +250,9 @@ insats│              │              │ insats
 7. ~~**Fas 5.2:** Mandatkalkylator~~ ✅
 8. ~~**Fas 5.2:** Debattkalender~~ ✅
 9. ~~**Fas 5.2:** Swipe-gester i quiz~~ ✅
-10. **Nästa:** Fas 5.3 - Print-stylesheet, kandidatdatabas (låg prioritet)
-11. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
+10. ~~**Fas 5.3:** Print-stylesheet~~ ✅
+11. **Nästa:** Fas 5.3 - Kandidatdatabas (låg prioritet, hög komplexitet)
+12. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---
 
