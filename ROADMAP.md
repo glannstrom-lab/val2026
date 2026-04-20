@@ -167,7 +167,7 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 | Status | Funktion | Beskrivning | Komplexitet |
 |--------|----------|-------------|-------------|
-| ⏳ | **Debattkalender** | Lista kommande valdebatter | Medel |
+| ✅ | **Debattkalender** | Lista kommande valdebatter med countdown | Medel |
 | ✅ | **Mandatkalkylator** | Simulera valresultat med Sainte-Laguë-metoden | Hög |
 | ⏳ | **Swipe-gester i quiz** | Bättre mobil-UX | Medel |
 
@@ -248,8 +248,9 @@ insats│              │              │ insats
 5. ~~**Denna vecka:** Innehållsförbättringar (Fas 4) - AI, Ukraina, NATO, kärnvapen~~ ✅
 6. ~~**Denna vecka:** Nya funktioner (Fas 5) - dark mode, quiz-progress, partijämförelse~~ ✅
 7. ~~**Fas 5.2:** Mandatkalkylator~~ ✅
-8. **Nästa:** Fas 5.2 - Debattkalender, swipe-gester (medel prioritet)
-9. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
+8. ~~**Fas 5.2:** Debattkalender~~ ✅
+9. **Nästa:** Fas 5.2 - Swipe-gester i quiz, Fas 5.3 - Print-stylesheet
+10. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---
 

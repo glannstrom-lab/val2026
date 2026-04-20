@@ -32,7 +32,8 @@
       items: [
         { href: 'opinion.html', title: 'Opinionsläget', desc: 'Aktuella opinionsmätningar' },
         { href: 'tidslinje.html', title: 'Tidslinje', desc: 'Händelser från 2022 till valet' },
-        { href: 'historik.html', title: 'Valhistorik', desc: 'Tidigare val och trender' }
+        { href: 'historik.html', title: 'Valhistorik', desc: 'Tidigare val och trender' },
+        { href: 'debatter.html', title: 'Debattkalender', desc: 'Kommande valdebatter' }
       ]
     }
   };

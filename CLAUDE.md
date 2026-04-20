@@ -23,7 +23,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ## 2. Tech stack
 
 - **Vanilla HTML, CSS, JavaScript** — inga ramverk, ingen build-process
-- **Multi-page struktur** — 16 separata HTML-sidor med delad header/footer-komponent
+- **Multi-page struktur** — 17 separata HTML-sidor med delad header/footer-komponent
 - **Data i JSON** — all partidata i `/data/`-mappen, laddas via `fetch()`
 - **Ingen backend** — allt körs i webbläsaren
 - **PWA-stöd** — service worker för offline-läsning
@@ -50,6 +50,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ├── rostningar.html         # Riksdagsröstningar
 ├── jamfor.html             # Partijämförelse (två partier sida vid sida)
 ├── mandat.html             # Mandatkalkylator (simulera valresultat)
+├── debatter.html           # Debattkalender (kommande valdebatter)
 ├── om.html                 # Om sidan, källor, metodik
 ├── index-single.html       # (Arkiv) Gammal ensidig version
 │
@@ -76,7 +77,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 │   ├── budget.js           # Statsbudget (510 rader)
 │   ├── votes.js            # Riksdagsröstningar (340 rader)
 │   ├── partycompare.js     # Partijämförelse (398 rader)
-│   └── seatcalc.js         # Mandatkalkylator (320 rader)
+│   ├── seatcalc.js         # Mandatkalkylator (320 rader)
+│   └── debates.js          # Debattkalender (220 rader)
 │
 ├── /data/
 │   ├── parties.json        # Grunddata om partierna (8 partier)
@@ -89,7 +91,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 │   ├── election-history.json   # Valresultat 2018, 2022, EU 2024
 │   ├── constituencies.json # Valkretsar med mandatfördelning
 │   ├── budget.json         # 27 budgetområden
-│   └── votes.json          # 20 riksdagsomröstningar
+│   ├── votes.json          # 20 riksdagsomröstningar
+│   └── debates.json        # 12 valdebatter
 │
 ├── /assets/
 │   ├── /logos/             # Officiella partilogotyper (PNG)
