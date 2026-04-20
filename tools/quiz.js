@@ -29,6 +29,11 @@
     'disagree_strongly': 'Tar avstånd helt'
   };
 
+  // Swipe configuration
+  const SWIPE_THRESHOLD = 80; // Minimum distance in pixels to trigger swipe
+  const SWIPE_VELOCITY_THRESHOLD = 0.3; // Minimum velocity to trigger quick swipe
+  const SWIPE_MAX_ROTATION = 15; // Max rotation in degrees during swipe
+
   // ==========================================================================
   // State
   // ==========================================================================
@@ -41,6 +46,20 @@
   let importantFlags = {};
   let quizStarted = false;
   let quizCompleted = false;
+
+  // Swipe state
+  let swipeState = {
+    startX: 0,
+    startY: 0,
+    startTime: 0,
+    currentX: 0,
+    isSwiping: false
+  };
+
+  // Check if device supports touch
+  function isTouchDevice() {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  }
 
   // ==========================================================================
   // LocalStorage Progress Saving
@@ -219,6 +238,8 @@
     const existingAnswer = answers[question.id];
     const isImportant = importantFlags[question.id] || false;
 
+    const showSwipeHint = isTouchDevice();
+
     container.innerHTML = `
       <div class="quiz-question-container">
         <!-- Progress bar -->
@@ -232,9 +253,31 @@
           </div>
         </div>
 
-        <!-- Question -->
-        <div class="quiz-question">
-          <h3 class="quiz-statement">"${question.statement}"</h3>
+        <!-- Swipe hint for mobile -->
+        ${showSwipeHint ? `
+          <div class="quiz-swipe-hint" id="quiz-swipe-hint">
+            <span class="quiz-swipe-hint-left">← Tar avstånd</span>
+            <span class="quiz-swipe-hint-text">Svep för att svara</span>
+            <span class="quiz-swipe-hint-right">Håller med →</span>
+          </div>
+        ` : ''}
+
+        <!-- Swipeable question card -->
+        <div class="quiz-swipe-wrapper">
+          <!-- Swipe indicators (shown during swipe) -->
+          <div class="quiz-swipe-indicator quiz-swipe-indicator--left" id="swipe-indicator-left">
+            <span>✗</span>
+            <span>Tar avstånd</span>
+          </div>
+          <div class="quiz-swipe-indicator quiz-swipe-indicator--right" id="swipe-indicator-right">
+            <span>✓</span>
+            <span>Håller med</span>
+          </div>
+
+          <!-- Question card -->
+          <div class="quiz-question quiz-swipe-card" id="quiz-swipe-card">
+            <h3 class="quiz-statement">"${question.statement}"</h3>
+          </div>
         </div>
 
         <!-- Answer options -->
@@ -314,6 +357,150 @@
         renderResults(container);
       }
     });
+
+    // Swipe functionality for touch devices
+    if (isTouchDevice()) {
+      setupSwipeHandlers(container, question);
+    }
+  }
+
+  // ==========================================================================
+  // Swipe Handlers
+  // ==========================================================================
+
+  function setupSwipeHandlers(container, question) {
+    const card = document.getElementById('quiz-swipe-card');
+    const indicatorLeft = document.getElementById('swipe-indicator-left');
+    const indicatorRight = document.getElementById('swipe-indicator-right');
+    const swipeHint = document.getElementById('quiz-swipe-hint');
+
+    if (!card) return;
+
+    function handleTouchStart(e) {
+      if (e.touches.length !== 1) return;
+
+      const touch = e.touches[0];
+      swipeState.startX = touch.clientX;
+      swipeState.startY = touch.clientY;
+      swipeState.startTime = Date.now();
+      swipeState.currentX = 0;
+      swipeState.isSwiping = true;
+
+      card.style.transition = 'none';
+    }
+
+    function handleTouchMove(e) {
+      if (!swipeState.isSwiping || e.touches.length !== 1) return;
+
+      const touch = e.touches[0];
+      const deltaX = touch.clientX - swipeState.startX;
+      const deltaY = touch.clientY - swipeState.startY;
+
+      // If vertical scroll is more significant, don't interfere
+      if (Math.abs(deltaY) > Math.abs(deltaX) && Math.abs(deltaX) < 30) {
+        return;
+      }
+
+      // Prevent page scroll when swiping horizontally
+      if (Math.abs(deltaX) > 10) {
+        e.preventDefault();
+      }
+
+      swipeState.currentX = deltaX;
+
+      // Calculate rotation based on swipe distance
+      const rotation = (deltaX / window.innerWidth) * SWIPE_MAX_ROTATION;
+      const opacity = Math.min(Math.abs(deltaX) / SWIPE_THRESHOLD, 1);
+
+      // Apply transform to card
+      card.style.transform = `translateX(${deltaX}px) rotate(${rotation}deg)`;
+
+      // Show appropriate indicator
+      if (deltaX > 30) {
+        indicatorRight.style.opacity = opacity;
+        indicatorLeft.style.opacity = 0;
+        card.classList.add('swiping-right');
+        card.classList.remove('swiping-left');
+      } else if (deltaX < -30) {
+        indicatorLeft.style.opacity = opacity;
+        indicatorRight.style.opacity = 0;
+        card.classList.add('swiping-left');
+        card.classList.remove('swiping-right');
+      } else {
+        indicatorLeft.style.opacity = 0;
+        indicatorRight.style.opacity = 0;
+        card.classList.remove('swiping-left', 'swiping-right');
+      }
+
+      // Hide hint during swipe
+      if (swipeHint && Math.abs(deltaX) > 20) {
+        swipeHint.style.opacity = 0;
+      }
+    }
+
+    function handleTouchEnd(e) {
+      if (!swipeState.isSwiping) return;
+
+      const deltaX = swipeState.currentX;
+      const deltaTime = Date.now() - swipeState.startTime;
+      const velocity = Math.abs(deltaX) / deltaTime;
+
+      // Determine if swipe was significant enough
+      const isSwipe = Math.abs(deltaX) > SWIPE_THRESHOLD || velocity > SWIPE_VELOCITY_THRESHOLD;
+
+      if (isSwipe && Math.abs(deltaX) > 50) {
+        // Animate card off screen
+        const direction = deltaX > 0 ? 1 : -1;
+        card.style.transition = 'transform 0.3s ease-out, opacity 0.3s ease-out';
+        card.style.transform = `translateX(${direction * window.innerWidth}px) rotate(${direction * 30}deg)`;
+        card.style.opacity = '0';
+
+        // Set answer based on swipe direction
+        const answerKey = deltaX > 0 ? 'agree' : 'disagree';
+        answers[question.id] = answerKey;
+        saveProgress();
+
+        // Highlight the selected answer
+        container.querySelectorAll('.quiz-answer').forEach(el => el.classList.remove('is-selected'));
+        const selectedAnswer = container.querySelector(`input[value="${answerKey}"]`);
+        if (selectedAnswer) {
+          selectedAnswer.checked = true;
+          selectedAnswer.closest('.quiz-answer').classList.add('is-selected');
+        }
+
+        // Move to next question after animation
+        setTimeout(() => {
+          if (currentQuestion < quizData.questions.length - 1) {
+            currentQuestion++;
+            saveProgress();
+            renderCurrentQuestion(container);
+          } else {
+            quizCompleted = true;
+            clearProgress();
+            renderResults(container);
+          }
+        }, 300);
+      } else {
+        // Snap back to center
+        card.style.transition = 'transform 0.3s ease-out';
+        card.style.transform = 'translateX(0) rotate(0deg)';
+        indicatorLeft.style.opacity = 0;
+        indicatorRight.style.opacity = 0;
+        card.classList.remove('swiping-left', 'swiping-right');
+
+        if (swipeHint) {
+          swipeHint.style.opacity = 1;
+        }
+      }
+
+      swipeState.isSwiping = false;
+    }
+
+    // Add touch event listeners
+    card.addEventListener('touchstart', handleTouchStart, { passive: true });
+    card.addEventListener('touchmove', handleTouchMove, { passive: false });
+    card.addEventListener('touchend', handleTouchEnd, { passive: true });
+    card.addEventListener('touchcancel', handleTouchEnd, { passive: true });
   }
 
   // ==========================================================================

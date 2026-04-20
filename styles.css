@@ -7095,3 +7095,136 @@ section {
     gap: var(--space-2);
   }
 }
+
+/* ==========================================================================
+   Quiz Swipe Gestures
+   ========================================================================== */
+
+/* Swipe hint */
+.quiz-swipe-hint {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  margin-bottom: var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  transition: opacity 0.2s;
+}
+
+.quiz-swipe-hint-left {
+  color: var(--color-error);
+}
+
+.quiz-swipe-hint-right {
+  color: var(--color-success);
+}
+
+.quiz-swipe-hint-text {
+  font-weight: 500;
+}
+
+/* Swipe wrapper */
+.quiz-swipe-wrapper {
+  position: relative;
+  margin-bottom: var(--space-4);
+  touch-action: pan-y;
+}
+
+/* Swipe card */
+.quiz-swipe-card {
+  position: relative;
+  z-index: 2;
+  will-change: transform;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.quiz-swipe-card:active {
+  cursor: grabbing;
+}
+
+.quiz-swipe-card.swiping-right {
+  border-color: var(--color-success);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+}
+
+.quiz-swipe-card.swiping-left {
+  border-color: var(--color-error);
+  box-shadow: 0 0 20px rgba(239, 68, 68, 0.3);
+}
+
+/* Swipe indicators */
+.quiz-swipe-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 0.15s;
+  pointer-events: none;
+}
+
+.quiz-swipe-indicator span:first-child {
+  font-size: var(--text-2xl);
+}
+
+.quiz-swipe-indicator--left {
+  left: -60px;
+  background: var(--color-error);
+  color: white;
+}
+
+.quiz-swipe-indicator--right {
+  right: -60px;
+  background: var(--color-success);
+  color: white;
+}
+
+/* Mobile adjustments */
+@media (max-width: 640px) {
+  .quiz-swipe-indicator--left {
+    left: 0;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+
+  .quiz-swipe-indicator--right {
+    right: 0;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .quiz-swipe-hint {
+    padding: var(--space-3);
+    font-size: var(--text-sm);
+  }
+
+  .quiz-swipe-card {
+    touch-action: pan-y;
+  }
+}
+
+/* Hide swipe elements on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .quiz-swipe-hint {
+    display: none;
+  }
+
+  .quiz-swipe-indicator {
+    display: none;
+  }
+
+  .quiz-swipe-card {
+    cursor: default;
+  }
+}
