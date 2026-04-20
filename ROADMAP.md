@@ -151,7 +151,7 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 ---
 
-## Fas 5: Nya funktioner (2-4 veckor) ✅ PÅBÖRJAD
+## Fas 5: Nya funktioner (2-4 veckor) ✅ KLAR
 
 **Implementerat:** 20 april 2026
 
@@ -160,7 +160,7 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 | Status | Funktion | Beskrivning | Komplexitet |
 |--------|----------|-------------|-------------|
 | ✅ | **Dark/light mode** | Toggle i header, sparas i localStorage, följer systempreferens | Medel |
-| ⏳ | **Jämför två partier** | Sida-vid-sida-jämförelse | Hög |
+| ✅ | **Jämför två partier** | Ny sida jamfor.html med partiväljare, stats, ideologi, sakfrågor | Hög |
 | ✅ | **Spara quiz-progress** | localStorage för att inte tappa svar, resume-prompt | Låg |
 
 ### 5.2 Prioritet Medel
@@ -246,8 +246,8 @@ insats│              │              │ insats
 3. ~~**Denna vecka:** Prestandaoptimering (Fas 2)~~ ✅
 4. ~~**Denna vecka:** Kodkvalitet (Fas 3) - eliminera duplicering~~ ✅
 5. ~~**Denna vecka:** Innehållsförbättringar (Fas 4) - AI, Ukraina, NATO, kärnvapen~~ ✅
-6. ~~**Denna vecka:** Nya funktioner (Fas 5) - dark mode, quiz-progress~~ ✅
-7. **Nästa:** Partijämförelse sida-vid-sida (Fas 5)
+6. ~~**Denna vecka:** Nya funktioner (Fas 5) - dark mode, quiz-progress, partijämförelse~~ ✅
+7. **Nästa:** Fas 5.2 - Debattkalender, mandatkalkylator (medel prioritet)
 8. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---

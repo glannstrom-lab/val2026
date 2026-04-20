@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Jämför två partier sida vid sida - sakfrågor, ideologi, valresultat och partiledare inför valet 2026.">
+  <meta name="theme-color" content="#0d0d0d">
+  <title>Jämför partier — Val 2026</title>
+  <link rel="preconnect" href="https://fonts.bunny.net">
+  <link href="https://fonts.bunny.net/css?family=space-grotesk:400,500,600,700|inter:400,500,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body class="page-jamfor">
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Brödsmulor">
+          <a href="index.html">Hem</a>
+          <span>/</span>
+          <span>Jämför partier</span>
+        </nav>
+        <h1>Jämför två partier</h1>
+        <p class="page-hero-subtitle">Välj två partier för att jämföra deras ståndpunkter i sakfrågor, ideologi, valresultat och partiledare.</p>
+      </div>
+    </section>
+
+    <section class="partycompare-section">
+      <div class="container">
+        <div id="partycompare-container">
+          <!-- Comparison rendered by partycompare.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="shared/constants.js" defer></script>
+  <script src="components/header.js" defer></script>
+  <script src="tools/partycompare.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
