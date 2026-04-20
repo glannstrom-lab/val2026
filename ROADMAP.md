@@ -151,15 +151,17 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 ---
 
-## Fas 5: Nya funktioner (2-4 veckor)
+## Fas 5: Nya funktioner (2-4 veckor) ✅ PÅBÖRJAD
+
+**Implementerat:** 20 april 2026
 
 ### 5.1 Prioritet Hög
 
-| Funktion | Beskrivning | Komplexitet |
-|----------|-------------|-------------|
-| **Dark/light mode** | Låt användaren välja tema | Medel |
-| **Jämför två partier** | Sida-vid-sida-jämförelse | Hög |
-| **Spara quiz-progress** | localStorage för att inte tappa svar | Låg |
+| Status | Funktion | Beskrivning | Komplexitet |
+|--------|----------|-------------|-------------|
+| ✅ | **Dark/light mode** | Toggle i header, sparas i localStorage, följer systempreferens | Medel |
+| ⏳ | **Jämför två partier** | Sida-vid-sida-jämförelse | Hög |
+| ✅ | **Spara quiz-progress** | localStorage för att inte tappa svar, resume-prompt | Låg |
 
 ### 5.2 Prioritet Medel
 
@@ -244,8 +246,9 @@ insats│              │              │ insats
 3. ~~**Denna vecka:** Prestandaoptimering (Fas 2)~~ ✅
 4. ~~**Denna vecka:** Kodkvalitet (Fas 3) - eliminera duplicering~~ ✅
 5. ~~**Denna vecka:** Innehållsförbättringar (Fas 4) - AI, Ukraina, NATO, kärnvapen~~ ✅
-6. **Nästa:** Fas 5 - Nya funktioner (dark mode, partijämförelse)
-7. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
+6. ~~**Denna vecka:** Nya funktioner (Fas 5) - dark mode, quiz-progress~~ ✅
+7. **Nästa:** Partijämförelse sida-vid-sida (Fas 5)
+8. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---
 

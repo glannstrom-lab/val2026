@@ -43,6 +43,59 @@
   let quizCompleted = false;
 
   // ==========================================================================
+  // LocalStorage Progress Saving
+  // ==========================================================================
+
+  const STORAGE_KEY = 'val2026_quiz_progress';
+
+  function saveProgress() {
+    const progress = {
+      currentQuestion,
+      answers,
+      importantFlags,
+      timestamp: Date.now()
+    };
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+    } catch (e) {
+      console.warn('Could not save quiz progress:', e);
+    }
+  }
+
+  function loadProgress() {
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (!saved) return null;
+
+      const progress = JSON.parse(saved);
+      // Only restore if less than 24 hours old
+      const hoursSince = (Date.now() - progress.timestamp) / (1000 * 60 * 60);
+      if (hoursSince > 24) {
+        clearProgress();
+        return null;
+      }
+
+      return progress;
+    } catch (e) {
+      console.warn('Could not load quiz progress:', e);
+      return null;
+    }
+  }
+
+  function clearProgress() {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (e) {
+      // Ignore
+    }
+  }
+
+  function hasProgress() {
+    const progress = loadProgress();
+    return progress && (Object.keys(progress.answers).length > 0 || progress.currentQuestion > 0);
+  }
+
+  // ==========================================================================
   // Data Loading
   // ==========================================================================
 
@@ -72,6 +125,9 @@
   function renderQuizStart(container) {
     const totalQuestions = quizData.questions.length;
     const categories = Object.values(quizData.categories);
+    const savedProgress = loadProgress();
+    const hasSaved = savedProgress && (Object.keys(savedProgress.answers).length > 0 || savedProgress.currentQuestion > 0);
+    const answeredCount = hasSaved ? Object.keys(savedProgress.answers).length : 0;
 
     container.innerHTML = `
       <div class="quiz-start">
@@ -97,14 +153,31 @@
             <span>Ca 5–10 minuter</span>
           </div>
           <div class="quiz-info-item">
-            <span class="quiz-info-icon">🔒</span>
-            <span>Inga svar sparas</span>
+            <span class="quiz-info-icon">💾</span>
+            <span>Progress sparas automatiskt</span>
           </div>
         </div>
 
-        <button class="btn btn-primary quiz-start-btn" id="quiz-start-btn">
-          Starta valkompassen
-        </button>
+        ${hasSaved ? `
+          <div class="quiz-resume-prompt">
+            <p class="quiz-resume-text">
+              <strong>Fortsätt där du slutade?</strong><br>
+              Du har svarat på ${answeredCount} av ${totalQuestions} frågor.
+            </p>
+            <div class="quiz-resume-buttons">
+              <button class="btn btn-primary" id="quiz-resume-btn">
+                Fortsätt
+              </button>
+              <button class="btn btn-secondary" id="quiz-restart-btn">
+                Börja om
+              </button>
+            </div>
+          </div>
+        ` : `
+          <button class="btn btn-primary quiz-start-btn" id="quiz-start-btn">
+            Starta valkompassen
+          </button>
+        `}
 
         <p class="quiz-disclaimer-note">
           Detta är ingen röstningsrekommendation. Resultatet bygger på förenklade data.
@@ -112,10 +185,31 @@
       </div>
     `;
 
-    document.getElementById('quiz-start-btn').addEventListener('click', () => {
-      quizStarted = true;
-      renderCurrentQuestion(container);
-    });
+    if (hasSaved) {
+      document.getElementById('quiz-resume-btn').addEventListener('click', () => {
+        // Restore saved progress
+        currentQuestion = savedProgress.currentQuestion;
+        Object.assign(answers, savedProgress.answers);
+        Object.assign(importantFlags, savedProgress.importantFlags || {});
+        quizStarted = true;
+        renderCurrentQuestion(container);
+      });
+
+      document.getElementById('quiz-restart-btn').addEventListener('click', () => {
+        // Clear saved progress and start fresh
+        clearProgress();
+        currentQuestion = 0;
+        answers = {};
+        importantFlags = {};
+        quizStarted = true;
+        renderCurrentQuestion(container);
+      });
+    } else {
+      document.getElementById('quiz-start-btn').addEventListener('click', () => {
+        quizStarted = true;
+        renderCurrentQuestion(container);
+      });
+    }
   }
 
   function renderCurrentQuestion(container) {
@@ -191,17 +285,20 @@
         answers[question.id] = e.target.value;
         container.querySelectorAll('.quiz-answer').forEach(el => el.classList.remove('is-selected'));
         e.target.closest('.quiz-answer').classList.add('is-selected');
+        saveProgress();
       });
     });
 
     const importantToggle = document.getElementById('important-toggle');
     importantToggle.addEventListener('change', (e) => {
       importantFlags[question.id] = e.target.checked;
+      saveProgress();
     });
 
     container.querySelector('.quiz-nav-prev').addEventListener('click', () => {
       if (currentQuestion > 0) {
         currentQuestion--;
+        saveProgress();
         renderCurrentQuestion(container);
       }
     });
@@ -209,9 +306,11 @@
     document.getElementById('quiz-next-btn').addEventListener('click', () => {
       if (currentQuestion < quizData.questions.length - 1) {
         currentQuestion++;
+        saveProgress();
         renderCurrentQuestion(container);
       } else {
         quizCompleted = true;
+        clearProgress(); // Clear saved progress when completed
         renderResults(container);
       }
     });
