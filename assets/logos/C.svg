@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <circle cx="50" cy="50" r="48" fill="#009933"/>
+  <!-- Four-leaf clover / fyrklöver -->
+  <g fill="#fff">
+    <ellipse cx="50" cy="35" rx="12" ry="14"/>
+    <ellipse cx="50" cy="65" rx="12" ry="14"/>
+    <ellipse cx="35" cy="50" rx="14" ry="12"/>
+    <ellipse cx="65" cy="50" rx="14" ry="12"/>
+    <circle cx="50" cy="50" r="6" fill="#009933"/>
+  </g>
+</svg>
