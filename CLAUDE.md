@@ -117,8 +117,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 | **Startsida** | `index.html` | Hero, nedräkning, snabbguide, opinionsöversikt |
 | **Partierna** | `partier.html` | Alla 8 partier med logotyper, ledare, mandat |
 | **Politisk kompass** | `kompass.html` | 2D-visualisering, tooltips, koalitionsläge |
-| **Valkompass** | `quiz.html` | 46 frågor, matchningsalgoritm, delbar URL |
-| **Sakfrågor** | `sakfragor.html` | 51 sakfrågor, filter per kategori |
+| **Valkompass** | `quiz.html` | 50 frågor, matchningsalgoritm, delbar URL |
+| **Sakfrågor** | `sakfragor.html` | 56 sakfrågor, filter per kategori |
 | **Tidslinje** | `tidslinje.html` | 36 händelser 2022-2026, filter |
 | **Opinionsläget** | `opinion.html` | Stapeldiagram + historisk linjegraf |
 | **Valhistorik** | `historik.html` | Jämför 2018, 2022, EU 2024, partiledare |
@@ -195,8 +195,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ## 8. Publicerings-checklista
 
 - [x] Alla åtta partier har komplett data
-- [x] 51 sakfrågor med position för varje parti
-- [x] 46 quiz-frågor balanserat över 10 kategorier
+- [x] 56 sakfrågor med position för varje parti
+- [x] 50 quiz-frågor balanserat över 10 kategorier
 - [x] Kompasspositioner verifierade mot CHES/GU-data
 - [x] Opinionssnittet uppdaterat (april 2026)
 - [x] 36 tidslinjehändelser

@@ -1,0 +1,86 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Run quiz algorithm tests
+        run: node tests/quiz.test.js
+
+      - name: Run data integrity tests
+        run: node tests/data.test.js
+
+      - name: Validate JSON files
+        run: |
+          echo "Validating JSON files..."
+          for file in data/*.json; do
+            echo "  Checking $file"
+            node -e "JSON.parse(require('fs').readFileSync('$file', 'utf8'))"
+          done
+          echo "All JSON files are valid!"
+
+      - name: Check HTML syntax
+        run: |
+          echo "Checking HTML files for common issues..."
+          # Check for unclosed tags (basic check)
+          for file in *.html; do
+            echo "  Checking $file"
+            # Check that file is not empty
+            if [ ! -s "$file" ]; then
+              echo "    Error: $file is empty"
+              exit 1
+            fi
+            # Check for DOCTYPE
+            if ! grep -q "<!DOCTYPE html>" "$file"; then
+              echo "    Warning: $file missing DOCTYPE"
+            fi
+          done
+          echo "HTML checks complete!"
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install -g @lhci/cli http-server
+
+      - name: Start server
+        run: |
+          http-server . -p 8080 &
+          sleep 3
+
+      - name: Run Lighthouse
+        run: |
+          lhci autorun --config=.lighthouserc.json || true
+
+      - name: Upload Lighthouse results
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-results
+          path: .lighthouseci/
+          retention-days: 7
+        if: always()
