@@ -2431,3 +2431,360 @@ section {
 .skip-link:focus {
   top: 0;
 }
+
+/* --------------------------------------------------------------------------
+   Coalition Builder
+   -------------------------------------------------------------------------- */
+.coalition-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Source toggle */
+.coalition-source-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.coalition-source-label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.coalition-source-buttons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.coalition-source-btn {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.coalition-source-btn:hover {
+  background: var(--color-bg-hover);
+}
+
+.coalition-source-btn.is-active {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #000;
+}
+
+/* Seat meter */
+.coalition-meter {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.coalition-meter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-3);
+}
+
+.coalition-meter-title {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.coalition-meter-count {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+.coalition-meter-count.has-majority {
+  color: var(--color-success);
+}
+
+.coalition-meter-bar {
+  position: relative;
+  height: 24px;
+  background: var(--color-bg);
+  border-radius: var(--radius-full);
+  overflow: visible;
+}
+
+.coalition-meter-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-hover));
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.coalition-meter-fill.has-majority {
+  background: linear-gradient(90deg, var(--color-success), #4ade80);
+}
+
+.coalition-meter-threshold {
+  position: absolute;
+  top: -8px;
+  bottom: -8px;
+  width: 3px;
+  background: var(--color-error);
+  transform: translateX(-50%);
+}
+
+.coalition-meter-threshold-label {
+  position: absolute;
+  top: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-error);
+  white-space: nowrap;
+}
+
+.coalition-meter-status {
+  margin-top: var(--space-4);
+  text-align: center;
+}
+
+.coalition-status-success {
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+.coalition-status-pending {
+  color: var(--color-text-muted);
+}
+
+/* Party selector */
+.coalition-parties {
+  margin-bottom: var(--space-6);
+}
+
+.coalition-parties h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.coalition-party-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 480px) {
+  .coalition-party-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.coalition-party-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+.coalition-party-card:hover {
+  background: var(--color-bg-hover);
+  border-color: var(--party-color, var(--color-border));
+}
+
+.coalition-party-card.is-selected {
+  background: color-mix(in srgb, var(--party-color) 15%, var(--color-bg-card));
+  border-color: var(--party-color);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--party-color) 30%, transparent);
+}
+
+.coalition-party-card.under-threshold {
+  opacity: 0.7;
+}
+
+.coalition-party-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.coalition-party-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  text-align: center;
+  color: var(--color-text);
+}
+
+.coalition-party-seats {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.coalition-party-warning {
+  font-size: var(--text-xs);
+  color: var(--color-error);
+  font-weight: 500;
+}
+
+/* Coalition summary */
+.coalition-summary {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.coalition-summary h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.coalition-summary-parties {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}
+
+.coalition-summary-party {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.coalition-summary-badge {
+  font-family: var(--font-display);
+  font-size: var(--text-sm);
+  font-weight: 700;
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+}
+
+.coalition-summary-seats {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.coalition-summary-plus,
+.coalition-summary-equals {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text-muted);
+}
+
+.coalition-summary-total {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-4);
+  background: var(--color-bg);
+  border-radius: var(--radius-md);
+}
+
+.coalition-summary-total.has-majority {
+  color: var(--color-success);
+  background: color-mix(in srgb, var(--color-success) 15%, var(--color-bg));
+}
+
+/* Preset coalitions */
+.coalition-presets {
+  margin-bottom: var(--space-6);
+}
+
+.coalition-presets h4 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.coalition-preset-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) {
+  .coalition-preset-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.coalition-preset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.coalition-preset-btn:hover {
+  background: var(--color-bg-hover);
+}
+
+.coalition-preset-btn.is-active {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--color-accent) 30%, transparent);
+}
+
+.coalition-preset-name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.coalition-preset-parties {
+  display: flex;
+  gap: var(--space-1);
+}
+
+.coalition-preset-parties span {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+/* Coalition info */
+.coalition-info {
+  text-align: center;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}

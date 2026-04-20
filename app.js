@@ -361,6 +361,11 @@
       window.initTimeline();
     }
 
+    // Initialize coalition builder (loaded from tools/coalition.js)
+    if (typeof window.initCoalition === 'function') {
+      window.initCoalition();
+    }
+
     // Handle initial hash
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
