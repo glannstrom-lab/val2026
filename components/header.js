@@ -13,6 +13,7 @@
         { href: 'kompass.html', title: 'Politisk kompass', desc: 'Se var partierna står ideologiskt' },
         { href: 'quiz.html', title: 'Valkompass', desc: 'Hitta partier som matchar dig' },
         { href: 'jamfor.html', title: 'Jämför partier', desc: 'Två partier sida vid sida' },
+        { href: 'mandat.html', title: 'Mandatkalkylator', desc: 'Simulera valresultat' },
         { href: 'koalition.html', title: 'Koalitionsbyggare', desc: 'Bygg regeringsunderlag' },
         { href: 'gissa.html', title: 'Gissa partiet', desc: 'Testa dina kunskaper' }
       ]

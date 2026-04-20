@@ -165,11 +165,11 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 ### 5.2 Prioritet Medel
 
-| Funktion | Beskrivning | Komplexitet |
-|----------|-------------|-------------|
-| **Debattkalender** | Lista kommande valdebatter | Medel |
-| **Mandatkalkylator** | Simulera valresultat | Hög |
-| **Swipe-gester i quiz** | Bättre mobil-UX | Medel |
+| Status | Funktion | Beskrivning | Komplexitet |
+|--------|----------|-------------|-------------|
+| ⏳ | **Debattkalender** | Lista kommande valdebatter | Medel |
+| ✅ | **Mandatkalkylator** | Simulera valresultat med Sainte-Laguë-metoden | Hög |
+| ⏳ | **Swipe-gester i quiz** | Bättre mobil-UX | Medel |
 
 ### 5.3 Prioritet Låg
 
@@ -247,8 +247,9 @@ insats│              │              │ insats
 4. ~~**Denna vecka:** Kodkvalitet (Fas 3) - eliminera duplicering~~ ✅
 5. ~~**Denna vecka:** Innehållsförbättringar (Fas 4) - AI, Ukraina, NATO, kärnvapen~~ ✅
 6. ~~**Denna vecka:** Nya funktioner (Fas 5) - dark mode, quiz-progress, partijämförelse~~ ✅
-7. **Nästa:** Fas 5.2 - Debattkalender, mandatkalkylator (medel prioritet)
-8. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
+7. ~~**Fas 5.2:** Mandatkalkylator~~ ✅
+8. **Nästa:** Fas 5.2 - Debattkalender, swipe-gester (medel prioritet)
+9. **Löpande:** Fas 6 - Teknisk skuld och dokumentation
 
 ---
 

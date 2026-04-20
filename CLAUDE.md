@@ -23,7 +23,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ## 2. Tech stack
 
 - **Vanilla HTML, CSS, JavaScript** — inga ramverk, ingen build-process
-- **Multi-page struktur** — 15 separata HTML-sidor med delad header/footer-komponent
+- **Multi-page struktur** — 16 separata HTML-sidor med delad header/footer-komponent
 - **Data i JSON** — all partidata i `/data/`-mappen, laddas via `fetch()`
 - **Ingen backend** — allt körs i webbläsaren
 - **PWA-stöd** — service worker för offline-läsning
@@ -49,6 +49,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ├── budget.html             # Statsbudget-jämförelse
 ├── rostningar.html         # Riksdagsröstningar
 ├── jamfor.html             # Partijämförelse (två partier sida vid sida)
+├── mandat.html             # Mandatkalkylator (simulera valresultat)
 ├── om.html                 # Om sidan, källor, metodik
 ├── index-single.html       # (Arkiv) Gammal ensidig version
 │
@@ -74,7 +75,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 │   ├── history.js          # Valhistorik (397 rader)
 │   ├── budget.js           # Statsbudget (510 rader)
 │   ├── votes.js            # Riksdagsröstningar (340 rader)
-│   └── partycompare.js     # Partijämförelse (398 rader)
+│   ├── partycompare.js     # Partijämförelse (398 rader)
+│   └── seatcalc.js         # Mandatkalkylator (320 rader)
 │
 ├── /data/
 │   ├── parties.json        # Grunddata om partierna (8 partier)
