@@ -1,0 +1,272 @@
+{
+  "description": "Sveriges 29 riksdagsvalkretsar med mandatfördelning",
+  "total_mandates": 349,
+  "fixed_mandates": 310,
+  "adjustment_mandates": 39,
+  "source": "Valmyndigheten, val.se",
+  "constituencies": [
+    {
+      "id": "stockholms-kommun",
+      "name": "Stockholms kommun",
+      "region": "Stockholm",
+      "mandates_2022": 28,
+      "population": 984748,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 28.5, "M": 22.1, "SD": 11.2, "MP": 9.2, "V": 10.5, "C": 5.8, "KD": 3.8, "L": 7.2 }
+    },
+    {
+      "id": "stockholms-lan",
+      "name": "Stockholms län",
+      "region": "Stockholm",
+      "mandates_2022": 41,
+      "population": 1620000,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 27.8, "M": 22.5, "SD": 16.5, "V": 6.5, "C": 6.8, "MP": 6.2, "KD": 5.5, "L": 6.0 }
+    },
+    {
+      "id": "uppsala-lan",
+      "name": "Uppsala län",
+      "region": "Svealand",
+      "mandates_2022": 12,
+      "population": 395026,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 29.1, "M": 20.2, "SD": 17.8, "V": 8.2, "C": 7.5, "MP": 5.8, "KD": 4.9, "L": 4.8 }
+    },
+    {
+      "id": "sodermanlands-lan",
+      "name": "Södermanlands län",
+      "region": "Svealand",
+      "mandates_2022": 9,
+      "population": 302959,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 32.8, "SD": 25.2, "M": 17.5, "V": 6.2, "C": 5.1, "KD": 5.8, "MP": 3.8, "L": 2.5 }
+    },
+    {
+      "id": "ostergotlands-lan",
+      "name": "Östergötlands län",
+      "region": "Svealand",
+      "mandates_2022": 14,
+      "population": 470920,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 31.2, "SD": 22.5, "M": 18.8, "V": 7.1, "C": 6.2, "KD": 5.5, "MP": 4.2, "L": 3.2 }
+    },
+    {
+      "id": "jonkopings-lan",
+      "name": "Jönköpings län",
+      "region": "Småland",
+      "mandates_2022": 11,
+      "population": 369420,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 26.5, "SD": 24.8, "M": 18.2, "KD": 10.5, "C": 7.8, "V": 4.5, "MP": 3.2, "L": 3.5 }
+    },
+    {
+      "id": "kronobergs-lan",
+      "name": "Kronobergs län",
+      "region": "Småland",
+      "mandates_2022": 6,
+      "population": 203860,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 28.2, "SD": 26.5, "M": 17.8, "C": 9.2, "KD": 6.5, "V": 5.2, "MP": 3.5, "L": 2.2 }
+    },
+    {
+      "id": "kalmar-lan",
+      "name": "Kalmar län",
+      "region": "Småland",
+      "mandates_2022": 8,
+      "population": 247620,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 30.5, "SD": 25.8, "M": 17.2, "C": 8.8, "KD": 5.8, "V": 5.5, "MP": 3.2, "L": 2.5 }
+    },
+    {
+      "id": "gotlands-lan",
+      "name": "Gotlands län",
+      "region": "Gotland",
+      "mandates_2022": 2,
+      "population": 61005,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 30.8, "M": 18.5, "SD": 18.2, "C": 11.5, "MP": 8.2, "V": 6.5, "KD": 3.2, "L": 2.5 }
+    },
+    {
+      "id": "blekinge-lan",
+      "name": "Blekinge län",
+      "region": "Blekinge",
+      "mandates_2022": 5,
+      "population": 161167,
+      "largest_party_2022": "SD",
+      "results_2022": { "SD": 29.8, "S": 28.5, "M": 17.2, "V": 6.8, "C": 5.5, "KD": 5.2, "MP": 3.5, "L": 2.5 }
+    },
+    {
+      "id": "skane-lans-sodra",
+      "name": "Skåne läns södra",
+      "region": "Skåne",
+      "mandates_2022": 15,
+      "population": 520000,
+      "largest_party_2022": "SD",
+      "results_2022": { "SD": 26.5, "S": 25.8, "M": 20.5, "V": 7.2, "C": 5.5, "MP": 5.2, "KD": 4.8, "L": 3.2 }
+    },
+    {
+      "id": "skane-lans-vastra",
+      "name": "Skåne läns västra",
+      "region": "Skåne",
+      "mandates_2022": 11,
+      "population": 370000,
+      "largest_party_2022": "SD",
+      "results_2022": { "SD": 28.2, "S": 27.5, "M": 18.5, "V": 6.8, "C": 5.8, "KD": 5.2, "MP": 4.2, "L": 2.8 }
+    },
+    {
+      "id": "skane-lans-norra-ostra",
+      "name": "Skåne läns norra och östra",
+      "region": "Skåne",
+      "mandates_2022": 10,
+      "population": 330000,
+      "largest_party_2022": "SD",
+      "results_2022": { "SD": 29.5, "S": 26.2, "M": 18.8, "C": 6.5, "V": 5.8, "KD": 5.5, "MP": 3.8, "L": 2.8 }
+    },
+    {
+      "id": "hallands-lan",
+      "name": "Hallands län",
+      "region": "Halland",
+      "mandates_2022": 10,
+      "population": 338554,
+      "largest_party_2022": "M",
+      "results_2022": { "M": 24.5, "S": 24.2, "SD": 21.8, "C": 8.5, "KD": 6.5, "V": 5.2, "MP": 4.5, "L": 3.8 }
+    },
+    {
+      "id": "vastra-gotalands-lans-vastra",
+      "name": "Västra Götalands läns västra",
+      "region": "Västra Götaland",
+      "mandates_2022": 12,
+      "population": 400000,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 29.5, "M": 21.2, "SD": 20.5, "C": 7.5, "V": 6.8, "KD": 5.2, "MP": 4.8, "L": 3.5 }
+    },
+    {
+      "id": "vastra-gotalands-lans-norra",
+      "name": "Västra Götalands läns norra",
+      "region": "Västra Götaland",
+      "mandates_2022": 6,
+      "population": 200000,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 30.2, "SD": 23.5, "M": 18.8, "C": 9.5, "V": 5.5, "KD": 5.2, "MP": 3.8, "L": 2.5 }
+    },
+    {
+      "id": "vastra-gotalands-lans-sodra",
+      "name": "Västra Götalands läns södra",
+      "region": "Västra Götaland",
+      "mandates_2022": 9,
+      "population": 300000,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 28.5, "M": 22.5, "SD": 21.2, "C": 8.2, "V": 6.2, "KD": 5.5, "MP": 4.2, "L": 2.8 }
+    },
+    {
+      "id": "vastra-gotalands-lans-ostra",
+      "name": "Västra Götalands läns östra",
+      "region": "Västra Götaland",
+      "mandates_2022": 7,
+      "population": 230000,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 31.2, "SD": 24.5, "M": 17.5, "C": 8.8, "V": 5.8, "KD": 5.5, "MP": 3.5, "L": 2.2 }
+    },
+    {
+      "id": "goteborgs-kommun",
+      "name": "Göteborgs kommun",
+      "region": "Västra Götaland",
+      "mandates_2022": 18,
+      "population": 590000,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 30.5, "M": 19.8, "SD": 12.8, "V": 12.5, "MP": 8.5, "C": 5.2, "KD": 3.8, "L": 5.5 }
+    },
+    {
+      "id": "varmlands-lan",
+      "name": "Värmlands län",
+      "region": "Svealand",
+      "mandates_2022": 9,
+      "population": 283196,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 34.5, "SD": 23.8, "M": 16.2, "C": 8.5, "V": 6.2, "KD": 4.8, "MP": 3.2, "L": 2.2 }
+    },
+    {
+      "id": "orebro-lan",
+      "name": "Örebro län",
+      "region": "Svealand",
+      "mandates_2022": 10,
+      "population": 307215,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 33.8, "SD": 22.5, "M": 17.5, "V": 7.2, "C": 6.2, "KD": 5.2, "MP": 4.2, "L": 2.5 }
+    },
+    {
+      "id": "vastmanlands-lan",
+      "name": "Västmanlands län",
+      "region": "Svealand",
+      "mandates_2022": 9,
+      "population": 278715,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 33.2, "SD": 24.8, "M": 17.2, "V": 6.5, "C": 5.5, "KD": 5.2, "MP": 3.8, "L": 2.8 }
+    },
+    {
+      "id": "dalarnas-lan",
+      "name": "Dalarnas län",
+      "region": "Norrland",
+      "mandates_2022": 9,
+      "population": 288387,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 36.5, "SD": 22.5, "M": 15.8, "C": 9.2, "V": 6.2, "KD": 4.2, "MP": 3.2, "L": 1.8 }
+    },
+    {
+      "id": "gavleborgs-lan",
+      "name": "Gävleborgs län",
+      "region": "Norrland",
+      "mandates_2022": 9,
+      "population": 287851,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 37.2, "SD": 23.5, "M": 15.2, "V": 7.5, "C": 6.2, "KD": 4.5, "MP": 3.2, "L": 1.8 }
+    },
+    {
+      "id": "vasternorrlands-lan",
+      "name": "Västernorrlands län",
+      "region": "Norrland",
+      "mandates_2022": 8,
+      "population": 243835,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 36.8, "SD": 21.2, "M": 16.5, "V": 8.2, "C": 7.5, "KD": 4.2, "MP": 3.2, "L": 1.8 }
+    },
+    {
+      "id": "jamtlands-lan",
+      "name": "Jämtlands län",
+      "region": "Norrland",
+      "mandates_2022": 4,
+      "population": 132054,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 32.5, "SD": 17.5, "M": 14.8, "C": 15.2, "V": 8.5, "MP": 5.8, "KD": 3.2, "L": 2.2 }
+    },
+    {
+      "id": "vasterbottens-lan",
+      "name": "Västerbottens län",
+      "region": "Norrland",
+      "mandates_2022": 9,
+      "population": 273033,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 35.2, "SD": 16.8, "M": 16.2, "C": 10.5, "V": 10.2, "MP": 5.5, "KD": 3.2, "L": 2.2 }
+    },
+    {
+      "id": "norrbottens-lan",
+      "name": "Norrbottens län",
+      "region": "Norrland",
+      "mandates_2022": 9,
+      "population": 250740,
+      "largest_party_2022": "S",
+      "results_2022": { "S": 40.5, "SD": 18.2, "M": 13.8, "V": 10.5, "C": 8.2, "MP": 3.5, "KD": 2.8, "L": 2.2 }
+    }
+  ],
+  "regions": {
+    "Stockholm": { "name": "Storstockholm", "constituencies": ["stockholms-kommun", "stockholms-lan"], "total_mandates": 69 },
+    "Skåne": { "name": "Skåne", "constituencies": ["skane-lans-sodra", "skane-lans-vastra", "skane-lans-norra-ostra"], "total_mandates": 36 },
+    "Västra Götaland": { "name": "Västra Götaland", "constituencies": ["goteborgs-kommun", "vastra-gotalands-lans-vastra", "vastra-gotalands-lans-norra", "vastra-gotalands-lans-sodra", "vastra-gotalands-lans-ostra"], "total_mandates": 52 },
+    "Norrland": { "name": "Norrland", "constituencies": ["dalarnas-lan", "gavleborgs-lan", "vasternorrlands-lan", "jamtlands-lan", "vasterbottens-lan", "norrbottens-lan"], "total_mandates": 48 }
+  },
+  "notes": [
+    "310 fasta valkretsmandat fördelas direkt i valkretsarna",
+    "39 utjämningsmandat fördelas nationellt för att ge proportionell fördelning",
+    "4% riksdagsspärr krävs för att delta i mandatfördelningen"
+  ]
+}

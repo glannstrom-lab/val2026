@@ -3,7 +3,7 @@
  * Möjliggör offline-läsning
  */
 
-const CACHE_NAME = 'val2026-v4';
+const CACHE_NAME = 'val2026-v5';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -18,6 +18,7 @@ const ASSETS_TO_CACHE = [
   './tools/pollgraph.js',
   './tools/budget.js',
   './tools/votes.js',
+  './tools/history.js',
   './data/parties.json',
   './data/compass-positions.json',
   './data/quiz-questions.json',
@@ -27,6 +28,8 @@ const ASSETS_TO_CACHE = [
   './data/votes.json',
   './data/budget.json',
   './data/polls-history.json',
+  './data/election-history.json',
+  './data/constituencies.json',
   './assets/logos/V.png',
   './assets/logos/S.png',
   './assets/logos/MP.png',

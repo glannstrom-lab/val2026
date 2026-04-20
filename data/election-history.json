@@ -1,0 +1,131 @@
+{
+  "description": "Historiska valresultat och jämförelser",
+  "elections": {
+    "riksdag_2018": {
+      "name": "Riksdagsvalet 2018",
+      "date": "2018-09-09",
+      "type": "riksdag",
+      "turnout": 87.2,
+      "total_votes": 6535271,
+      "results": {
+        "S": { "votes_pct": 28.3, "mandates": 100, "change_pct": -2.8, "change_mandates": -13 },
+        "M": { "votes_pct": 19.8, "mandates": 70, "change_pct": -3.5, "change_mandates": -14 },
+        "SD": { "votes_pct": 17.5, "mandates": 62, "change_pct": 4.7, "change_mandates": 13 },
+        "C": { "votes_pct": 8.6, "mandates": 31, "change_pct": 2.5, "change_mandates": 9 },
+        "V": { "votes_pct": 8.0, "mandates": 28, "change_pct": 2.3, "change_mandates": 7 },
+        "KD": { "votes_pct": 6.3, "mandates": 22, "change_pct": 1.8, "change_mandates": 6 },
+        "L": { "votes_pct": 5.5, "mandates": 20, "change_pct": 0.1, "change_mandates": 1 },
+        "MP": { "votes_pct": 4.4, "mandates": 16, "change_pct": -2.5, "change_mandates": -9 }
+      },
+      "government": "S-regering med stöd av C, L, MP, V (Januariavtalet)",
+      "pm": "Stefan Löfven",
+      "source_url": "https://valresultat.svt.se/2018/10000.html"
+    },
+    "riksdag_2022": {
+      "name": "Riksdagsvalet 2022",
+      "date": "2022-09-11",
+      "type": "riksdag",
+      "turnout": 84.2,
+      "total_votes": 6290016,
+      "results": {
+        "S": { "votes_pct": 30.3, "mandates": 107, "change_pct": 2.0, "change_mandates": 7 },
+        "SD": { "votes_pct": 20.5, "mandates": 73, "change_pct": 3.0, "change_mandates": 11 },
+        "M": { "votes_pct": 19.1, "mandates": 68, "change_pct": -0.7, "change_mandates": -2 },
+        "V": { "votes_pct": 6.8, "mandates": 24, "change_pct": -1.2, "change_mandates": -4 },
+        "C": { "votes_pct": 6.7, "mandates": 24, "change_pct": -1.9, "change_mandates": -7 },
+        "KD": { "votes_pct": 5.3, "mandates": 19, "change_pct": -1.0, "change_mandates": -3 },
+        "MP": { "votes_pct": 5.1, "mandates": 18, "change_pct": 0.7, "change_mandates": 2 },
+        "L": { "votes_pct": 4.6, "mandates": 16, "change_pct": -0.9, "change_mandates": -4 }
+      },
+      "government": "M-KD-L-regering med stöd av SD (Tidöavtalet)",
+      "pm": "Ulf Kristersson",
+      "source_url": "https://valresultat.svt.se/2022/"
+    },
+    "eu_2024": {
+      "name": "EU-valet 2024",
+      "date": "2024-06-09",
+      "type": "eu",
+      "turnout": 53.4,
+      "total_votes": 4198011,
+      "sweden_seats": 21,
+      "results": {
+        "S": { "votes_pct": 24.8, "seats": 5, "change_pct": 1.3, "change_seats": 0 },
+        "M": { "votes_pct": 17.5, "seats": 4, "change_pct": 0.7, "change_seats": 0 },
+        "MP": { "votes_pct": 13.9, "seats": 3, "change_pct": 2.3, "change_seats": 1 },
+        "SD": { "votes_pct": 13.2, "seats": 3, "change_pct": -2.2, "change_seats": 0 },
+        "V": { "votes_pct": 11.1, "seats": 2, "change_pct": 4.3, "change_seats": 1 },
+        "C": { "votes_pct": 7.3, "seats": 2, "change_pct": -3.5, "change_seats": 0 },
+        "KD": { "votes_pct": 5.7, "seats": 1, "change_pct": -2.9, "change_seats": -1 },
+        "L": { "votes_pct": 4.4, "seats": 1, "change_pct": 0.3, "change_seats": 0 }
+      },
+      "highlights": [
+        "Vänsterpartiet största vinnaren (+4.3%)",
+        "Miljöpartiet ökade mest i mandat (+1)",
+        "SD backade från toppnoteringen 2019",
+        "Lägre valdeltagande än riksdagsvalen"
+      ],
+      "source_url": "https://valresultat.svt.se/2024/"
+    }
+  },
+  "opinion_current": {
+    "date": "2026-04",
+    "source": "Poll of Polls / Verian",
+    "values": {
+      "S": 33.0,
+      "SD": 20.0,
+      "M": 17.0,
+      "V": 8.0,
+      "C": 6.0,
+      "MP": 6.0,
+      "KD": 5.0,
+      "L": 2.0
+    },
+    "notes": [
+      "L under riksdagsspärren på 4%",
+      "S fortsatt stabilt störst",
+      "Oppositionen leder över regeringsunderlaget"
+    ]
+  },
+  "trends": [
+    {
+      "party": "S",
+      "trend": "stable",
+      "description": "Stabilt runt 33% sedan 2023"
+    },
+    {
+      "party": "SD",
+      "trend": "down",
+      "description": "Tappat från 20.5% (valet) till 20%"
+    },
+    {
+      "party": "M",
+      "trend": "down",
+      "description": "Sjunkit från 19.1% till 17%"
+    },
+    {
+      "party": "V",
+      "trend": "up",
+      "description": "Ökat från 6.8% till 8%"
+    },
+    {
+      "party": "MP",
+      "trend": "up",
+      "description": "Ökat från 5.1% till 6%"
+    },
+    {
+      "party": "L",
+      "trend": "down",
+      "description": "Sjunkit under spärren, från 4.6% till 2%"
+    }
+  ],
+  "block_comparison": {
+    "riksdag_2022": {
+      "hogerblock": { "parties": ["M", "KD", "L", "SD"], "total_pct": 49.5, "mandates": 176 },
+      "vansterblock": { "parties": ["S", "V", "C", "MP"], "total_pct": 48.9, "mandates": 173 }
+    },
+    "opinion_2026": {
+      "hogerblock": { "parties": ["M", "KD", "L", "SD"], "total_pct": 44.0 },
+      "vansterblock": { "parties": ["S", "V", "C", "MP"], "total_pct": 53.0 }
+    }
+  }
+}

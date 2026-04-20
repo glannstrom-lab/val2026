@@ -6,13 +6,27 @@
     "farg": "#AF0000",
     "ledare": "Nooshi Dadgostar",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2020-10",
+    "ledare_fodd": "1985-06-20",
+    "ledare_bakgrund": "Född i Perstorp, uppvuxen i Göteborg. Föräldrar flydde från Iran. Studerade juridik vid Stockholms universitet. Riksdagsledamot sedan 2014. Tidigare ordförande i Ung Vänster.",
+    "ledare_utbildning": "Juristprogrammet, Stockholms universitet (ej examen)",
+    "ledare_bild": "dadgostar.jpg",
     "mandat_2022": 24,
+    "mandat_2018": 28,
     "valresultat_2022": 6.75,
+    "valresultat_2018": 8.0,
+    "eu_2024_pct": 11.1,
+    "eu_2024_mandat": 2,
+    "opinion_nu": 8.0,
     "ideologi": "Socialism, feminism, miljöpolitik",
     "grundat": 1917,
     "webbplats": "https://www.vansterpartiet.se",
     "beskrivning": "Vänsterpartiet är ett socialistiskt och feministiskt parti som vill omfördela makt och resurser i samhället. Partiet betonar jämlikhet, välfärd och klimatomställning.",
-    "block": "opposition"
+    "block": "opposition",
+    "profil": {
+      "ekonomi": -7,
+      "gal_tan": -3
+    }
   },
   {
     "id": "S",
@@ -21,13 +35,27 @@
     "farg": "#E8112D",
     "ledare": "Magdalena Andersson",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2021-11",
+    "ledare_fodd": "1967-01-23",
+    "ledare_bakgrund": "Född i Uppsala. Finansminister 2014-2021, statsminister 2021-2022. Doktor i nationalekonomi. Har arbetat på Finansdepartementet och varit statssekreterare.",
+    "ledare_utbildning": "Doktor i nationalekonomi, Handelshögskolan Stockholm",
+    "ledare_bild": "andersson.jpg",
     "mandat_2022": 107,
+    "mandat_2018": 100,
     "valresultat_2022": 30.33,
+    "valresultat_2018": 28.3,
+    "eu_2024_pct": 24.8,
+    "eu_2024_mandat": 5,
+    "opinion_nu": 33.0,
     "ideologi": "Socialdemokrati, reformism",
     "grundat": 1889,
     "webbplats": "https://www.socialdemokraterna.se",
     "beskrivning": "Socialdemokraterna är Sveriges största parti och har präglat svensk politik under 1900-talet. Partiet står för en stark välfärdsstat, arbetsrätt och pragmatisk reformism.",
-    "block": "opposition"
+    "block": "opposition",
+    "profil": {
+      "ekonomi": -3,
+      "gal_tan": 1
+    }
   },
   {
     "id": "MP",
@@ -36,13 +64,27 @@
     "farg": "#83CF39",
     "ledare": "Daniel Helldén & Amanda Lind",
     "ledare_titel": "språkrör",
+    "ledare_sedan": "2024-04",
+    "ledare_fodd": "1965/1980",
+    "ledare_bakgrund": "Daniel Helldén: Tidigare trafikborgarråd i Stockholm. Amanda Lind: Tidigare kultur- och demokratiminister, partisekreterare och kommunpolitiker i Härnösand.",
+    "ledare_utbildning": "Amanda Lind: Socionom",
+    "ledare_bild": "mp-sprakror.jpg",
     "mandat_2022": 18,
+    "mandat_2018": 16,
     "valresultat_2022": 5.08,
+    "valresultat_2018": 4.4,
+    "eu_2024_pct": 13.9,
+    "eu_2024_mandat": 3,
+    "opinion_nu": 6.0,
     "ideologi": "Grön politik, ekologism, feminism",
     "grundat": 1981,
     "webbplats": "https://www.mp.se",
     "beskrivning": "Miljöpartiet prioriterar klimat och miljöfrågor framför traditionell höger-vänster-politik. Partiet förespråkar hållbar utveckling, biologisk mångfald och social rättvisa.",
-    "block": "opposition"
+    "block": "opposition",
+    "profil": {
+      "ekonomi": -4,
+      "gal_tan": -6
+    }
   },
   {
     "id": "C",
@@ -51,13 +93,27 @@
     "farg": "#009933",
     "ledare": "Muharrem Demirok",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2023-09",
+    "ledare_fodd": "1978-08-30",
+    "ledare_bakgrund": "Född i Turkiet, kom till Sverige som barn. Kommunstyrelsens ordförande i Linköping. Har arbetat med integration och näringsliv. Tidigare ordförande för Centerpartiets ungdomsförbund.",
+    "ledare_utbildning": "Ekonomie magister, Linköpings universitet",
+    "ledare_bild": "demirok.jpg",
     "mandat_2022": 24,
+    "mandat_2018": 31,
     "valresultat_2022": 6.71,
+    "valresultat_2018": 8.6,
+    "eu_2024_pct": 7.3,
+    "eu_2024_mandat": 2,
+    "opinion_nu": 6.0,
     "ideologi": "Liberalism, decentralism, grön liberalism",
     "grundat": 1913,
     "webbplats": "https://www.centerpartiet.se",
     "beskrivning": "Centerpartiet har sina rötter i landsbygden och betonar decentralisering, småföretagande och miljö. Partiet har rört sig i liberal riktning under 2000-talet.",
-    "block": "opposition"
+    "block": "opposition",
+    "profil": {
+      "ekonomi": 3,
+      "gal_tan": -3
+    }
   },
   {
     "id": "L",
@@ -66,13 +122,28 @@
     "farg": "#006AB3",
     "ledare": "Simona Mohamsson",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2025-06",
+    "ledare_fodd": "1995",
+    "ledare_bakgrund": "Född i Hamburg, kom till Sverige som åttaåring. Ordförande för socialnämnden i Göteborg. Tidigare vice förbundsordförande Liberala ungdomsförbundet. Utbildnings- och integrationsminister sedan 2025.",
+    "ledare_utbildning": "Offentlig förvaltning, Göteborgs universitet",
+    "ledare_bild": "mohamsson.jpg",
     "mandat_2022": 16,
+    "mandat_2018": 20,
     "valresultat_2022": 4.61,
+    "valresultat_2018": 5.5,
+    "eu_2024_pct": 4.4,
+    "eu_2024_mandat": 1,
+    "opinion_nu": 2.0,
     "ideologi": "Socialliberalism",
     "grundat": 1934,
     "webbplats": "https://www.liberalerna.se",
     "beskrivning": "Liberalerna betonar individens frihet, utbildning och rättsstaten. Partiet ingår i Tidöregeringen och har fokuserat på integrations- och utbildningsfrågor.",
-    "block": "regering"
+    "block": "regering",
+    "risk_sparr": true,
+    "profil": {
+      "ekonomi": 4,
+      "gal_tan": -2
+    }
   },
   {
     "id": "KD",
@@ -81,13 +152,27 @@
     "farg": "#1F3C81",
     "ledare": "Ebba Busch",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2015-04",
+    "ledare_fodd": "1987-08-11",
+    "ledare_bakgrund": "Uppvuxen i Uppsala. Vice statsminister och energi- och näringsminister sedan 2022. Tidigare kommunstyrelseordförande i Uppsala.",
+    "ledare_utbildning": "Studerade freds- och konfliktvetenskap, Uppsala universitet",
+    "ledare_bild": "busch.jpg",
     "mandat_2022": 19,
+    "mandat_2018": 22,
     "valresultat_2022": 5.34,
+    "valresultat_2018": 6.3,
+    "eu_2024_pct": 5.7,
+    "eu_2024_mandat": 1,
+    "opinion_nu": 5.0,
     "ideologi": "Kristdemokrati, konservatism",
     "grundat": 1964,
     "webbplats": "https://www.kristdemokraterna.se",
     "beskrivning": "Kristdemokraterna bygger sin politik på kristna värderingar och betonar familjen, äldreomsorgen och civilsamhället. Partiet ingår i Tidöregeringen.",
-    "block": "regering"
+    "block": "regering",
+    "profil": {
+      "ekonomi": 5,
+      "gal_tan": 4
+    }
   },
   {
     "id": "M",
@@ -96,13 +181,27 @@
     "farg": "#1B49DD",
     "ledare": "Ulf Kristersson",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2017-10",
+    "ledare_fodd": "1963-12-29",
+    "ledare_bakgrund": "Statsminister sedan oktober 2022. Tidigare socialförsäkringsminister 2010-2014. Ordförande för Moderata ungdomsförbundet 1988-1992. Civilingenjör i industriell ekonomi.",
+    "ledare_utbildning": "Civilingenjör industriell ekonomi, Linköpings tekniska högskola",
+    "ledare_bild": "kristersson.jpg",
     "mandat_2022": 68,
+    "mandat_2018": 70,
     "valresultat_2022": 19.10,
+    "valresultat_2018": 19.8,
+    "eu_2024_pct": 17.5,
+    "eu_2024_mandat": 4,
+    "opinion_nu": 17.0,
     "ideologi": "Konservativ liberalism",
     "grundat": 1904,
     "webbplats": "https://www.moderaterna.se",
     "beskrivning": "Moderaterna är Sveriges näst största parti och leder Tidöregeringen. Partiet förespråkar lägre skatter, valfrihet i välfärden och hårdare tag mot brottslighet.",
-    "block": "regering"
+    "block": "regering",
+    "profil": {
+      "ekonomi": 6,
+      "gal_tan": 2
+    }
   },
   {
     "id": "SD",
@@ -111,12 +210,26 @@
     "farg": "#DDDD00",
     "ledare": "Jimmie Åkesson",
     "ledare_titel": "partiledare",
+    "ledare_sedan": "2005-05",
+    "ledare_fodd": "1979-05-17",
+    "ledare_bakgrund": "Partiledare sedan 2005 - längst sittande bland riksdagspartierna. Uppvuxen i Sölvesborg. Riksdagsledamot sedan 2010. Har lett partiets omvandling till riksdagsparti.",
+    "ledare_utbildning": "Studerade statsvetenskap, Lunds universitet",
+    "ledare_bild": "akesson.jpg",
     "mandat_2022": 73,
+    "mandat_2018": 62,
     "valresultat_2022": 20.54,
+    "valresultat_2018": 17.5,
+    "eu_2024_pct": 13.2,
+    "eu_2024_mandat": 3,
+    "opinion_nu": 20.0,
     "ideologi": "Nationalkonservatism, socialkonservatism",
     "grundat": 1988,
     "webbplats": "https://www.sd.se",
     "beskrivning": "Sverigedemokraterna är riksdagens tredje största parti och stödjer Tidöregeringen. Partiets kärnfrågor är minskad invandring, lag och ordning samt välfärdsnationalism.",
-    "block": "regering"
+    "block": "regering",
+    "profil": {
+      "ekonomi": 3,
+      "gal_tan": 7
+    }
   }
 ]
