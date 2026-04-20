@@ -17,7 +17,7 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 | PerfOptimizer | ✅ Fixat | ~~Render-blockerande resurser~~ |
 | TestEngineer | ✅ Fixat | ~~4%-spärren i koalitionsbyggare~~ |
 | SwedishEditor | ✅ Fixat | ~~Terminologi-inkonsekvens~~ |
-| FrontendDev | ⚠️ Refaktorering | Stor kodduplicering |
+| FrontendDev | ✅ Fixat | ~~Stor kodduplicering~~ |
 
 ---
 
@@ -84,15 +84,19 @@ Sammanställd från granskning av 8 specialiserade agenter: DataValidator, Conte
 
 ---
 
-## Fas 3: Kodkvalitet (3-5 dagar)
+## Fas 3: Kodkvalitet (3-5 dagar) ✅ KLAR
+
+**Implementerad:** 20 april 2026
 
 ### 3.1 Eliminera duplicering (FrontendDev)
 
-| Åtgärd | Påverkan | Tid |
-|--------|----------|-----|
-| Skapa `shared/constants.js` med PARTY_COLORS, PARTY_NAMES, etc. | -10-15 KB JS | 2-3 tim |
-| Skapa `shared/utils.js` med delade funktioner | Bättre underhåll | 3-4 tim |
-| Standardisera init-mönster (alla via window.initX) | Konsistens | 1-2 tim |
+| Status | Åtgärd | Påverkan |
+|--------|--------|----------|
+| ✅ | Skapa `shared/constants.js` med PARTY_COLORS, PARTY_NAMES, PARTY_TEXT_COLORS, PARTY_IDS, RIKSDAG_* | Eliminerat ~500 rader duplicerad kod |
+| ✅ | Uppdatera alla 11 JS-filer att använda delade konstanter | Centraliserat underhåll |
+| ✅ | Uppdatera service worker (v7) med nya filer | Korrekt caching |
+| ⏳ | Skapa `shared/utils.js` med delade funktioner | Bättre underhåll |
+| ⏳ | Standardisera init-mönster (alla via window.initX) | Konsistens |
 
 ### 3.2 Förbättra felhantering
 
@@ -236,8 +240,9 @@ insats│              │              │ insats
 1. ~~**Idag:** Fixa kritiska tillgänglighetsproblem (kontrast, fokus)~~ ✅
 2. ~~**Denna vecka:** Fas 1 komplett~~ ✅
 3. ~~**Denna vecka:** Prestandaoptimering (Fas 2)~~ ✅
-4. **Nästa:** Fas 3 - Kodkvalitet (eliminera duplicering)
-5. **Före valet:** Alla nya sakfrågor om AI, Ukraina, NATO tillagda
+4. ~~**Denna vecka:** Kodkvalitet (Fas 3) - eliminera duplicering~~ ✅
+5. **Nästa:** Fas 4 - Innehållsförbättringar (AI, Ukraina, NATO)
+6. **Före valet:** Alla nya sakfrågor tillagda
 
 ---
 

@@ -6,19 +6,10 @@
 (function() {
   'use strict';
 
+  // From shared/constants.js (filtered to opposition parties)
   const PARTY_ORDER = ['S', 'V', 'C', 'MP'];
-  const PARTY_COLORS = {
-    'S': '#E8112D',
-    'V': '#AF0000',
-    'C': '#009933',
-    'MP': '#83CF39'
-  };
-  const PARTY_NAMES = {
-    'S': 'Socialdemokraterna',
-    'V': 'Vänsterpartiet',
-    'C': 'Centerpartiet',
-    'MP': 'Miljöpartiet'
-  };
+  const PARTY_COLORS = window.PARTY_COLORS;
+  const PARTY_NAMES = window.PARTY_NAMES;
 
   let budgetData = null;
   let selectedParties = ['S', 'V', 'C', 'MP'];

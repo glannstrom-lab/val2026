@@ -3,7 +3,7 @@
  * Möjliggör offline-läsning
  */
 
-const CACHE_NAME = 'val2026-v6';
+const CACHE_NAME = 'val2026-v7';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -21,6 +21,7 @@ const ASSETS_TO_CACHE = [
   './om.html',
   './styles.css',
   './app.js',
+  './shared/constants.js',
   './components/header.js',
   './tools/compass.js',
   './tools/quiz.js',

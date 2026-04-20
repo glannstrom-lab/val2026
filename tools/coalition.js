@@ -7,33 +7,13 @@
   'use strict';
 
   // ==========================================================================
-  // Constants
+  // Constants (from shared/constants.js)
   // ==========================================================================
 
-  const MAJORITY_THRESHOLD = 175;
-  const TOTAL_SEATS = 349;
-
-  const PARTY_COLORS = {
-    V: '#AF0000',
-    S: '#E8112D',
-    MP: '#83CF39',
-    C: '#009933',
-    L: '#006AB3',
-    KD: '#1F3C81',
-    M: '#1B49DD',
-    SD: '#DDDD00'
-  };
-
-  const PARTY_TEXT_COLORS = {
-    V: '#ffffff',
-    S: '#ffffff',
-    MP: '#000000',
-    C: '#ffffff',
-    L: '#ffffff',
-    KD: '#ffffff',
-    M: '#ffffff',
-    SD: '#000000'
-  };
+  const MAJORITY_THRESHOLD = window.RIKSDAG_MAJORITY;
+  const TOTAL_SEATS = window.RIKSDAG_TOTAL_SEATS;
+  const PARTY_COLORS = window.PARTY_COLORS;
+  const PARTY_TEXT_COLORS = window.PARTY_TEXT_COLORS;
 
   // Predefined coalitions
   const PRESET_COALITIONS = [

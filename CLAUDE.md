@@ -56,6 +56,9 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 ├── manifest.json           # PWA manifest
 ├── sw.js                   # Service worker för offline
 │
+├── /shared/
+│   └── constants.js        # Delade konstanter (PARTY_COLORS, PARTY_NAMES, etc.)
+│
 ├── /components/
 │   └── header.js           # Mega menu navigation + footer (275 rader)
 │

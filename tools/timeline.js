@@ -7,30 +7,11 @@
   'use strict';
 
   // ==========================================================================
-  // Constants
+  // Constants (from shared/constants.js)
   // ==========================================================================
 
-  const PARTY_COLORS = {
-    V: '#AF0000',
-    S: '#E8112D',
-    MP: '#83CF39',
-    C: '#009933',
-    L: '#006AB3',
-    KD: '#1F3C81',
-    M: '#1B49DD',
-    SD: '#DDDD00'
-  };
-
-  const PARTY_NAMES = {
-    V: 'Vänsterpartiet',
-    S: 'Socialdemokraterna',
-    MP: 'Miljöpartiet',
-    C: 'Centerpartiet',
-    L: 'Liberalerna',
-    KD: 'Kristdemokraterna',
-    M: 'Moderaterna',
-    SD: 'Sverigedemokraterna'
-  };
+  const PARTY_COLORS = window.PARTY_COLORS;
+  const PARTY_NAMES = window.PARTY_NAMES;
 
   const MONTHS_SV = [
     'jan', 'feb', 'mar', 'apr', 'maj', 'jun',

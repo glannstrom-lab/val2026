@@ -24,17 +24,8 @@
     { id: 'L', namn: 'Liberalerna', procent: 2 }
   ];
 
-  // Party colors (must match parties.json)
-  const PARTY_COLORS = {
-    V: '#AF0000',
-    S: '#E8112D',
-    MP: '#83CF39',
-    C: '#009933',
-    L: '#006AB3',
-    KD: '#1F3C81',
-    M: '#1B49DD',
-    SD: '#DDDD00'
-  };
+  // From shared/constants.js
+  const PARTY_COLORS = window.PARTY_COLORS;
 
   // ==========================================================================
   // State
