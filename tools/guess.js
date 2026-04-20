@@ -159,7 +159,7 @@
           ${Object.keys(PARTY_NAMES).map(partyId => `
             <button class="guess-option" data-party="${partyId}"
               style="--party-color: ${PARTY_COLORS[partyId]}; --party-text: ${PARTY_TEXT_COLORS[partyId]}">
-              <img src="assets/logos/${partyId}.png" alt="" class="guess-option-logo">
+              <img src="assets/logos/${partyId}.png" alt="${partyId}" class="guess-option-logo">
               <span class="guess-option-name">${PARTY_NAMES[partyId]}</span>
             </button>
           `).join('')}

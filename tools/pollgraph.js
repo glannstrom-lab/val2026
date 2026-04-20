@@ -249,7 +249,7 @@
               <button class="pollgraph-filter-btn ${selectedParties.has(partyId) ? 'is-active' : ''}"
                 data-party="${partyId}"
                 style="--party-color: ${PARTY_COLORS[partyId]}">
-                <img src="assets/logos/${partyId}.png" alt="" class="pollgraph-filter-logo">
+                <img src="assets/logos/${partyId}.png" alt="${partyId}" class="pollgraph-filter-logo">
                 <span>${partyId}</span>
               </button>
             `).join('')}

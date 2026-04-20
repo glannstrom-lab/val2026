@@ -211,7 +211,7 @@
         data-party="${party.id}"
         style="--party-color: ${PARTY_COLORS[party.id]}; --party-text: ${PARTY_TEXT_COLORS[party.id]}"
         aria-pressed="${isSelected}">
-        <img src="assets/logos/${party.id}.png" alt="" class="coalition-party-logo">
+        <img src="assets/logos/${party.id}.png" alt="${party.id}" class="coalition-party-logo">
         <span class="coalition-party-name">${party.namn}</span>
         <span class="coalition-party-seats">${seats} mandat</span>
         ${underThreshold ? '<span class="coalition-party-warning">Under spärren</span>' : ''}

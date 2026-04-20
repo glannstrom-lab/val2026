@@ -237,7 +237,7 @@
       <div class="poll-bar-container">
         <div class="poll-bar-header">
           <div class="poll-bar-party">
-            <img src="assets/logos/${poll.id}.png" alt="" class="poll-bar-logo">
+            <img src="assets/logos/${poll.id}.png" alt="${poll.id}" class="poll-bar-logo">
             <span class="poll-bar-name">${poll.namn}</span>
           </div>
           <span class="poll-bar-value" style="color: ${isBelowThreshold ? 'var(--color-error)' : 'inherit'}">

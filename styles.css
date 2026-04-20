@@ -3165,3 +3165,177 @@ section {
   color: var(--color-text-muted);
   text-align: center;
 }
+
+/* --------------------------------------------------------------------------
+   Mobile Improvements
+   -------------------------------------------------------------------------- */
+
+/* Better touch targets on mobile */
+@media (max-width: 640px) {
+  /* Poll graph filter buttons */
+  .pollgraph-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pollgraph-filter-buttons {
+    justify-content: center;
+  }
+
+  .pollgraph-filter-btn {
+    padding: var(--space-2) var(--space-3);
+  }
+
+  /* Guess quiz options - larger touch targets */
+  .guess-option {
+    padding: var(--space-4);
+    min-height: 80px;
+  }
+
+  .guess-option-logo {
+    width: 36px;
+    height: 36px;
+  }
+
+  /* Quiz answer buttons */
+  .quiz-answer-btn {
+    padding: var(--space-3);
+    min-height: 48px;
+  }
+
+  /* Coalition party cards */
+  .coalition-party-card {
+    padding: var(--space-3);
+  }
+
+  .coalition-party-logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  .coalition-party-name {
+    font-size: var(--text-xs);
+  }
+
+  /* Quote text smaller on mobile */
+  .guess-quote {
+    padding: var(--space-4);
+  }
+
+  .guess-quote-text {
+    font-size: var(--text-lg);
+    padding-left: var(--space-6);
+  }
+
+  .guess-quote-mark {
+    font-size: 3rem;
+  }
+
+  /* Timeline compact on mobile */
+  .timeline-event-header {
+    padding: var(--space-3);
+  }
+
+  .timeline-event-title {
+    font-size: var(--text-base);
+  }
+
+  /* Navigation overflow prevention */
+  .main-nav {
+    display: none;
+  }
+
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  .container {
+    padding-left: var(--space-4);
+    padding-right: var(--space-4);
+  }
+
+  /* Section headers smaller */
+  .section-header h2 {
+    font-size: var(--text-2xl);
+  }
+
+  /* Countdown compact */
+  .countdown {
+    gap: var(--space-2);
+  }
+
+  .countdown-value {
+    font-size: var(--text-3xl);
+  }
+
+  /* Poll bars with logo */
+  .poll-bar-logo {
+    width: 24px;
+    height: 24px;
+  }
+
+  .poll-bar-name {
+    font-size: var(--text-sm);
+  }
+
+  /* Compare party buttons compact */
+  .compare-party-btn {
+    min-width: 50px;
+    padding: var(--space-2);
+  }
+
+  .compare-party-logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* About grid single column */
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Quick guide items */
+  .quick-guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .quick-guide-item .number {
+    font-size: var(--text-3xl);
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 380px) {
+  .countdown-item {
+    min-width: 60px;
+  }
+
+  .countdown-value {
+    font-size: var(--text-2xl);
+  }
+
+  .countdown-label {
+    font-size: var(--text-xs);
+  }
+
+  .coalition-party-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  .guess-options {
+    gap: var(--space-2);
+  }
+
+  .cta-group {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .cta-group .btn {
+    width: 100%;
+    text-align: center;
+  }
+}
