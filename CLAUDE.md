@@ -89,7 +89,8 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 │   ├── favicon.svg
 │   └── icon-192.svg        # PWA-ikon
 │
-└── CLAUDE.md               # Denna fil
+├── CLAUDE.md               # Denna fil
+└── AGENTS.md               # Agentteam-definitioner
 ```
 
 ---
@@ -261,7 +262,41 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 
 ---
 
-## 11. Källor
+## 11. Agentteam
+
+Projektet har ett definierat team av 8 specialiserade agenter. Fullständiga prompter finns i `AGENTS.md`.
+
+| Agent | Syfte | Användning |
+|-------|-------|------------|
+| **DataValidator** | Validerar JSON-data, kontrollerar partipositioner och källor | Före release, efter dataändringar |
+| **ContentResearcher** | Researchar politiskt innehåll, opinionsdata | Innehållsuppdateringar |
+| **FrontendDev** | Implementerar funktioner i HTML/CSS/JS | Ny funktionalitet |
+| **A11yAuditor** | Testar WCAG 2.1 AA, tangentbord, mobilvy | Före release, efter UI-ändringar |
+| **NeutralityChecker** | Granskar politisk bias och ledande formuleringar | Före release, nya quiz-frågor |
+| **PerfOptimizer** | Optimerar Lighthouse-poäng och laddtid | Prestandaproblem |
+| **TestEngineer** | Testar quiz-algoritm, navigation, edge cases | Efter kodändringar |
+| **SwedishEditor** | Språkgranskning, terminologi, konsekvent stil | Före release, nytt innehåll |
+
+### Rekommenderade arbetsflöden
+
+**Före release:**
+```
+DataValidator → NeutralityChecker → A11yAuditor → SwedishEditor
+```
+
+**Vid ny funktion:**
+```
+FrontendDev → TestEngineer → A11yAuditor → PerfOptimizer
+```
+
+**Innehållsuppdatering:**
+```
+ContentResearcher → DataValidator → NeutralityChecker → SwedishEditor
+```
+
+---
+
+## 12. Källor
 
 | Källa | Användning |
 |-------|------------|
@@ -274,7 +309,7 @@ Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du b�
 
 ---
 
-## 12. Kontakt & Bidrag
+## 13. Kontakt & Bidrag
 
 **Repository:** https://github.com/glannstrom-lab/val2026
 
