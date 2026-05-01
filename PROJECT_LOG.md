@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 35 — 2026-05-01 — Content (DECISIONS.md uppdatering)
+
+**Bedömning**: DECISIONS.md hade bara Cykel 0-entry om autonom drift. Sedan dess har 34 cykler tagit många viktiga arkitekturbeslut som inte dokumenterats. När en framtida utvecklare (eller jag i en framtida session) läser DECISIONS för kontext finns ingen historik.
+**Alternativ jag valde bort**:
+- Skippa dokumentation — försämrar projektets långsiktiga underhåll
+- Skriva 30+ entries — overengineering, många cykel-fixar är taktiska, inte arkitektur
+- Mobile UX/Neutrality/SEO (4-6 cykler bortom)
+**Gjort**:
+1. Lade till 4 nya DECISIONS.md-entries för de mest arkitektoniskt viktiga besluten:
+   - **Källrad-mönster**: synlig under data, inte bara CTA (Cykel 1, 6, 10)
+   - **JSON-LD via scripts/**: idempotenta node-scripts istället för bygg-pipeline (Cykel 15, 21, 34)
+   - **Service worker hybrid-strategi**: cache-first generellt, SWR för data-filer (Cykel 33)
+   - **Konsekvent felmeddelande-mönster** över 14 tools (Cykel 11)
+2. Format följer befintlig template (Kontext / Alternativ / Val / Konsekvens / Upphäver)
+**Resultat**:
+- DECISIONS.md är nu en faktiskt nyttig arkitektur-historik
+- Framtida utvecklare ser varför vissa val gjorts
+- Append-only-regel respekterad — inga ändringar i Cykel 0-entry
+**Nästa cykel bör undvika**: Content. Senaste 3: Performance, Tools, Content. Cykel 36 kandidater: Mobile UX, Neutrality (7 cykler bortom), Accessibility (4 cykler bortom), SEO (5 cykler bortom).
+
+---
+
 ## Cykel 34 — 2026-05-01 — Tools (run-all.cjs deploy-kedja)
 
 **Bedömning**: Mobile UX-audit av compass.js visade att touchstart-handler redan finns (rad 423) — tooltip fungerar på mobil. Inget att åtgärda. Pivot till Tools: 8 idempotenta scripts har ackumulerats i `scripts/`-mappen under Cyklerna 3, 5, 14, 15, 21, 24, 26, 27. Varje deploy som ändrar data eller HTML kan kräva re-körning av flera. Saknas en samlingsrunner.
