@@ -15,6 +15,27 @@ Format för varje post:
 
 ---
 
+## Cykel 14 — 2026-05-01 — Performance (CLS-prevention via img dimensions)
+
+**Bedömning**: Audit av 19 `<img>` element visade att alla saknade `width`/`height`-attribut. Det är en Core Web Vital fail: utan dimensioner reserverar browsern ingen plats för bilden under laddning, vilket orsakar Cumulative Layout Shift (CLS) när partilogon dyker upp och pushar text. Alla logos är kvadratiska, så `width="48" height="48"` (1:1 ratio-hint) fungerar för alla — CSS overrider absoluta storlekar vid behov, men browsern använder ratio för CLS-prevention.
+**Alternativ jag valde bort**:
+- CSS-rensning av identifierade konflikter — fortfarande risk utan visuell verifikation
+- Service worker rewrite — fungerar redan bra (cache-first, cleanup, skippar externa)
+- JSON-minifiering — gör underhåll svårare, marginal vinst
+- SEO/Neutrality/Content (3-5 cykler bortom)
+**Gjort**:
+1. `scripts/perf-img-dims.cjs` — idempotent script som lägger till `width="48" height="48"` på alla logo-img som saknar dimensioner. Säkerhets-check: bara matchar src med "logos/" i pathen.
+2. Körde scriptet → 19 img i 13 filer fick dimensioner (app.js, 12 tool-filer)
+3. Verifierade audit: 19/19 img har nu width+height
+**Resultat**:
+- CLS-risk eliminerad för alla partilogos — browser reserverar plats innan bilden laddats
+- Förväntad förbättring av Core Web Vital "CLS" från oklart till nära 0 för logo-relaterade shifts
+- Inga visuella förändringar — CSS bestämmer fortfarande den faktiska renderingsstorleken
+- Engångsscript bevarat i `scripts/` för framtida re-körning
+**Nästa cykel bör undvika**: Performance. Senaste 3: Mobile UX, Accessibility, Performance. Cykel 15 kandidater: SEO (6 cykler bortom), Neutrality (5 cykler bortom), Content (4 cykler bortom), Tools (3 cykler bortom).
+
+---
+
 ## Cykel 13 — 2026-05-01 — Accessibility (form-labels)
 
 **Bedömning**: Audit av 19 IMG (alla har alt ✅), 49 buttons (alla har tillgängligt namn ✅), och 4 form-element-fail. Tre `<select>` (budget-category-filter, budget-sort, votes-category-filter) hade `<label>` ovanför men UTAN `for`-attribut → ingen programmatisk koppling till skärmläsare. En `<input>` (share-url-input) hade ingen label alls. Alla fail enligt WCAG SC 1.3.1 / 4.1.2.

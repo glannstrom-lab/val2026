@@ -201,7 +201,7 @@
             ${initials}
           </div>
           <div class="candidate-party-badge">
-            <img src="assets/logos/${candidate.party}.png" alt="${candidate.party}" loading="lazy" decoding="async">
+            <img src="assets/logos/${candidate.party}.png" alt="${candidate.party}" loading="lazy" decoding="async" width="48" height="48">
           </div>
         </div>
 

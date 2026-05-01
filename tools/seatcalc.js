@@ -169,7 +169,7 @@
             ${PARTY_IDS.map(id => `
               <div class="seatcalc-slider-row" style="--party-color: ${PARTY_COLORS[id]}">
                 <div class="seatcalc-slider-header">
-                  <img src="assets/logos/${id}.png" alt="${id}" class="seatcalc-party-logo" loading="lazy" decoding="async">
+                  <img src="assets/logos/${id}.png" alt="${id}" class="seatcalc-party-logo" loading="lazy" decoding="async" width="48" height="48">
                   <span class="seatcalc-party-name">${PARTY_NAMES[id]}</span>
                   <span class="seatcalc-party-value">${currentVotes[id].toFixed(1)}%</span>
                 </div>
@@ -234,7 +234,7 @@
               ${PARTY_IDS.filter(id => seats[id] > 0).sort((a, b) => seats[b] - seats[a]).map(id => `
                 <div class="seatcalc-bar-row">
                   <div class="seatcalc-bar-label">
-                    <img src="assets/logos/${id}.png" alt="${id}" loading="lazy" decoding="async">
+                    <img src="assets/logos/${id}.png" alt="${id}" loading="lazy" decoding="async" width="48" height="48">
                     <span>${id}</span>
                   </div>
                   <div class="seatcalc-bar-track">

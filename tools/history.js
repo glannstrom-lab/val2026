@@ -196,7 +196,7 @@
             return `
               <div class="eu-party-row" style="--party-color: ${PARTY_COLORS[party]}">
                 <div class="eu-party-info">
-                  <img src="./assets/logos/${party}.png" alt="${party}" class="eu-party-logo" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                  <img src="./assets/logos/${party}.png" alt="${party}" class="eu-party-logo" loading="lazy" decoding="async" onerror="this.style.display='none'" width="48" height="48">
                   <span class="eu-party-name">${party}</span>
                 </div>
                 <div class="eu-party-stats">
@@ -234,7 +234,7 @@
           ${partiesData.map(party => `
             <div class="leader-card" style="--party-color: ${party.farg}">
               <div class="leader-header">
-                <img src="./assets/logos/${party.id}.png" alt="${party.kortnamn}" class="leader-party-logo" loading="lazy" decoding="async" onerror="this.style.display='none'">
+                <img src="./assets/logos/${party.id}.png" alt="${party.kortnamn}" class="leader-party-logo" loading="lazy" decoding="async" onerror="this.style.display='none'" width="48" height="48">
                 <div class="leader-party-info">
                   <span class="leader-party-name">${party.namn}</span>
                   <span class="leader-opinion ${party.opinion_nu > party.valresultat_2022 ? 'up' : 'down'}">

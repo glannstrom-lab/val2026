@@ -192,7 +192,7 @@
                 </span>
                 ${event.party ? `
                   <span class="timeline-event-party" style="background: ${partyColor}">
-                    <img src="assets/logos/${event.party}.png" alt="${event.party}" class="timeline-party-logo" loading="lazy" decoding="async">
+                    <img src="assets/logos/${event.party}.png" alt="${event.party}" class="timeline-party-logo" loading="lazy" decoding="async" width="48" height="48">
                     ${event.party}
                   </span>
                 ` : ''}

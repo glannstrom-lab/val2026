@@ -215,7 +215,7 @@
       return `
         <div class="party-stat-card" style="--party-color: ${PARTY_COLORS[party]}">
           <div class="party-stat-logo">
-            <img src="./assets/logos/${party}.png" alt="${party}" loading="lazy" decoding="async" onerror="this.style.display='none'">
+            <img src="./assets/logos/${party}.png" alt="${party}" loading="lazy" decoding="async" onerror="this.style.display='none'" width="48" height="48">
             <span class="party-stat-name">${party}</span>
           </div>
           <div class="party-stat-bars">

@@ -80,7 +80,7 @@
                   data-party="${party.id}"
                   data-slot="0"
                   style="--party-color: ${PARTY_COLORS[party.id]}; --party-text: ${PARTY_TEXT_COLORS[party.id]}">
-                  <img src="assets/logos/${party.id}.png" alt="${party.id}" loading="lazy" decoding="async">
+                  <img src="assets/logos/${party.id}.png" alt="${party.id}" loading="lazy" decoding="async" width="48" height="48">
                   <span>${party.kortnamn}</span>
                 </button>
               `).join('')}
@@ -97,7 +97,7 @@
                   data-party="${party.id}"
                   data-slot="1"
                   style="--party-color: ${PARTY_COLORS[party.id]}; --party-text: ${PARTY_TEXT_COLORS[party.id]}">
-                  <img src="assets/logos/${party.id}.png" alt="${party.id}" loading="lazy" decoding="async">
+                  <img src="assets/logos/${party.id}.png" alt="${party.id}" loading="lazy" decoding="async" width="48" height="48">
                   <span>${party.kortnamn}</span>
                 </button>
               `).join('')}
@@ -147,7 +147,7 @@
         <div class="partycompare-selected-parties">
           <button class="partycompare-selected-party" data-slot="0"
             style="--party-color: ${PARTY_COLORS[party1.id]}">
-            <img src="assets/logos/${party1.id}.png" alt="${party1.id}" loading="lazy" decoding="async">
+            <img src="assets/logos/${party1.id}.png" alt="${party1.id}" loading="lazy" decoding="async" width="48" height="48">
             <span>${party1.namn}</span>
             <span class="partycompare-change-btn">Ändra</span>
           </button>
@@ -156,7 +156,7 @@
 
           <button class="partycompare-selected-party" data-slot="1"
             style="--party-color: ${PARTY_COLORS[party2.id]}">
-            <img src="assets/logos/${party2.id}.png" alt="${party2.id}" loading="lazy" decoding="async">
+            <img src="assets/logos/${party2.id}.png" alt="${party2.id}" loading="lazy" decoding="async" width="48" height="48">
             <span>${party2.namn}</span>
             <span class="partycompare-change-btn">Ändra</span>
           </button>

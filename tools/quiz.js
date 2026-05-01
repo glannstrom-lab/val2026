@@ -623,7 +623,7 @@
               <div class="quiz-match-item ${index === 0 ? 'is-top' : ''}">
                 <div class="quiz-match-header">
                   <div class="quiz-match-party">
-                    <img src="assets/logos/${match.id}.png" alt="${match.id}" class="quiz-match-logo" loading="lazy" decoding="async">
+                    <img src="assets/logos/${match.id}.png" alt="${match.id}" class="quiz-match-logo" loading="lazy" decoding="async" width="48" height="48">
                     <span class="quiz-match-name">${match.name}</span>
                   </div>
                   <span class="quiz-match-percent">${match.matchPercent}%</span>

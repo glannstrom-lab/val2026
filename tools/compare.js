@@ -73,7 +73,7 @@
                   data-party="${partyId}"
                   style="--party-color: ${PARTY_COLORS[partyId]}; --party-text: ${PARTY_TEXT_COLORS[partyId]}"
                   aria-pressed="${isSelected}">
-                  <img src="assets/logos/${partyId}.png" alt="${partyId}" class="compare-party-logo" loading="lazy" decoding="async">
+                  <img src="assets/logos/${partyId}.png" alt="${partyId}" class="compare-party-logo" loading="lazy" decoding="async" width="48" height="48">
                   <span class="compare-party-abbr">${partyId}</span>
                 </button>
               `;

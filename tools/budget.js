@@ -267,7 +267,7 @@
       <div class="budget-party-card" style="--party-color: ${PARTY_COLORS[party]}">
         <div class="party-card-header">
           <img src="./assets/logos/${party}.png" alt="${party}" class="party-card-logo" loading="lazy" decoding="async"
-               onerror="this.style.display='none'">
+               onerror="this.style.display='none'" width="48" height="48">
           <div class="party-card-title">
             <h4>${data.name}</h4>
             <span class="party-motion-title">${data.motion_title}</span>
