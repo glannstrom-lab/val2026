@@ -967,7 +967,7 @@ section {
   }
 }
 
-.about-item h3 {
+.about-item h2 {
   font-size: var(--text-lg);
   margin-bottom: var(--space-3);
   display: flex;
@@ -2726,7 +2726,7 @@ section {
   margin-bottom: var(--space-6);
 }
 
-.coalition-parties h4 {
+.coalition-parties h2 {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 600;
@@ -2809,7 +2809,7 @@ section {
   margin-bottom: var(--space-6);
 }
 
-.coalition-summary h4 {
+.coalition-summary h2 {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 600;
@@ -2872,7 +2872,7 @@ section {
   margin-bottom: var(--space-6);
 }
 
-.coalition-presets h4 {
+.coalition-presets h2 {
   font-family: var(--font-display);
   font-size: var(--text-lg);
   font-weight: 600;
@@ -5801,7 +5801,8 @@ section {
   border-radius: var(--radius-lg);
 }
 
-.about-contact h3 {
+.about-contact h2 {
+  font-size: var(--text-lg);
   margin-bottom: var(--space-3);
 }
 

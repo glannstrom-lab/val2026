@@ -105,14 +105,14 @@ Du är autonom produktägare för detta projekt. Varje cykel följer du denna se
 För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vilken som senast valdes.
 
 - [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1, 6)*
-- [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2)*
+- [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2, 7)*
 - [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5)*
 - [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4)*
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3)*
 
-Senast vald: **Content (Cykel 6, 2026-05-01)**
+Senast vald: **Accessibility (Cykel 7, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -155,6 +155,8 @@ Du har INTE auktoritet att:
 - **Säker performance-vinst utan browser: preload + font-display.** `<link rel="preload" href="styles.css">` parallelliserar CSS-laddning med HTML-parsning. `&display=swap` i font-URL undviker FOIT (Flash of Invisible Text). Båda är riskfria på multi-page sajt — inga visuella förändringar, bara snabbare. (Cykel 5)
 - **Audit av synliga källor sida för sida innan tillägg.** Innan en cykel lägger till källrader, granska varje sida — flera kan redan ha dem (opinion.html hade pollofpolls.se, budget/votes/EU-history hade specifika links). Att lägga till dubblet skadar UX. (Cykel 6)
 - **Återanvändbar `.history-source` / `.seatcalc-source`-klass.** Mönster: liten muted text med top-border som separerar från kärninnehåll, länkar i underline. Konsekvent stil över olika datatyper bygger användarens förtroende. (Cykel 6)
+- **Heading-audit kräver TVÅ pass: statisk HTML och JS-renderade tool-templates.** Sidan är multi-page med h1 i HTML och resten av rubrikerna inserterade av tools/*.js. Hopp h1→h3 (WCAG SC 1.3.1 fail) syns inte i bara HTML-audit. Audit-skript måste söka även i JS-stränglitteralerna. (Cykel 7)
+- **Föredra statisk h2 i HTML över h2 i JS.** När en tool renderar mycket innehåll lägg ankaret som statisk `<h2>` i HTML (eventuellt sr-only om den inte är visuellt nödvändig) — då fungerar hierarkin även med JS avstängd, och bryggar till tool-renderade h3-rubriker. (Cykel 7)
 
 ## Referensdata
 

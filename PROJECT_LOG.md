@@ -15,6 +15,30 @@ Format för varje post:
 
 ---
 
+## Cykel 7 — 2026-05-01 — Accessibility (heading-hierarki)
+
+**Bedömning**: Audit av heading-strukturen avslöjade en konkret WCAG SC 1.3.1-fail i om.html (h1 → direkt h3, hopp över h2). Skip-link injiceras korrekt via header.js. Audit av JS-tools fann fler hopp: coalition.js renderar bara h4 (3 stycken) på en sida som bara har h1; timeline.js renderar h4 för 36 events utan mellanlag. Andra tools (budget/candidates/compare/guess/history/partycompare/quiz/seatcalc/votes) börjar också med h3 utan h2 mellanlag — backloggat eftersom omfattande.
+**Alternativ jag valde bort**:
+- SEO (JSON-LD strukturerad data) — bara 4 cykler sedan SEO-cykel, ge variation tid
+- Tools — för diffust
+- Mobile UX — kräver browser
+- Fixa alla JS-tool-hopp i en cykel — för stort, risk för regressions
+**Gjort**:
+1. om.html — bytte 7 h3 → h2 (alla peer-rubriker direkt under sidans h1: Syfte, Metodik, Källor, Begränsningar, Integritet, Tillgänglighet, Kontakt)
+2. styles.css — `.about-item h3` → `.about-item h2`, `.about-contact h3` → `.about-contact h2` (matchar nya HTML-strukturen, behåller font-size:lg)
+3. tools/coalition.js — bytte 3 h4 → h2 ("Välj partier", "Snabbval", "Din koalition") plus motsvarande CSS-regler `.coalition-parties h2`, `.coalition-summary h2`, `.coalition-presets h2`
+4. tidslinje.html — lade till statisk `<h2 class="sr-only" id="timeline-heading">Politiska händelser</h2>` med aria-labelledby på `<section>`. Synlig för skärmläsare, osynlig visuellt
+5. tools/timeline.js — bytte event-titel-tag från h4 → h3 så hierarki blir h1→h2(sr-only)→h3
+6. ROADMAP backlog: heading-hopp i 9 övriga JS-tools (budget/candidates/compare/guess/history/partycompare/quiz/seatcalc/votes)
+**Resultat**:
+- Audit kör grön på alla 17 statiska HTML-sidor — inga fler hopp
+- om.html, koalition.html, tidslinje.html nu fullständigt WCAG SC 1.3.1-kompatibla även med JS påslagen
+- Statiska CSS-regler uppdaterade så ingen visuell regression
+- `.sr-only`-klassen redan i styles.css (rad 2555) — återanvändbar, inget nytt
+**Nästa cykel bör undvika**: Accessibility. Senaste 3: Content, Accessibility, ??? Kandidater för Cykel 8: Tools, Mobile UX, SEO (med 4 cykler bortom), Performance (3 cykler bortom), Neutrality (3 cykler bortom).
+
+---
+
 ## Cykel 6 — 2026-05-01 — Content (källrader på fler sidor)
 
 **Bedömning**: Cykel 1 lade till källrad på partier.html. Backloggat: göra motsvarande på opinion.html, historik.html, mandat.html, budget.html, rostningar.html. Audit visade att opinion.html (pollofpolls.se), budget.html (Prop. 2024/25:1) och rostningar.html (Riksdagens öppna data) redan hade synliga källor — kvarvarande luckor: historik.html (bara EU-valet hade källa, riksdagsvalen 2018/2022 saknade), mandat.html (förklarade Sainte-Laguë men hade ingen länk till regelverket).

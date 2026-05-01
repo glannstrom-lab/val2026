@@ -185,7 +185,7 @@
             </time>
 
             <div class="timeline-event-title-wrap">
-              <h4 class="timeline-event-title">${event.title}</h4>
+              <h3 class="timeline-event-title">${event.title}</h3>
               <div class="timeline-event-meta">
                 <span class="timeline-event-type" style="background: ${type?.color || '#666'}">
                   ${type?.label || event.type}

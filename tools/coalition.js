@@ -150,7 +150,7 @@
 
         <!-- Party selector -->
         <div class="coalition-parties">
-          <h4>Välj partier</h4>
+          <h2>Välj partier</h2>
           <div class="coalition-party-grid">
             ${partiesData.map(party => renderPartyCard(party)).join('')}
           </div>
@@ -161,7 +161,7 @@
 
         <!-- Preset coalitions -->
         <div class="coalition-presets">
-          <h4>Snabbval</h4>
+          <h2>Snabbval</h2>
           <div class="coalition-preset-grid">
             ${PRESET_COALITIONS.map(preset => renderPresetButton(preset)).join('')}
           </div>
@@ -205,7 +205,7 @@
 
     return `
       <div class="coalition-summary">
-        <h4>Din koalition</h4>
+        <h2>Din koalition</h2>
         <div class="coalition-summary-parties">
           ${selectedList.map(partyId => {
             const party = partiesData.find(p => p.id === partyId);
