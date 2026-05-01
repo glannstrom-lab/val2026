@@ -15,6 +15,25 @@ Format för varje post:
 
 ---
 
+## Cykel 9 — 2026-05-01 — Neutrality audit (quotes + quiz)
+
+**Bedömning**: Audit av quotes.json visade PERFEKT balans — exakt 7 citat per parti × 8 partier = 56 totalt. Ingen åtgärd behövs där. Audit av 50 quiz-frågor identifierade två tydliga formuleringsproblem: (1) fråga 23 "traditionella familjevärderingar" är KD-typisk laddad frasering; (2) fråga 50 inramade gruvbrytning med "för att säkra mineraler till grön omställning" — rättfärdigande inramning som styr svaret. Andra frågor använder intensifierare ("kraftigt", "ytterligare") men det är vanligt politiskt språk.
+**Alternativ jag valde bort**:
+- Cykel-omfattande granskning av 56 sakfrågesummeringar i issues.json — för stort
+- Ändra quiz-frågor 16, 32, 39 (intensifierare) — gränsfall, riskerar över-redigering
+- Tools/Mobile UX/Performance
+**Gjort**:
+1. quiz-questions.json q23: "Sverige bör värna traditionella familjevärderingar i politiken" → "Politiken bör främja traditionella familjeformer". Tar bort KD-laddat språk men behåller policykärnan så positionerings-vektorerna är fortsatt giltiga.
+2. quiz-questions.json q50: "Gruvbrytning bör tillåtas i skyddade områden för att säkra mineraler till grön omställning" → "Gruvbrytning bör tillåtas i naturskyddade områden". Tar bort rättfärdigande inramning. Positions-vektorer ej påverkade — frågan handlar fortfarande om samma policy.
+3. JSON-validitet verifierad.
+**Resultat**:
+- Två neutrralitetsfix utan att ändra positionsmatris (svaren V=-2, MP=-2, M=2 etc. står sig)
+- Quiz-resultat blir mer rättvisande eftersom svar inte styrs av inramning
+- quotes.json bekräftat optimalt balanserat — ingen ytterligare åtgärd behövs
+**Nästa cykel bör undvika**: Neutrality. Senaste 3: Accessibility, SEO, Neutrality. Cykel 10 kandidater: Tools, Mobile UX, Performance (4 cykler bortom), Content (3 cykler bortom).
+
+---
+
 ## Cykel 8 — 2026-05-01 — SEO & meta (JSON-LD strukturerad data)
 
 **Bedömning**: Cykel 3 backloggade JSON-LD strukturerad data. Detta hjälper Google visa rich results, stärker entitetsdata, och kommunicerar sidans natur till AI-assistenter. Inga ld+json-block fanns.
