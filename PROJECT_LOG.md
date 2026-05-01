@@ -15,6 +15,32 @@ Format för varje post:
 
 ---
 
+## Cykel 36 — 2026-05-01 — Accessibility + SEO (audit clear)
+
+**Bedömning**: Bred audit av återstående a11y och SEO-luckor i en cykel, eftersom tidigare cykler tagit hand om de uppenbara problemen.
+
+**Granskat utan att hitta något att åtgärda**:
+- Form-labels på alla `<input>`, `<select>`, `<textarea>` (vilka var fokus i Cykel 13) — alla har label/aria-label
+- Range-input i seatcalc.js — har aria-label, browser läser min/max/value automatiskt
+- Quiz radio-grupp — wrapped i `<label>` + role="radiogroup" + aria-label
+- Quiz checkboxar — wrapped i `<label>`
+- Kompass coalition-toggle — wrapped i `<label>`
+- Compare/partycompare/votes/budget filter-selects — alla har `<label for="X">` + sr-only där behövs
+- Viewport meta — alla 17 sidor, ingen `user-scalable=no` (skulle vara WCAG-fail)
+- HTML lang-attribut — alla 18 sidor (inkl arkiverad index-single) har `<html lang="sv">`
+
+**Fynd**: Projektet är på en hög baseline efter 35 cyklars systematiska arbete. Återstående arbete kräver tools jag inte har tillgång till i denna miljö:
+- Lighthouse CLI för Performance / SEO / Accessibility / Best Practices score
+- axe-core för automatiserad WCAG-validering
+- W3C HTML-validator
+- Skärmläsare för manuell SR-test
+- Verklig browser för 3G-laddtidstest, hover-states, faktisk visuell verifikation
+
+**Ingen kodändring committad**. Bara log-uppdatering — ärligt rapporterande av audit-resultat.
+**Nästa cykel bör undvika**: Accessibility, SEO. Senaste 3: Tools, Content, Accessibility/SEO. Cykel 37 kandidater: Mobile UX (5 cykler bortom), Neutrality (7 cykler bortom!), Performance (4 cykler bortom).
+
+---
+
 ## Cykel 35 — 2026-05-01 — Content (DECISIONS.md uppdatering)
 
 **Bedömning**: DECISIONS.md hade bara Cykel 0-entry om autonom drift. Sedan dess har 34 cykler tagit många viktiga arkitekturbeslut som inte dokumenterats. När en framtida utvecklare (eller jag i en framtida session) läser DECISIONS för kontext finns ingen historik.
