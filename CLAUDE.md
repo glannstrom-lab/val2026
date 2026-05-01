@@ -107,12 +107,12 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1)*
 - [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2)*
 - [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
-- [ ] **Performance** — laddtider, bildoptimering, CSS-rensning
+- [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5)*
 - [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4)*
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3)*
 
-Senast vald: **Neutrality audit (Cykel 4, 2026-05-01)**
+Senast vald: **Performance (Cykel 5, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -151,6 +151,8 @@ Du har INTE auktoritet att:
 - **"Hårdare tag" är populism, inte beskrivning.** Använd "skärpta straff", "skärpt straffrätt" eller "stärkt lag och ordning" — ord som också Liberalerna och SD använder neutralt på samma område. Konsekvent terminologi över partier är neutralitetens kärna. (Cykel 4)
 - **Storlekspåståenden hör hemma i statistik, inte i beskrivningstext.** Mandat och valresultat finns redan synligt i partikortet. När de upprepas i `beskrivning` skapas asymmetri (bara stora partier får storleksomnämnande). Håll beskrivningen om politik och historik, inte storlek. (Cykel 4)
 - **Räkna partiomnämnanden som balanstest.** Aggregera och jämför mot riksdagsmandat-fördelningen — det avslöjar dolda asymmetrier (t.ex. timeline.json hade M=5, S=2 trots att S har 39% fler mandat). (Cykel 4)
+- **CSS-konflikter där samma klassnamn definieras i olika scopes är inte alltid duplicering.** En grupp-selektor `.a, .b { ... }` följt av `.b { specifik }` är legitimt mönster, inte duplicering. Endast när två block med samma selektor har olika stilar utan delad bas är det en konflikt — då ska den senare scopas under sin parent (`.parent .child`). Visuell verifikation krävs före fix. (Cykel 5)
+- **Säker performance-vinst utan browser: preload + font-display.** `<link rel="preload" href="styles.css">` parallelliserar CSS-laddning med HTML-parsning. `&display=swap` i font-URL undviker FOIT (Flash of Invisible Text). Båda är riskfria på multi-page sajt — inga visuella förändringar, bara snabbare. (Cykel 5)
 
 ## Referensdata
 

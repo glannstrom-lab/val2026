@@ -60,3 +60,12 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - Stöd för enkel svenska-version
 - Skapa `assets/og-image.png` (1200×630) för social sharing — referens i meta-taggar finns ej, behövs för Twitter/Facebook-preview
 - JSON-LD strukturerad data (Organization för portalen, Event för debatter, Person för partiledare/kandidater)
+- **CSS-konflikter att scope:a** (identifierat Cykel 5):
+  - `.party-card-header` — global definition (rad 676) krockar med variant inom
+    `.budget-party-card` (rad 4286). Borde scopas: `.budget-party-card .party-card-header`.
+  - `.party-stat-value` / `.party-stat-label` — global (rad 732/739) krockar med
+    votes-specifik variant (rad 3877/3857). Borde scopas under votes-parent.
+  - `.block-label` — opinion-page (rad 4899) krockar med block-bar-variant (rad 5863).
+    Borde scopas. Kräver visuell verifikation före commit.
+- Bildoptimering av PNG-logotyper (totalt 53 KB, SD/MP/S är 9–13 KB var). WebP eller
+  manuell komprimering kan spara 30–50 %.

@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 5 — 2026-05-01 — Performance
+
+**Bedömning**: Performance-audit utan browser. Filstorleksanalys: styles.css är 150 KB över 5800+ rader, app.js 14 KB, alla 14 verktygsfiler total 187 KB (men bara en laddas per sida pga multi-page). Preload-audit visade att endast index.html (1 av 17) hade `<link rel="preload">` för styles.css. Tre sidor (debatter, kandidater, mandat — samma trio som inkonsekvent SEO i Cykel 3) saknade `display=swap` i font-URL → FOIT-risk. CSS-duplikat-audit identifierade 17 selektorer, varav 11 är legitima gruppselektor-mönster och 3 är reella konflikter (`.party-card-header`, `.party-stat-value/label`, `.block-label` definieras i konkurrerande scopes).
+**Alternativ jag valde bort**:
+- Bildoptimering — kräver imagemin/sharp som dependency, mot CLAUDE.md "ingen build-process". Backloggat istället.
+- CSS-konflikt-fix — risk utan visuell verifikation. Backloggat med specifik fix-strategi.
+- CSS-rensning av oanvända klasser — kräver browser-baserad coverage-analys eller risken att bryta något dynamiskt
+**Gjort**:
+1. `scripts/perf-preload.cjs` — idempotent script som inserterar `<link rel="preload" href="styles.css" as="style">` före befintlig styles.css-link på alla sidor som saknar den, och normaliserar Bunny Fonts-URL med `&display=swap`
+2. Körde scriptet → 16/17 filer ändrade (index.html hade redan båda)
+3. Verifierade post-fix: 17/17 sidor har preload + display=swap
+4. ROADMAP backlog: tre CSS-konflikter att scope:a med specifika rad-referenser (kräver visuell verifikation)
+5. ROADMAP backlog: bildoptimering av PNG-logotyper (53 KB total, SD/MP/S är 9–13 KB var)
+**Resultat**:
+- Förväntad förbättring: parallell CSS-laddning på 16 sidor → ~50–150 ms snabbare First Contentful Paint på 4G
+- FOIT undvikt på debatter/kandidater/mandat → text syns direkt även om Bunny Fonts är långsam
+- Inga visuella förändringar (preload + display=swap är non-breaking)
+- styles.css storlek oförändrad (rensning backloggad)
+**Nästa cykel bör undvika**: Performance. Senaste 3: SEO, Neutrality, Performance. Kandidater: Tools, Mobile UX, Content (>3 cykler sedan), Accessibility (>3 cykler sedan).
+
+---
+
 ## Cykel 4 — 2026-05-01 — Neutrality audit
 
 **Bedömning**: Två klasser av neutralitetsproblem identifierade. (1) **Textbias** i partibeskrivningar: S "har präglat svensk politik under 1900-talet" (positivt laddat), M "hårdare tag mot brottslighet" (populistisk frasering medan SD får neutralt "lag och ordning"), och bara S/M/SD får storlekspåståenden i beskrivning vilket skapar strukturell asymmetri (storlek finns redan i partikortets statistik). (2) **Strukturell obalans i timeline.json**: M=5, L=3, MP=3, S=2, SD=2, V=1, C=1, KD=1 av 36 händelser. Förväntat enligt mandat: S~11, SD~8, M~7. S och SD kraftigt underrepresenterade.
