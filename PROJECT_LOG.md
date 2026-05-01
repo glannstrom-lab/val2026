@@ -15,6 +15,27 @@ Format för varje post:
 
 ---
 
+## Cykel 15 — 2026-05-01 — SEO (Person-LD för partiledare)
+
+**Bedömning**: Cykel 8 lade WebSite på index och AboutPage på om — men hoppade Person-LD för partiledare pga synkningsrisk mellan parties.json och statisk LD. Lösning: scripts/gen-partier-ld.cjs som genererar LD från parties.json. Re-körs vid ledare-byte → ingen drift möjlig.
+**Alternativ jag valde bort**:
+- Dynamisk JS-injection — bots kör inte alltid JS, lägre tillförlitlighet
+- Hårdkoda JSON-LD i partier.html — synkningsrisk
+- Event[] för debatter.html — datat ändras ofta, hög underhållskostnad
+- Performance/Mobile UX/Accessibility (3-5 cykler bortom)
+**Gjort**:
+1. `scripts/gen-partier-ld.cjs` — läser parties.json, sorterar efter mandat 2022 desc, genererar `ItemList` med 8 `Person`-items (varje med `jobTitle` och `memberOf: PoliticalParty`)
+2. Skriptet är idempotent — tar bort befintlig genererad LD-block om den finns och inserterar ny
+3. Körde scriptet → `<script type="application/ld+json">` insertad i partier.html `<head>`
+4. Validerat: 8 personer i korrekt ordning (S, SD, M, ..., L)
+**Resultat**:
+- Google + Bing kan nu hämta strukturerad data om alla 8 partiledare och deras partier
+- Schema-validitet verifierad via JSON.parse + manuell granskning av `@type` och `itemListElement.length`
+- Vid framtida partiledar-byte: kör `node scripts/gen-partier-ld.cjs` så uppdateras LD utan manuella edit
+**Nästa cykel bör undvika**: SEO. Senaste 3: Accessibility, Performance, SEO. Cykel 16 kandidater: Neutrality (6 cykler bortom), Content (5 cykler bortom), Tools (4 cykler bortom), Mobile UX (3 cykler bortom).
+
+---
+
 ## Cykel 14 — 2026-05-01 — Performance (CLS-prevention via img dimensions)
 
 **Bedömning**: Audit av 19 `<img>` element visade att alla saknade `width`/`height`-attribut. Det är en Core Web Vital fail: utan dimensioner reserverar browsern ingen plats för bilden under laddning, vilket orsakar Cumulative Layout Shift (CLS) när partilogon dyker upp och pushar text. Alla logos är kvadratiska, så `width="48" height="48"` (1:1 ratio-hint) fungerar för alla — CSS overrider absoluta storlekar vid behov, men browsern använder ratio för CLS-prevention.

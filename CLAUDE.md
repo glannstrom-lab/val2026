@@ -110,9 +110,9 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5, 14)*
 - [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4, 9)*
 - [x] **Mobile UX** — testning och förbättring på små skärmar *(Cykel 12)*
-- [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3, 8)*
+- [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3, 8, 15)*
 
-Senast vald: **Performance (Cykel 14, 2026-05-01)**
+Senast vald: **SEO & meta (Cykel 15, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 

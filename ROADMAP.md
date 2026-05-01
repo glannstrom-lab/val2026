@@ -69,9 +69,9 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - Skapa `assets/og-image.png` (1200×630) för social sharing — referens i meta-taggar finns ej, behövs för Twitter/Facebook-preview
 - JSON-LD strukturerad data
   (Cykel 8: WebSite på index.html, AboutPage + BreadcrumbList på om.html.
-  Kvar: ItemList av Person för partiledare på partier.html, Event[] på
-  debatter.html, Person[] på kandidater.html. Dynamisk injection från
-  parties.json föredras för synkning men risk att SEO-bots inte kör JS.)
+  Cykel 15: ItemList av Person för 8 partiledare på partier.html via
+  scripts/gen-partier-ld.cjs (re-kör vid ledare-byte).
+  Kvar: Event[] på debatter.html, Person[] på kandidater.html.)
 - **CSS-konflikter att scope:a** (identifierat Cykel 5):
   - `.party-card-header` — global definition (rad 676) krockar med variant inom
     `.budget-party-card` (rad 4286). Borde scopas: `.budget-party-card .party-card-header`.
