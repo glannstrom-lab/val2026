@@ -28,7 +28,11 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 ### Fas 3: Polering (juli → september 2026)
 - [ ] Faktagranskning av all text mot primärkällor
 - [ ] Performance-optimering: Lighthouse 100 där möjligt
-- [ ] SEO och social sharing
+- [~] SEO och social sharing
+      (Cykel 3: alla 17 sidor har komplett OG/Twitter/canonical, robots.txt
+      och sitemap.xml på plats. Kvar: skapa og-image.png 1200x630, lägg till
+      JSON-LD strukturerad data där relevant, verifiera med Google Search
+      Console efter publicering.)
 - [ ] Lasttest inför valdag
 
 ### Fas 4: Valperiod (september 2026)
@@ -49,3 +53,5 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - Delningsbar URL för väljartest-resultat (utan tracking)
 - Språkgranskning av jämförande text för neutralitet
 - Stöd för enkel svenska-version
+- Skapa `assets/og-image.png` (1200×630) för social sharing — referens i meta-taggar finns ej, behövs för Twitter/Facebook-preview
+- JSON-LD strukturerad data (Organization för portalen, Event för debatter, Person för partiledare/kandidater)

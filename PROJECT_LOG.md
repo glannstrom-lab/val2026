@@ -15,6 +15,31 @@ Format för varje post:
 
 ---
 
+## Cykel 3 — 2026-05-01 — SEO & meta
+
+**Bedömning**: Audit över 17 HTML-sidor visade att alla hade `<title>` och `<meta name="description">` ✅, men endast 4 hade `og:title`, 0 hade `og:image`, 0 hade `canonical`. Title-format inkonsekvent: 14 använde em-dash `—`, 3 använde pipe `|`. Saknade `robots.txt` och `sitemap.xml`. Sajten ska upptäckas av sökmotorer och dela bra på sociala medier — dessa luckor är konkreta SEO-fail.
+**Alternativ jag valde bort**:
+- Performance — Lighthouse kräver browser-körning
+- Mobile UX — kräver browser-testning  
+- Neutrality audit — sista commit gjorde redan
+- Tools — för diffust mål
+**Gjort**:
+1. Skrev `scripts/seo-meta.cjs` — idempotent engångsscript som städar befintliga OG/Twitter/canonical och inserterar ett komplett block efter description-tag
+2. Körde scriptet → 17/17 sidor uppdaterade med konsekvent SEO-block: og:type, og:site_name, og:url, og:title, og:description, og:locale, twitter:card, twitter:title, twitter:description, canonical
+3. Normaliserade title-separator `|` → `—` i samma script (debatter, kandidater, mandat)
+4. Skapade `robots.txt` (tillåter alla crawlers, blockerar arkiverade `index-single.html`, pekar på sitemap)
+5. Skapade `sitemap.xml` med 17 URL:er, lastmod 2026-05-01, prioriteter baserade på relevans (startsida 1.0, partier/quiz/sakfrågor 0.9, om/gissa 0.5)
+6. Backlogade i ROADMAP: skapa `assets/og-image.png` (1200×630), lägg till JSON-LD strukturerad data
+7. Markerade Fas 3 "SEO och social sharing" som delvis (`[~]`)
+**Resultat**:
+- Audit verifierad: alla 17 sidor har komplett SEO-block (8 obligatoriska taggar + canonical)
+- Title-format nu enhetligt em-dash på alla sidor
+- Sitemap och robots.txt på plats inför Google Search Console-registrering
+- Engångsscript bevarat i `scripts/` — idempotent, kan köras igen vid framtida sidtillägg
+**Nästa cykel bör undvika**: SEO-kategori. Senaste 3: Content, Accessibility, SEO. Kandidater: Tools, Performance, Neutrality audit, Mobile UX.
+
+---
+
 ## Cykel 2 — 2026-05-01 — Accessibility
 
 **Bedömning**: WCAG 2.1 AA-fail upptäckta vid CSS-granskning. (1) Light mode `--color-accent #4a9eff` mot vit bakgrund = endast 2.75:1 — länktext fail (krav 4.5:1). Påverkar varje `<a>` i light mode. (2) Fyra interaktiva element (`.votes-select`, `.budget-select`, `.candidates-filter-select`, `.candidates-search-input`) hade `outline: none` med endast 1px border-färgändring som focus-indikator. `.candidates-search-input` hade en hardkodad indigo-shadow som inte matchade temat.

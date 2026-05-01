@@ -110,9 +110,9 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [ ] **Performance** — laddtider, bildoptimering, CSS-rensning
 - [ ] **Neutrality audit** — språkgranskning, jämn behandling av partier
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
-- [ ] **SEO & meta** — sökmotorer, social sharing-bilder
+- [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3)*
 
-Senast vald: **Accessibility (Cykel 2, 2026-05-01)**
+Senast vald: **SEO & meta (Cykel 3, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -146,6 +146,8 @@ Du har INTE auktoritet att:
 - **CLAUDE2.md-arvet.** Detaljerad teknisk inventering (filstruktur, kodrader per verktyg, opinionssiffror, partiledare) finns i CLAUDE2.md. När den nya autonoma loopen tog över sparades den filen separat istället för att slängas — referera vid behov, men håll Current State i denna fil uppdaterad. (Cykel 1)
 - **Light mode och dark mode måste tonas separat.** En accent-färg som funkar mot mörk bakgrund (`#4a9eff` ger 7:1 på #0d0d0d) kan totalt fail mot vit bakgrund (2.75:1). Light theme behöver mörkare accent (#1d6fcf, 4.97:1) — inte samma palett. (Cykel 2)
 - **`--focus-ring` som custom property.** Centraliserar focus-indikator-stilen så att alla tema-overrides automatiskt fungerar. Bytet från `:focus` till `:focus-visible` undviker att visa fokusring vid musklick på `<select>`. (Cykel 2)
+- **Engångsscript för repetitiv HTML-redigering är OK i `scripts/`.** När en ändring ska göras på 17 filer på exakt samma sätt är ett node-script mer pålitligt än 17 individuella Edit-anrop. Behåll i `scripts/` så framtida cykler kan köra om den vid behov (idempotent). (Cykel 3)
+- **Title-separator `—` (em-dash), inte `|`.** Etablerad konvention i projektet. När nya HTML-sidor skapas, använd em-dash. (Cykel 3)
 
 ## Referensdata
 

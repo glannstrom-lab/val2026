@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Arkiverad single-page-version som inte ska indexeras
+Disallow: /index-single.html
+
+Sitemap: https://glannstrom-lab.github.io/val2026/sitemap.xml
