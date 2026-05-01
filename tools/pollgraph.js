@@ -283,7 +283,7 @@
       pollsData = await response.json();
     } catch (error) {
       console.error('Error loading polls history:', error);
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda opinionsdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda opinionsdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

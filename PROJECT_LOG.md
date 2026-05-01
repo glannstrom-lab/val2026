@@ -15,6 +15,25 @@ Format för varje post:
 
 ---
 
+## Cykel 11 — 2026-05-01 — Tools (felhantering)
+
+**Bedömning**: Audit av felhantering i alla 14 tool-filer avslöjade två problem: (1) **`.error`-klassen saknades helt i CSS** trots att 3 tools använde `class="error"` — felmeddelanden gav noll visuell feedback. Bugg. (2) Felmeddelanden var inkonsekventa (8 tools använde `text-center text-muted`-klass, 3 använde `error`) och minimala (en mening, ingen vägledning).
+**Alternativ jag valde bort**:
+- Performance/Mobile UX/Accessibility (4-6 cykler bortom — kan vänta)
+- Lägga till retry-knapp via JS — komplexare än enkel reload-länk
+- Fixa seatcalc.js (har graceful degradation utan felmeddelande, fungerar utan partidata) — inget verkligt fel
+**Gjort**:
+1. styles.css: ny `.error`-klass med röd-tinad bakgrund, varnings-border, ⚠-prefix via `::before`
+2. 13 tool-filer (alla utom seatcalc): bytte felmeddelande till konsekvent format `<div class="error">Kunde inte ladda X. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>`
+3. CSS-buggen för `class="error"` löst — tidigare gav den noll visuell stil
+**Resultat**:
+- Alla 13 tools har nu samma fel-UX: synlig varningsruta + reload-link
+- Användaren får handlingsbar information istället för bara en mening
+- Visuellt konsekvent över hela sajten
+**Nästa cykel bör undvika**: Tools. Senaste 3: Neutrality, Content, Tools. Cykel 12 kandidater: Mobile UX, Performance (6 cykler bortom), Accessibility (4 cykler bortom), SEO (3 cykler bortom).
+
+---
+
 ## Cykel 10 — 2026-05-01 — Content (källrad i quiz)
 
 **Bedömning**: Audit av kompass.html visade att synlig källrad redan finns (rad 77 — CHES + GU + V-Dem). quiz.html (renderas av quiz.js) däremot saknade transparens om matchningsalgoritmen — användaren ser bara procentsiffror utan att förstå hur de beräknas. Detta är ett MUSS-kvalitet enligt CLAUDE.md ("källhänvisningar synliga för användaren") tillämpat på algoritmen, inte bara fakta.

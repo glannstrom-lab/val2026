@@ -235,7 +235,7 @@
       quotesData = await response.json();
     } catch (error) {
       console.error('Error loading quotes data:', error);
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda quizdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda quizdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

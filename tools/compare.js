@@ -265,7 +265,7 @@
 
     const loaded = await loadData();
     if (!loaded) {
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda sakfrågedata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda sakfrågedata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

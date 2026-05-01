@@ -106,13 +106,13 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 
 - [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1, 6, 10)*
 - [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2, 7)*
-- [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
+- [x] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje *(Cykel 11)*
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5)*
 - [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4, 9)*
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3, 8)*
 
-Senast vald: **Content (Cykel 10, 2026-05-01)**
+Senast vald: **Tools (Cykel 11, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 

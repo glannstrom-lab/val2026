@@ -27,7 +27,7 @@
       render(container);
     } catch (error) {
       console.error('Could not load budget data:', error);
-      container.innerHTML = '<p class="error">Kunde inte ladda budgetdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda budgetdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
     }
   }
 

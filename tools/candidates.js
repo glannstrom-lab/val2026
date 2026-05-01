@@ -101,7 +101,7 @@
 
   function render(container) {
     if (!candidatesData) {
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda kandidatdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda kandidatdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 
@@ -304,7 +304,7 @@
       console.log('Candidates database initialized');
     } catch (error) {
       console.error('Error loading candidates:', error);
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda kandidatdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda kandidatdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
     }
   }
 

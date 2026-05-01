@@ -300,7 +300,7 @@
 
     const loaded = await loadData();
     if (!loaded) {
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda tidslinjedata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda tidslinjedata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

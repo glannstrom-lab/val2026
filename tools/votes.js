@@ -24,7 +24,7 @@
       render(container);
     } catch (error) {
       console.error('Could not load votes data:', error);
-      container.innerHTML = '<p class="error">Kunde inte ladda röstningsdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda röstningsdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
     }
   }
 

@@ -291,7 +291,7 @@
       partiesData = await response.json();
     } catch (error) {
       console.error('Error loading parties data:', error);
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda partidata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda partidata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

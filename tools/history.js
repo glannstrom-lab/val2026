@@ -32,7 +32,7 @@
       render(container);
     } catch (error) {
       console.error('Could not load history data:', error);
-      container.innerHTML = '<p class="error">Kunde inte ladda valhistorik.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda valhistorik. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
     }
   }
 

@@ -90,7 +90,7 @@
 
   function render(container) {
     if (!debatesData) {
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda debattdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda debattdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 
@@ -249,7 +249,7 @@
       console.log('Debates calendar initialized');
     } catch (error) {
       console.error('Error loading debates:', error);
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda debattdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda debattdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
     }
   }
 

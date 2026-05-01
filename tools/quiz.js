@@ -958,7 +958,7 @@
 
     const loaded = await loadQuizData();
     if (!loaded) {
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda quiz-data.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda quiz-data. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

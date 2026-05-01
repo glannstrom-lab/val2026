@@ -489,7 +489,7 @@
       partiesData = await partiesResponse.json();
     } catch (error) {
       console.error('Error loading compass data:', error);
-      container.innerHTML = '<p class="text-center text-muted">Kunde inte ladda kompassdata.</p>';
+      container.innerHTML = '<div class="error">Kunde inte ladda kompassdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 
