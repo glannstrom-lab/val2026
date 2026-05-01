@@ -361,11 +361,16 @@ section {
 .nav-toggle {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
   background: none;
   border: none;
   padding: var(--space-2);
   cursor: pointer;
+  /* WCAG 2.5.5 Target Size — minst 44×44 px för touch */
+  min-width: 44px;
+  min-height: 44px;
 }
 
 @media (min-width: 1024px) {
@@ -533,6 +538,8 @@ section {
   cursor: pointer;
   text-decoration: none;
   transition: all var(--transition-fast);
+  /* WCAG 2.5.5 Target Size — säkrar 44×44 px klickyta */
+  min-height: 44px;
 }
 
 .btn:focus-visible {

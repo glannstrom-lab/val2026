@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 12 — 2026-05-01 — Mobile UX (touch target)
+
+**Bedömning**: Statisk audit av touch-targets i CSS (utan browser). `.nav-toggle` (hamburger-knappen) hade padding 8px och spans 24×2px → faktisk klickyta 40×32 px. Det är **WCAG 2.5.5 Target Size fail** (krav 44×44 px). `.btn` med padding 12+24 px och text-base ~16-20 px hamnar runt 40-44 px höjd — borderline, riskerar fail beroende på font-rendering.
+**Alternativ jag valde bort**:
+- Performance, Accessibility (4-7 cykler bortom — kan vänta)
+- Lägga `min-height: 44px` globalt på alla 55 button-like selektorer — risk för layout-bryt utan visuell verifikation
+- Ändra font-size för 76 element som använder text-xs (12px) — gränsfall för läsbarhet, riskerar visuell regression
+**Gjort**:
+1. styles.css `.nav-toggle`: `min-width: 44px; min-height: 44px;` + `align-items/justify-content: center;` så icon-strecken centreras i den nu-korrekta klickytan
+2. styles.css `.btn`: `min-height: 44px` säkrar att alla huvudknappar uppfyller WCAG 2.5.5 oavsett font-rendering
+3. Inline-kommentarer i båda fallen refererar SC 2.5.5 så framtida cykler vet varför värdet är 44
+**Resultat**:
+- Hamburger-menyn nu från 40×32 → 44×44 px (klick-yta växer 50%)
+- Alla huvud-CTA-knappar säkras till minst 44 px höjd
+- Ingen visuell förändring för knappar som redan är ≥44 px (min-height är non-shrinking)
+- Inga andra interaktiva element ändrade — backloggat: audit av icon-only-knappar (close-modal, expand-toggle, party-color-buttons)
+**Nästa cykel bör undvika**: Mobile UX. Senaste 3: Content, Tools, Mobile UX. Cykel 13 kandidater: Performance (8 cykler bortom!), Accessibility (5 cykler bortom), SEO (4 cykler bortom), Neutrality (3 cykler bortom).
+
+---
+
 ## Cykel 11 — 2026-05-01 — Tools (felhantering)
 
 **Bedömning**: Audit av felhantering i alla 14 tool-filer avslöjade två problem: (1) **`.error`-klassen saknades helt i CSS** trots att 3 tools använde `class="error"` — felmeddelanden gav noll visuell feedback. Bugg. (2) Felmeddelanden var inkonsekventa (8 tools använde `text-center text-muted`-klass, 3 använde `error`) och minimala (en mening, ingen vägledning).
