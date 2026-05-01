@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 21 — 2026-05-01 — SEO (Event-LD för debatter)
+
+**Bedömning**: Cykel 8/15 etablerade JSON-LD pattern. Backloggat: Event[] för debatter.html. Datat har 12 schemalagda valdebatter med datum/tid/kanal/partideltagare — perfekt för schema.org BroadcastEvent. Risken med dynamiska data: re-kör scriptet vid ändring.
+**Alternativ jag valde bort**:
+- Person[] för kandidater — 80 kandidater, för stor LD-block. Backloggat: överväg topp-5 per parti
+- Hårdkoda Event-LD i debatter.html — synkningsrisk
+- Dynamisk JS-injection — bots läser inte alltid JS
+**Gjort**:
+1. `scripts/gen-debatter-ld.cjs` — läser debates.json, sorterar kronologiskt, genererar `ItemList` med 12 `BroadcastEvent`-items (startDate ISO med Sverige-TZ +02:00, eventStatus mappad från status-fält, publishedOn som BroadcastService med kanalnamn, about för topics)
+2. `clean()`-helper rensar undefined-fields så LD blir kompakt
+3. Idempotent — ersätter befintlig ItemList-block om det finns
+4. Körde scriptet → 12 BroadcastEvent insertade i debatter.html `<head>`
+5. Validerat: JSON.parse OK, kronologisk ordning, första debat 2026-03-21 09:00, sista 2026-09-11 (slutdebatt)
+**Resultat**:
+- Google Knowledge Graph kan nu visa valdebatterna som rich result
+- BroadcastEvent + publishedOn ger Google möjlighet att lista dem som TV/radio-event
+- Vid debatt-ändring: kör `node scripts/gen-debatter-ld.cjs`
+- 4 av 5 idempotenta scripts i `scripts/` nu (seo-meta, perf-preload, perf-img-dims, gen-partier-ld, gen-debatter-ld)
+**Nästa cykel bör undvika**: SEO. Senaste 3: Neutrality, Content (#19), SEO. Cykel 22 kandidater: Performance (8 cykler bortom!), Tools (6 cykler bortom), Mobile UX (5 cykler bortom), Accessibility (4 cykler bortom).
+
+---
+
 ## Cykel 20 — 2026-05-01 — Neutrality (timeline-events)
 
 **Bedömning**: Granskning av 36 timeline-events för värdeladdat språk. 34 av 36 är neutralt formulerade. Två tydligt laddade: (1) Budget 2025: "Regeringen presenterar **historisk** försvarssatsning" — "historisk" är dramatiserande adjektiv som upphöjer regeringens insats. (2) Event 2025-10-15 titel "**Vårdkris**: Rekordlånga köer" — "vårdkris" är politiskt term som vissa partier använder för att dramatisera, fakta är de rekordlånga köerna.

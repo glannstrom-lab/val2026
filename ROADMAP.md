@@ -70,8 +70,11 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - JSON-LD strukturerad data
   (Cykel 8: WebSite på index.html, AboutPage + BreadcrumbList på om.html.
   Cykel 15: ItemList av Person för 8 partiledare på partier.html via
-  scripts/gen-partier-ld.cjs (re-kör vid ledare-byte).
-  Kvar: Event[] på debatter.html, Person[] på kandidater.html.)
+  scripts/gen-partier-ld.cjs.
+  Cykel 21: ItemList av BroadcastEvent för 12 valdebatter på debatter.html
+  via scripts/gen-debatter-ld.cjs.
+  Kvar: Person[] på kandidater.html (~80 kandidater — stor LD, kanske bara
+  topp-5 per parti).)
 - **CSS-konflikter att scope:a** (identifierat Cykel 5):
   - `.party-card-header` — global definition (rad 676) krockar med variant inom
     `.budget-party-card` (rad 4286). Borde scopas: `.budget-party-card .party-card-header`.
