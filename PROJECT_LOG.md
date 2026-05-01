@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 28 — 2026-05-01 — Performance (service worker cache bump)
+
+**Bedömning**: Service worker har CACHE_NAME = 'val2026-v13'. Jag har gjort 27 cykler med modifikationer (CSS, JS, HTML, data) — användare som tidigare besökt sajten har v13-cachen och får INTE de senaste fixarna förrän cachen invalideras. Detta är en konkret leveransbugg.
+**Alternativ jag valde bort**:
+- Auto-version baserat på timestamp/git-hash — kräver build-step (mot CLAUDE.md)
+- network-first cache-strategi istället för cache-first — ändring av paradigm är riskfylld
+- skipWaiting + clients.claim är redan på plats, så v14-update aktiveras direkt vid nästa besök
+- SEO/Neutrality/Accessibility (4-7 cykler bortom)
+**Gjort**:
+1. sw.js CACHE_NAME: 'val2026-v13' → 'val2026-v14'
+2. Inline-kommentar om versionsbump-konvention så framtida deploys vet att de ska bumpa
+3. CLAUDE.md Lessons Learned: dokumenterad praxis "bumpa CACHE_NAME vid varje deploy med kodändringar"
+**Resultat**:
+- Användare som öppnar sajten efter denna deploy får automatiskt v14 (skipWaiting + clients.claim är redan i sw.js)
+- Alla 27 cyklars ändringar levereras till slutanvändare nu
+- Konvention dokumenterad så framtida cykler vet att bumpa
+**Nästa cykel bör undvika**: Performance. Senaste 3: Tools, Content, Performance. Cykel 29 kandidater: SEO (7 cykler bortom), Neutrality (8 cykler bortom!!), Accessibility (5 cykler bortom), Mobile UX (3 cykler bortom).
+
+---
+
 ## Cykel 27 — 2026-05-01 — Content (valmanifest-stub)
 
 **Bedömning**: Tidsfaktor: 1 maj 2026, 9 veckor till feature-frys. Fas 2 i ROADMAP säger "Alla partier har sina valmanifest 2026 inlagda när de publiceras" (typiskt maj-juni). Bättre att förbereda strukturen NU så att tillägg sker utan kodändring senare. Då räcker det att uppdatera `parties.json`.

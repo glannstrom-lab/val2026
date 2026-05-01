@@ -1,9 +1,14 @@
 /**
  * Service Worker för Val 2026
  * Möjliggör offline-läsning
+ *
+ * VIKTIGT: Bumpa CACHE_NAME-versionen efter en batch av kodändringar så
+ * att användare med en gammal cache hämtar nya filer. Annars syns inte
+ * fixar förrän cachen invalideras manuellt. Aktuell konvention: 'val2026-vN'
+ * där N ökas vid varje deploy som ändrar CSS/JS/data eller HTML-struktur.
  */
 
-const CACHE_NAME = 'val2026-v13';
+const CACHE_NAME = 'val2026-v14';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
