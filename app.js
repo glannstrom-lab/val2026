@@ -181,7 +181,7 @@
     partiesData = await fetchJSON('data/parties.json');
 
     if (!partiesData) {
-      grid.innerHTML = '<p class="text-center text-muted">Kunde inte ladda partidata.</p>';
+      grid.innerHTML = '<div class="error">Kunde inte ladda partidata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';
       return;
     }
 

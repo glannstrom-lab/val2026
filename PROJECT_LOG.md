@@ -15,6 +15,30 @@ Format för varje post:
 
 ---
 
+## Cykel 19 — 2026-05-01 — Content (README + felmeddelande-konsistens)
+
+**Bedömning**: Audit av kompass.html visade redan komplett struktur (källor, disclaimer, axel-förklaring) — inget att lägga till. Pivot avslöjade två konsekvensluckor: (1) `app.js:184` använde fortfarande gamla felmeddelande-formatet `<p class="text-center text-muted">` — Cykel 11 missade detta. (2) `README.md` var kraftigt föråldrad — säger "24 frågor" (faktiskt 50), listar bara compass + quiz (faktiskt 14 tools), fel valdatum (13 sept istället för 14), saknar 12 av 14 verktyg.
+**Alternativ jag valde bort**:
+- Lägga till metodik-disclosure på kompass.html — redan implementerat (CHES-källa + axel-förklaring + disclaimer-toggle)
+- Performance/SEO/Neutrality (4-9 cykler bortom)
+**Gjort**:
+1. app.js:184 — `<p class="text-center text-muted">Kunde inte ladda partidata.</p>` → `<div class="error">...med reload-länk</div>`. Konsekvent med Cykel 11:s pattern över alla 14 tools.
+2. README.md — komplett rewrite:
+   - Korrekt valdatum (14 september 2026)
+   - Live-URL
+   - Alla 14 verktyg listade med beskrivning
+   - Tech stack uppdaterad (PWA, 18 sidor, multi-page)
+   - Datakällor i tabell-format med primär/sekundär-distinktion
+   - Tillgänglighets-sektion (WCAG 2.1 AA)
+   - Hänvisning till CLAUDE.md och DECISIONS.md
+**Resultat**:
+- 100% felmeddelande-konsistens nu (alla 14 tools + app.js)
+- README.md speglar faktiskt projekt — inte arvet från Phase 1
+- Externa besökare till repot får korrekt bild av vad som finns
+**Nästa cykel bör undvika**: Content. Senaste 3: Mobile UX, Accessibility, Content. Cykel 20 kandidater: Neutrality (10 cykler bortom!), SEO (5 cykler bortom), Performance (6 cykler bortom), Tools (4 cykler bortom).
+
+---
+
 ## Cykel 18 — 2026-05-01 — Accessibility (aria-live regions)
 
 **Bedömning**: Backloggat från Cykel 13. Inga aria-live regions fanns. Det betyder att skärmläsar-användare inte får feedback när dynamiskt innehåll uppdateras. Två tydliga kandidater: `.coalition-summary` (mandat-räknare uppdateras vid val av parti) och `.candidates-results-info` (kandidatsöknings-räknare uppdateras vid filter). Dessa är diskreta sammanfattnings-element — inte hela listor — så `aria-live="polite"` blir inte störande.
