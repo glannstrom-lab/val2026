@@ -22,6 +22,9 @@
   --color-accent: #4a9eff;
   --color-accent-hover: #6bb3ff;
 
+  /* Focus ring (WCAG 2.4.7) — used by inputs/selects som tar bort outline */
+  --focus-ring: 0 0 0 3px rgba(74, 158, 255, 0.35);
+
   --color-success: #4ade80;
   --color-warning: #fbbf24;
   --color-error: #f87171;
@@ -106,6 +109,12 @@
 
   --color-border: #e0e0e0;
   --color-border-subtle: #f0f0f0;
+
+  /* Mörkare accent i light mode — #4a9eff mot vit ger bara 3.5:1 (fail WCAG AA
+     för text). #1d6fcf ger ~5.4:1 vilket klarar AA för normal text och länkar. */
+  --color-accent: #1d6fcf;
+  --color-accent-hover: #1557a1;
+  --focus-ring: 0 0 0 3px rgba(29, 111, 207, 0.30);
 
   --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -3475,9 +3484,10 @@ section {
   min-width: 200px;
 }
 
-.votes-select:focus {
+.votes-select:focus-visible {
   outline: none;
   border-color: var(--color-accent);
+  box-shadow: var(--focus-ring);
 }
 
 .votes-tag-filters {
@@ -4075,9 +4085,10 @@ section {
   cursor: pointer;
 }
 
-.budget-select:focus {
+.budget-select:focus-visible {
   outline: none;
   border-color: var(--color-accent);
+  box-shadow: var(--focus-ring);
 }
 
 /* Budget Highlights */
@@ -7583,10 +7594,10 @@ section {
   transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.candidates-search-input:focus {
+.candidates-search-input:focus-visible {
   outline: none;
   border-color: var(--color-accent);
-  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  box-shadow: var(--focus-ring);
 }
 
 .candidates-search-input::placeholder {
@@ -7626,9 +7637,10 @@ section {
   cursor: pointer;
 }
 
-.candidates-filter-select:focus {
+.candidates-filter-select:focus-visible {
   outline: none;
   border-color: var(--color-accent);
+  box-shadow: var(--focus-ring);
 }
 
 /* Results info */

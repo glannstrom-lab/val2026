@@ -105,14 +105,14 @@ Du är autonom produktägare för detta projekt. Varje cykel följer du denna se
 För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vilken som senast valdes.
 
 - [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1)*
-- [ ] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation
+- [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2)*
 - [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
 - [ ] **Performance** — laddtider, bildoptimering, CSS-rensning
 - [ ] **Neutrality audit** — språkgranskning, jämn behandling av partier
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [ ] **SEO & meta** — sökmotorer, social sharing-bilder
 
-Senast vald: **Content (Cykel 1, 2026-05-01)**
+Senast vald: **Accessibility (Cykel 2, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -144,6 +144,8 @@ Du har INTE auktoritet att:
 ## Lessons Learned
 - **Källrad direkt under data-block, inte bara CTA längst ner.** En "Besök officiell sida"-knapp signalerar inte att den är källan till siffrorna ovanför. Synlig källrad nära siffrorna är bättre. (Cykel 1)
 - **CLAUDE2.md-arvet.** Detaljerad teknisk inventering (filstruktur, kodrader per verktyg, opinionssiffror, partiledare) finns i CLAUDE2.md. När den nya autonoma loopen tog över sparades den filen separat istället för att slängas — referera vid behov, men håll Current State i denna fil uppdaterad. (Cykel 1)
+- **Light mode och dark mode måste tonas separat.** En accent-färg som funkar mot mörk bakgrund (`#4a9eff` ger 7:1 på #0d0d0d) kan totalt fail mot vit bakgrund (2.75:1). Light theme behöver mörkare accent (#1d6fcf, 4.97:1) — inte samma palett. (Cykel 2)
+- **`--focus-ring` som custom property.** Centraliserar focus-indikator-stilen så att alla tema-overrides automatiskt fungerar. Bytet från `:focus` till `:focus-visible` undviker att visa fokusring vid musklick på `<select>`. (Cykel 2)
 
 ## Referensdata
 

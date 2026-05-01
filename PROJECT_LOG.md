@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 2 — 2026-05-01 — Accessibility
+
+**Bedömning**: WCAG 2.1 AA-fail upptäckta vid CSS-granskning. (1) Light mode `--color-accent #4a9eff` mot vit bakgrund = endast 2.75:1 — länktext fail (krav 4.5:1). Påverkar varje `<a>` i light mode. (2) Fyra interaktiva element (`.votes-select`, `.budget-select`, `.candidates-filter-select`, `.candidates-search-input`) hade `outline: none` med endast 1px border-färgändring som focus-indikator. `.candidates-search-input` hade en hardkodad indigo-shadow som inte matchade temat.
+**Alternativ jag valde bort**:
+- Neutrality audit — sista commit (f4f2431) gjorde redan språk- och färgfix, ge variation tid
+- Mobile UX — kräver browser-testning, inte trivialt automatiserat i denna miljö
+- Performance — Lighthouse kräver lokal körning
+**Gjort**:
+1. Lade till `--focus-ring` custom property i `:root` (styles.css:25) med `0 0 0 3px rgba(74,158,255,0.35)`
+2. Light theme override (styles.css:118-122): `--color-accent: #1d6fcf` (4.97:1 ✅), `--color-accent-hover: #1557a1` (7.22:1 ✅), egen `--focus-ring` i tonad blå
+3. Bytte `.votes-select:focus`, `.budget-select:focus`, `.candidates-search-input:focus`, `.candidates-filter-select:focus` till `:focus-visible` och lade till `box-shadow: var(--focus-ring)`
+4. Verifierade alla kontraster matematiskt (relativ luminans → WCAG-formel) — alla passerar AA
+5. Markerade Fas 1 "WCAG 2.1 AA-baseline" som delvis (`[~]`) i ROADMAP, listade kvarvarande arbete (full axe-core, screenreader, W3C, 3G)
+**Resultat**:
+- Light mode accent: 2.75:1 → 4.97:1 (WCAG AA pass)
+- Dark mode kontraster verifierade: text 17.83:1, text-muted 7.43:1, text-subtle på bg-card 4.50:1 (på gränsen men pass)
+- Fyra fokus-fail åtgärdade — synlig blå ring vid tangentbordsnavigation
+- Bytet till `:focus-visible` undviker focus-ring vid musklick på `<select>` (ren UX)
+**Nästa cykel bör undvika**: Accessibility-kategori. Kandidater: Tools, Performance, Neutrality audit, Mobile UX, SEO & meta. Senaste 3: Setup, Content, Accessibility — alla unika, så öppet val.
+
+---
+
 ## Cykel 1 — 2026-05-01 — Content
 
 **Bedömning**: Projektet är längre kommet än CLAUDE.md antyder — 18 sidor, 14 verktyg, 13 datafiler redan byggda. Tidsfaktor: 9 veckor till feature-frys (1 juli) → fokus ska vara fakta + polering, inte nya features. Konkret gap: partier.html visar mandat 2022, valresultat 2022, ideologi och beskrivning som text utan synlig källrad. Det bryter mot MÅSTE-kravet "Källhänvisningar synliga för användaren". Endast en CTA längst ner i kortet ("Besök officiell sida") signalerar käll-koppling, men inte tydligt.

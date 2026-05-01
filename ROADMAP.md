@@ -10,7 +10,10 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 
 ### Fas 1: Grund (nu → ~maj 2026)
 - [ ] Verktyg fungerar end-to-end utan fel
-- [ ] WCAG 2.1 AA-baseline uppnådd för alla sidor
+- [~] WCAG 2.1 AA-baseline uppnådd för alla sidor
+      (Cykel 2: light-mode accent fixad 2.75→4.97, fyra select/input fick
+      synlig fokusring via `--focus-ring`. Kvar: full axe-core-körning på
+      varje sida, screenreader-test, HTML-validering W3C, 3G-laddtidstest.)
 - [~] Alla 8 partier har baspresentation med källor
       (Cykel 1: synlig källrad i partikortet — riksdagen.se + val.se. Kvar:
       partispecifika riksdagslänkar, källor till `beskrivning`/`ideologi`-text.)
