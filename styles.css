@@ -776,6 +776,37 @@ section {
   color: var(--color-text);
 }
 
+/* Noscript-fallback för sidor som annars kräver JS */
+.noscript-fallback {
+  padding: var(--space-5);
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-4);
+}
+
+.noscript-fallback p {
+  margin-bottom: var(--space-3);
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+.noscript-parties {
+  margin-left: var(--space-5);
+  margin-bottom: var(--space-3);
+}
+
+.noscript-parties li {
+  margin-bottom: var(--space-2);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+}
+
+.noscript-fallback a {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
 /* Återanvändbar källrad — används av history-source, seatcalc-source m.fl. */
 .history-source,
 .seatcalc-source {

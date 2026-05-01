@@ -15,6 +15,25 @@ Format för varje post:
 
 ---
 
+## Cykel 30 — 2026-05-01 — Tools (noscript-fallback partier.html)
+
+**Bedömning**: CLAUDE.md MUSS-krav: "Fungerar utan JavaScript för all kärninformation (verktygen får kräva JS)". Partier är kärninformation. partier.html renderar via JS — utan JS ser användaren tom sida. Bryter mot kravet. opinion.html, historik.html etc har samma problem men en sida åt gången.
+**Alternativ jag valde bort**:
+- Implementera SSR — bryter mot CLAUDE.md "ingen build-process"
+- Servera statiskt HTML duplicerat — synk-risk med data
+- SEO/Accessibility/Mobile UX (4-8 cykler bortom)
+**Gjort**:
+1. partier.html: `<noscript>` insertad efter parties-grid div. Statiskt fallback med 8 partier (namn + ledare + officiell webbplats), källänkar till riksdagen.se + val.se
+2. styles.css `.noscript-fallback` + `.noscript-parties`: muted-tinad bakgrund, borderad ruta, accent-länkar
+3. Användare utan JS får full kärninformation via fallback (8 partier + ledare + officiella sidor)
+4. Dokumentation: dataduplikation accepterad — ledare-uppdateringar måste göras på två ställen (parties.json + partier.html noscript). Säkrast: re-kör en hypotetisk script för att synka, eller manuell synk vid ledar-byten.
+**Resultat**:
+- partier.html uppfyller nu MUSS-kravet "fungerar utan JS för kärninformation"
+- Backloggat: motsvarande noscript på opinion.html, historik.html, om.html (om de behöver). De flesta tools (kompass, quiz) faller inom undantaget "verktygen får kräva JS"
+**Nästa cykel bör undvika**: Tools. Senaste 3: Performance, Neutrality, Tools. Cykel 31 kandidater: SEO (9 cykler bortom!!!), Accessibility (6 cykler bortom), Mobile UX (5 cykler bortom), Content (4 cykler bortom).
+
+---
+
 ## Cykel 29 — 2026-05-01 — Neutrality (kompass-axel-text)
 
 **Bedömning**: Bred audit av tidigare ej-granskade datafiler. compass-positions.json, polls-history.json, votes.json, candidates.json, election-history.json, budget.json — alla har acceptabelt språk. compass-positions har "hårdare linje" på M och S men det är symmetrisk (båda får samma term). Hittade dock ett ord på kompass.html "Så läser du kompassen": Y-axelns auktoritära beskrivning innehåller "nationalism" — laddat ord som kan tolkas som etnonationalism eller civic nationalism beroende på läsare.
