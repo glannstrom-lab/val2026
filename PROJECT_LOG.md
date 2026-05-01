@@ -15,6 +15,27 @@ Format för varje post:
 
 ---
 
+## Cykel 17 — 2026-05-01 — Mobile UX (icon-button touch targets)
+
+**Bedömning**: Cykel 12 fixade `.btn` och `.nav-toggle`. Audit av icon-only-buttons hittade 5 till med risk: `.theme-toggle` (40×40 px), `.diff-info-btn` (18×18 px — kraftigt under 44), `.compare-issue-expand` och `.timeline-event-toggle` (~32 px), och `.nav-toggle` (redan fixad).
+**Alternativ jag valde bort**:
+- Tvinga `.diff-info-btn` till 44×44 visuellt — skulle förstöra tabellradlayouten
+- Fixa `.compare-issue-expand` och `.timeline-event-toggle` — backloggat: hela `.compare-issue-header` och `.timeline-event-header` är klickbara redan, så toggle-knappen är inom större touch target
+- Neutrality/Content/Accessibility (3-7 cykler bortom)
+**Gjort**:
+1. styles.css `.theme-toggle`: 40×40 → 44×44 px (minor visual ändring, inom design-tolerans)
+2. styles.css `.diff-info-btn`: behöll visuell 18×18 men lade till `position: relative` + `::before { inset: -13px }` så klickytan utvidgas till 44×44 px utan att ändra tabellradlayouten
+3. Inline-kommentarer refererar SC 2.5.5
+4. CLAUDE.md Lessons Learned: "Pseudo-element-utvidgad klickyta"-mönstret dokumenterat
+**Resultat**:
+- 2 fler interaktiva element uppfyller WCAG 2.5.5
+- `.diff-info-btn` har nu samma klickyta som `.btn` (44×44) trots 18×18 visuell design
+- Inga tabellrad-layout-regressioner — pseudo-element är osynligt
+- Återstående: `.compare-issue-expand` och `.timeline-event-toggle` (backloggade — header är redan klickbart)
+**Nästa cykel bör undvika**: Mobile UX. Senaste 3: SEO, Tools, Mobile UX. Cykel 18 kandidater: Neutrality (8 cykler bortom!), Content (7 cykler bortom), Accessibility (4 cykler bortom), Performance (3 cykler bortom).
+
+---
+
 ## Cykel 16 — 2026-05-01 — Tools (städa dödkod)
 
 **Bedömning**: Började som Neutrality-cykel — audit av issues.json positions visade balanserad stance-fördelning (V t.ex. 35 för / 11 emot, M 23/11; rimlig spridning) och att laddade ord ("kraftigt", "rättvis") är symmetriskt fördelade eller refererar partiers egen retorik. Inget tydligt att åtgärda. Pivoterade till Tools — modal-accessibility-audit avslöjade att `<div class="party-modal">` i partier.html med `role="dialog"` och `aria-modal="true"` är **dödkod**: ingen JS-kod öppnar/stänger den, ingen CSS stilar den, kommentar säger "rendered by app.js" men ingen sådan funktion finns.

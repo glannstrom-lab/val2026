@@ -325,8 +325,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  /* WCAG 2.5.5 — minst 44×44 px klickyta */
+  width: 44px;
+  height: 44px;
   background: var(--color-bg-elevated);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-md);
@@ -4346,6 +4347,15 @@ section {
   color: var(--color-text-muted);
   cursor: pointer;
   transition: all var(--transition-fast);
+  /* WCAG 2.5.5 — utöka klickytan till 44×44 via pseudo-element utan att
+     ändra visuell 18×18-design (cirkel-ikon i tabellrad) */
+  position: relative;
+}
+
+.diff-info-btn::before {
+  content: "";
+  position: absolute;
+  inset: -13px;
 }
 
 .diff-info-btn:hover {
