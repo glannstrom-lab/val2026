@@ -15,6 +15,25 @@ Format för varje post:
 
 ---
 
+## Cykel 16 — 2026-05-01 — Tools (städa dödkod)
+
+**Bedömning**: Började som Neutrality-cykel — audit av issues.json positions visade balanserad stance-fördelning (V t.ex. 35 för / 11 emot, M 23/11; rimlig spridning) och att laddade ord ("kraftigt", "rättvis") är symmetriskt fördelade eller refererar partiers egen retorik. Inget tydligt att åtgärda. Pivoterade till Tools — modal-accessibility-audit avslöjade att `<div class="party-modal">` i partier.html med `role="dialog"` och `aria-modal="true"` är **dödkod**: ingen JS-kod öppnar/stänger den, ingen CSS stilar den, kommentar säger "rendered by app.js" men ingen sådan funktion finns.
+**Alternativ jag valde bort**:
+- Implementera party-modal som ny feature — för stort för en cykel, feature-frys 1 juli närmar sig (9 veckor)
+- Behålla dödkoden — gömd komplexitet utan värde, missvisande för framtida utvecklare
+- Modal-keyboard-fix — irrelevant när modal aldrig syns
+**Gjort**:
+1. Tog bort `<div class="party-modal">`-blocket (7 rader) från partier.html. Säkert: ingen CSS, ingen JS, aldrig synlig
+2. ROADMAP backlog: dokumenterat som potentiell framtida feature med a11y-krav (focus-trap, Esc, aria-modal)
+3. Audit av övrig keyboard support visade att projektet generellt är bra: tools/compass.js har tabindex+keydown, compare/timeline har aria-expanded+keydown, coalition har aria-pressed
+**Resultat**:
+- partier.html nu 7 rader kortare, ingen dödkod
+- Code hygiene + transparens: dödkod är ofta värre än ingen kod alls
+- Inga regressionsrisker (modalen aldrig synlig)
+**Nästa cykel bör undvika**: Tools. Senaste 3: Performance, SEO, Tools. Cykel 17 kandidater: Neutrality (7 cykler bortom!), Content (6 cykler bortom), Mobile UX (4 cykler bortom), Accessibility (3 cykler bortom).
+
+---
+
 ## Cykel 15 — 2026-05-01 — SEO (Person-LD för partiledare)
 
 **Bedömning**: Cykel 8 lade WebSite på index och AboutPage på om — men hoppade Person-LD för partiledare pga synkningsrisk mellan parties.json och statisk LD. Lösning: scripts/gen-partier-ld.cjs som genererar LD från parties.json. Re-körs vid ledare-byte → ingen drift möjlig.

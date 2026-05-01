@@ -81,6 +81,10 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
     Borde scopas. Kräver visuell verifikation före commit.
 - Bildoptimering av PNG-logotyper (totalt 53 KB, SD/MP/S är 9–13 KB var). WebP eller
   manuell komprimering kan spara 30–50 %.
+- **Implementera party-detail-modal**: klick på partikort öppnar fördjupad vy
+  (ledare-info, ideologi, mandathistorik). Tomma `<div class="party-modal">`
+  togs bort i Cykel 16 (dödkod utan implementation). Backloggad som potentiell
+  feature — kräver design + a11y (focus-trap, Esc, aria-modal).
 - **aria-live regions för dynamiska uppdateringar** (identifierat Cykel 13). Quiz-
   resultat, sakfrågefilter, koalitionsbyggare uppdaterar UI utan att skärmläsare
   annonserar förändringen. Kandidater för aria-live="polite": quiz-results-container,
