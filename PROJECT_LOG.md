@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 20 — 2026-05-01 — Neutrality (timeline-events)
+
+**Bedömning**: Granskning av 36 timeline-events för värdeladdat språk. 34 av 36 är neutralt formulerade. Två tydligt laddade: (1) Budget 2025: "Regeringen presenterar **historisk** försvarssatsning" — "historisk" är dramatiserande adjektiv som upphöjer regeringens insats. (2) Event 2025-10-15 titel "**Vårdkris**: Rekordlånga köer" — "vårdkris" är politiskt term som vissa partier använder för att dramatisera, fakta är de rekordlånga köerna.
+**Alternativ jag valde bort**:
+- "kraftigt", "ytterligare", "skärper tonen" — vanliga politiska intensifierare, OK i kontext
+- "Tillfälliga visitationszoner... för att bekämpa gängkriminalitet" — regeringens egen rättfärdigande men det är lagens uttalade syfte
+- "Valbudgeten" — etablerad svensk politisk term
+- SEO/Performance/Tools/Mobile UX
+**Gjort**:
+1. timeline.json e019 (Budget 2025): "presenterar historisk försvarssatsning och fortsatta skattesänkningar" → "höjer försvarsanslag till 2,4 % av BNP och fortsätter med skattesänkningar". Tar bort dramatiserande adjektiv, lägger till konkret siffra.
+2. timeline.json e026 (2025-10-15): titel "Vårdkris: Rekordlånga köer" → "Rekordlånga vårdköer". Behåller fakta-claim om köerna men tar bort politiskt termer.
+3. JSON-validitet verifierad.
+**Resultat**:
+- Två fakta-baserade ersättningar för dramatiserande språk
+- Övriga 34 events är acceptabelt formulerade — flagga att timeline-balans (S/SD underrepresenterade) fortfarande gäller och är backloggad
+- "vårdkris" var det mest värdeladdade ordet kvar i datat
+**Nästa cykel bör undvika**: Neutrality. Senaste 3: Accessibility, Content, Neutrality. Cykel 21 kandidater: Performance (7 cykler bortom!), SEO (6 cykler bortom), Tools (5 cykler bortom), Mobile UX (4 cykler bortom).
+
+---
+
 ## Cykel 19 — 2026-05-01 — Content (README + felmeddelande-konsistens)
 
 **Bedömning**: Audit av kompass.html visade redan komplett struktur (källor, disclaimer, axel-förklaring) — inget att lägga till. Pivot avslöjade två konsekvensluckor: (1) `app.js:184` använde fortfarande gamla felmeddelande-formatet `<p class="text-center text-muted">` — Cykel 11 missade detta. (2) `README.md` var kraftigt föråldrad — säger "24 frågor" (faktiskt 50), listar bara compass + quiz (faktiskt 14 tools), fel valdatum (13 sept istället för 14), saknar 12 av 14 verktyg.
