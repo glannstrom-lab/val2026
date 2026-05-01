@@ -15,6 +15,27 @@ Format för varje post:
 
 ---
 
+## Cykel 24 — 2026-05-01 — Accessibility (heading-anchors)
+
+**Bedömning**: Cykel 7 backloggade heading-hopp i 9 tool-sidor. Mönstret etablerat på tidslinje.html (Cykel 7): statisk `<h2 class="sr-only">` med aria-labelledby gör hierarkin korrekt utan visuell ändring. Skärmläsare läser ankaret, övriga ser inget.
+**Alternativ jag valde bort**:
+- Synlig h2 (visuell rubrik) — designval ingen tidigare gjort, hög risk för regression
+- Byta tool-rendered h3 till h2 — skulle ändra många kodbaser, h2 är överraskande visuellt
+- Performance/SEO/Tools/Mobile UX (4-9 cykler bortom)
+**Gjort**:
+1. `scripts/a11y-h2-anchors.cjs` — idempotent script som inserterar `<h2 id="X-heading" class="sr-only">` precis före tool-container. Lägger till `aria-labelledby="X-heading"` på närmaste section. Skippar sidor som redan har sr-only h2.
+2. Initial regex `<div\s+id="X">` matchade inte sidor med `class=` på samma rad. Iterativ förbättring → `<div\b[^>]*\bid="X"[^>]*>` flexiblare.
+3. Körde scriptet (två iterationer) → 9/9 sidor uppdaterade
+4. Audit verifierar: alla 9 sidor har nu h: 1,2 (statisk hierarki) + h3+ från tool-rendering
+**Resultat**:
+- WCAG SC 1.3.1 (Info and Relationships) komplett uppfylld för alla tool-sidor
+- Skärmläsare läser sektionsrubriker innan tool-innehåll
+- Inga visuella förändringar (sr-only)
+- ROADMAP backlog uppdaterad med komplett accessibility-status
+**Nästa cykel bör undvika**: Accessibility. Senaste 3: Tools, Performance, Accessibility. Cykel 25 kandidater: Mobile UX (8 cykler bortom!), Neutrality (5 cykler bortom), Content (6 cykler bortom), SEO (4 cykler bortom).
+
+---
+
 ## Cykel 23 — 2026-05-01 — Performance (CSS-konflikter scopade)
 
 **Bedömning**: Cykel 5 backloggade 3 reella CSS-klasskonflikter där samma selector definierades två gånger med olika stilar. Audit nu via grep + HTML/JS-användning bekräftade att varje konflikt har distinkta parents: budget-versionen av `.party-card-header` är inom `.budget-party-card`, votes-versionen av `.party-stat-label/value` är inom `.party-stat-bar`, och block-bar-versionen av `.block-label` är inom `.block-bar-left/right`. Säker scoping möjlig utan visuell verifikation.

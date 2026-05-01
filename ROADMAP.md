@@ -12,13 +12,14 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - [ ] Verktyg fungerar end-to-end utan fel
 - [~] WCAG 2.1 AA-baseline uppnådd för alla sidor
       (Cykel 2: light-mode accent fixad 2.75→4.97, fyra select/input fick
-      synlig fokusring via `--focus-ring`. Cykel 7: heading-hierarki fixad
-      i om.html, coalition-tool, timeline-tool. Kvar: full axe-core-körning
-      på varje sida, screenreader-test, HTML-validering W3C, 3G-laddtidstest.
-      Heading-hopp i JS-tools — budget/candidates/compare/guess/history/
-      partycompare/quiz/seatcalc/votes startar rendering med h3 men deras
-      sidor har bara h1 statiskt. Lägg statisk h2 i varje HTML eller byt
-      tool-rendering till h2.)
+      synlig fokusring. Cykel 7: heading-hierarki fixad i om.html, coalition,
+      timeline. Cykel 12: 44×44 px target size på nav-toggle och btn.
+      Cykel 13: form-labels (4 element). Cykel 17: theme-toggle 44×44 +
+      diff-info-btn pseudo-element-utvidgad klickyta. Cykel 18: aria-live
+      på coalition-summary + candidates-results-info. Cykel 24: sr-only h2
+      anchors på alla 9 tool-sidor som hade h1→h3-hopp.
+      Kvar: full axe-core-körning, screenreader-test, HTML-validering W3C,
+      3G-laddtidstest.)
 - [~] Alla 8 partier har baspresentation med källor
       (Cykel 1: synlig källrad i partikortet — riksdagen.se + val.se. Kvar:
       partispecifika riksdagslänkar, källor till `beskrivning`/`ideologi`-text.)
