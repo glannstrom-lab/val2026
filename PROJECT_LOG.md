@@ -15,6 +15,27 @@ Format för varje post:
 
 ---
 
+## Cykel 8 — 2026-05-01 — SEO & meta (JSON-LD strukturerad data)
+
+**Bedömning**: Cykel 3 backloggade JSON-LD strukturerad data. Detta hjälper Google visa rich results, stärker entitetsdata, och kommunicerar sidans natur till AI-assistenter. Inga ld+json-block fanns.
+**Alternativ jag valde bort**:
+- Person/ItemList för partiledare via dynamisk injection — risk att bots inte kör JS
+- Statisk Person-data för 8 partiledare — synkningsrisk när partier byter ledare
+- Event[] för 12 debatter — datat ändras ofta, hög underhållskostnad
+- Tools/Mobile UX/Neutrality
+**Gjort**:
+1. index.html: statisk `WebSite`-LD med `about: Event` (Riksdagsvalet 2026, startDate 2026-09-14, location Sverige)
+2. om.html: statisk `AboutPage`-LD med `breadcrumb: BreadcrumbList` (Hem → Om sidan) och `isPartOf` som länkar till WebSite-entiteten
+3. JSON-validitet verifierad med node — båda block parser korrekt
+4. ROADMAP backlog uppdaterad: ItemList Person (partier.html), Event[] (debatter.html), Person[] (kandidater.html) — kräver synkstrategi
+**Resultat**:
+- Google + Bing kan nu identifiera sajten som WebSite-entitet kopplad till valhändelsen
+- Breadcrumbs för om-sidan (rich result-eligible)
+- Två sidor täckta — basal närvaro inför Search Console-registrering
+**Nästa cykel bör undvika**: SEO. Senaste 3: Accessibility, Content (#6), SEO (#8). Vänta — med ny ordning: senaste 3 = Content (6), Accessibility (7), SEO (8). Cykel 9 kandidater: Tools, Mobile UX, Performance (4 cykler bortom), Neutrality (4 cykler bortom).
+
+---
+
 ## Cykel 7 — 2026-05-01 — Accessibility (heading-hierarki)
 
 **Bedömning**: Audit av heading-strukturen avslöjade en konkret WCAG SC 1.3.1-fail i om.html (h1 → direkt h3, hopp över h2). Skip-link injiceras korrekt via header.js. Audit av JS-tools fann fler hopp: coalition.js renderar bara h4 (3 stycken) på en sida som bara har h1; timeline.js renderar h4 för 36 events utan mellanlag. Andra tools (budget/candidates/compare/guess/history/partycompare/quiz/seatcalc/votes) börjar också med h3 utan h2 mellanlag — backloggat eftersom omfattande.
