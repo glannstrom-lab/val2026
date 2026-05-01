@@ -741,6 +741,24 @@ section {
   line-height: var(--leading-relaxed);
 }
 
+.party-sources {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-3);
+  line-height: 1.5;
+}
+
+.party-sources a {
+  color: var(--color-text-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.party-sources a:hover,
+.party-sources a:focus {
+  color: var(--color-text);
+}
+
 .party-ideology {
   font-size: var(--text-xs);
   color: var(--color-text-subtle);

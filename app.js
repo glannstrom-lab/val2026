@@ -152,6 +152,14 @@
           </div>
         </div>
 
+        <p class="party-sources">
+          Källor:
+          <a href="https://www.riksdagen.se/sv/ledamoter-och-partier/" target="_blank" rel="noopener">riksdagen.se</a>
+          (mandat) ·
+          <a href="https://www.val.se" target="_blank" rel="noopener">val.se</a>
+          (valresultat)
+        </p>
+
         <p class="party-description">${party.beskrivning}</p>
 
         <span class="party-ideology">${party.ideologi}</span>

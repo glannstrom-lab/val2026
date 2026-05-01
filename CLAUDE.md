@@ -1,333 +1,164 @@
-# CLAUDE.md — Väljarportal inför riksdagsvalet 2026
-
-Detta dokument beskriver projektet för Claude Code. Läs hela filen innan du börjar bygga eller ändra något. Uppdatera denna fil när arkitektur eller beslut ändras.
-
----
-
-## 1. Projektöversikt
-
-**Mål:** En statisk, överskådlig och faktabaserad webbplats inför riksdagsvalet 13 september 2026 som hjälper väljare att förstå partierna och bilda sig en egen uppfattning.
-
-**Live-URL:** https://glannstrom-lab.github.io/val2026/
-
-**Publiceringsdatum för valet:** 13 september 2026
-
-**Karaktär:** Allt-i-ett-portal, politiskt neutral, inte röstningsrådgivande. Sidan ger inga rekommendationer — bara verktyg och fakta.
-
-**Målgrupp:** Svenska röstberättigade, från första-gångs-väljare till pålästa. Läsbart på mobil och desktop.
-
-**Språk:** Svenska genomgående.
-
----
-
-## 2. Tech stack
-
-- **Vanilla HTML, CSS, JavaScript** — inga ramverk, ingen build-process
-- **Multi-page struktur** — 18 separata HTML-sidor med delad header/footer-komponent
-- **Data i JSON** — all partidata i `/data/`-mappen, laddas via `fetch()`
-- **Ingen backend** — allt körs i webbläsaren
-- **PWA-stöd** — service worker för offline-läsning
-- **Hosting:** GitHub Pages
-- **Fonts:** Space Grotesk (display) + Inter (brödtext) via Bunny Fonts
-
----
-
-## 3. Aktuell filstruktur
-
-```
-/
-├── index.html              # Startsida med hero, snabbguide, opinionsöversikt
-├── partier.html            # Alla åtta riksdagspartier
-├── kompass.html            # Politisk kompass
-├── quiz.html               # Valkompass-quiz
-├── sakfragor.html          # Sakfråge-jämförelse
-├── tidslinje.html          # Politisk tidslinje 2022-2026
-├── opinion.html            # Opinionsläget med graf
-├── historik.html           # Valhistorik (2018, 2022, EU 2024)
-├── koalition.html          # Koalitionsbyggare
-├── gissa.html              # Gissa partiet-quiz
-├── budget.html             # Statsbudget-jämförelse
-├── rostningar.html         # Riksdagsröstningar
-├── jamfor.html             # Partijämförelse (två partier sida vid sida)
-├── mandat.html             # Mandatkalkylator (simulera valresultat)
-├── debatter.html           # Debattkalender (kommande valdebatter)
-├── kandidater.html         # Kandidatdatabas (sökbar lista)
-├── om.html                 # Om sidan, källor, metodik
-├── index-single.html       # (Arkiv) Gammal ensidig version
-│
-├── styles.css              # All CSS (~5800 rader)
-├── app.js                  # Sidspecifik init, shared state
-├── manifest.json           # PWA manifest
-├── sw.js                   # Service worker för offline
-│
-├── /shared/
-│   └── constants.js        # Delade konstanter (PARTY_COLORS, PARTY_NAMES, etc.)
-│
-├── /components/
-│   └── header.js           # Mega menu navigation + footer (275 rader)
-│
-├── /tools/
-│   ├── compass.js          # Politisk kompass (533 rader)
-│   ├── quiz.js             # Valkompass-quiz (695 rader)
-│   ├── compare.js          # Sakfråge-jämförelse (299 rader)
-│   ├── timeline.js         # Tidslinje (334 rader)
-│   ├── coalition.js        # Koalitionsbyggare (326 rader)
-│   ├── guess.js            # Gissa partiet-quiz (278 rader)
-│   ├── pollgraph.js        # Opinionsgraf (317 rader)
-│   ├── history.js          # Valhistorik (397 rader)
-│   ├── budget.js           # Statsbudget (510 rader)
-│   ├── votes.js            # Riksdagsröstningar (340 rader)
-│   ├── partycompare.js     # Partijämförelse (398 rader)
-│   ├── seatcalc.js         # Mandatkalkylator (320 rader)
-│   ├── debates.js          # Debattkalender (220 rader)
-│   └── candidates.js       # Kandidatdatabas (280 rader)
-│
-├── /data/
-│   ├── parties.json        # Grunddata om partierna (8 partier)
-│   ├── compass-positions.json  # Kompasspositioner
-│   ├── quiz-questions.json # 50 quiz-frågor (10 kategorier)
-│   ├── issues.json         # 56 sakfrågor (12 kategorier)
-│   ├── timeline.json       # 36 politiska händelser
-│   ├── quotes.json         # 56 partiuttalanden
-│   ├── polls-history.json  # Opinionshistorik sedan 2022
-│   ├── election-history.json   # Valresultat 2018, 2022, EU 2024
-│   ├── constituencies.json # Valkretsar med mandatfördelning
-│   ├── budget.json         # 27 budgetområden
-│   ├── votes.json          # 20 riksdagsomröstningar
-│   ├── debates.json        # 12 valdebatter
-│   └── candidates.json     # 80 riksdagskandidater
-│
-├── /assets/
-│   ├── /logos/             # Officiella partilogotyper (PNG)
-│   ├── favicon.svg
-│   └── icon-192.svg        # PWA-ikon
-│
-├── CLAUDE.md               # Denna fil
-└── AGENTS.md               # Agentteam-definitioner
-```
-
----
-
-## 4. Implementerade funktioner
-
-### 4.1 Sidor och sektioner
-
-| Sida | Fil | Beskrivning |
-|------|-----|-------------|
-| **Startsida** | `index.html` | Hero, nedräkning, snabbguide, opinionsöversikt |
-| **Partierna** | `partier.html` | Alla 8 partier med logotyper, ledare, mandat |
-| **Politisk kompass** | `kompass.html` | 2D-visualisering, tooltips, koalitionsläge |
-| **Valkompass** | `quiz.html` | 50 frågor, matchningsalgoritm, delbar URL |
-| **Sakfrågor** | `sakfragor.html` | 56 sakfrågor, filter per kategori |
-| **Tidslinje** | `tidslinje.html` | 36 händelser 2022-2026, filter |
-| **Opinionsläget** | `opinion.html` | Stapeldiagram + historisk linjegraf |
-| **Valhistorik** | `historik.html` | Jämför 2018, 2022, EU 2024, partiledare |
-| **Koalitionsbyggare** | `koalition.html` | Bygg majoriteter, preset-koalitioner |
-| **Gissa partiet** | `gissa.html` | 56 citat att gissa parti på |
-| **Statsbudgeten** | `budget.html` | Jämför regeringens vs oppositionens budget |
-| **Röstningar** | `rostningar.html` | 20 riksdagsomröstningar |
-| **Om sidan** | `om.html` | Metodik, källor, integritet, tillgänglighet |
-
-### 4.2 Navigation
-
-- **Mega menu** med tre kategorier: Verktyg, Fakta, Analys
-- **Mobilnavigation** med hamburger-meny
-- **Breadcrumbs** på alla undersidor
-- **Footer** med alla länkar
-
-### 4.3 Tekniska funktioner
-
-| Funktion | Status |
-|----------|--------|
-| Multi-page struktur | ✅ |
-| Mobilresponsiv design | ✅ |
-| PWA / offline-stöd | ✅ |
-| Open Graph meta-taggar | ✅ |
-| Tangentbordsnavigering | ✅ |
-| WCAG 2.1 AA | ✅ |
-| Delbar quiz-URL | ✅ |
-| Officiella partilogotyper | ✅ |
-
----
-
-## 5. Partiledare (april 2026)
-
-| Parti | Ledare | Titel |
-|-------|--------|-------|
-| V | Nooshi Dadgostar | Partiledare |
-| S | Magdalena Andersson | Partiledare |
-| MP | Daniel Helldén & Amanda Lind | Språkrör |
-| C | Muharrem Demirok | Partiledare |
-| L | Simona Mohamsson | Partiledare |
-| KD | Ebba Busch | Partiledare |
-| M | Ulf Kristersson | Partiledare |
-| SD | Jimmie Åkesson | Partiledare |
-
----
-
-## 6. Opinionsläget (april 2026)
-
-| Parti | Procent | Under spärren? |
-|-------|---------|----------------|
-| S | 33% | Nej |
-| SD | 20% | Nej |
-| M | 18% | Nej |
-| V | 8% | Nej |
-| C | 6% | Nej |
-| MP | 6% | Nej |
-| KD | 5% | Nej |
-| L | 2% | **Ja** |
-
----
-
-## 7. Datakategorier
-
-### Quiz-frågor (50 st, 10 kategorier)
-- Ekonomi, Arbetsmarknad, Lag & ordning, Migration, Klimat & energi
-- Sjukvård, Skola, Försvar, EU, Värderingar
-
-### Sakfrågor (56 st, 12 kategorier)
-- Ekonomi, Energi, Lag & ordning, Migration, Miljö, Försvar
-- Vård, Skola, Arbetsmarknad, Familj, Kultur, EU
-
----
-
-## 8. Publicerings-checklista
-
-- [x] Alla åtta partier har komplett data
-- [x] 56 sakfrågor med position för varje parti
-- [x] 50 quiz-frågor balanserat över 10 kategorier
-- [x] Kompasspositioner verifierade mot CHES/GU-data
-- [x] Opinionssnittet uppdaterat (april 2026)
-- [x] 36 tidslinjehändelser
-- [x] Valhistorik för 2018, 2022, EU 2024
-- [x] 20 riksdagsomröstningar
-- [x] Statsbudget-jämförelse
-- [x] Valkretsar med mandatfördelning
-- [x] Mobilvy fungerar för alla verktyg
-- [x] Tangentbordsnavigering fungerar
-- [x] "Om sidan" komplett med källor
-- [x] Inga tracking-skript, inga cookies
-- [ ] Kontrast testad med WebAIM
-- [ ] HTML validerad med W3C
-- [ ] Laddtid testad på 3G
-
----
-
-## 9. Roadmap — Framtida förbättringar
-
-### Prioritet: Hög
-
-| Uppgift | Beskrivning | Komplexitet |
-|---------|-------------|-------------|
-| **Dark/light mode** | Låt användaren välja tema | Medel |
-| **Jämför två partier** | Sida-vid-sida-jämförelse | Hög |
-| **Spara quiz-progress** | localStorage för att inte tappa svar | Låg |
-| **Debattkalender** | Lista kommande valdebatter | Medel |
-
-### Prioritet: Medel
-
-| Uppgift | Beskrivning | Komplexitet |
-|---------|-------------|-------------|
-| **Swipe-gester i quiz** | Bättre mobil-UX | Medel |
-| **Animationer** | Stagger reveal vid scroll | Låg |
-| **Mandatkalkylator** | Simulera valresultat | Hög |
-| **Kandidatdatabas** | Sökbar lista över kandidater | Hög |
-| **Print-stylesheet** | Optimera för utskrift | Låg |
-
-### Prioritet: Låg
-
-| Uppgift | Beskrivning | Komplexitet |
-|---------|-------------|-------------|
-| **Preload fonts** | Förbättra laddtid | Låg |
-| **Lazy loading** | Ladda sektioner vid behov | Medel |
-| **Enhetstester** | Testa quiz-algoritmen | Hög |
-| **Lighthouse 100/100** | Optimera alla kategorier | Medel |
-
-### Framtida
-
-| Uppgift | Beskrivning | Komplexitet |
-|---------|-------------|-------------|
-| **Engelsk version** | Internationell tillgänglighet | Hög |
-| **Region/kommun-stöd** | Utöka till andra val | Mycket hög |
-| **Inbäddningsbara widgets** | Låt andra bädda in verktyg | Hög |
-
----
-
-## 10. Utvecklingsprinciper
-
-**Vid kodändringar:**
-1. Lägg all data i JSON — hårdkoda inte i JS
-2. Testa på mobil innan commit
-3. Commita ofta med tydliga meddelanden
-4. Uppdatera denna fil om arkitekturen ändras
-5. Nya verktyg ska anropas från `app.js` i rätt `case`
-
-**Vid innehållsändringar:**
-- Om en sakfråga läggs till, inkludera alla 8 partier
-- Alla partipositioner ska ha källa
-- Verifiera partiledare innan publicering (kan ändras!)
-
-**Frågor att ställa användaren:**
-- Färgval/visuell riktning om otydligt
-- Om en quiz-fråga är för ledande
-- Om en sakfråga ska inkluderas
-
----
-
-## 11. Agentteam
-
-Projektet har ett definierat team av 8 specialiserade agenter. Fullständiga prompter finns i `AGENTS.md`.
-
-| Agent | Syfte | Användning |
-|-------|-------|------------|
-| **DataValidator** | Validerar JSON-data, kontrollerar partipositioner och källor | Före release, efter dataändringar |
-| **ContentResearcher** | Researchar politiskt innehåll, opinionsdata | Innehållsuppdateringar |
-| **FrontendDev** | Implementerar funktioner i HTML/CSS/JS | Ny funktionalitet |
-| **A11yAuditor** | Testar WCAG 2.1 AA, tangentbord, mobilvy | Före release, efter UI-ändringar |
-| **NeutralityChecker** | Granskar politisk bias och ledande formuleringar | Före release, nya quiz-frågor |
-| **PerfOptimizer** | Optimerar Lighthouse-poäng och laddtid | Prestandaproblem |
-| **TestEngineer** | Testar quiz-algoritm, navigation, edge cases | Efter kodändringar |
-| **SwedishEditor** | Språkgranskning, terminologi, konsekvent stil | Före release, nytt innehåll |
-
-### Rekommenderade arbetsflöden
-
-**Före release:**
-```
-DataValidator → NeutralityChecker → A11yAuditor → SwedishEditor
-```
-
-**Vid ny funktion:**
-```
-FrontendDev → TestEngineer → A11yAuditor → PerfOptimizer
-```
-
-**Innehållsuppdatering:**
-```
-ContentResearcher → DataValidator → NeutralityChecker → SwedishEditor
-```
-
----
-
-## 12. Källor
-
-| Källa | Användning |
-|-------|------------|
-| [Riksdagen.se](https://riksdagen.se) | Partilogotyper, mandatfördelning, röstningar |
-| [Val.se](https://val.se) | Valresultat, regler |
-| [Poll of Polls](https://pollofpolls.se) | Opinionssnitt |
-| [Chapel Hill Expert Survey](https://chesdata.eu) | Kompasspositioner |
-| [SCB](https://scb.se) | Valstatistik |
-| Partiernas officiella sidor | Sakfrågor, partiprogram, budget |
-
----
-
-## 13. Kontakt & Bidrag
-
-**Repository:** https://github.com/glannstrom-lab/val2026
-
-**Rapportera fel:** Skapa en issue på GitHub
-
----
-
-*Senast uppdaterad: 20 april 2026*
+# Riksdagsvalet 2026 — Väljarportal
+# Mode: Autonomous Product Owner
+
+## Mission
+Bygga och underhålla en neutral, faktabaserad informationsportal inför riksdagsvalet 2026 som hjälper svenska väljare fatta välgrundade beslut. Sajten ska vara fullt tillgänglig (WCAG 2.1 AA), faktakorrekt, partipolitiskt neutral, och fungera utan JavaScript där det är möjligt.
+
+**Detta får du aldrig ändra.** Allt annat i denna fil är ditt att uppdatera.
+
+## Success Criteria
+
+### Måste-krav (blockerande för release)
+- WCAG 2.1 AA-compliance verifierad med axe-core eller motsvarande, noll fel
+- Alla faktapåståenden om partier har källa till officiell partidokumentation eller riksdagen.se
+- Lighthouse-score: Performance ≥95, Accessibility 100, Best Practices ≥95, SEO ≥95
+- Fungerar utan JavaScript för all kärninformation (verktygen får kräva JS)
+- Inga externa trackers, ingen cookie-banner behövs
+
+### Kvalitetsmål
+- Politisk neutralitet: ingen ordval som favoriserar något block, alla partier får lika utrymme proportionellt mot riksdagsmandat
+- Källhänvisningar synliga för användaren, inte bara i koden
+- Fungerar på mobil först (de flesta väljare läser på telefon)
+- Sidladdning under 1 sekund på 4G
+
+### Affärs/projektmål
+- Färdigställd huvudfunktionalitet senast 1 juli 2026 (10 veckor före valet)
+- Sista 10 veckorna fokus på faktagranskning, polering, och uppdatering med valmanifest
+
+## Current State
+*Uppdaterad 2026-05-01, Cykel 1.*
+
+**Stack & hosting**
+- Vanilla HTML/CSS/JS, ingen build-process. PWA via service worker (`sw.js`).
+- Multi-page (18 HTML-filer), delad header/footer via `components/header.js`.
+- Live: https://glannstrom-lab.github.io/val2026/ (GitHub Pages).
+- Fonts: Space Grotesk + Inter via Bunny Fonts.
+
+**Implementerade verktyg (14 st i `tools/`)**
+Politisk kompass, valkompass-quiz (50 frågor), sakfrågejämförelse (56 frågor),
+tidslinje (36 händelser), opinionsgraf, valhistorik, koalitionsbyggare,
+gissa partiet, statsbudget, riksdagsröstningar, partijämförelse,
+mandatkalkylator, debattkalender, kandidatdatabas.
+
+**Data (`data/`)**
+13 JSON-filer. Sakfrågorna har källfält per partiposition. Kompasspositioner
+verifierade mot CHES/GU. Senaste opinion (apr 2026): S 33, SD 20, M 18, V 8,
+C 6, MP 6, KD 5, L 2 (under 4%-spärren).
+
+**Senast utfört**
+- f4f2431 — neutralitetsfix, SD-färgkontrast, stavfel
+- aedc864 — kritiska buggar från agentgranskning
+- f74de62 — Phase 6: tester och CI/CD
+- 7122dba — kandidatdatabas
+
+**Öppna luckor (från CLAUDE2.md, ej verifierade i denna cykel)**
+- Kontrast testad mot WebAIM över alla sidor
+- HTML-validering med W3C
+- Laddtid uppmätt på 3G
+
+**Observerat denna cykel**
+- partier.html visade ingen synlig källrad för mandat/valresultat. Adresserat i Cykel 1 (riksdagen.se + val.se under stats-blocket).
+- `parties.json`: `beskrivning` och `ideologi` är formulerade av oss baserat på partiernas egna sidor, men källan visas inte explicit. Den befintliga "Besök officiell sida"-knappen är effektiv källa men signaleras inte som sådan. Kandidat för framtida polering.
+
+## Operating Loop
+
+Du är autonom produktägare för detta projekt. Varje cykel följer du denna sekvens.
+
+### Phase 1: Assess (Produktägare-hatten)
+
+1. Läs sista 10 posterna i `PROJECT_LOG.md` och hela `ROADMAP.md`
+2. Kör `git log --oneline -20` för att se senaste arbetet
+3. Kontrollera systematiskt:
+   - **Tillgänglighet**: kör axe-core eller pa11y mot alla sidor, notera fel
+   - **Faktakorrekthet**: finns det påståenden utan källhänvisning? Har något parti uppdaterat sin politik?
+   - **Neutralitet**: läs igenom textinnehåll med fräsch blick — favoriserar något ordval?
+   - **Performance**: kör Lighthouse på en slumpvis vald sida
+   - **Roadmap-glapp**: vad i ROADMAP.md är inte påbörjat?
+   - **Tidsfaktor**: hur många veckor till 1 juli 2026? Påverkar detta prioritering?
+4. Skriv kort bedömning till `PROJECT_LOG.md`:
+   - Vad gjordes förra cykeln
+   - Vad behöver projektet MEST nu
+   - Lista 2-3 alternativ du valde bort och varför
+
+### Phase 2: Plan (Arkitekt-hatten)
+
+1. Behövs nya subagents eller skills för uppgiften? Skapa/installera bara om uppgiften kommer återkomma minst 3 gånger.
+2. Behöver `CLAUDE.md` uppdateras med nya mönster eller upptäckter? Uppdatera "Current State" och "Lessons Learned"-sektionen.
+3. Bryt ner uppgiften i 3-7 konkreta steg.
+
+### Phase 3: Execute (Implementatör-hatten)
+
+1. Utför stegen ett i taget, verifiera varje innan du går vidare.
+2. För faktapåståenden: hämta alltid från primärkälla (parti.se, riksdagen.se, valmyndigheten.se), inte sekundärkällor.
+3. För neutralitet: när du skriver om ett parti, jämför med hur du skrivit om motsvarande parti i annat block.
+4. Commita arbetande kod med beskrivande meddelanden på svenska.
+
+### Phase 4: Reflect & Anti-Repetition
+
+1. Uppdatera `PROJECT_LOG.md` med vad som faktiskt gjordes, vad som fungerade, vad som inte fungerade.
+2. Uppdatera `ROADMAP.md` om prioriteringar skiftade.
+3. **Anti-repetition check**: Titta på de 3 senaste loggposterna. Kategorisera varje (feature, bugfix, content, accessibility, performance, refactor, testing). Om dagens uppgift är samma kategori som 2+ av de senaste, måste nästa cykel välja annan kategori.
+4. **Tidsmedvetenhet**: Om mindre än 12 veckor till 1 juli, prioritera faktainnehåll och polering över nya features.
+
+## Kategoriroterare
+
+För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vilken som senast valdes.
+
+- [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1)*
+- [ ] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation
+- [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
+- [ ] **Performance** — laddtider, bildoptimering, CSS-rensning
+- [ ] **Neutrality audit** — språkgranskning, jämn behandling av partier
+- [ ] **Mobile UX** — testning och förbättring på små skärmar
+- [ ] **SEO & meta** — sökmotorer, social sharing-bilder
+
+Senast vald: **Content (Cykel 1, 2026-05-01)**
+
+## Anti-Patterns (undvik)
+
+- Bygga nya features när existerande har WCAG-fel eller saknar källor
+- Lägga till tredjepartsbibliotek eller build-steg — projektet är medvetet enkelt
+- Lägga åsikter i texten även när det "uppenbart är sant" — låt fakta stå för sig
+- Skriva om verktyg som fungerar bara för att de är gamla
+- Skapa subagents för engångsuppgifter
+- Polera CSS när faktainnehåll fattas
+- Lägga till JavaScript för funktioner som kan göras med HTML/CSS
+
+## Auktoritet
+
+Du har full auktoritet att:
+- Modifiera vilken fil som helst inklusive denna `CLAUDE.md` (utom Mission-sektionen)
+- Skapa, modifiera eller ta bort subagents i `.claude/agents/`
+- Refaktorera arkitektur — men endast om det förbättrar tillgänglighet, performance eller underhållbarhet
+- Ändra `ROADMAP.md` baserat på vad du lär dig
+- Ta bort verktyg som inte längre är värdefulla (logga beslutet i `DECISIONS.md`)
+
+Du har INTE auktoritet att:
+- Ändra Mission-sektionen
+- Radera historik i `PROJECT_LOG.md` eller `DECISIONS.md`
+- Lägga till partipolitiska åsikter eller rekommendationer
+- Lägga till trackers, analytics, eller cookies
+- Publicera till produktion utan att Phase 1-checks är gröna
+- Lägga till AI-genererat innehåll om partier utan källhänvisning till primärkälla
+
+## Lessons Learned
+- **Källrad direkt under data-block, inte bara CTA längst ner.** En "Besök officiell sida"-knapp signalerar inte att den är källan till siffrorna ovanför. Synlig källrad nära siffrorna är bättre. (Cykel 1)
+- **CLAUDE2.md-arvet.** Detaljerad teknisk inventering (filstruktur, kodrader per verktyg, opinionssiffror, partiledare) finns i CLAUDE2.md. När den nya autonoma loopen tog över sparades den filen separat istället för att slängas — referera vid behov, men håll Current State i denna fil uppdaterad. (Cykel 1)
+
+## Referensdata
+
+Riksdagspartier (alfabetisk ordning, använd alltid denna ordning för neutralitet):
+- Centerpartiet (C)
+- Kristdemokraterna (KD)
+- Liberalerna (L)
+- Miljöpartiet (MP)
+- Moderaterna (M)
+- Socialdemokraterna (S)
+- Sverigedemokraterna (SD)
+- Vänsterpartiet (V)
+
+Primärkällor (använd alltid dessa, inte sekundärkällor):
+- riksdagen.se — för röstningshistorik och motioner
+- valmyndigheten.se — för valdata och regler
+- [parti].se — för officiell politik
+- scb.se — för statistik
