@@ -240,7 +240,6 @@
     }
 
     render(container);
-    console.log('Guess the party quiz initialized');
   }
 
   // Export for global access

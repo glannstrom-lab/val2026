@@ -506,7 +506,6 @@
       disclaimer.textContent = compassData.meta.disclaimer;
     }
 
-    console.log('Political compass initialized');
   }
 
   // Export for global access

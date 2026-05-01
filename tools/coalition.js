@@ -297,7 +297,6 @@
 
     render(container);
 
-    console.log('Coalition builder initialized');
   }
 
   // Export for global access

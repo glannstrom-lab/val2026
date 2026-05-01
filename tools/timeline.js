@@ -306,7 +306,6 @@
 
     render(container);
 
-    console.log('Timeline initialized');
   }
 
   // Export for global access

@@ -301,7 +301,6 @@
       const res = await fetch('data/candidates.json');
       candidatesData = await res.json();
       render(container);
-      console.log('Candidates database initialized');
     } catch (error) {
       console.error('Error loading candidates:', error);
       container.innerHTML = '<div class="error">Kunde inte ladda kandidatdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';

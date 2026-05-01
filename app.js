@@ -340,7 +340,6 @@
 
   function init() {
     const currentPage = getCurrentPage();
-    console.log('Val 2026 Väljarportal - Page:', currentPage);
 
     // Global inits (run on all pages)
     initSmoothScroll();
@@ -419,7 +418,6 @@
     handleHashChange();
     window.addEventListener('hashchange', handleHashChange);
 
-    console.log('Val 2026 Väljarportal initialized');
   }
 
   // Run on DOM ready
@@ -434,10 +432,8 @@
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('./sw.js')
         .then((registration) => {
-          console.log('Service Worker registered:', registration.scope);
         })
         .catch((error) => {
-          console.log('Service Worker registration failed:', error);
         });
     });
   }

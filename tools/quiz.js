@@ -971,7 +971,6 @@
       renderQuizStart(container);
     }
 
-    console.log('Quiz initialized');
   }
 
   // Export for global access

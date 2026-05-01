@@ -15,6 +15,25 @@ Format för varje post:
 
 ---
 
+## Cykel 26 — 2026-05-01 — Tools (code hygiene)
+
+**Bedömning**: Audit hittade 15 dev-rester av typen `console.log('X initialized')` i tools (12), app.js (3) och service worker-registrering. Dessa är dev-debugging som inte behövs i produktion — minor performance-förlust + brus i devtools-konsolen för slutanvändare.
+**Alternativ jag valde bort**:
+- Behålla console.log som debug-aid — slutanvändaren har inte nytta av det
+- Lägga till en build-step som strip:ar console-anrop — bryter mot CLAUDE.md "ingen build-process"
+- Konvertera till conditional debug-mode — overengineering för en statisk sajt
+**Gjort**:
+1. `scripts/hygiene-console.cjs` — idempotent script som tar bort hela rader som matchar `^\s*console\.log\(.*\);?\s*$`. Behåller `console.error` och `console.warn` (felhantering)
+2. Körde scriptet → 15 console.log-rader borttagna från 12 filer
+3. Audit-grep verifierar: 0 `console.log` kvar i prod-kod
+**Resultat**:
+- Renare devtools-konsol för slutanvändare
+- Marginal performance-vinst (15 färre funktionsanrop vid sidladdning)
+- 7 idempotenta scripts i `scripts/`-mappen — utgör en ren toolkit för framtida cykler
+**Nästa cykel bör undvika**: Tools. Senaste 3: Accessibility, Mobile UX, Tools. Cykel 27 kandidater: Performance (4 cykler bortom), SEO (5 cykler bortom), Neutrality (6 cykler bortom), Content (7 cykler bortom!).
+
+---
+
 ## Cykel 25 — 2026-05-01 — Mobile UX (fluid hero-rubrik)
 
 **Bedömning**: Audit av media-query coverage. De största riskerna (`.budget-table`, `.compass-svg`, `.container`, `.btn`) har redan responsiva setups. Hittade dock att `.page-hero h1` använder fast `font-size: var(--text-4xl)` (40 px) utan mobile-skalning — på 320 px-mobiler blir det 12,5% av skärmbredden men kan ändå orsaka tight radbrytning. 17 sidor använder denna stil.

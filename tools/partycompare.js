@@ -382,7 +382,6 @@
     }
 
     render(container);
-    console.log('Party compare initialized');
   }
 
   window.initPartyCompare = init;

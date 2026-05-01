@@ -404,7 +404,6 @@
     }
 
     render(container);
-    console.log('Seat calculator initialized');
   }
 
   window.initSeatCalc = init;

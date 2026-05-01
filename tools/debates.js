@@ -246,7 +246,6 @@
       const res = await fetch('data/debates.json');
       debatesData = await res.json();
       render(container);
-      console.log('Debates calendar initialized');
     } catch (error) {
       console.error('Error loading debates:', error);
       container.innerHTML = '<div class="error">Kunde inte ladda debattdata. Kontrollera internetanslutningen och <a href="javascript:location.reload()">ladda om sidan</a>.</div>';

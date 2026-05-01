@@ -271,7 +271,6 @@
 
     render(container);
 
-    console.log('Compare tool initialized');
   }
 
   // Export for global access

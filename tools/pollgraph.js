@@ -288,7 +288,6 @@
     }
 
     render(container);
-    console.log('Poll graph initialized');
   }
 
   // Export for global access
