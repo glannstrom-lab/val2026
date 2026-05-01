@@ -161,7 +161,7 @@
       </div>
 
       <!-- Results count -->
-      <div class="candidates-results-info">
+      <div class="candidates-results-info" aria-live="polite" aria-atomic="true">
         <span class="candidates-count">
           ${filteredCandidates.length} ${filteredCandidates.length === 1 ? 'kandidat' : 'kandidater'}
           ${currentFilters.search || currentFilters.party !== 'all' || currentFilters.constituency !== 'all' ? ' (filtrerat)' : ''}

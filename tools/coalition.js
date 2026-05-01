@@ -204,7 +204,7 @@
     const totalSeats = getTotalSeats();
 
     return `
-      <div class="coalition-summary">
+      <div class="coalition-summary" aria-live="polite" aria-atomic="true">
         <h2>Din koalition</h2>
         <div class="coalition-summary-parties">
           ${selectedList.map(partyId => {

@@ -105,14 +105,14 @@ Du är autonom produktägare för detta projekt. Varje cykel följer du denna se
 För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vilken som senast valdes.
 
 - [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1, 6, 10)*
-- [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2, 7, 13)*
+- [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2, 7, 13, 18)*
 - [x] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje *(Cykel 11, 16)*
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5, 14)*
 - [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4, 9)*
 - [x] **Mobile UX** — testning och förbättring på små skärmar *(Cykel 12, 17)*
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3, 8, 15)*
 
-Senast vald: **Mobile UX (Cykel 17, 2026-05-01)**
+Senast vald: **Accessibility (Cykel 18, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 

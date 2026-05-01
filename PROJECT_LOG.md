@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 18 — 2026-05-01 — Accessibility (aria-live regions)
+
+**Bedömning**: Backloggat från Cykel 13. Inga aria-live regions fanns. Det betyder att skärmläsar-användare inte får feedback när dynamiskt innehåll uppdateras. Två tydliga kandidater: `.coalition-summary` (mandat-räknare uppdateras vid val av parti) och `.candidates-results-info` (kandidatsöknings-räknare uppdateras vid filter). Dessa är diskreta sammanfattnings-element — inte hela listor — så `aria-live="polite"` blir inte störande.
+**Alternativ jag valde bort**:
+- aria-live på hela quiz-result-vyn — bättre att flytta fokus istället, mindre noisy
+- aria-live på compare-issue-listan — för stor mängd att annonsera vid varje filter
+- aria-live="assertive" — alltid för aggressivt för icke-kritiska updates
+- Performance/Tools/Mobile UX (3-7 cykler bortom)
+**Gjort**:
+1. tools/coalition.js: `<div class="coalition-summary">` → med `aria-live="polite" aria-atomic="true"`. När användaren toggle:ar partier annonserar SR nya totala mandat
+2. tools/candidates.js: `<div class="candidates-results-info">` → med samma attribut. När filter ändras annonseras "X kandidater (filtrerat)"
+3. `aria-atomic="true"` säkrar att hela texten läses, inte bara det som ändrades — bra för räknare-fraseringar
+**Resultat**:
+- 2 säkra fixar — lägger till attribut på existerande element, inga visuella förändringar
+- Skärmläsare får nu feedback vid de två viktigaste dynamiska sammanfattningarna
+- Inte överanvänt — lägger inte aria-live på hela listor (skulle bli störande)
+**Nästa cykel bör undvika**: Accessibility. Senaste 3: Tools, Mobile UX, Accessibility. Cykel 19 kandidater: Neutrality (9 cykler bortom!), Content (8 cykler bortom), SEO (4 cykler bortom), Performance (5 cykler bortom).
+
+---
+
 ## Cykel 17 — 2026-05-01 — Mobile UX (icon-button touch targets)
 
 **Bedömning**: Cykel 12 fixade `.btn` och `.nav-toggle`. Audit av icon-only-buttons hittade 5 till med risk: `.theme-toggle` (40×40 px), `.diff-info-btn` (18×18 px — kraftigt under 44), `.compare-issue-expand` och `.timeline-event-toggle` (~32 px), och `.nav-toggle` (redan fixad).
