@@ -14,10 +14,10 @@
     "mandat_2022": 24,
     "mandat_2018": 28,
     "valresultat_2022": 6.75,
-    "valresultat_2018": 8.0,
+    "valresultat_2018": 8,
     "eu_2024_pct": 11.1,
     "eu_2024_mandat": 2,
-    "opinion_nu": 8.0,
+    "opinion_nu": 8,
     "ideologi": "Socialism, feminism, miljöpolitik",
     "grundat": 1917,
     "webbplats": "https://www.vansterpartiet.se",
@@ -26,7 +26,8 @@
     "profil": {
       "ekonomi": -7,
       "gal_tan": -3
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "S",
@@ -46,7 +47,7 @@
     "valresultat_2018": 28.3,
     "eu_2024_pct": 24.8,
     "eu_2024_mandat": 5,
-    "opinion_nu": 33.0,
+    "opinion_nu": 33,
     "ideologi": "Socialdemokrati, reformism",
     "grundat": 1889,
     "webbplats": "https://www.socialdemokraterna.se",
@@ -55,7 +56,8 @@
     "profil": {
       "ekonomi": -3,
       "gal_tan": 1
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "MP",
@@ -75,7 +77,7 @@
     "valresultat_2018": 4.4,
     "eu_2024_pct": 13.9,
     "eu_2024_mandat": 3,
-    "opinion_nu": 6.0,
+    "opinion_nu": 6,
     "ideologi": "Grön politik, ekologism, feminism",
     "grundat": 1981,
     "webbplats": "https://www.mp.se",
@@ -84,7 +86,8 @@
     "profil": {
       "ekonomi": -4,
       "gal_tan": -6
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "C",
@@ -104,7 +107,7 @@
     "valresultat_2018": 8.6,
     "eu_2024_pct": 7.3,
     "eu_2024_mandat": 2,
-    "opinion_nu": 6.0,
+    "opinion_nu": 6,
     "ideologi": "Liberalism, decentralism, grön liberalism",
     "grundat": 1913,
     "webbplats": "https://www.centerpartiet.se",
@@ -113,7 +116,8 @@
     "profil": {
       "ekonomi": 3,
       "gal_tan": -3
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "L",
@@ -133,7 +137,7 @@
     "valresultat_2018": 5.5,
     "eu_2024_pct": 4.4,
     "eu_2024_mandat": 1,
-    "opinion_nu": 2.0,
+    "opinion_nu": 2,
     "ideologi": "Socialliberalism",
     "grundat": 1934,
     "webbplats": "https://www.liberalerna.se",
@@ -143,7 +147,8 @@
     "profil": {
       "ekonomi": 4,
       "gal_tan": -2
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "KD",
@@ -163,7 +168,7 @@
     "valresultat_2018": 6.3,
     "eu_2024_pct": 5.7,
     "eu_2024_mandat": 1,
-    "opinion_nu": 5.0,
+    "opinion_nu": 5,
     "ideologi": "Kristdemokrati, konservatism",
     "grundat": 1964,
     "webbplats": "https://www.kristdemokraterna.se",
@@ -172,7 +177,8 @@
     "profil": {
       "ekonomi": 5,
       "gal_tan": 4
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "M",
@@ -188,11 +194,11 @@
     "ledare_bild": "kristersson.jpg",
     "mandat_2022": 68,
     "mandat_2018": 70,
-    "valresultat_2022": 19.10,
+    "valresultat_2022": 19.1,
     "valresultat_2018": 19.8,
     "eu_2024_pct": 17.5,
     "eu_2024_mandat": 4,
-    "opinion_nu": 18.0,
+    "opinion_nu": 18,
     "ideologi": "Konservativ liberalism",
     "grundat": 1904,
     "webbplats": "https://www.moderaterna.se",
@@ -201,7 +207,8 @@
     "profil": {
       "ekonomi": 6,
       "gal_tan": 2
-    }
+    },
+    "valmanifest_2026_url": null
   },
   {
     "id": "SD",
@@ -221,7 +228,7 @@
     "valresultat_2018": 17.5,
     "eu_2024_pct": 13.2,
     "eu_2024_mandat": 3,
-    "opinion_nu": 20.0,
+    "opinion_nu": 20,
     "ideologi": "Nationalkonservatism, socialkonservatism",
     "grundat": 1988,
     "webbplats": "https://www.sd.se",
@@ -230,6 +237,7 @@
     "profil": {
       "ekonomi": 3,
       "gal_tan": 7
-    }
+    },
+    "valmanifest_2026_url": null
   }
 ]

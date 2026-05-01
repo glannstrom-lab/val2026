@@ -26,7 +26,11 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - [ ] Mobilvänlig layout verifierad
 
 ### Fas 2: Innehåll (maj → juli 2026)
-- [ ] Alla partier har sina valmanifest 2026 inlagda när de publiceras
+- [~] Alla partier har sina valmanifest 2026 inlagda när de publiceras
+      (Cykel 27: struktur klar — fältet `valmanifest_2026_url` finns på alla 8
+      partier i parties.json (initial null). renderPartyCard visar villkorligt
+      en framträdande "Valmanifest 2026 →"-länk när URL fylls i. Återstår:
+      handhållare uppdaterar fältet när respektive parti publicerar manifest.)
 - [ ] Sakfrågejämförelse täcker minst 15 frågor
 - [ ] Politisk kompass har minst 25 påståenden, kalibrerad mot faktisk partipolitik
 - [ ] Kampanjtidslinjen uppdateras kontinuerligt med viktiga händelser

@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 27 — 2026-05-01 — Content (valmanifest-stub)
+
+**Bedömning**: Tidsfaktor: 1 maj 2026, 9 veckor till feature-frys. Fas 2 i ROADMAP säger "Alla partier har sina valmanifest 2026 inlagda när de publiceras" (typiskt maj-juni). Bättre att förbereda strukturen NU så att tillägg sker utan kodändring senare. Då räcker det att uppdatera `parties.json`.
+**Alternativ jag valde bort**:
+- Skapa en separat `valmanifest.json` — onödig komplexitet, valmanifest är en attribut på parti
+- Hardkoda 8 valmanifest-länkar med "kommer snart"-status — synlig stub gör sajten ofärdig
+- Performance/SEO/Neutrality (4-6 cykler bortom)
+**Gjort**:
+1. `scripts/add-valmanifest-field.cjs` — idempotent script som lägger `valmanifest_2026_url: null` på varje parti
+2. Körde scriptet → 8/8 partier har nu fältet
+3. app.js renderPartyCard: villkorlig rendering — om URL finns visas "Valmanifest 2026 →"-länk i framträdande accent-färg ovanför "Besök officiell sida"-länken
+4. styles.css `.party-link-manifest`: framträdande färg (accent), bold, så användaren ser direkt när manifest publiceras
+5. ROADMAP Fas 2 markerad delvis (`[~]`) — strukturen klar, väntar på att respektive parti publicerar
+**Resultat**:
+- Sajten är "ready" för partimanifest-publicering — bara `parties.json` ska uppdateras
+- Inget syns på partikorten just nu (alla URL är null)
+- När fältet uppdateras till en URL: tydlig accent-färgad länk dyker upp på det specifika partikortet
+- Mönster för "feature ready, awaiting data" etablerat
+**Nästa cykel bör undvika**: Content. Senaste 3: Mobile UX, Tools, Content. Cykel 28 kandidater: Performance (5 cykler bortom), SEO (6 cykler bortom), Neutrality (7 cykler bortom!), Accessibility (4 cykler bortom).
+
+---
+
 ## Cykel 26 — 2026-05-01 — Tools (code hygiene)
 
 **Bedömning**: Audit hittade 15 dev-rester av typen `console.log('X initialized')` i tools (12), app.js (3) och service worker-registrering. Dessa är dev-debugging som inte behövs i produktion — minor performance-förlust + brus i devtools-konsolen för slutanvändare.

@@ -879,6 +879,21 @@ section {
   height: 16px;
 }
 
+/* Valmanifest-länk: framträdande färgmarkerad så den syns när partier
+   släpper sina manifest. Kommer aldrig synas på partikort där
+   valmanifest_2026_url är null. */
+.party-link-manifest {
+  display: inline-flex;
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+.party-link-manifest:hover,
+.party-link-manifest:focus-visible {
+  color: var(--color-accent-hover);
+}
+
 /* Block indicators */
 .party-block {
   display: inline-flex;
