@@ -109,10 +109,10 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [x] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje *(Cykel 11, 16, 22)*
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5, 14, 23)*
 - [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4, 9, 20)*
-- [x] **Mobile UX** — testning och förbättring på små skärmar *(Cykel 12, 17)*
+- [x] **Mobile UX** — testning och förbättring på små skärmar *(Cykel 12, 17, 25)*
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3, 8, 15, 21)*
 
-Senast vald: **Accessibility (Cykel 24, 2026-05-01)**
+Senast vald: **Mobile UX (Cykel 25, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -147,6 +147,7 @@ Du har INTE auktoritet att:
 - **Light mode och dark mode måste tonas separat.** En accent-färg som funkar mot mörk bakgrund (`#4a9eff` ger 7:1 på #0d0d0d) kan totalt fail mot vit bakgrund (2.75:1). Light theme behöver mörkare accent (#1d6fcf, 4.97:1) — inte samma palett. (Cykel 2)
 - **`--focus-ring` som custom property.** Centraliserar focus-indikator-stilen så att alla tema-overrides automatiskt fungerar. Bytet från `:focus` till `:focus-visible` undviker att visa fokusring vid musklick på `<select>`. (Cykel 2)
 - **Pseudo-element-utvidgad klickyta för små icon-buttons.** När en icon-button MÅSTE vara liten visuellt (t.ex. 18×18 cirkel i tabellrad), utöka klickytan med `::before { position:absolute; inset:-13px }` så total klickyta blir 44×44 utan att ändra visuell design. WCAG 2.5.5 räknar pseudo-element-yta som touch target. (Cykel 17)
+- **Fluid typografi via `clamp()` istället för media-query.** `font-size: clamp(min, vw, max)` ger jämn skalning utan breakpoint-snärje. Modern syntax, bred browser support sedan 2020. Använd för rubriker som annars kräver mobile-overrides. (Cykel 25)
 - **Engångsscript för repetitiv HTML-redigering är OK i `scripts/`.** När en ändring ska göras på 17 filer på exakt samma sätt är ett node-script mer pålitligt än 17 individuella Edit-anrop. Behåll i `scripts/` så framtida cykler kan köra om den vid behov (idempotent). (Cykel 3)
 - **Title-separator `—` (em-dash), inte `|`.** Etablerad konvention i projektet. När nya HTML-sidor skapas, använd em-dash. (Cykel 3)
 - **"Hårdare tag" är populism, inte beskrivning.** Använd "skärpta straff", "skärpt straffrätt" eller "stärkt lag och ordning" — ord som också Liberalerna och SD använder neutralt på samma område. Konsekvent terminologi över partier är neutralitetens kärna. (Cykel 4)

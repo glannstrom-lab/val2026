@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 25 — 2026-05-01 — Mobile UX (fluid hero-rubrik)
+
+**Bedömning**: Audit av media-query coverage. De största riskerna (`.budget-table`, `.compass-svg`, `.container`, `.btn`) har redan responsiva setups. Hittade dock att `.page-hero h1` använder fast `font-size: var(--text-4xl)` (40 px) utan mobile-skalning — på 320 px-mobiler blir det 12,5% av skärmbredden men kan ändå orsaka tight radbrytning. 17 sidor använder denna stil.
+**Alternativ jag valde bort**:
+- Lägga till @media (max-width: 480px) override — fungerar men breakpoint-baserat hopp
+- Hårdkodade rem-värden — mindre flexibelt
+- Neutrality/SEO/Content (4-6 cykler bortom)
+**Gjort**:
+1. styles.css `.page-hero h1`: `font-size: var(--text-4xl)` → `font-size: clamp(var(--text-3xl), 6vw, var(--text-4xl))`. Fluid skalning från 2rem (mobil) till 2.5rem (desktop). 6vw = 19.2px på 320px-skärm men minimum är text-3xl = 32px, så det går inte under 32px någonstans.
+2. Inline-kommentar förklarar varför.
+3. CLAUDE.md Lessons Learned: clamp()-mönstret dokumenterat
+**Resultat**:
+- Sidrubriker skalar nu fluently på alla 17 sidor med .page-hero
+- Inga breakpoint-snärje — clamp() är modernare än media queries för typografi
+- 320px-mobil får 32px rubrik (läsbar), 1024px+ får 40px (designvärde)
+- Browser support: clamp() finns sedan 2020 (Chrome 79, Firefox 75, Safari 13.1)
+**Nästa cykel bör undvika**: Mobile UX. Senaste 3: Performance, Accessibility, Mobile UX. Cykel 26 kandidater: Neutrality (6 cykler bortom), Content (7 cykler bortom!), SEO (5 cykler bortom), Tools (4 cykler bortom).
+
+---
+
 ## Cykel 24 — 2026-05-01 — Accessibility (heading-anchors)
 
 **Bedömning**: Cykel 7 backloggade heading-hopp i 9 tool-sidor. Mönstret etablerat på tidslinje.html (Cykel 7): statisk `<h2 class="sr-only">` med aria-labelledby gör hierarkin korrekt utan visuell ändring. Skärmläsare läser ankaret, övriga ser inget.

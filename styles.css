@@ -5677,7 +5677,9 @@ section {
 
 .page-hero h1 {
   font-family: var(--font-display);
-  font-size: var(--text-4xl);
+  /* Fluid: 1.75rem (mobil) → 2.5rem (desktop). Förhindrar 40px-rubrik
+     på 320px-skärm där den tar 60%+ av bredden. */
+  font-size: clamp(var(--text-3xl), 6vw, var(--text-4xl));
   font-weight: 700;
   margin-bottom: var(--space-4);
 }
