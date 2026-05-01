@@ -15,6 +15,24 @@ Format för varje post:
 
 ---
 
+## Cykel 32 — 2026-05-01 — Accessibility (aria-current navigation)
+
+**Bedömning**: Header.js sätter `class="active"` på navigations-länken som motsvarar aktuell sida (visuell indicator). Men ingen `aria-current="page"`. Skärmläsare kan inte berätta för användaren "du är på den här sidan". WCAG SC 2.4.8 Location.
+**Alternativ jag valde bort**:
+- aria-current på alla länkar — fel, ska bara vara på den aktuella
+- Ändra `class="active"` till bara aria-current — tar bort visuell styling
+- Mobile UX/Performance/Content (4-6 cykler bortom)
+**Gjort**:
+1. components/header.js (4 ställen): lägga till `aria-current="page"` när `currentPage === item.href` (matchar `class="active"`-villkor). Påverkar: dropdown-items, om-länken (desktop nav), mobil-nav links, mobil-nav om-länk
+2. sw.js: bumpa CACHE_NAME v14 → v15 (header.js ändras → invalidera cache)
+**Resultat**:
+- Skärmläsare annonserar "current page" när användaren tabbar genom navigation till aktuell sida
+- 4 ställen i header.js har nu attributet
+- Inga visuella förändringar — class="active" stilen behållas
+**Nästa cykel bör undvika**: Accessibility. Senaste 3: Tools, SEO, Accessibility. Cykel 33 kandidater: Mobile UX (7 cykler bortom), Performance (5 cykler bortom), Content (6 cykler bortom), Neutrality (4 cykler bortom).
+
+---
+
 ## Cykel 31 — 2026-05-01 — SEO (description audit)
 
 **Bedömning**: Audit av description-meta på alla 17 sidor. SEO-rekommendation är 70–160 tecken. 16 av 17 inom intervall ✅. **kandidater.html** hade endast 63 tecken — under-optimerat. Den kortaste description får sämst CTR i sökmotor-resultat.

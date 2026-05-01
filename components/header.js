@@ -66,17 +66,20 @@
               </button>
               <div class="nav-dropdown-menu">
                 <div class="dropdown-items">
-                  ${category.items.map(item => `
-                    <a href="${item.href}" class="dropdown-item ${currentPage === item.href ? 'active' : ''}">
+                  ${category.items.map(item => {
+                    const isActive = currentPage === item.href;
+                    return `
+                    <a href="${item.href}" class="dropdown-item ${isActive ? 'active' : ''}"${isActive ? ' aria-current="page"' : ''}>
                       <span class="dropdown-item-title">${item.title}</span>
                       <span class="dropdown-item-desc">${item.desc}</span>
                     </a>
-                  `).join('')}
+                  `;
+                  }).join('')}
                 </div>
               </div>
             </div>
           `).join('')}
-          <a href="om.html" class="nav-link ${currentPage === 'om.html' ? 'active' : ''}">Om sidan</a>
+          <a href="om.html" class="nav-link ${currentPage === 'om.html' ? 'active' : ''}"${currentPage === 'om.html' ? ' aria-current="page"' : ''}>Om sidan</a>
         </nav>
 
         <div class="header-actions">
@@ -119,11 +122,13 @@
     Object.entries(MENU_STRUCTURE).forEach(([key, category]) => {
       html += `<div class="mobile-nav-category">${category.label}</div>`;
       category.items.forEach(item => {
-        html += `<a href="${item.href}" class="${currentPage === item.href ? 'active' : ''}">${item.title}</a>`;
+        const isActive = currentPage === item.href;
+        html += `<a href="${item.href}" class="${isActive ? 'active' : ''}"${isActive ? ' aria-current="page"' : ''}>${item.title}</a>`;
       });
     });
     html += `<div class="mobile-nav-category">Övrigt</div>`;
-    html += `<a href="om.html" class="${currentPage === 'om.html' ? 'active' : ''}">Om sidan</a>`;
+    const omActive = currentPage === 'om.html';
+    html += `<a href="om.html" class="${omActive ? 'active' : ''}"${omActive ? ' aria-current="page"' : ''}>Om sidan</a>`;
 
     nav.innerHTML = html;
     return nav;

@@ -8,7 +8,7 @@
  * där N ökas vid varje deploy som ändrar CSS/JS/data eller HTML-struktur.
  */
 
-const CACHE_NAME = 'val2026-v14';
+const CACHE_NAME = 'val2026-v15';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
