@@ -270,7 +270,12 @@
   // ==========================================================================
 
   function getPreferredTheme() {
-    const stored = localStorage.getItem('theme');
+    let stored = null;
+    try {
+      stored = localStorage.getItem('theme');
+    } catch (e) {
+      // localStorage avstängd (privat-mode, blockerad) — falla tillbaka till system
+    }
     if (stored) return stored;
 
     // Check system preference
@@ -282,7 +287,11 @@
 
   function setTheme(theme) {
     document.documentElement.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
+    try {
+      localStorage.setItem('theme', theme);
+    } catch (e) {
+      // Quota full eller localStorage avstängd — temat sparas inte men appliceras ändå
+    }
 
     // Update meta theme-color for mobile browsers
     const metaTheme = document.querySelector('meta[name="theme-color"]');
@@ -309,7 +318,9 @@
 
     // Listen for system theme changes
     window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
-      if (!localStorage.getItem('theme')) {
+      let userPref = null;
+      try { userPref = localStorage.getItem('theme'); } catch (_) {}
+      if (!userPref) {
         setTheme(e.matches ? 'light' : 'dark');
       }
     });

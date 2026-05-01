@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 22 — 2026-05-01 — Tools (localStorage felhantering)
+
+**Bedömning**: Audit av localStorage-anrop. quiz.js har excellent felhantering — try/catch på save/load/clear, 24h-expiration. header.js saknade try/catch på 3 anrop: `getPreferredTheme()`, `setTheme()`, och system-prefers-listener. Detta orsakar TypeError i Safari privat-mode (localStorage kastar SecurityError) eller om quotan är full — och de error-fallen är vanliga.
+**Alternativ jag valde bort**:
+- Bygga centralized localStorage-wrapper med inbyggd fallback — för stor refactor för en cykel
+- Ta bort theme-persistance helt — degraderar UX
+- Performance/Mobile UX/Accessibility (4-8 cykler bortom)
+**Gjort**:
+1. components/header.js `getPreferredTheme()`: try/catch runt `localStorage.getItem('theme')`. Vid fel: falla tillbaka till system-preferens.
+2. components/header.js `setTheme()`: try/catch runt `localStorage.setItem`. Vid fel: temat appliceras visuellt men sparas inte (graceful degradation).
+3. components/header.js system-prefers-listener: try/catch runt `localStorage.getItem`, fallback till null så `if (!userPref)` triggar systemändring.
+4. Inline-kommentarer förklarar vilka fall som täcks (Safari privat-mode, quota full).
+**Resultat**:
+- Sajten kraschar inte längre i Safari privat-mode eller vid full localStorage-quota
+- Theme-toggle fungerar fortfarande (visuellt) även när storage failar
+- 3 robusta one-line try-catch-fixar utan logikförändring i happy-path
+**Nästa cykel bör undvika**: Tools. Senaste 3: Content (#19), SEO (#21), Tools. Cykel 23 kandidater: Performance (9 cykler bortom!!), Mobile UX (6 cykler bortom), Accessibility (5 cykler bortom), Neutrality (3 cykler bortom).
+
+---
+
 ## Cykel 21 — 2026-05-01 — SEO (Event-LD för debatter)
 
 **Bedömning**: Cykel 8/15 etablerade JSON-LD pattern. Backloggat: Event[] för debatter.html. Datat har 12 schemalagda valdebatter med datum/tid/kanal/partideltagare — perfekt för schema.org BroadcastEvent. Risken med dynamiska data: re-kör scriptet vid ändring.
