@@ -15,6 +15,27 @@ Format för varje post:
 
 ---
 
+## Cykel 34 — 2026-05-01 — Tools (run-all.cjs deploy-kedja)
+
+**Bedömning**: Mobile UX-audit av compass.js visade att touchstart-handler redan finns (rad 423) — tooltip fungerar på mobil. Inget att åtgärda. Pivot till Tools: 8 idempotenta scripts har ackumulerats i `scripts/`-mappen under Cyklerna 3, 5, 14, 15, 21, 24, 26, 27. Varje deploy som ändrar data eller HTML kan kräva re-körning av flera. Saknas en samlingsrunner.
+**Alternativ jag valde bort**:
+- npm scripts — kräver package.json som mot CLAUDE.md "ingen build-process"
+- Bash-script — fungerar inte på Windows utan WSL
+- Mobile UX touch-targets på fler element (backloggad: compare-issue-expand)
+**Gjort**:
+1. `scripts/run-all.cjs` — kör alla 8 scripts i logisk ordning (data → SEO/HTML → JSON-LD → hygiene → preload). execSync per script, kapture sista raden som status, fail-fast om någon krashar.
+2. Verifierade vid första körning: 8/8 lyckades, ingen krash
+3. **Upptäckt**: 3 scripts är "best-effort idempotent" (seo-meta, gen-partier-ld, gen-debatter-ld). De regenererar block från data och kan ge formaterings-skillnader mellan körningar.
+4. Lade till varning i run-all.cjs-headern: "Granska git diff efter run-all och committa bara avsiktliga ändringar."
+**Resultat**:
+- Single command (`node scripts/run-all.cjs`) kör hela kedjan
+- Tydligt dokumenterad bagage: 5 fullständigt idempotenta + 3 best-effort
+- Vid framtida partiledar-byte eller debate-tillägg räcker en kommando
+- Reverterade test-körnings-ändringar (HTML hade fått minor formatering)
+**Nästa cykel bör undvika**: Tools. Senaste 3: Accessibility, Performance, Tools. Cykel 35 kandidater: Mobile UX (varierande), Content (8 cykler bortom!), Neutrality (6 cykler bortom), SEO (4 cykler bortom).
+
+---
+
 ## Cykel 33 — 2026-05-01 — Performance (SWR för data-filer)
 
 **Bedömning**: Service worker hade enbart cache-first-strategi. Funkar bra för HTML/CSS/JS (CACHE_NAME-bump invaliderar) men problematiskt för `data/*.json` som ändras ofta under valrörelsen (opinion uppdateras månadsvis, debatter tillkommer, tidslinje växer). Användare får aldrig nya data förrän nästa CACHE_NAME-bump. Bättre: stale-while-revalidate för data-filer.
