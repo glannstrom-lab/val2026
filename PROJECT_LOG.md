@@ -15,6 +15,31 @@ Format för varje post:
 
 ---
 
+## Cykel 4 — 2026-05-01 — Neutrality audit
+
+**Bedömning**: Två klasser av neutralitetsproblem identifierade. (1) **Textbias** i partibeskrivningar: S "har präglat svensk politik under 1900-talet" (positivt laddat), M "hårdare tag mot brottslighet" (populistisk frasering medan SD får neutralt "lag och ordning"), och bara S/M/SD får storlekspåståenden i beskrivning vilket skapar strukturell asymmetri (storlek finns redan i partikortets statistik). (2) **Strukturell obalans i timeline.json**: M=5, L=3, MP=3, S=2, SD=2, V=1, C=1, KD=1 av 36 händelser. Förväntat enligt mandat: S~11, SD~8, M~7. S och SD kraftigt underrepresenterade.
+**Alternativ jag valde bort**:
+- Performance — Lighthouse kräver browser-körning
+- Mobile UX — kräver browser
+- Tools — för diffust
+- Lägga till faktiska timeline-händelser för S/SD — kräver omfattande research, för stort för en cykel. Backloggat.
+**Gjort**:
+1. parties.json — S beskrivning: tog bort "Sveriges största parti och har präglat svensk politik under 1900-talet" → "är Sveriges äldsta riksdagsparti, grundat 1889" (faktabaserad, inte värderande)
+2. parties.json — M beskrivning: tog bort "Sveriges näst största parti och" och bytte "hårdare tag mot brottslighet" → "skärpt straffrätt" (samma ord som SD/L får på samma område)
+3. parties.json — SD beskrivning: tog bort "är riksdagens tredje största parti och" → "stödjer Tidöregeringen som samarbetsparti" (förtydligar relation utan storleksrang)
+4. issues.json — C på hedersbrott: "Vill ha hårdare tag mot hedersbrott" → "Vill skärpa straffen för hedersbrott" (matchar L:s neutrala "skärpta straff" på samma rad)
+5. ROADMAP — backloggat: timeline-balansering med specifika rekommenderade händelse-tillägg per parti
+6. Markerade Neutrality audit som klar i kategoriroteraren
+7. CLAUDE.md Lessons Learned: tre nya regler (hårdare tag är populism, storlekspåståenden hör hemma i statistik, räkna omnämnanden som balanstest)
+**Resultat**:
+- Fyra textändringar, alla med samma ords-konsistens som befintliga neutrala formuleringar i samma datafiler (gjorde ändringar BAKÅT-kompatibla mot etablerad neutral språknorm i projektet)
+- JSON-validitet verifierad efter varje ändring
+- Strukturell asymmetri i timeline-data nu dokumenterad — ej åtgärdad i denna cykel men ej längre osynlig
+- Inga textändringar i quotes.json eller compass-positions.json gjordes — de kräver djupare språkgranskning som är en framtida cykels jobb
+**Nästa cykel bör undvika**: Neutrality audit-kategori. Senaste 3: Accessibility, SEO, Neutrality. Kandidater: Tools, Performance, Mobile UX, Content, Accessibility (med 1 cykels mellanrum kan den återkomma).
+
+---
+
 ## Cykel 3 — 2026-05-01 — SEO & meta
 
 **Bedömning**: Audit över 17 HTML-sidor visade att alla hade `<title>` och `<meta name="description">` ✅, men endast 4 hade `og:title`, 0 hade `og:image`, 0 hade `canonical`. Title-format inkonsekvent: 14 använde em-dash `—`, 3 använde pipe `|`. Saknade `robots.txt` och `sitemap.xml`. Sajten ska upptäckas av sökmotorer och dela bra på sociala medier — dessa luckor är konkreta SEO-fail.

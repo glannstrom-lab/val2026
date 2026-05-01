@@ -108,11 +108,11 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2)*
 - [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
 - [ ] **Performance** — laddtider, bildoptimering, CSS-rensning
-- [ ] **Neutrality audit** — språkgranskning, jämn behandling av partier
+- [x] **Neutrality audit** — språkgranskning, jämn behandling av partier *(Cykel 4)*
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3)*
 
-Senast vald: **SEO & meta (Cykel 3, 2026-05-01)**
+Senast vald: **Neutrality audit (Cykel 4, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -148,6 +148,9 @@ Du har INTE auktoritet att:
 - **`--focus-ring` som custom property.** Centraliserar focus-indikator-stilen så att alla tema-overrides automatiskt fungerar. Bytet från `:focus` till `:focus-visible` undviker att visa fokusring vid musklick på `<select>`. (Cykel 2)
 - **Engångsscript för repetitiv HTML-redigering är OK i `scripts/`.** När en ändring ska göras på 17 filer på exakt samma sätt är ett node-script mer pålitligt än 17 individuella Edit-anrop. Behåll i `scripts/` så framtida cykler kan köra om den vid behov (idempotent). (Cykel 3)
 - **Title-separator `—` (em-dash), inte `|`.** Etablerad konvention i projektet. När nya HTML-sidor skapas, använd em-dash. (Cykel 3)
+- **"Hårdare tag" är populism, inte beskrivning.** Använd "skärpta straff", "skärpt straffrätt" eller "stärkt lag och ordning" — ord som också Liberalerna och SD använder neutralt på samma område. Konsekvent terminologi över partier är neutralitetens kärna. (Cykel 4)
+- **Storlekspåståenden hör hemma i statistik, inte i beskrivningstext.** Mandat och valresultat finns redan synligt i partikortet. När de upprepas i `beskrivning` skapas asymmetri (bara stora partier får storleksomnämnande). Håll beskrivningen om politik och historik, inte storlek. (Cykel 4)
+- **Räkna partiomnämnanden som balanstest.** Aggregera och jämför mot riksdagsmandat-fördelningen — det avslöjar dolda asymmetrier (t.ex. timeline.json hade M=5, S=2 trots att S har 39% fler mandat). (Cykel 4)
 
 ## Referensdata
 

@@ -47,6 +47,11 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 - Källhänvisningssystem som visas synligt för användaren
   (Cykel 1: påbörjat på partier.html. Behöver göras motsvarande på opinion.html,
   historik.html, mandat.html, budget.html, rostningar.html.)
+- **Tidslinje-balansering**: aktuell fördelning M=5, L=3, MP=3, S=2, SD=2, V=1, C=1,
+  KD=1 av totalt 36 händelser. Förväntat baserat på riksdagsmandat: S~11, SD~8,
+  M~7, V/C~3, KD/MP/L~2. S och SD kraftigt underrepresenterade. Lägg till
+  faktabaserade händelser från 2022-2026 — t.ex. S oppositionsstrategi,
+  SD-utspel/utskottsarbete, V-motioner, KD-initiativ. (Identifierat Cykel 4)
 - Verifiera och inför partispecifika riksdagslänkar i parties.json (`riksdagen_url`)
 - Källor till `beskrivning` och `ideologi` i parties.json (per parti)
 - Print-vänlig stil för väljartestets resultat

@@ -50,7 +50,7 @@
     "ideologi": "Socialdemokrati, reformism",
     "grundat": 1889,
     "webbplats": "https://www.socialdemokraterna.se",
-    "beskrivning": "Socialdemokraterna är Sveriges största parti och har präglat svensk politik under 1900-talet. Partiet står för en stark välfärdsstat, arbetsrätt och pragmatisk reformism.",
+    "beskrivning": "Socialdemokraterna är Sveriges äldsta riksdagsparti, grundat 1889. Partiet står för en stark välfärdsstat, arbetsrätt och pragmatisk reformism.",
     "block": "opposition",
     "profil": {
       "ekonomi": -3,
@@ -196,7 +196,7 @@
     "ideologi": "Konservativ liberalism",
     "grundat": 1904,
     "webbplats": "https://www.moderaterna.se",
-    "beskrivning": "Moderaterna är Sveriges näst största parti och leder Tidöregeringen. Partiet förespråkar lägre skatter, valfrihet i välfärden och hårdare tag mot brottslighet.",
+    "beskrivning": "Moderaterna leder Tidöregeringen och förespråkar lägre skatter, valfrihet i välfärden och skärpt straffrätt.",
     "block": "regering",
     "profil": {
       "ekonomi": 6,
@@ -225,7 +225,7 @@
     "ideologi": "Nationalkonservatism, socialkonservatism",
     "grundat": 1988,
     "webbplats": "https://www.sd.se",
-    "beskrivning": "Sverigedemokraterna är riksdagens tredje största parti och stödjer Tidöregeringen. Partiets kärnfrågor är minskad invandring, lag och ordning samt välfärdsnationalism.",
+    "beskrivning": "Sverigedemokraterna stödjer Tidöregeringen som samarbetsparti. Partiets kärnfrågor är minskad invandring, lag och ordning samt välfärdsnationalism.",
     "block": "regering",
     "profil": {
       "ekonomi": 3,
