@@ -104,7 +104,7 @@ Du är autonom produktägare för detta projekt. Varje cykel följer du denna se
 
 För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vilken som senast valdes.
 
-- [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1)*
+- [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1, 6)*
 - [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2)*
 - [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5)*
@@ -112,7 +112,7 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3)*
 
-Senast vald: **Performance (Cykel 5, 2026-05-01)**
+Senast vald: **Content (Cykel 6, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 
@@ -153,6 +153,8 @@ Du har INTE auktoritet att:
 - **Räkna partiomnämnanden som balanstest.** Aggregera och jämför mot riksdagsmandat-fördelningen — det avslöjar dolda asymmetrier (t.ex. timeline.json hade M=5, S=2 trots att S har 39% fler mandat). (Cykel 4)
 - **CSS-konflikter där samma klassnamn definieras i olika scopes är inte alltid duplicering.** En grupp-selektor `.a, .b { ... }` följt av `.b { specifik }` är legitimt mönster, inte duplicering. Endast när två block med samma selektor har olika stilar utan delad bas är det en konflikt — då ska den senare scopas under sin parent (`.parent .child`). Visuell verifikation krävs före fix. (Cykel 5)
 - **Säker performance-vinst utan browser: preload + font-display.** `<link rel="preload" href="styles.css">` parallelliserar CSS-laddning med HTML-parsning. `&display=swap` i font-URL undviker FOIT (Flash of Invisible Text). Båda är riskfria på multi-page sajt — inga visuella förändringar, bara snabbare. (Cykel 5)
+- **Audit av synliga källor sida för sida innan tillägg.** Innan en cykel lägger till källrader, granska varje sida — flera kan redan ha dem (opinion.html hade pollofpolls.se, budget/votes/EU-history hade specifika links). Att lägga till dubblet skadar UX. (Cykel 6)
+- **Återanvändbar `.history-source` / `.seatcalc-source`-klass.** Mönster: liten muted text med top-border som separerar från kärninnehåll, länkar i underline. Konsekvent stil över olika datatyper bygger användarens förtroende. (Cykel 6)
 
 ## Referensdata
 

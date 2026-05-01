@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 6 — 2026-05-01 — Content (källrader på fler sidor)
+
+**Bedömning**: Cykel 1 lade till källrad på partier.html. Backloggat: göra motsvarande på opinion.html, historik.html, mandat.html, budget.html, rostningar.html. Audit visade att opinion.html (pollofpolls.se), budget.html (Prop. 2024/25:1) och rostningar.html (Riksdagens öppna data) redan hade synliga källor — kvarvarande luckor: historik.html (bara EU-valet hade källa, riksdagsvalen 2018/2022 saknade), mandat.html (förklarade Sainte-Laguë men hade ingen länk till regelverket).
+**Alternativ jag valde bort**:
+- Tools — för diffust mål
+- Mobile UX — kräver browser-testning
+- Accessibility — bara 4 cykler sedan, ge variation tid
+- Lägg till källa även på kompass.html (CHES) och quiz.html (matchningsalgoritm) — backloggat
+**Gjort**:
+1. `tools/history.js` — lade till `.history-source`-block efter Valdeltagande-sektionen i `renderRiksdagComparison`. Visar tre källor: val.se (officiell, primärkälla), SVT 2022, SVT 2018 (sekundärkällor från `data/election-history.json`)
+2. `tools/seatcalc.js` — lade till `.seatcalc-source`-paragraph i info-boxen om Sainte-Laguë-metoden, med länk till vallagen 2005:837 kap 14 (primärkälla regelverk) och val.se
+3. `styles.css` — ny återanvändbar klass `.history-source, .seatcalc-source` med top-border som visuell separator, font-size xs, underline-länkar med samma muted-tokens som `.party-sources`
+4. ROADMAP backlog uppdaterad: opinion/budget/rostningar avbockade, kompass/quiz/tidslinje kvar
+**Resultat**:
+- Riksdagsvalen 2018/2022 har nu synlig primärkällelänk på historik-sidan
+- Mandatkalkylatorn visar regelverkets URL → användaren kan verifiera metodbeskrivning mot lagtext
+- CSS-klass återanvändbar för framtida källrader (kompass, quiz)
+- Inga ändringar i data/-filer, bara i visningsdelen — JSON-validitet ej påverkad
+**Nästa cykel bör undvika**: Content. Senaste 3: Neutrality, Performance, Content. Kandidater: Tools, Mobile UX, Accessibility (med 4 cykler bortom), SEO (med 3 cykler bortom).
+
+---
+
 ## Cykel 5 — 2026-05-01 — Performance
 
 **Bedömning**: Performance-audit utan browser. Filstorleksanalys: styles.css är 150 KB över 5800+ rader, app.js 14 KB, alla 14 verktygsfiler total 187 KB (men bara en laddas per sida pga multi-page). Preload-audit visade att endast index.html (1 av 17) hade `<link rel="preload">` för styles.css. Tre sidor (debatter, kandidater, mandat — samma trio som inkonsekvent SEO i Cykel 3) saknade `display=swap` i font-URL → FOIT-risk. CSS-duplikat-audit identifierade 17 selektorer, varav 11 är legitima gruppselektor-mönster och 3 är reella konflikter (`.party-card-header`, `.party-stat-value/label`, `.block-label` definieras i konkurrerande scopes).

@@ -264,6 +264,10 @@
             <h4>Om beräkningen</h4>
             <p>Mandaten fördelas enligt den <strong>modifierade Sainte-Laguë-metoden</strong> som används i svenska riksdagsval. Partier som får under 4% av rösterna får inga mandat.</p>
             <p>Riksdagen har <strong>349 mandat</strong>. Det krävs <strong>175 mandat</strong> för egen majoritet.</p>
+            <p class="seatcalc-source">
+              Regelverket beskrivs i <a href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/vallag-2005837_sfs-2005-837/" target="_blank" rel="noopener">vallagen (2005:837)</a>, kap. 14. Ytterligare information från
+              <a href="https://www.val.se" target="_blank" rel="noopener">val.se</a> (Valmyndigheten).
+            </p>
           </div>
         </div>
       </div>

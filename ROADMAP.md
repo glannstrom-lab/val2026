@@ -45,8 +45,11 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
 [Lägg till och ta bort fritt baserat på vad du upptäcker]
 
 - Källhänvisningssystem som visas synligt för användaren
-  (Cykel 1: påbörjat på partier.html. Behöver göras motsvarande på opinion.html,
-  historik.html, mandat.html, budget.html, rostningar.html.)
+  (Cykel 1: partier.html. Cykel 6: historik.html (riksdagsvalen 2018/2022) och
+  mandat.html (Sainte-Laguë + vallagen). Verifierat i Cykel 6 att opinion.html,
+  budget.html, rostningar.html redan har källor. Kvar: kompass.html (CHES-data),
+  quiz.html (matchningsalgoritm), tidslinje.html per händelse, sakfragor.html
+  redan har källor per parti-position men inte tydligt högt upp på sidan.)
 - **Tidslinje-balansering**: aktuell fördelning M=5, L=3, MP=3, S=2, SD=2, V=1, C=1,
   KD=1 av totalt 36 händelser. Förväntat baserat på riksdagsmandat: S~11, SD~8,
   M~7, V/C~3, KD/MP/L~2. S och SD kraftigt underrepresenterade. Lägg till

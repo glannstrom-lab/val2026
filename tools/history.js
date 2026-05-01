@@ -163,6 +163,13 @@
             </div>
           </div>
         </div>
+
+        <div class="history-source">
+          Källor:
+          <a href="https://www.val.se" target="_blank" rel="noopener">val.se</a> (Valmyndigheten, officiell),
+          <a href="${e2022.source_url}" target="_blank" rel="noopener">SVT 2022</a>,
+          <a href="${e2018.source_url}" target="_blank" rel="noopener">SVT 2018</a>
+        </div>
       </div>
     `;
   }
