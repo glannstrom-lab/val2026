@@ -15,6 +15,28 @@ Format för varje post:
 
 ---
 
+## Cykel 23 — 2026-05-01 — Performance (CSS-konflikter scopade)
+
+**Bedömning**: Cykel 5 backloggade 3 reella CSS-klasskonflikter där samma selector definierades två gånger med olika stilar. Audit nu via grep + HTML/JS-användning bekräftade att varje konflikt har distinkta parents: budget-versionen av `.party-card-header` är inom `.budget-party-card`, votes-versionen av `.party-stat-label/value` är inom `.party-stat-bar`, och block-bar-versionen av `.block-label` är inom `.block-bar-left/right`. Säker scoping möjlig utan visuell verifikation.
+**Alternativ jag valde bort**:
+- Klass-rename (skulle kräva uppdatering i JS också) — för stort
+- !important-hack — kosmetiskt fel, inte arkitekturellt
+- Tools/SEO/Mobile UX/Accessibility (3-9 cykler bortom)
+**Gjort**:
+1. styles.css `.party-card-header` (rad 4401) → `.budget-party-card .party-card-header`
+2. styles.css `.party-stat-label` (rad 3963) → `.party-stat-bar .party-stat-label`
+3. styles.css `.party-stat-value` (rad 3983) → `.party-stat-bar .party-stat-value`
+4. styles.css `.block-label` (rad 5979) → `.block-bar-left .block-label, .block-bar-right .block-label`
+5. Audit verifierar: 4 globala definitioner kvar (en per selector), ingen dublett. ROADMAP backlog avbockad.
+**Resultat**:
+- 3 CSS-arkitektur-konflikter lösta — varje selector har nu unik scope och unik styling
+- Specificity är consistent: parent + child = 0.0.2.0 vs global 0.0.1.0, så scopade vinner som förväntat
+- Ingen risk för cascade-bugg där fel CSS appliceras på fel element
+- Inga visuella förändringar i happy-path (samma styles, samma elements)
+**Nästa cykel bör undvika**: Performance. Senaste 3: SEO, Tools, Performance. Cykel 24 kandidater: Mobile UX (7 cykler bortom!), Accessibility (6 cykler bortom), Neutrality (4 cykler bortom), Content (5 cykler bortom).
+
+---
+
 ## Cykel 22 — 2026-05-01 — Tools (localStorage felhantering)
 
 **Bedömning**: Audit av localStorage-anrop. quiz.js har excellent felhantering — try/catch på save/load/clear, 24h-expiration. header.js saknade try/catch på 3 anrop: `getPreferredTheme()`, `setTheme()`, och system-prefers-listener. Detta orsakar TypeError i Safari privat-mode (localStorage kastar SecurityError) eller om quotan är full — och de error-fallen är vanliga.

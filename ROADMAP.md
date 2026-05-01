@@ -75,13 +75,9 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
   via scripts/gen-debatter-ld.cjs.
   Kvar: Person[] på kandidater.html (~80 kandidater — stor LD, kanske bara
   topp-5 per parti).)
-- **CSS-konflikter att scope:a** (identifierat Cykel 5):
-  - `.party-card-header` — global definition (rad 676) krockar med variant inom
-    `.budget-party-card` (rad 4286). Borde scopas: `.budget-party-card .party-card-header`.
-  - `.party-stat-value` / `.party-stat-label` — global (rad 732/739) krockar med
-    votes-specifik variant (rad 3877/3857). Borde scopas under votes-parent.
-  - `.block-label` — opinion-page (rad 4899) krockar med block-bar-variant (rad 5863).
-    Borde scopas. Kräver visuell verifikation före commit.
+- ~~CSS-konflikter att scope:a~~ **Löst i Cykel 23**: alla tre konflikter
+  (`.party-card-header`, `.party-stat-value/label`, `.block-label`) scopade
+  under sina parents (`.budget-party-card`, `.party-stat-bar`, `.block-bar-left/right`).
 - Bildoptimering av PNG-logotyper (totalt 53 KB, SD/MP/S är 9–13 KB var). WebP eller
   manuell komprimering kan spara 30–50 %.
 - **Implementera party-detail-modal**: klick på partikort öppnar fördjupad vy
