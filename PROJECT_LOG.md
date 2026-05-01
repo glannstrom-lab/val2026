@@ -15,6 +15,29 @@ Format för varje post:
 
 ---
 
+## Cykel 33 — 2026-05-01 — Performance (SWR för data-filer)
+
+**Bedömning**: Service worker hade enbart cache-first-strategi. Funkar bra för HTML/CSS/JS (CACHE_NAME-bump invaliderar) men problematiskt för `data/*.json` som ändras ofta under valrörelsen (opinion uppdateras månadsvis, debatter tillkommer, tidslinje växer). Användare får aldrig nya data förrän nästa CACHE_NAME-bump. Bättre: stale-while-revalidate för data-filer.
+**Alternativ jag valde bort**:
+- Network-first för data — ger långsam offline-respons
+- No-cache för data — bryter offline-läsningen helt
+- Mobile UX/Content/Neutrality (4-7 cykler bortom)
+**Gjort**:
+1. sw.js fetch-listener: refaktorerad till två strategier baserat på URL.
+   - Match `/data/*.json` → stale-while-revalidate
+   - Allt annat → cache-first (oförändrat beteende)
+2. Två nya helper-funktioner: `cacheFirst(request)` och `staleWhileRevalidate(request)`. Båda har samma error-handling som tidigare.
+3. CACHE_NAME bumpad v15 → v16 så uppdaterad sw.js levereras till alla användare
+4. Inline-kommentarer förklarar strategi-valet och CLAUDE.md Lessons Learned dokumenterar mönstret
+**Resultat**:
+- Användare får färskast möjligt data utan att behöva CACHE_NAME-bump
+- Offline-läsning fortsatt fungerar (SWR returnerar cached om network failar)
+- Inga regressionsrisker — HTML/CSS/JS-flödet är oförändrat (cache-first)
+- Förberedelse för Fas 2: när partier släpper valmanifest och timeline uppdateras, slutanvändare ser ändringar nästan direkt
+**Nästa cykel bör undvika**: Performance. Senaste 3: SEO, Accessibility, Performance. Cykel 34 kandidater: Mobile UX (8 cykler bortom!), Content (7 cykler bortom), Neutrality (5 cykler bortom), Tools (4 cykler bortom).
+
+---
+
 ## Cykel 32 — 2026-05-01 — Accessibility (aria-current navigation)
 
 **Bedömning**: Header.js sätter `class="active"` på navigations-länken som motsvarar aktuell sida (visuell indicator). Men ingen `aria-current="page"`. Skärmläsare kan inte berätta för användaren "du är på den här sidan". WCAG SC 2.4.8 Location.

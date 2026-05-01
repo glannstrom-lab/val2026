@@ -8,7 +8,7 @@
  * där N ökas vid varje deploy som ändrar CSS/JS/data eller HTML-struktur.
  */
 
-const CACHE_NAME = 'val2026-v15';
+const CACHE_NAME = 'val2026-v16';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',
@@ -99,7 +99,7 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Fetch event - serve from cache, fallback to network
+// Fetch event — strategi varierar per resurstyp
 self.addEventListener('fetch', (event) => {
   // Skip non-GET requests
   if (event.request.method !== 'GET') return;
@@ -107,34 +107,50 @@ self.addEventListener('fetch', (event) => {
   // Skip external requests
   if (!event.request.url.startsWith(self.location.origin)) return;
 
-  event.respondWith(
-    caches.match(event.request)
-      .then((cachedResponse) => {
-        if (cachedResponse) {
-          return cachedResponse;
-        }
+  const url = new URL(event.request.url);
+  // Stale-while-revalidate för data/*.json — innehåll ändras under valrörelsen
+  // (opinionssiffror, debatter, tidslinje). Användaren får cached snabbt och
+  // bakgrundshämtning uppdaterar cache till nästa besök.
+  const isDataFile = /\/data\/[^/]+\.json$/.test(url.pathname);
 
-        return fetch(event.request)
-          .then((response) => {
-            // Don't cache non-successful responses
-            if (!response || response.status !== 200 || response.type !== 'basic') {
-              return response;
-            }
+  if (isDataFile) {
+    event.respondWith(staleWhileRevalidate(event.request));
+    return;
+  }
 
-            // Clone the response
-            const responseToCache = response.clone();
-
-            caches.open(CACHE_NAME)
-              .then((cache) => {
-                cache.put(event.request, responseToCache);
-              });
-
-            return response;
-          });
-      })
-      .catch(() => {
-        // Return offline page if available
-        return caches.match('./index.html');
-      })
-  );
+  // Cache-first för allt annat (HTML, CSS, JS, bilder) — CACHE_NAME-bump
+  // hanterar invalidering vid deploy
+  event.respondWith(cacheFirst(event.request));
 });
+
+function cacheFirst(request) {
+  return caches.match(request)
+    .then((cachedResponse) => {
+      if (cachedResponse) return cachedResponse;
+      return fetch(request)
+        .then((response) => {
+          if (!response || response.status !== 200 || response.type !== 'basic') {
+            return response;
+          }
+          const responseToCache = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, responseToCache));
+          return response;
+        });
+    })
+    .catch(() => caches.match('./index.html'));
+}
+
+function staleWhileRevalidate(request) {
+  return caches.match(request).then((cachedResponse) => {
+    const networkFetch = fetch(request)
+      .then((response) => {
+        if (response && response.status === 200 && response.type === 'basic') {
+          const clone = response.clone();
+          caches.open(CACHE_NAME).then((cache) => cache.put(request, clone));
+        }
+        return response;
+      })
+      .catch(() => cachedResponse); // network failed, falla tillbaka till cache
+    return cachedResponse || networkFetch;
+  });
+}
