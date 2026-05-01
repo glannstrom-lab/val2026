@@ -15,6 +15,23 @@ Format för varje post:
 
 ---
 
+## Cykel 29 — 2026-05-01 — Neutrality (kompass-axel-text)
+
+**Bedömning**: Bred audit av tidigare ej-granskade datafiler. compass-positions.json, polls-history.json, votes.json, candidates.json, election-history.json, budget.json — alla har acceptabelt språk. compass-positions har "hårdare linje" på M och S men det är symmetrisk (båda får samma term). Hittade dock ett ord på kompass.html "Så läser du kompassen": Y-axelns auktoritära beskrivning innehåller "nationalism" — laddat ord som kan tolkas som etnonationalism eller civic nationalism beroende på läsare.
+**Alternativ jag valde bort**:
+- Stora textomskrivningar — inte motiverat efter audit
+- Granska budget.json party_summaries motion_titles — partiernas egna titlar, neutralt rapporterande
+- SEO/Accessibility/Mobile UX (3-7 cykler bortom)
+**Gjort**:
+1. kompass.html: "Traditionella värden, nationalism, ordning" → "Traditionella värden, nationell identitet, ordning". Mer neutralt språk + konsekvent med SD-position-beskrivningen i compass-positions.json som använder "nationell identitet"
+**Resultat**:
+- En neutralare formulering på kompass-sidan
+- Konsekvent terminologi med data-fil
+- Audit över 6 datafiler bekräftar att projektet är språkligt välbalanserat
+**Nästa cykel bör undvika**: Neutrality. Senaste 3: Content, Performance, Neutrality. Cykel 30 kandidater: SEO (8 cykler bortom!!), Accessibility (5 cykler bortom), Mobile UX (4 cykler bortom), Tools (3 cykler bortom).
+
+---
+
 ## Cykel 28 — 2026-05-01 — Performance (service worker cache bump)
 
 **Bedömning**: Service worker har CACHE_NAME = 'val2026-v13'. Jag har gjort 27 cykler med modifikationer (CSS, JS, HTML, data) — användare som tidigare besökt sajten har v13-cachen och får INTE de senaste fixarna förrän cachen invalideras. Detta är en konkret leveransbugg.
