@@ -15,6 +15,24 @@ Format för varje post:
 
 ---
 
+## Cykel 31 — 2026-05-01 — SEO (description audit)
+
+**Bedömning**: Audit av description-meta på alla 17 sidor. SEO-rekommendation är 70–160 tecken. 16 av 17 inom intervall ✅. **kandidater.html** hade endast 63 tecken — under-optimerat. Den kortaste description får sämst CTR i sökmotor-resultat.
+**Alternativ jag valde bort**:
+- Skriva om alla 17 descriptions för att maximera CTR — risk för regression och inte värt det
+- Generera SVG OG-image — Twitter/Facebook stödjer inte alltid SVG. Backloggat
+- Person[]-LD för 73 kandidater — för stor LD-block. Backloggat
+**Gjort**:
+1. kandidater.html description: 63 → 128 tecken: "Sök bland riksdagskandidater inför valet 2026. Filtrera på parti och valkrets, läs om kandidaternas erfarenhet och fokusområden."
+2. Uppdaterade matchande og:description och twitter:description (fanns identiska kopior från Cykel 3-scriptet)
+3. Audit-resultat: alla 17 sidor nu inom 76-128 tecken ✅
+**Resultat**:
+- Kandidat-sidan får mer beskrivande SERP-snippet i Google
+- Konsekvens mellan description, og:description, twitter:description bibehållen
+**Nästa cykel bör undvika**: SEO. Senaste 3: Neutrality, Tools, SEO. Cykel 32 kandidater: Accessibility (7 cykler bortom!), Mobile UX (6 cykler bortom), Content (5 cykler bortom), Performance (4 cykler bortom).
+
+---
+
 ## Cykel 30 — 2026-05-01 — Tools (noscript-fallback partier.html)
 
 **Bedömning**: CLAUDE.md MUSS-krav: "Fungerar utan JavaScript för all kärninformation (verktygen får kräva JS)". Partier är kärninformation. partier.html renderar via JS — utan JS ser användaren tom sida. Bryter mot kravet. opinion.html, historik.html etc har samma problem men en sida åt gången.
