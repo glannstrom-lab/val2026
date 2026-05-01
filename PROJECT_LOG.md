@@ -15,6 +15,24 @@ Format för varje post:
 
 ---
 
+## Cykel 10 — 2026-05-01 — Content (källrad i quiz)
+
+**Bedömning**: Audit av kompass.html visade att synlig källrad redan finns (rad 77 — CHES + GU + V-Dem). quiz.html (renderas av quiz.js) däremot saknade transparens om matchningsalgoritmen — användaren ser bara procentsiffror utan att förstå hur de beräknas. Detta är ett MUSS-kvalitet enligt CLAUDE.md ("källhänvisningar synliga för användaren") tillämpat på algoritmen, inte bara fakta.
+**Alternativ jag valde bort**:
+- Tools (för diffust), Mobile UX (kräver browser), Performance (4 cykler bortom — kan vänta)
+- Lägga till källrad till quotes.json - quotes är redan visade utan källattribut, men varje citat har "stand alone" karaktär
+**Gjort**:
+1. tools/quiz.js: ny `<details class="quiz-method">` insertad ovanför disclaimer på resultat-sidan. Innehåller: numrerad lista (4 punkter) som förklarar matchningsalgoritmen + länk till CHES + länk till om.html för fullständig källista.
+2. styles.css: ny klass `.quiz-method` med disclosure-styling — collapsed by default med ▸/▾ chevron-indicator, öppnar för att visa metodbeskrivning. Använder befintliga muted-tokens.
+**Resultat**:
+- Användaren kan nu öppna metodik-disclosure och förstå exakt hur matchnings-procenten räknas
+- Ingen visuell störning på de som inte vill veta — collapsed by default
+- CHES-källa direkt länkbar från resultatsidan
+- kompass.html bekräftad redan ha källa — ingen åtgärd där
+**Nästa cykel bör undvika**: Content. Senaste 3: SEO, Neutrality, Content. Cykel 11 kandidater: Tools, Mobile UX, Performance (5 cykler bortom), Accessibility (4 cykler bortom).
+
+---
+
 ## Cykel 9 — 2026-05-01 — Neutrality audit (quotes + quiz)
 
 **Bedömning**: Audit av quotes.json visade PERFEKT balans — exakt 7 citat per parti × 8 partier = 56 totalt. Ingen åtgärd behövs där. Audit av 50 quiz-frågor identifierade två tydliga formuleringsproblem: (1) fråga 23 "traditionella familjevärderingar" är KD-typisk laddad frasering; (2) fråga 50 inramade gruvbrytning med "för att säkra mineraler till grön omställning" — rättfärdigande inramning som styr svaret. Andra frågor använder intensifierare ("kraftigt", "ytterligare") men det är vanligt politiskt språk.

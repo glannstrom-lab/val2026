@@ -104,7 +104,7 @@ Du är autonom produktägare för detta projekt. Varje cykel följer du denna se
 
 För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vilken som senast valdes.
 
-- [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1, 6)*
+- [x] **Content** — fakta, källor, partiinformation, valmanifest *(Cykel 1, 6, 10)*
 - [x] **Accessibility** — WCAG-fixar, screenreader-test, tangentbordsnavigation *(Cykel 2, 7)*
 - [ ] **Tools** — förbättringar av kompass/test/jämförelse/tidslinje
 - [x] **Performance** — laddtider, bildoptimering, CSS-rensning *(Cykel 5)*
@@ -112,7 +112,7 @@ För att tvinga variation, rotera mellan dessa kategorier över tid. Markera vil
 - [ ] **Mobile UX** — testning och förbättring på små skärmar
 - [x] **SEO & meta** — sökmotorer, social sharing-bilder *(Cykel 3, 8)*
 
-Senast vald: **Neutrality audit (Cykel 9, 2026-05-01)**
+Senast vald: **Content (Cykel 10, 2026-05-01)**
 
 ## Anti-Patterns (undvik)
 

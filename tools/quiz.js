@@ -670,6 +670,24 @@
           <a href="#partier" class="btn btn-primary">Läs om partierna</a>
         </div>
 
+        <!-- Metodik -->
+        <details class="quiz-method">
+          <summary>Hur räknas matchningen?</summary>
+          <div class="quiz-method-content">
+            <ol>
+              <li>För varje fråga jämförs ditt svar med partiets position på skalan −2 till +2.</li>
+              <li>Mindre avstånd = högre poäng (max 4 poäng per fråga).</li>
+              <li>Frågor du markerat som <em>viktiga</em> väger dubbelt.</li>
+              <li>Resultatet normaliseras till procent (0–100 %).</li>
+            </ol>
+            <p>
+              Partipositionerna baseras på partiernas officiella program, riksdagsmotioner
+              och <a href="https://www.chesdata.eu/" target="_blank" rel="noopener">Chapel Hill Expert Survey</a> 2024.
+              Fullständig källista i <a href="om.html">Om sidan</a>.
+            </p>
+          </div>
+        </details>
+
         <!-- Disclaimer -->
         <div class="quiz-results-disclaimer">
           <p>${quizData.meta.disclaimer}</p>
