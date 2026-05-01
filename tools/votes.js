@@ -34,7 +34,7 @@
         <!-- Filters -->
         <div class="votes-filters">
           <div class="votes-filter-group">
-            <label>Kategori:</label>
+            <label for="votes-category-filter">Kategori:</label>
             <select id="votes-category-filter" class="votes-select">
               <option value="all">Alla kategorier</option>
               ${Object.entries(votesData.categories).map(([key, label]) =>

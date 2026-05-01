@@ -81,3 +81,7 @@ Levande dokument. Du som autonom produktägare uppdaterar detta baserat på vad 
     Borde scopas. Kräver visuell verifikation före commit.
 - Bildoptimering av PNG-logotyper (totalt 53 KB, SD/MP/S är 9–13 KB var). WebP eller
   manuell komprimering kan spara 30–50 %.
+- **aria-live regions för dynamiska uppdateringar** (identifierat Cykel 13). Quiz-
+  resultat, sakfrågefilter, koalitionsbyggare uppdaterar UI utan att skärmläsare
+  annonserar förändringen. Kandidater för aria-live="polite": quiz-results-container,
+  compare-issues, coalition-summary. Inte aria-live="assertive" — för aggressivt.

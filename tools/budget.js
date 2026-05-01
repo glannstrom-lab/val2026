@@ -56,7 +56,7 @@
           </div>
 
           <div class="budget-filter-group">
-            <label>Kategori:</label>
+            <label for="budget-category-filter">Kategori:</label>
             <select id="budget-category-filter" class="budget-select">
               <option value="all">Alla utgiftsområden</option>
               ${Object.entries(budgetData.categories).map(([key, cat]) =>
@@ -66,7 +66,7 @@
           </div>
 
           <div class="budget-filter-group">
-            <label>Sortering:</label>
+            <label for="budget-sort">Sortering:</label>
             <select id="budget-sort" class="budget-select">
               <option value="id">Utgiftsområde (1-27)</option>
               <option value="gov">Regeringens budget</option>

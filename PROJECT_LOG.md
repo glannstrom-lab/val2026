@@ -15,6 +15,26 @@ Format för varje post:
 
 ---
 
+## Cykel 13 — 2026-05-01 — Accessibility (form-labels)
+
+**Bedömning**: Audit av 19 IMG (alla har alt ✅), 49 buttons (alla har tillgängligt namn ✅), och 4 form-element-fail. Tre `<select>` (budget-category-filter, budget-sort, votes-category-filter) hade `<label>` ovanför men UTAN `for`-attribut → ingen programmatisk koppling till skärmläsare. En `<input>` (share-url-input) hade ingen label alls. Alla fail enligt WCAG SC 1.3.1 / 4.1.2.
+**Alternativ jag valde bort**:
+- Performance/SEO/Neutrality (3-8 cykler bortom — kan vänta)
+- aria-live regions för dynamiska uppdateringar — backloggat (kräver utvärdering vilka som ska annonseras, för aggressivt blir störande)
+- Modal-audit (aria-modal, fokus-trap) — backloggat
+**Gjort**:
+1. tools/budget.js: `<label>` → `<label for="budget-category-filter">` och `<label for="budget-sort">`
+2. tools/votes.js: `<label>` → `<label for="votes-category-filter">`
+3. tools/quiz.js: lade till `aria-label="Delbar länk till ditt quiz-resultat"` på readonly input (ingen synlig label finns)
+4. ROADMAP backlog: aria-live regions för dynamiska uppdateringar
+**Resultat**:
+- Audit-script kör grön: 0 form-elements saknar label/aria
+- Skärmläsare läser nu upp etiketten när användaren tabbar in i select/input
+- Fyra säkra one-line-fixar — ingen visuell förändring
+**Nästa cykel bör undvika**: Accessibility. Senaste 3: Tools, Mobile UX, Accessibility. Cykel 14 kandidater: Performance (8 cykler bortom!), SEO (5 cykler bortom), Neutrality (4 cykler bortom), Content (3 cykler bortom).
+
+---
+
 ## Cykel 12 — 2026-05-01 — Mobile UX (touch target)
 
 **Bedömning**: Statisk audit av touch-targets i CSS (utan browser). `.nav-toggle` (hamburger-knappen) hade padding 8px och spans 24×2px → faktisk klickyta 40×32 px. Det är **WCAG 2.5.5 Target Size fail** (krav 44×44 px). `.btn` med padding 12+24 px och text-base ~16-20 px hamnar runt 40-44 px höjd — borderline, riskerar fail beroende på font-rendering.

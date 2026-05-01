@@ -658,7 +658,7 @@
         <div class="quiz-share">
           <h4>Dela ditt resultat</h4>
           <div class="quiz-share-url">
-            <input type="text" value="${shareUrl}" readonly id="share-url-input">
+            <input type="text" value="${shareUrl}" readonly id="share-url-input" aria-label="Delbar länk till ditt quiz-resultat">
             <button class="btn btn-secondary" id="copy-url-btn">Kopiera</button>
           </div>
           <p class="quiz-share-note">Länken innehåller dina svar (inga personuppgifter)</p>
